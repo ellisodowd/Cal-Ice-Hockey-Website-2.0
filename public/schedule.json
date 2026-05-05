@@ -1,0 +1,256 @@
+{
+  "games": [
+    {
+      "side": "left",
+      "opponent": "San Jose State University",
+      "logo": "images/SJSULogo.png",
+      "datetimeText": "Friday, September 26th 8:30pm",
+      "locationText": "@Sharks Ice - San Jose, CA",
+      "scoreText": "Score: 7 - 3",
+      "watchUrl": ""
+    },
+    {
+      "side": "right",
+      "opponent": "San Jose State University",
+      "logo": "images/SJSULogo.png",
+      "datetimeText": "Saturday, September 27th 8:30pm",
+      "locationText": "@Sharks Ice - San Jose, CA",
+      "scoreText": "Score: 14 - 3",
+      "watchUrl": ""
+    },
+    {
+      "side": "left",
+      "opponent": "Grand Canyon University",
+      "logo": "images/GCUlogo.png",
+      "datetimeText": "Friday, October 3rd 7:30pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 4 - 1",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "right",
+      "opponent": "Grand Canyon University",
+      "logo": "images/GCUlogo.png",
+      "datetimeText": "Saturday, October 4th 8:15pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 2 - 4",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "left",
+      "opponent": "Washington State University",
+      "logo": "images/WashingtonStateLogo.png",
+      "datetimeText": "Friday, October 10th 7:30pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 6 - 0",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "right",
+      "opponent": "Washington State University",
+      "logo": "images/WashingtonStateLogo.png",
+      "datetimeText": "Saturday, October 11th 8:15pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 6 - 2",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "left",
+      "opponent": "UC San Diego",
+      "logo": "images/UCSDLogo.png",
+      "datetimeText": "Saturday, October 25th 8:15pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 8 - 1",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "right",
+      "opponent": "UC San Diego",
+      "logo": "images/UCSDLogo.png",
+      "datetimeText": "Sunday, October 26th 10:45am",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 13 - 0",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "left",
+      "opponent": "Eastern Washington University",
+      "logo": "images/EasternWashingtonLogo.png",
+      "datetimeText": "Friday, October 31st 7:30pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 10 - 0",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "right",
+      "opponent": "Eastern Washington University",
+      "logo": "images/EasternWashingtonLogo.png",
+      "datetimeText": "Saturday, November 1st 8:15pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 14 - 3",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "left",
+      "opponent": "University of Washington",
+      "logo": "images/UWashingtonLogo.png",
+      "datetimeText": "Friday, November 7th 8:45pm",
+      "locationText": "@Kraken Community Iceplex - Seattle, WA",
+      "scoreText": "Score: 6 - 2",
+      "watchUrl": "https://www.youtube.com/watch?v=ikNmLy0tkO8&t=2207s"
+    },
+    {
+      "side": "right",
+      "opponent": "University of Washington",
+      "logo": "images/UWashingtonLogo.png",
+      "datetimeText": "Saturday, November 8th 8:00pm",
+      "locationText": "@Kraken Community Iceplex - Seattle, WA",
+      "scoreText": "Score: 3 - 1",
+      "watchUrl": "https://www.youtube.com/watch?v=Mu2e-o3iK-c"
+    },
+    {
+      "side": "left",
+      "opponent": "Western Washington University",
+      "logo": "images/WesternWashingtonLogo.png",
+      "datetimeText": "Sunday, November 9th 5:15pm",
+      "locationText": "@Bellingham Sportsplex - Bellingham, WA",
+      "scoreText": "Score: 9 - 4",
+      "watchUrl": "https://www.youtube.com/watch?v=Ubt2gvVJDps&t=5136s"
+    },
+    {
+      "side": "right",
+      "opponent": "Western Washington University",
+      "logo": "images/WesternWashingtonLogo.png",
+      "datetimeText": "Monday, November 10th 10:00am",
+      "locationText": "@Bellingham Sportsplex - Bellingham, WA",
+      "scoreText": "Score: 11 - 5",
+      "watchUrl": "https://www.youtube.com/watch?v=RLNj_p2o8KY"
+    },
+    {
+      "side": "left",
+      "opponent": "Loyola Marymount University",
+      "logo": "images/LMUlogo.png",
+      "datetimeText": "Saturday, November 15th 7:00pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 2 - 5",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "right",
+      "opponent": "Loyola Marymount University",
+      "logo": "images/LMUlogo.png",
+      "datetimeText": "Sunday, November 16th 10:45am",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 5 - 0",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "left",
+      "opponent": "Utah State University",
+      "logo": "images/UtahStatelogo.png",
+      "datetimeText": "Thursday, November 20th 7:00pm",
+      "locationText": "@Eccles Ice Center - North Logan, Utah",
+      "scoreText": "Score: 1 - 8",
+      "watchUrl": "https://www.youtube.com/watch?v=lGauc1NR5Lw"
+    },
+    {
+      "side": "right",
+      "opponent": "University of Utah",
+      "logo": "images/UniversityofUtahLogo.png",
+      "datetimeText": "Friday, November 21st 7:30pm",
+      "locationText": "@Salt Lake City Sports Complex - Utah",
+      "scoreText": "Score: 3 - 6",
+      "watchUrl": "https://www.youtube.com/watch?v=ZNlJ4bPPvbE"
+    },
+    {
+      "side": "left",
+      "opponent": "Weber State",
+      "logo": "images/WeberStateLogo.png",
+      "datetimeText": "Saturday, November 22nd 7:15pm",
+      "locationText": "@Weber County Ice Sheet - Ogden, Utah",
+      "scoreText": "Score: 3 - 2",
+      "watchUrl": "https://www.youtube.com/watch?v=qveR8zZA8jQ"
+    },
+    {
+      "side": "right",
+      "opponent": "Montana State",
+      "logo": "images/MontanaStateLogo.png",
+      "datetimeText": "Sunday, November 23rd 10:00am",
+      "locationText": "@Weber County Ice Sheet - Ogden, Utah",
+      "scoreText": "Score: 4 - 8",
+      "watchUrl": "https://www.youtube.com/watch?v=5_qSSnfXfj0&t=1941s"
+    },
+    {
+      "side": "left",
+      "opponent": "MSU Denver",
+      "logo": "images/MSUDenverLogo.png",
+      "datetimeText": "Friday, January 16th 7:15pm",
+      "locationText": "@Ice Centre at the Promenade - Westminster, Colorado",
+      "scoreText": "Score: 2 - 5",
+      "watchUrl": "https://www.youtube.com/watch?v=nnR_biDwSWs"
+    },
+    {
+      "side": "right",
+      "opponent": "Dakota College at Bottineau",
+      "logo": "images/DokotaCollegeLogo.png",
+      "datetimeText": "Saturday, January 17th 11:30am",
+      "locationText": "@Ice Centre at the Promenade - Westminster, Colorado",
+      "scoreText": "Score: 8 - 4",
+      "watchUrl": "https://www.youtube.com/watch?v=tTadh5jDXiE"
+    },
+    {
+      "side": "left",
+      "opponent": "Northeastern University",
+      "logo": "images/NorthEasternLogo.png",
+      "datetimeText": "Sunday, January 18th 7:00pm",
+      "locationText": "@Greeley Ice Haus - Greeley, Colorado",
+      "scoreText": "Score: 6 - 3",
+      "watchUrl": "https://www.youtube.com/watch?v=XP3GY6gjaiQ&t=2s"
+    },
+    {
+      "side": "right",
+      "opponent": "University of Colorado",
+      "logo": "images/ColoradoUniversityLogo.png",
+      "datetimeText": "Monday, January 19th 11:00am",
+      "locationText": "@CU Student Recreation Center - Boulder, Colorado",
+      "scoreText": "Score: 1 - 2",
+      "watchUrl": "https://www.youtube.com/watch?v=tp5osox5ayA"
+    },
+    {
+      "side": "left",
+      "opponent": "University of Southern California",
+      "logo": "images/USCLogo.png",
+      "datetimeText": "Friday, January 23rd 7:30pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 3 - 7",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "right",
+      "opponent": "University of Southern California",
+      "logo": "images/USCLogo.png",
+      "datetimeText": "Saturday, January 24th 8:15pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "Score: 4 - 1",
+      "watchUrl": "https://www.bdehockey.com/free-vod.php?con=vaultCAL&type=v&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "side": "left",
+      "opponent": "San Jose State University",
+      "logo": "images/SJSULogo.png",
+      "datetimeText": "Friday, January 30th 8:45pm",
+      "locationText": "@Sharks Ice - San Jose, CA",
+      "scoreText": "Score:",
+      "watchUrl": ""
+    },
+    {
+      "side": "right",
+      "opponent": "Cal Alumni Game",
+      "logo": "",
+      "datetimeText": "Saturday, January 31st 8:15pm",
+      "locationText": "@Oakland Ice Center",
+      "scoreText": "FREE ADMISSION; Preskate 2-for-1 special w/ team @7:15pm",
+      "watchUrl": ""
+    }
+  ]
+}

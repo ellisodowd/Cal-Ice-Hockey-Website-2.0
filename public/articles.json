@@ -1,0 +1,108 @@
+{
+  "articles": [
+    {
+      "dateText": "26 January 2026",
+      "title": "Golden Bears Respond on Senior Night With Statement Win Over USC",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "The No. 8 California Golden Bears delivered a strong response on Senior Night, bouncing back from a tough loss to defeat conference rival USC 4–1 on January 24 at the Oakland Ice Center.",
+      "image": "images/article13.png",
+      "href": "articles/article13.html"
+    },
+    {
+      "dateText": "16 January 2026",
+      "title": "Golden Bears Back on the Ice After Winter Break",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "The No.8 California Golden Bears hockey team returns to battle this weekend at the Big Mountain Classic in Colorado.",
+      "image": "images/article12.png",
+      "href": "articles/article12.html"
+    },
+    {
+      "dateText": "20 November 2025",
+      "title": "Cal Splits Weekend Series with LMU Ahead of Utah Showcase",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "OAKLAND, Calif. - - The Cal Ice hockey team lost 6-2 in its marquee event of the season, The Big Freeze, but responded with a 5-0 shutout victory the following morning.",
+      "image": "images/article11img.png",
+      "href": "articles/article11.html"
+    },
+    {
+      "dateText": "14 November 2025",
+      "title": "Cal Ice Hockey Gearing up for the Crown Jewel of the Season Schedule",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "After a road trip that included travel woes and four back-to-back games, the UC Berkeley hockey team will return home for an event that all Cal fans circle on their calendar, the Big Freeze.",
+      "image": "images/article10img.png",
+      "href": "articles/article10.html"
+    },
+    {
+      "dateText": "19 February 2025",
+      "title": "Cal Ice Battles Through Adversity at PAC-8 Playoffs, Earns Spot in ACHA Regionals",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "The Cal Ice team returned earlier this week from the PAC-8 Playoffs in Cheney, Washington, following a hard-fought postseason run. At the PAC-8 Awards Banquet on February 7th, Head Coach Devin Cox was honored as Coach of the Year, while standout players Aidan Comeau (#80, Goalie), Kodai Mizuno (#9, Forward), and Sean Dolim (#88, Defense) earned First-Team All PAC-8 honors",
+      "image": "images/article8.png",
+      "href": "articles/article8.html"
+    },
+    {
+      "dateText": "14 November 2024",
+      "title": "UC Berkeley Hockey Clinches the Top Seed in the PAC-8",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "The California Golden Bears hockey team swept its opponents over Veteran’s Day weekend to improve to a 16-0 overall record, 14-0 in conference. The weekend included two games against Eastern Washington University and two games against Washington State University - all games took place at the EWU student recreation center in Cheney, Wash",
+      "image": "images/Article8Banner.avif",
+      "href": "articles/article9.html"
+    },
+    {
+      "dateText": "8 November 2023",
+      "title": "Bears Thrive Under New Coaching Staff; hold League No. 1 Ranking after 29-Goal Weekend",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "The Bears made big moves during the offseason. Not only did they bring in 13 rookies, but also hired a new Head Coach in Devin Cox, who’s been leading the charge to playoffs.",
+      "image": "images/Article1Banner.jpg",
+      "href": "articles/article1.html"
+    },
+    {
+      "dateText": "3 August 2020",
+      "title": "2020-21 Season Update",
+      "titleClass": "articleTitle",
+      "excerpt": "Due to the ongoing COVID-19 pandemic, all fall 2020 Golden Bear Ice Hockey activities have been put on hold. All tryouts, games, and practices have been postponed until further notice.",
+      "image": "images/MeetTheBearsBanner.jpg",
+      "href": "articles/article2.html"
+    },
+    {
+      "dateText": "3 August 2020",
+      "title": "2019-20 Season Recap",
+      "titleClass": "articleTitle",
+      "excerpt": "The 2019-2020 Bears were loaded with offensive talent up and down their lineup. Headlined by forwards Delfino Varela (8G, 14A, 18GP) and Gabriel Giammarco (10G, 10A, 16GP), the Bear’s explosive offense propelled them to a record of 14 Wins and 9 Losses overall. Not to outdone, however, were the Bears defensemen. D-men Matt Chorlian (2G, 7A, 22GP)  and Jefferey Chen (6G, 6A, 24GP) kept Cal’s blue line solid all season long and kept opponents to 2 or fewer goals 11 games this season.",
+      "image": "images/Article3Banner.png",
+      "href": "articles/article3.html"
+    },
+    {
+      "dateText": "10 February 2019",
+      "title": "Bears Come Up Short",
+      "titleClass": "articleTitle",
+      "excerpt": "LAKE TAHOE - After 60 minutes of hard-fought hockey, the Oregon Ducks put a dagger into the California Golden Bears' season, who came home with a second-place trophy in the PAC-8 tournament for the second year in the running.",
+      "image": "images/Article4Banner.jpg",
+      "href": "articles/article4.html"
+    },
+    {
+      "dateText": "9 February 2019",
+      "title": "Cal Beats EWU in OT; Heads to Finals",
+      "titleClass": "articleTitle",
+      "excerpt": "LAKE TAHOE - The overtime period had just begun, but all 20 California players remained glued to the bench, fatigued from the elevation and uneasy about what may unfold before them.",
+      "image": "images/Article5Banner.jpeg",
+      "href": "articles/article5.html"
+    },
+    {
+      "dateText": "8 February 2019",
+      "title": "Golden Bears Advance to Semifinals",
+      "titleClass": "articleTitle",
+      "excerpt": "LAKE TAHOE - The Golden Bears begin the playoffs rolling. California Ice Hockey defeats the University of Washington in their first game of the 2019 PAC-8 playoffs 11-3.",
+      "image": "images/Article6Banner.png",
+      "href": "articles/article6.html"
+    },
+    {
+      "dateText": "3 February 2019",
+      "title": "Regular Season Recap; Playoff Preview",
+      "titleClass": "articleTitle",
+      "excerpt": "BERKELEY - The California Golden Bears came into this season with hopes of building off  last year's successes. After a grueling seven months, they were able to do just that, heading into playoffs with an 18-4 record which is good enough for the 1st seed in the PAC-8 South Division and 20th in the region.",
+      "image": "images/Article7Banner.jpg",
+      "href": "articles/article7.html"
+    }
+  ]
+}

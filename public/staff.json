@@ -1,0 +1,104 @@
+{
+    "coaches": [
+      {
+        "name": "Devin Cox",
+        "role": "Head Coach",
+        "contact": "925-216-7455 / devincox@calicehockey.com",
+        "image": "images/DevinCox.jpeg"
+      },
+      {
+        "name": "Darien Oliver",
+        "role": "Assistant Coach",
+        "contact": "",
+        "image": "images/DarienOliver.jpg"
+      },
+      {
+        "name": "Pravin Chandra",
+        "role": "Assistant Coach",
+        "contact": "",
+        "image": "images/PravinChandra.jpg"
+      },
+      {
+        "name": "Mark Arneson",
+        "role": "Assistant Coach",
+        "contact": "",
+        "image": "images/MarkArneson.jpg"
+      },
+      {
+        "name": "Everett Morton",
+        "role": "Goalie Coach",
+        "contact": "",
+        "image": "images/EverettMorton.jpg"
+      },
+      {
+        "name": "Thor Oase",
+        "role": "Player Development Coach",
+        "contact": "",
+        "image": "Headshots/Oase.png"
+      }
+    ],
+    "executive": [
+      {
+        "name": "Michele Cox",
+        "role": "General Manager",
+        "contact": "310-818-1003 / michelecox@calicehockey.com",
+        "image": "images/MicheleCox.jpg"
+      },
+      {
+        "name": "Kodai Mizuno",
+        "role": "Club President",
+        "contact": "",
+        "image": "images/blank-profile-picture-973460_960_720.jpeg"
+      },
+      {
+        "name": "Enzo Goebel",
+        "role": "Vice President",
+        "contact": "",
+        "image": "Headshots/goebel.png"
+      },
+      {
+        "name": "Tyson Storr",
+        "role": "Senior Advisor",
+        "contact": "",
+        "image": "Headshots/storrStaff.png"
+      },
+      {
+        "name": "Aidan Comeau",
+        "role": "Head of Travel",
+        "contact": "",
+        "image": "images/blank-profile-picture-973460_960_720.jpeg"
+      },
+      {
+        "name": "Yusuf Akbas",
+        "role": "Safety Officer",
+        "contact": "",
+        "image": "images/blank-profile-picture-973460_960_720.jpeg"
+      },
+      {
+        "name": "Allan Anaka",
+        "role": "Head of Technology / Website Design",
+        "contact": "",
+        "image": "Headshots/allanAnaka.png"
+      },
+      {
+        "name": "Roxana Nourishad",
+        "role": "Director of Marketing",
+        "contact": "",
+        "image": "images/blank-profile-picture-973460_960_720.jpeg"
+      },
+      {
+        "name": "Auden Meyer",
+        "role": "Game Day Operations",
+        "contact": "",
+        "image": "Headshots/auden.png"
+      },
+      {
+        "name": "Ryan Carlson",
+        "role": "Director of Broadcasting",
+        "contact": "",
+        "image": "Headshots/ryanCarlson.png"
+      }
+    ]
+  }
+  
+  
