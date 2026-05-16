@@ -4,6 +4,7 @@ import Schedule from './pages/Schedule.jsx'
 import Roster from './pages/Roster.jsx'
 import Staff from './pages/Staff.jsx'
 import Articles from './pages/Articles.jsx'
+import About from './pages/About.jsx'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/roster" element={<Roster />} />
         <Route path="/staff" element={<Staff />} />
         <Route path="/articles" element={<Articles />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   )
