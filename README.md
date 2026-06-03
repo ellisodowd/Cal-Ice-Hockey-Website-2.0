@@ -135,7 +135,7 @@ them here by name only.
 | ---------------- | -------------------------- | -------------------------------------- |
 | Cloudflare       | `TODO: which email/account`| Hosting + (optionally) DNS             |
 | Porkbun          | `TODO: which email/account`| Domain registrar for calicehockey.com  |
-| GitHub repo      | `TODO: owner/org`          | Source; connected to Cloudflare Pages  |
+| GitHub repo      | `ellisodowd`               | Source; connected to Cloudflare Pages  |
 | HostGator        | `TODO: legacy`             | Old host — cancel after cutover        |
 | Google Cloud     | `TODO: OAuth project owner`| Old OAuth app; reused by the Expo app  |
 
