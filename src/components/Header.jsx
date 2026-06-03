@@ -1,7 +1,10 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+
   useEffect(() => {
     const onScroll = () => {
       const header = document.querySelector('header')
@@ -11,12 +14,29 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close the mobile menu whenever the route changes
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <header>
-      <Link to="/" className="logo">
+    <header className={menuOpen ? 'menu-open' : ''}>
+      <Link to="/" className="logo" onClick={closeMenu}>
         <img src="/images/calicehockeylogo2.png" alt="California" />
       </Link>
-      <ul>
+      <button
+        className="nav-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul className={menuOpen ? 'open' : ''}>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/schedule">Schedule</Link></li>
