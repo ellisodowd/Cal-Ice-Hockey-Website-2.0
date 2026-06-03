@@ -29,3 +29,6 @@ videos/
 *.mp4
 *.MP4
 *.zip
+
+# Build output (Cloudflare builds this on deploy)
+dist/

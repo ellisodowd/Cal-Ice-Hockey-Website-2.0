@@ -44,9 +44,8 @@ export default function Header() {
         <li><Link to="/staff">Staff</Link></li>
         <li><Link to="/articles">Articles</Link></li>
         <li className="dropdown">
-          <a href="/login.php">Team</a>
+          <a>Team</a>
           <ul className="dropdown-menu">
-            <li><a href="/login.php">Login</a></li>
             <li><a href="https://forms.gle/nP5RbMVFuc2RLnWz9" target="_blank" rel="noreferrer">Recruits</a></li>
             <li><a href="https://forms.gle/iUhuvuu1Cd8nx1Cd6" target="_blank" rel="noreferrer">Alumni</a></li>
           </ul>
