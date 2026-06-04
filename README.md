@@ -148,7 +148,7 @@ them here by name only.
 | Porkbun          | `TODO: which email/account`| Domain registrar for calicehockey.com  |
 | GitHub repo      | `ellisodowd`               | Source; connected to Cloudflare Workers |
 | HostGator        | `TODO: legacy`             | Old host — cancel after cutover        |
-| Google Cloud     | `TODO: OAuth project owner`| Old OAuth app; reused by the Expo app  |
+| Google Cloud     | `ellis_odowd@berkeley.edu` | OAuth client for Google sign-in; now used by the Expo app via Supabase. See the app repo for details. |
 
 ---
 
