@@ -144,7 +144,7 @@ them here by name only.
 
 | Service          | Account / email            | Notes                                  |
 | ---------------- | -------------------------- | -------------------------------------- |
-| Cloudflare       | `ellis_odowd@berkeley.edu` | Hosting + (optionally) DNS. ⚠️ personal email — migrate to a team-owned account before graduation |
+| Cloudflare       | `ellis_odowd@berkeley.edu` | Hosting + (optionally) DNS. Plan: transfer account ownership to another player before graduation (account kept active until then) |
 | Porkbun          | `TODO: which email/account`| Domain registrar for calicehockey.com  |
 | GitHub repo      | `ellisodowd`               | Source; connected to Cloudflare Workers |
 | HostGator        | `TODO: legacy`             | Old host — cancel after cutover        |
