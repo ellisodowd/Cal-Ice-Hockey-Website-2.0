@@ -35,3 +35,6 @@ dist/
 
 # Claude Code local artifacts (worktrees, caches)
 .claude/
+
+# ...but DO track the background videos the site serves
+!public/images/*.mp4
