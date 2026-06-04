@@ -32,3 +32,6 @@ videos/
 
 # Build output (Cloudflare builds this on deploy)
 dist/
+
+# Claude Code local artifacts (worktrees, caches)
+.claude/
