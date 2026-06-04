@@ -16,7 +16,7 @@ database, no server-side code.
 | -------- | --------------------------------------- |
 | UI       | React 18 + React Router 6               |
 | Build    | Vite 5                                  |
-| Hosting  | Cloudflare Pages (static)               |
+| Hosting  | Cloudflare Workers (static assets)     |
 | Domain   | Porkbun (registrar) → Cloudflare (DNS)  |
 | Content  | Static JSON (`*.json`) read at runtime  |
 
@@ -50,7 +50,7 @@ rebuilds it on every deploy.
 git push to `main`
       │
       ▼
-Cloudflare Pages  ──build──▶  serves ./dist on the global CDN
+Cloudflare Workers  --build-->  serves ./dist on the global CDN
       ▲
       │ DNS (calicehockey.com)
    Porkbun (domain registrar)
@@ -58,45 +58,56 @@ Cloudflare Pages  ──build──▶  serves ./dist on the global CDN
 
 The site auto-deploys: **every push to `main` → production deploy.** Every push
 to any other branch (or PR) → its own **preview URL** for testing before merge.
-There is no CI config to maintain — it is built into Cloudflare Pages.
+There is no CI config to maintain — it is built into Cloudflare Workers Builds.
 
-### Cloudflare Pages — first-time setup
+> This project deploys as a **Cloudflare Worker serving static assets** (the
+> current default flow), not classic Pages. The Worker config lives in
+> [`wrangler.jsonc`](wrangler.jsonc) and the live URL is a `*.workers.dev`
+> address.
 
-> Not done yet. Do this once you've decided which Cloudflare account/email to use
-> (see [Accounts](#accounts--credentials)).
+### Cloudflare — first-time setup (done)
 
-1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
+Recreate from scratch only if the project is ever deleted:
+
+1. Cloudflare dashboard → **Workers & Pages → Create → import the Git repo**.
 2. Authorize GitHub and select this repository.
-3. Set the build configuration:
-   | Field                  | Value           |
-   | ---------------------- | --------------- |
-   | Production branch      | `main`          |
-   | Framework preset       | Vite            |
-   | Build command          | `npm run build` |
-   | Build output directory | `dist`          |
-4. Deploy. The first build gives you a `*.pages.dev` URL to verify.
+3. Build/deploy configuration:
+   | Field             | Value              |
+   | ----------------- | ------------------ |
+   | Production branch | `main`             |
+   | Build command     | `npm run build`    |
+   | Deploy command    | `npx wrangler deploy` |
+4. The deploy reads [`wrangler.jsonc`](wrangler.jsonc), which points at `./dist`
+   as static assets. The first build gives a `*.workers.dev` URL to verify.
 5. Add the custom domain (see below).
+
+> **Gotcha (already handled):** wrangler's Vite auto-detection requires Vite ≥ 6
+> (we're on 5.4), so `wrangler.jsonc` configures the static-assets deploy
+> explicitly to skip it. Don't remove that file.
 
 ### SPA routing
 
-This is a single-page app using client-side routing. `public/_redirects`
-contains:
+This is a single-page app using client-side routing. SPA fallback is configured
+in [`wrangler.jsonc`](wrangler.jsonc):
 
-```
-/*    /index.html   200
+```jsonc
+"assets": { "directory": "./dist", "not_found_handling": "single-page-application" }
 ```
 
-This makes Cloudflare serve `index.html` for any path so deep links (e.g.
-`/roster`) and page refreshes work instead of 404ing. Vite copies it into
-`dist/` automatically — don't delete it.
+This serves `index.html` for unknown paths so deep links (e.g. `/roster`) and
+refreshes work instead of 404ing.
+
+> Note: do **not** add a `public/_redirects` file — Workers static assets rejects
+> a `/* /index.html 200` rule as an infinite loop. `not_found_handling` is the
+> Workers-native replacement.
 
 ### Domain (Porkbun → Cloudflare)
 
-The domain **calicehockey.com** is registered at **Porkbun**. To point it at
-Cloudflare Pages, after the first deploy:
+The domain **calicehockey.com** is registered at **Porkbun**. To point it at the
+Worker, after the first deploy:
 
-1. Cloudflare Pages project → **Custom domains → Set up a domain** → enter
-   `calicehockey.com` (and `www`).
+1. The Worker's project → **Settings → Domains & Routes → Add → Custom domain** →
+   enter `calicehockey.com` (and `www`).
 2. Cloudflare shows the DNS records (or nameservers) to use.
 3. In **Porkbun**, either:
    - point the domain's **nameservers** to the ones Cloudflare gives you
@@ -110,7 +121,7 @@ Cloudflare Pages, after the first deploy:
 
 ### Cost
 
-- **Hosting:** free on Cloudflare Pages (unlimited bandwidth, 500 builds/month —
+- **Hosting:** free on Cloudflare Workers (generous free tier, plenty of requests/month --
   far more than this site needs).
 - **Domain:** the only recurring cost — the yearly Porkbun registration (~$10–15/yr).
 
@@ -135,7 +146,7 @@ them here by name only.
 | ---------------- | -------------------------- | -------------------------------------- |
 | Cloudflare       | `TODO: which email/account`| Hosting + (optionally) DNS             |
 | Porkbun          | `TODO: which email/account`| Domain registrar for calicehockey.com  |
-| GitHub repo      | `ellisodowd`               | Source; connected to Cloudflare Pages  |
+| GitHub repo      | `ellisodowd`               | Source; connected to Cloudflare Workers |
 | HostGator        | `TODO: legacy`             | Old host — cancel after cutover        |
 | Google Cloud     | `TODO: OAuth project owner`| Old OAuth app; reused by the Expo app  |
 
