@@ -1,0 +1,13 @@
+{
+  // Static-assets-only Worker: serve the Vite build output in ./dist.
+  // Explicit config so `wrangler deploy` skips Vite framework auto-detection
+  // (which otherwise requires Vite >= 6).
+  "name": "calicehockeywebsite",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist",
+    // SPA routing: serve index.html for unknown paths so React Router deep
+    // links / refreshes work (Workers equivalent of the _redirects rule).
+    "not_found_handling": "single-page-application"
+  }
+}
