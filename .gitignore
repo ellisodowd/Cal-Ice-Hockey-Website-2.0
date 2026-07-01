@@ -1,7 +1,5 @@
 # Large media (DO NOT TRACK)
 videos/
-*.mp4
-*.MP4
 *.mov
 *.zip
 
@@ -13,22 +11,11 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node / tooling (if added later)
+# Node / tooling
 node_modules/
 
 # Logs
 *.log
-# Large media
-videos/
-*.mp4
-*.MP4
-*.zip
-
-# Large media (keep out of git)
-videos/
-*.mp4
-*.MP4
-*.zip
 
 # Build output (Cloudflare builds this on deploy)
 dist/
