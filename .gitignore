@@ -1,5 +1,7 @@
 # Large media (DO NOT TRACK)
 videos/
+*.mp4
+*.MP4
 *.mov
 *.zip
 
@@ -11,14 +13,28 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node / tooling
+# Node / tooling (if added later)
 node_modules/
 
 # Logs
 *.log
+# Large media
+videos/
+*.mp4
+*.MP4
+*.zip
+
+# Large media (keep out of git)
+videos/
+*.mp4
+*.MP4
+*.zip
 
 # Build output (Cloudflare builds this on deploy)
 dist/
 
-# Claude Code worktrees (git worktrees, must not be tracked)
-.claude/worktrees/
+# Claude Code local artifacts (worktrees, caches)
+.claude/
+
+# ...but DO track the background videos the site serves
+!public/images/*.mp4
