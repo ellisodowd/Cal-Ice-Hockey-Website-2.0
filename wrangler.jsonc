@@ -1,0 +1,8 @@
+{
+  "name": "calicehockeywebsite",
+  "compatibility_date": "2026-08-18",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
