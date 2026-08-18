@@ -19,3 +19,6 @@ node_modules/
 
 # Build output (Cloudflare builds this on deploy)
 dist/
+
+# Claude Code worktrees (git worktrees, must not be tracked)
+.claude/worktrees/
