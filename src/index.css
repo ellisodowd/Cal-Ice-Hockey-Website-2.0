@@ -521,7 +521,7 @@ header ul li .dropdown-menu li a:hover {
 .rosterBottom {
   height: 150px;
   width: 100%;
-  background: url("images/bottomBackground.png") no-repeat center center;
+  background: url("/images/bottomBackground.png") no-repeat center center;
   background-size: cover;
   box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.8);
 }
@@ -588,7 +588,7 @@ header ul li .dropdown-menu li a:hover {
 -------------------------------- */
 body.sched {
   font-family: "Poppins", sans-serif;
-  background: url("images/backgroundSched.png") no-repeat -20px center fixed;
+  background: url("/images/backgroundSched.png") no-repeat -20px center fixed;
   background-size: 110%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -713,7 +713,7 @@ body.sched {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background: url("images/ScheduleBackground.jpg") no-repeat center center fixed;
+  background: url("/images/ScheduleBackground.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -734,7 +734,7 @@ body.sched {
   display: flex;
   justify-content: center;
   height: 100%;
-  background: url("images/rosterBackground.png") no-repeat -20px center fixed;
+  background: url("/images/rosterBackground.png") no-repeat -20px center fixed;
   background-size: 110%;
   background-repeat: no-repeat;
   position: relative;
@@ -1166,7 +1166,7 @@ section .content {
   height: 60vh;
   min-height: 380px;
   background: linear-gradient(rgba(4, 30, 66, 0.65), rgba(4, 30, 66, 0.85)),
-    url('images/MeetTheBearsBanner.jpg') no-repeat center center;
+    url('/images/MeetTheBearsBanner.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -1467,7 +1467,7 @@ section .content {
 .blogBody {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(images/LCHI6246.jpg);
+    url(/images/LCHI6246.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1603,7 +1603,7 @@ iframe {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("images/backgroundSched.png") no-repeat center center;
+    background: url("/images/backgroundSched.png") no-repeat center center;
     background-size: cover;
     z-index: -1;
   }
@@ -1617,7 +1617,7 @@ iframe {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("images/rosterBackground.png") no-repeat center center;
+    background: url("/images/rosterBackground.png") no-repeat center center;
     background-size: cover;
     z-index: -1;
   }
