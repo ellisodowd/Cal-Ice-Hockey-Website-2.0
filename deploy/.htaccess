@@ -1,6 +1,14 @@
 # SPA routing for the Cal Ice Hockey site.
 # This file is NOT deployed by CI — it lives on the server in public_html/
 # and is managed manually so client-side routes (e.g. /roster) don't 404.
+
+# calicehockey.com -> californiaicehockey.com (temporary, pending naming decision)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^(www\.)?calicehockey\.com$ [NC]
+  RewriteRule ^(.*)$ https://californiaicehockey.com/$1 [R=302,L]
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -9,3 +17,6 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
