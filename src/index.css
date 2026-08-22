@@ -284,9 +284,9 @@ header ul li .dropdown-menu li a:hover {
   header ul li a {
     display: block;
     margin: 0;
-    padding: 16px 25px;
+    padding: 18px 28px;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1.35rem;
   }
 
   /* Keep links light even when header is sticky on mobile */
@@ -1684,52 +1684,6 @@ iframe {
     flex-direction: column;
   }
 
-  /* Header/nav mobile defaults (single-row, no logo) */
-  header .logo {
-    display: none !important;
-  }
-  header {
-    padding: 8px 8px !important;
-    justify-content: center;
-  }
-  header.sticky {
-    padding: 4px 8px !important;
-  }
-
-  header ul {
-    flex: 1 1 auto;
-    min-width: 0;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    overflow: hidden;
-  }
-
-  header ul li a {
-    margin: 0;
-    padding: 8px 6px;
-    letter-spacing: 0.2px;
-    font-size: clamp(11px, 2.9vw, 13px) !important;
-    left: 0 !important;
-    white-space: nowrap;
-  }
-
-  /* Dropdown stays on-screen */
-  header ul li .dropdown-menu {
-    left: auto;
-    right: 0;
-  }
-
-  /* Improve tap behavior */
-  header ul li.dropdown > a {
-    padding: 10px 12px;
-    display: inline-block;
-    font-size: 12px !important;
-  }
-  header ul li.dropdown:active .dropdown-menu,
-  header ul li.dropdown:focus-within .dropdown-menu {
-    display: flex;
-  }
-
   /* Cards stack */
   .rosterContainer {
     width: 100%;
@@ -1886,15 +1840,3 @@ iframe {
   }
 }
 
-/* Extra squeeze for very narrow phones */
-@media (max-width: 360px) {
-  header {
-    padding: 6px 6px !important;
-  }
-  header ul li a {
-    padding: 7px 4px;
-    font-size: clamp(10px, 3.2vw, 12px) !important;
-    letter-spacing: 0.1px;
-  }
-}
-/* test */
