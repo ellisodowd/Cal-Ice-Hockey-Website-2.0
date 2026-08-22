@@ -2,6 +2,13 @@
 # This file is NOT deployed by CI — it lives on the server in public_html/
 # and is managed manually so client-side routes (e.g. /roster) don't 404.
 
+# Force HTTPS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 # calicehockey.com -> californiaicehockey.com (temporary, pending naming decision)
 <IfModule mod_rewrite.c>
   RewriteEngine On
