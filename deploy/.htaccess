@@ -1,0 +1,11 @@
+# SPA routing for the Cal Ice Hockey site.
+# This file is NOT deployed by CI — it lives on the server in public_html/
+# and is managed manually so client-side routes (e.g. /roster) don't 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
