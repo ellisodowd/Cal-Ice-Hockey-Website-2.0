@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "dateText": "22 August 2026",
+      "title": "California Ice Hockey Teams Up With the San Jose Sharks for a College Hockey Clinic",
+      "titleClass": "articleTitle longTitle",
+      "excerpt": "California Ice Hockey is joining forces with the San Jose Sharks for a College Hockey Clinic at the Oakland Ice Center on September 19, giving players ages 8–14 a high-energy day of skills clinics, challenges, and interactive sessions led by college club players.",
+      "image": "images/article14.png",
+      "href": "articles/article14.html"
+    },
+    {
       "dateText": "26 January 2026",
       "title": "Golden Bears Respond on Senior Night With Statement Win Over USC",
       "titleClass": "articleTitle longTitle",
