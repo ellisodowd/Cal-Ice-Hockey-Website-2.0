@@ -34,7 +34,7 @@
         "name": "Thor Oase",
         "role": "Player Development Coach",
         "contact": "",
-        "image": "Headshots/Oase.png"
+        "image": "Headshots/Oase.webp"
       }
     ],
     "executive": [
@@ -54,13 +54,13 @@
         "name": "Enzo Goebel",
         "role": "Vice President",
         "contact": "",
-        "image": "Headshots/goebel.png"
+        "image": "Headshots/goebel.webp"
       },
       {
         "name": "Tyson Storr",
         "role": "Senior Advisor",
         "contact": "",
-        "image": "Headshots/storrStaff.png"
+        "image": "Headshots/storrStaff.webp"
       },
       {
         "name": "Aidan Comeau",
@@ -78,7 +78,7 @@
         "name": "Allan Anaka",
         "role": "Head of Technology / Website Design",
         "contact": "",
-        "image": "Headshots/allanAnaka.png"
+        "image": "Headshots/allanAnaka.webp"
       },
       {
         "name": "Roxana Nourishad",
@@ -90,13 +90,13 @@
         "name": "Auden Meyer",
         "role": "Game Day Operations",
         "contact": "",
-        "image": "Headshots/auden.png"
+        "image": "Headshots/auden.webp"
       },
       {
         "name": "Ryan Carlson",
         "role": "Director of Broadcasting",
         "contact": "",
-        "image": "Headshots/ryanCarlson.png"
+        "image": "Headshots/ryanCarlson.webp"
       }
     ]
   }
