@@ -36,12 +36,6 @@ export default function Articles() {
     <div className="articlesBody">
       <Header />
 
-      <section className="banner articlesBanner">
-        <video id="background-video" autoPlay loop muted poster="/images/ArticlesBanner.mp4">
-          <source src="/images/ArticlesBanner.mp4" type="video/mp4" />
-        </video>
-      </section>
-
       <section className="articles">
         <div className="articlesHeading"></div>
         <div className="articlesContainer" id="articlesContainer">

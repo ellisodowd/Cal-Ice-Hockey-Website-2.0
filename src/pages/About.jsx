@@ -7,6 +7,17 @@ export default function About() {
       <Header />
 
       <section className="aboutHero">
+        <video
+          className="aboutHeroVideo"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/compliant_about-poster.jpg"
+        >
+          <source src="/images/compliant_about.mp4" type="video/mp4" />
+        </video>
         <div className="aboutHeroOverlay">
           <h1>California Golden Bears Ice Hockey</h1>
           <p>

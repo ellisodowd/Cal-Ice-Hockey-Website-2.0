@@ -8,8 +8,8 @@ export default function Home() {
       <Header />
 
       <section className="banner">
-        <video id="background-video" autoPlay loop muted poster="/images/HomePageVideo.mp4">
-          <source src="/images/HomePageVideo.mp4" type="video/mp4" />
+        <video id="background-video" autoPlay loop muted playsInline preload="metadata" poster="/images/HomeBanner-poster.jpg">
+          <source src="/images/HomeBanner.mp4" type="video/mp4" />
         </video>
       </section>
 
