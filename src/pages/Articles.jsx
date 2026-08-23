@@ -6,7 +6,7 @@ function ArticleThumbnail({ article }) {
   return (
     <div className="articleThumbnail">
       <div className="articleImg">
-        <img src={article.image} alt="" />
+        <img src={article.image} alt="" className={article.imgClass || ''} />
       </div>
       <div className="articleText">
         <span>{article.dateText}</span>

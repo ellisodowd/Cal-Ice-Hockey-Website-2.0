@@ -1411,6 +1411,14 @@ section .content {
   object-position: center;
 }
 
+/* Square logo thumbnails: match the landscape cards' shape without cropping */
+.articleImg img.logoThumb {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: contain;
+  background: #041e42;
+}
+
 .articleText {
   padding: 30px;
   display: flex;
