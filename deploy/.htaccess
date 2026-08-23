@@ -20,6 +20,13 @@
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
+
+  # The /articles route collides with the real public_html/articles/ folder,
+  # so the "not a directory" check below would let Apache serve the folder
+  # (403). Serve the app for exactly /articles (and /articles/); real files
+  # like /articles/article1.html are matched by the -f check and untouched.
+  RewriteRule ^articles/?$ /index.html [L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
