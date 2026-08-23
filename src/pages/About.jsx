@@ -51,7 +51,7 @@ export default function About() {
         </div>
 
         <div className="aboutCard">
-          <h2>Cal Ice Hockey</h2>
+          <h2>California Ice Hockey</h2>
           <ul>
             <li>
               We compete in the Pac-8 Conference and have consistently placed
