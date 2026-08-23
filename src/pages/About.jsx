@@ -20,10 +20,6 @@ export default function About() {
         </video>
         <div className="aboutHeroOverlay">
           <h1>California Golden Bears Ice Hockey</h1>
-          <p>
-            Compete at the highest level of club hockey while earning a degree
-            from the #1 public university in the world.
-          </p>
         </div>
       </section>
 

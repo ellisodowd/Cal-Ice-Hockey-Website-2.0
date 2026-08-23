@@ -1188,7 +1188,7 @@ section .content {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(4, 30, 66, 0.6), rgba(4, 30, 66, 0.8));
+  background: linear-gradient(rgba(4, 30, 66, 0.35), rgba(4, 30, 66, 0.55));
   z-index: 1;
 }
 
