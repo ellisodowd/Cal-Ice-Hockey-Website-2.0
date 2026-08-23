@@ -6,7 +6,7 @@ function ArticleThumbnail({ article }) {
   return (
     <div className="articleThumbnail">
       <div className="articleImg">
-        <img src={article.image} alt="" />
+        <img src={article.image} alt="" className={article.imgClass || ''} />
       </div>
       <div className="articleText">
         <span>{article.dateText}</span>
@@ -35,12 +35,6 @@ export default function Articles() {
   return (
     <div className="articlesBody">
       <Header />
-
-      <section className="banner articlesBanner">
-        <video id="background-video" autoPlay loop muted poster="/images/ArticlesBanner.mp4">
-          <source src="/images/ArticlesBanner.mp4" type="video/mp4" />
-        </video>
-      </section>
 
       <section className="articles">
         <div className="articlesHeading"></div>

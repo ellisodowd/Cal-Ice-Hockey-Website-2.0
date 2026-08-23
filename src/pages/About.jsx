@@ -7,13 +7,17 @@ export default function About() {
       <Header />
 
       <section className="aboutHero">
-        <div className="aboutHeroOverlay">
-          <h1>California Golden Bears Ice Hockey</h1>
-          <p>
-            Compete at the highest level of club hockey while earning a degree
-            from the #1 public university in the world.
-          </p>
-        </div>
+        <video
+          className="aboutHeroVideo"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/compliant_about-poster.jpg"
+        >
+          <source src="/images/compliant_about.mp4" type="video/mp4" />
+        </video>
       </section>
 
       <section className="aboutContent">
@@ -47,7 +51,7 @@ export default function About() {
         </div>
 
         <div className="aboutCard">
-          <h2>Cal Ice Hockey</h2>
+          <h2>California Ice Hockey</h2>
           <ul>
             <li>
               We compete in the Pac-8 Conference and have consistently placed

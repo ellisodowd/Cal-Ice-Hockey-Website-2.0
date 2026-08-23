@@ -8,15 +8,15 @@ export default function Home() {
       <Header />
 
       <section className="banner">
-        <video id="background-video" autoPlay loop muted poster="/images/HomePageVideo.mp4">
-          <source src="/images/HomePageVideo.mp4" type="video/mp4" />
+        <video id="background-video" autoPlay loop muted playsInline preload="metadata" poster="/images/HomeBanner-poster.jpg">
+          <source src="/images/HomeBanner.mp4" type="video/mp4" />
         </video>
       </section>
 
       <section className="MeetTheBears">
         <div className="boxMTB">
           <div className="leftMTB">
-            <img src="/images/MeetTheBearsBanner.jpg" alt="Cal Ice Hockey Pregame Lineup" />
+            <img src="/images/MeetTheBearsBanner.jpg" alt="California Ice Hockey Pregame Lineup" />
           </div>
           <div className="rightMTB">
             <div className="roster-button-container">
@@ -52,7 +52,7 @@ export default function Home() {
               </section>
             </div>
             <div className="rightStream">
-              <img src="/images/NowStreamingBanner.jpg" alt="Cal Ice Hockey Celebration Photo" />
+              <img src="/images/NowStreamingBanner.jpg" alt="California Ice Hockey Celebration Photo" />
             </div>
           </div>
         </section>

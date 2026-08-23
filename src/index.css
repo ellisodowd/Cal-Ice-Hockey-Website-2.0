@@ -1163,11 +1163,10 @@ section .content {
 .aboutHero {
   position: relative;
   width: 100%;
-  height: 60vh;
-  min-height: 380px;
-  background: linear-gradient(rgba(4, 30, 66, 0.65), rgba(4, 30, 66, 0.85)),
-    url('/images/MeetTheBearsBanner.jpg') no-repeat center center;
-  background-size: cover;
+  height: 85vh;
+  min-height: 520px;
+  background: var(--cal-blue);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1175,7 +1174,18 @@ section .content {
   padding: 0 20px;
 }
 
+.aboutHeroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .aboutHeroOverlay {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   color: #fff;
 }
@@ -1324,8 +1334,8 @@ section .content {
 
 @media (max-width: 768px) {
   .aboutHero {
-    height: 50vh;
-    min-height: 300px;
+    height: 70vh;
+    min-height: 440px;
   }
   .aboutCard {
     padding: 22px 22px;
@@ -1347,6 +1357,15 @@ section .content {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+}
+
+/* Articles has no hero banner: give the fixed nav a solid background so the
+   white links stay readable, and push content clear of the fixed header. */
+.articlesBody header:not(.sticky) {
+  background: var(--cal-blue);
+}
+.articlesBody .articles {
+  margin-top: 180px;
 }
 
 .articlesBody a {
@@ -1409,6 +1428,14 @@ section .content {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/* Square logo thumbnails: match the landscape cards' shape without cropping */
+.articleImg img.logoThumb {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: contain;
+  background: #041e42;
 }
 
 .articleText {
