@@ -18,9 +18,6 @@ export default function About() {
         >
           <source src="/images/compliant_about.mp4" type="video/mp4" />
         </video>
-        <div className="aboutHeroOverlay">
-          <h1>California Golden Bears Ice Hockey</h1>
-        </div>
       </section>
 
       <section className="aboutContent">

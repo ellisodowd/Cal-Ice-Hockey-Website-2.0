@@ -1183,15 +1183,6 @@ section .content {
   z-index: 0;
 }
 
-/* Gradient over the video for text legibility */
-.aboutHero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(4, 30, 66, 0.35), rgba(4, 30, 66, 0.55));
-  z-index: 1;
-}
-
 .aboutHeroOverlay {
   position: relative;
   z-index: 2;
