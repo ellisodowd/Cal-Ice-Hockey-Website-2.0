@@ -194,6 +194,11 @@ header ul li .dropdown-menu li a:hover {
   color: #000;
 }
 
+/* Flat Recruits/Alumni links: shown only in the mobile panel */
+.navMobile {
+  display: none;
+}
+
 /* Optional +/– indicator (desktop) */
 @media (min-width: 769px) {
   header ul {
@@ -294,16 +299,13 @@ header ul li .dropdown-menu li a:hover {
     color: #fff;
   }
 
-  /* Dropdown shown inline within the panel */
-  header ul li .dropdown-menu {
-    position: static;
-    display: flex;
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.08);
+  /* No hover on mobile: hide the Team dropdown and show the flat
+     Recruits/Alumni links instead. */
+  .navDesktop {
+    display: none;
   }
-  header ul li .dropdown-menu li a {
-    padding-left: 45px;
-    font-size: 1em;
+  .navMobile {
+    display: block;
   }
 }
 
