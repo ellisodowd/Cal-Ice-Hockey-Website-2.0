@@ -376,7 +376,7 @@ header ul li .dropdown-menu li a:hover {
 
 .heroAnnouncement__text {
   margin: 0;
-  font-family: "Spectral", serif;
+  font-family: "Avenir Next", "Avenir", "Jost", sans-serif;
   font-style: italic;
   font-weight: 500;
   font-size: clamp(1rem, 1.9vw, 1.75rem);
