@@ -359,18 +359,18 @@ header ul li .dropdown-menu li a:hover {
   border-radius: 22px;
   color: #fff;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(8, 20, 45, 0.42);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .heroAnnouncement:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(8, 20, 45, 0.52);
   transform: translateX(-50%) translateY(-2px);
 }
 
@@ -378,10 +378,10 @@ header ul li .dropdown-menu li a:hover {
   margin: 0;
   font-family: "Spectral", serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(1rem, 1.9vw, 1.75rem);
   line-height: 1.3;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
 
 .heroAnnouncement__arrow {
