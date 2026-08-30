@@ -11,6 +11,22 @@ export default function Home() {
         <video id="background-video" autoPlay loop muted playsInline preload="metadata" poster="/images/HomeBanner-poster.jpg">
           <source src="/images/HomeBanner.mp4" type="video/mp4" />
         </video>
+
+        <a
+          className="heroAnnouncement"
+          href="https://www.gofevo.com/event/Universitycalifornia22"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p className="heroAnnouncement__text">
+            The Golden Bears and San Jose Sharks are hosting a youth hockey clinic at Oakland Ice Center
+          </p>
+          <span className="heroAnnouncement__arrow" aria-hidden="true">
+            <svg viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12h34M27 3l9 9-9 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+        </a>
       </section>
 
       <section className="MeetTheBears">
