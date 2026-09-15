@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import { fetchSchedule } from '../lib/schedule.js'
 
 function GameCard({ game }) {
   const side = (game.side || 'left').toLowerCase() === 'right' ? 'right' : 'left'
@@ -12,12 +13,14 @@ function GameCard({ game }) {
 
   return (
     <div className={containerClass}>
-      <img src={game.logo} alt={game.opponent} />
+      {game.logo ? (
+        <img src={game.logo} alt={game.opponent} onError={e => { e.currentTarget.style.display = 'none' }} />
+      ) : null}
       <div className="textbox">
         <h2 className="blackText">{game.opponent}</h2>
         <h4>{game.datetimeText}</h4>
         <p>{game.locationText}</p>
-        <p>{game.scoreText}</p>
+        {game.scoreText ? <p>{game.scoreText}</p> : null}
         <span className={arrowClass}></span>
         <a href={game.watchUrl || ''}>Watch</a>
       </div>
@@ -35,13 +38,17 @@ export default function Schedule() {
   }, [])
 
   useEffect(() => {
-    fetch('/schedule.json', { cache: 'no-store' })
-      .then(res => {
-        if (!res.ok) throw new Error(`Failed to load schedule: ${res.status}`)
-        return res.json()
+    let cancelled = false
+    fetchSchedule()
+      .then(games => {
+        if (!cancelled) setGames(games)
       })
-      .then(data => setGames(Array.isArray(data.games) ? data.games : []))
-      .catch(err => setError(err.message))
+      .catch(err => {
+        if (!cancelled) setError(err.message)
+      })
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   return (
@@ -54,7 +61,7 @@ export default function Schedule() {
             <p style={{ color: 'white' }}>Could not load schedule.</p>
           </div>
         ) : (
-          games.map((game, i) => <GameCard key={i} game={game} />)
+          games.map(game => <GameCard key={game.gameId} game={game} />)
         )}
       </div>
 
