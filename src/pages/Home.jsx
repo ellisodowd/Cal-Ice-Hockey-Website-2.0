@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 
 export default function Home() {
-  const announcement = false;
+  const announcement = true;
   return (
     <>
       <Header />
@@ -15,12 +15,12 @@ export default function Home() {
         {announcement &&
           <a
           className="heroAnnouncement"
-          href="https://www.gofevo.com/event/Universitycalifornia22"
+          href="https://stores.inksoft.com/california_club_ice_hockey_2214/shop/product-detail/1006038"
           target="_blank"
           rel="noreferrer"
           >
           <p className="heroAnnouncement__text">
-            The Golden Bears and San Jose Sharks are hosting a youth hockey clinic at Oakland Ice Center
+            For the First time, Cal Ice Hockey <u>Jerseys</u> are Availible for Sale! (Live Until 9/27)
           </p>
           <span className="heroAnnouncement__arrow" aria-hidden="true">
             <svg viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
