@@ -62,7 +62,7 @@ export default function Roster() {
         return res.json();
       })
       .then((data) => {
-        const players = data.roster || [];
+        const players = (data.roster || []).sort((a, b) => a.number - b.number);
         setForwards(players.filter((p) => p.position === "forward"));
         setDefensemen(players.filter((p) => p.position === "defense"));
         setGoalies(players.filter((p) => p.position === "goalie"));
