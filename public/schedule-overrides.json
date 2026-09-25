@@ -1,3 +1,14 @@
 {
-  "overrides": []
+  "overrides": [
+    {
+      "matchDate": "2026-09-25",
+      "matchOpponent": "University of Texas",
+      "watchUrl": "https://www.bdehockey.com/free-live.php?con=watchCAL&type=l&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "matchDate": "2026-09-26",
+      "matchOpponent": "University of Texas",
+      "watchUrl": "https://www.bdehockey.com/free-live.php?con=watchCAL&type=l&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    }
+  ]
 }
