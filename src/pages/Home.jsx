@@ -15,12 +15,12 @@ export default function Home() {
         {announcement &&
           <a
           className="heroAnnouncement"
-          href="https://stores.inksoft.com/california_club_ice_hockey_2214/shop/product-detail/1006038"
+          href="https://homecoming.berkeley.edu/event/cal-ice-hockey/"
           target="_blank"
           rel="noreferrer"
           >
           <p className="heroAnnouncement__text">
-            For the First time, Cal Ice Hockey <u>Jerseys</u> are Availible for Sale! (Live Until 9/27)
+            Homecoming weekend tickets are on sale now for Cal vs University of Washington!
           </p>
           <span className="heroAnnouncement__arrow" aria-hidden="true">
             <svg viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
