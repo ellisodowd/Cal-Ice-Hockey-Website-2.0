@@ -9,6 +9,20 @@
       "matchDate": "2026-09-26",
       "matchOpponent": "University of Texas",
       "watchUrl": "https://www.bdehockey.com/free-live.php?con=watchCAL&type=l&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
+    },
+    {
+      "matchDate": "2026-10-31",
+      "matchOpponent": "Grand Canyon University",
+      "opponent": "Grand Canyon University",
+      "datetimeText": "Saturday, October 31st 9:45 PM MST",
+      "locationText": "@AZ Ice Arcadia"
+    },
+    {
+      "matchDate": "2026-11-01",
+      "matchOpponent": "Grand Canyon University",
+      "opponent": "Grand Canyon University",
+      "datetimeText": "Sunday, November 1st 12:00 PM MST",
+      "locationText": "@AZ Ice Peoria"
     }
   ]
 }
