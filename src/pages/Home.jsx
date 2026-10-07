@@ -1,93 +1,117 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import { fetchSchedule } from '../lib/schedule.js'
+import { Logo } from '../components/Brand.jsx'
+
+function NextHomeGame({ game }) {
+  return (
+    <section className="section" style={{ paddingTop: 24, paddingBottom: 0 }}>
+      <div className="wrap hnextcontainer">
+        <div className="hnext">
+          <span className="hnextteams">
+            <Logo size={42} color="var(--blue)" />
+            <span className="hnextvs">VS</span>
+            {game.logo
+              ? <img className="hnextlogo" src={game.logo} alt="" onError={e => { e.currentTarget.style.display = 'none' }} />
+              : <span className="hnextlogo fallback">{game.opponent.slice(0, 1)}</span>}
+          </span>
+
+          <span className="hnextinfo">
+            <span className="hnextlabel">Next home game</span>
+            <span className="hnextopp">vs {game.opponent}</span>
+            <span className="hnextwhen">{game.datetimeText} &middot; {game.locationText}</span>
+          </span>
+
+          <span className="hnextactions">
+            <a className="btn bGhostNavy bSm" href="/schedule">Full schedule</a>
+          </span>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function Home() {
-  const announcement = true;
+  const [nextHome, setNextHome] = useState(null)
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+    fetchSchedule()
+      .then(games => setNextHome(games.find(g => !g.isPlayed && g.homeAway === 'H') || null))
+      .catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    fetch('/articles.json', { cache: 'no-store' })
+      .then(res => (res.ok ? res.json() : { articles: [] }))
+      .then(data => setArticles(data.articles || []))
+      .catch(() => {})
+  }, [])
+
+  const hero = articles[0]
+  const rail = articles.slice(1, 6)
+  const cards = articles.slice(1, 4)
+
   return (
     <>
       <Header />
 
-      <section className="banner">
-        <video id="background-video" autoPlay loop muted playsInline preload="metadata" poster="/images/HomeBanner-poster.jpg">
-          <source src="/images/HomeBanner.mp4" type="video/mp4" />
-        </video>
-        {announcement &&
-          <a
-          className="heroAnnouncement"
-          href="https://stores.inksoft.com/california_club_ice_hockey_2214/shop/product-detail/1006038"
-          target="_blank"
-          rel="noreferrer"
-          >
-          <p className="heroAnnouncement__text">
-            For the First time, Cal Ice Hockey <u>Jerseys</u> are Availible for Sale! (Live Until 9/27)
-          </p>
-          <span className="heroAnnouncement__arrow" aria-hidden="true">
-            <svg viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12h34M27 3l9 9-9 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        </a>
-        }
-      </section>
+      {nextHome && <NextHomeGame game={nextHome} />}
 
-      <section className="MeetTheBears">
-        <div className="boxMTB">
-          <div className="leftMTB">
-            <img src="/images/MeetTheBearsBanner.jpg" alt="California Ice Hockey Pregame Lineup" />
-          </div>
-          <div className="rightMTB">
-            <div className="roster-button-container">
-              <mark className="MTBOverlay">Meet The Bears</mark>
-              <Link to="/roster" className="roster-button">View The Roster</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {hero && (
+        <section className="section" style={{ paddingTop: 30, paddingBottom: 0 }}>
+          <div className="wrap hherorow">
+            <a className="hhero" href={hero.href}>
+              <img src={hero.image} alt="" />
+              <div className="hheroscrim" />
+              <div className="hherotext">
+                <span className="newstag">{hero.dateText}</span>
+                <h1 className="hherotitle">{hero.title}</h1>
+                {hero.excerpt && <p className="hheroblurb">{hero.excerpt}</p>}
+              </div>
+            </a>
 
-      <section>
-        <section className="Stream">
-          <div className="boxStream">
-            <div className="leftStream">
-              <section className="StreamContainer">
-                <mark className="StreamingOverlay">Now Streaming!</mark>
-                <section className="logoContainer">
-                  <div className="StreamCal">
-                    <img src="/images/California_Golden_Bears_logo.svg.png" alt="Cal" />
-                  </div>
-                  <div className="Blackdog">
-                    <img src="/images/darkblueblackdog.png" alt="BlackDog" />
-                  </div>
-                </section>
-                <a
-                  href="https://www.bdehockey.com/free-live.php?con=watchCAL&type=l&desc=CAL%20Hockey%20-%20University%20of%20California%20Berkeley%20FREE"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="streaming-button"
-                >
-                  Live &amp; On Demand
-                </a>
-              </section>
-            </div>
-            <div className="rightStream">
-              <img src="/images/NowStreamingBanner.jpg" alt="California Ice Hockey Celebration Photo" />
+            <div className="htopwrap">
+              <aside className="htop">
+                <div className="htophead">
+                  <h2 className="hsectitle">Top Stories</h2>
+                </div>
+                {rail.length ? (
+                  <ul className="htoplist">
+                    {rail.map((n, i) => (
+                      <li key={i}>
+                        <a className="htoplink" href={n.href}>{n.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="bsm" style={{ color: 'var(--muted)' }}>No other stories yet.</p>
+                )}
+                <a className="htopall" href="/news">All news &rarr;</a>
+              </aside>
             </div>
           </div>
         </section>
+      )}
 
-        <div className="calendarContainer">
-          <iframe
-            src="https://embed.styledcalendar.com/#c4j9HaWSYeOTvNFYrSeK"
-            title="Styled Calendar"
-            className="styled-calendar-container"
-            frameBorder="0"
-            data-cy="calendar-embed-iframe"
-          />
-          <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js" />
-        </div>
+      {cards.length > 0 && (
+        <section className="section" style={{ paddingTop: 22, paddingBottom: 56 }}>
+          <div className="wrap hcards">
+            {cards.map((n, i) => (
+              <a className="hcard" key={i} href={n.href}>
+                <span className="hcardart">
+                  <img src={n.image} alt="" />
+                </span>
+                <span className="hcardtitle">{n.title}</span>
+                <span className="hcardmeta">{n.dateText}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
-        <Footer />
-      </section>
+      <Footer />
     </>
   )
 }
