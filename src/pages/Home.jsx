@@ -33,6 +33,7 @@ function NextHomeGame({ game }) {
 }
 
 export default function Home() {
+  const announcement = true
   const [nextHome, setNextHome] = useState(null)
   const [articles, setArticles] = useState([])
 
@@ -56,6 +57,24 @@ export default function Home() {
   return (
     <>
       <Header />
+
+      {announcement &&
+        <a
+        className="heroAnnouncement"
+        href="https://stores.inksoft.com/Cal_Ice_Hockey_Club_221608/shop/home"
+        target="_blank"
+        rel="noreferrer"
+        >
+        <p className="heroAnnouncement__text">
+          The Official Cal Ice Hockey Merch Store is Open for a Limited Time!
+        </p>
+        <span className="heroAnnouncement__arrow" aria-hidden="true">
+          <svg viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12h34M27 3l9 9-9 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+      </a>
+      }
 
       {nextHome && <NextHomeGame game={nextHome} />}
 

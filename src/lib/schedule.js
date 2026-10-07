@@ -140,6 +140,8 @@ function applyOverrides(games, overrides) {
       if (override.watchUrl) game.watchUrl = override.watchUrl
       if (override.logo) game.logo = override.logo
       if (override.scoreText) game.scoreText = override.scoreText
+      if (override.datetimeText) game.datetimeText = override.datetimeText
+      if (override.locationText) game.locationText = override.locationText
       continue
     }
 
