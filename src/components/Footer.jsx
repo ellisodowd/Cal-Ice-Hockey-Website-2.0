@@ -3,8 +3,7 @@ import { GoldenBears, Logo, Pac8Mark } from './Brand.jsx'
 const AFFILIATES = [
   { src: '/images/footer-berkeley.svg', alt: 'UC Berkeley', href: 'https://www.berkeley.edu' },
   { src: '/images/footer-acha.svg', alt: 'ACHA', href: 'https://www.achahockey.org', tall: true },
-  { mark: 'pac8', alt: 'Pac-8 Conference', href: 'https://www.instagram.com/pac8hockey/' },
-  { src: '/images/footer-nike.svg', alt: 'Nike', href: 'https://www.nike.com', short: true },
+  { mark: 'pac8', alt: 'Pac-8 Conference', href: 'https://www.instagram.com/pac8hockeyconference/' },
 ]
 
 const LEGAL = [
@@ -30,7 +29,7 @@ export default function Footer() {
         {AFFILIATES.map(a => {
           const mark = a.mark === 'pac8'
             ? <Pac8Mark />
-            : <img className={`faffilmark${a.tall ? ' tall' : ''}${a.short ? ' short' : ''}`} src={a.src} alt={a.alt} />
+            : <img className={`faffilmark${a.tall ? ' tall' : ''}`} src={a.src} alt={a.alt} />
           return (
             <a className="faffil" key={a.alt} href={a.href} target="_blank" rel="noreferrer noopener" aria-label={a.alt}>
               {mark}

@@ -52,6 +52,7 @@ export const IcTable = (p) => <Ic {...p} d={<path d="M3 5h18v14H3zM3 10h18M9 5v1
 export const IcArrowR = (p) => <Ic {...p} d={<path d="M4 12h15m-6-6 6 6-6 6" />} />
 export const IcChevL = (p) => <Ic {...p} sw={2.4} d={<path d="M14 6l-6 6 6 6" />} />
 export const IcChevR = (p) => <Ic {...p} sw={2.4} d={<path d="M10 6l6 6-6 6" />} />
+export const IcChevD = (p) => <Ic {...p} sw={2.4} d={<path d="M6 10l6 6 6-6" />} />
 
 // The goal light: a dome, its base, and three rays. Filled white so it reads
 // against the red disc the reference site always puts behind it.

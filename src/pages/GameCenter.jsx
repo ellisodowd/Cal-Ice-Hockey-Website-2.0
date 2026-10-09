@@ -541,7 +541,6 @@ export default function GameCenter() {
 
                 <div className="gcmid">
                   <span className="gcchip">{final ? 'FINAL' : summary.details?.status}</span>
-                  <span className="gcwhen">{summary.details?.date}</span>
                 </div>
 
                 <div className="gcteam right">
@@ -555,6 +554,8 @@ export default function GameCenter() {
                     </div>
                   </div>
                 </div>
+
+                <span className="gcwhen">{(summary.details?.date || '').replace(/^\w+,\s*/, '')}</span>
               </div>
             </div>
 

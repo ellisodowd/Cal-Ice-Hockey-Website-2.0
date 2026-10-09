@@ -56,7 +56,7 @@ export default function Scoreboard() {
 
   return (
     <div className="sboard">
-      <div className="wrap sboard-inner">
+      <div className="sboard-inner">
         <button className="chev" aria-label="Previous games" disabled={ends.start} onClick={() => scroll(-1)}>
           <IcChevL size={22} />
         </button>

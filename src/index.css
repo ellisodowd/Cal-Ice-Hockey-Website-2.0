@@ -104,10 +104,51 @@ a.socialbtn:hover { color: var(--deep); background: var(--gold); }
   font-family: var(--body); font-weight: 600; font-size: 14.5px; text-decoration: none; }
 .navdrop-menu a:hover { background: var(--mid); color: var(--gold); }
 
+/* Mobile navigation — above the breakpoint this is all inert; below it, the
+   links row and the dropdowns hide and this replaces them, since a hover
+   menu has nothing to trigger it on a touch screen. */
+.navburger { display: none; width: 38px; height: 38px; padding: 0; border: 0; cursor: pointer;
+  background: none; place-items: center; align-content: center; gap: 4px; justify-items: center; }
+.navburger span { display: block; width: 17px; height: 2px; border-radius: 2px; background: #fff;
+  transition: transform 0.18s, opacity 0.14s; }
+.navburger.on span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.navburger.on span:nth-child(2) { opacity: 0; }
+.navburger.on span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.navpanel { display: none; }
+.navpanelitem { display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: none; border: 0; cursor: pointer; font-family: var(--body); font-weight: 700;
+  font-size: 16px; color: #fff; text-align: left; padding: 13px 24px; text-decoration: none; }
+/* Team/More each sit in their own wrapper div (so their sub-list can mount
+   next to the trigger button), which breaks a plain adjacent-sibling
+   selector between them and the plain links around them — this targets
+   every direct child of the panel instead, wrapped or not. */
+.navpanel > *:not(:first-child) { border-top: 1px solid rgba(255, 255, 255, 0.09); }
+/* .chh a { color: inherit } is more specific than a bare class (same issue
+   as .navlink/.socialbtn above), so a <Link> rendered as .navpanelitem
+   inherits ink-on-navy instead of white unless it's element-qualified too. */
+a.navpanelitem { color: #fff; }
+a.navpanelitem.on { color: var(--gold); }
+.navpanelitem.on { color: var(--gold); }
+.navpanelitem.group svg { transition: transform 0.18s; }
+.navpanelitem.group.open svg { transform: rotate(180deg); }
+.navpanelsub { background: rgba(0, 0, 0, 0.22); }
+.navpanelitem.child { font-size: 15px; font-weight: 650; padding-left: 40px;
+  color: rgba(255, 255, 255, 0.82); }
+.navpanelitem.child.on { color: var(--gold); }
+.navpanelcta { padding: 18px 24px 22px; border-top: 1px solid rgba(255, 255, 255, 0.09); }
+.navpanelcta .goldpill { display: block; padding: 13px 14px; text-align: center; font-size: 15px;
+  font-weight: 800; }
+.navpanelsocials { display: flex; gap: 6px; padding: 14px 24px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09); }
+
 @media (max-width: 860px) {
-  .navbar { flex-wrap: wrap; padding: 10px 0; gap: 14px; }
-  .navlinks { margin-left: 0; width: 100%; }
-  .navactions { margin-left: 0; width: 100%; justify-content: space-between; }
+  .navbar { padding: 10px 24px; gap: 12px; min-height: 0; flex-wrap: nowrap; }
+  .navlinks { display: none; }
+  .navactions .socials { display: none; }
+  .navcta { display: none; }
+  .navburger { display: grid; }
+  .navpanel { display: block; }
 }
 
 /* Scoreboard — strip above the nav */
@@ -496,6 +537,18 @@ table.stats.sortable th { padding: 0; }
 .leadcontact dd { margin: 0; font-size: 14px; font-weight: 650; }
 .leadcontact a { color: var(--blue); text-decoration: none; }
 .leadcontact a:hover { text-decoration: underline; }
+@media (max-width: 560px) {
+  /* Same shape as a plain .staffcard below this width — full-width photo
+     on top, body underneath — rather than the side-by-side feature layout,
+     which left no room for the text next to a fixed photo column. */
+  .leadstaff { grid-template-columns: 1fr; }
+  .leadphoto { min-height: 230px; }
+  .leadbody { padding: 15px 16px 17px; align-self: stretch; }
+  .leadname { font-size: 16.5px; margin: 4px 0 0; }
+  .leadcontact { grid-template-columns: 1fr; gap: 0; margin-top: 8px; padding-top: 0; border-top: 0; max-width: none; }
+  .leadcontact dt { display: none; }
+  .leadcontact dd { display: block; margin-top: 8px; font-size: 12.5px; font-weight: 700; overflow-wrap: anywhere; }
+}
 
 .staffsec { margin-top: 36px; }
 .staffseclab { font-family: var(--body); font-weight: 750; font-size: 1.15rem; letter-spacing: -0.015em;
@@ -643,8 +696,31 @@ table.stats.sortable th { padding: 0; }
 .gcmid { display: grid; justify-items: center; gap: 5px; flex: 0 0 auto; }
 .gcchip { font-family: var(--body); font-weight: 700; font-size: 11.5px; letter-spacing: 0.02em;
   background: var(--ice); border-radius: 5px; padding: 4px 10px; color: var(--ink); white-space: nowrap; }
-.gcwhen { font-size: 12.5px; font-weight: 650; color: var(--muted); white-space: nowrap; }
+/* A direct grid child of .gcbannerinner (not nested in .gcmid) so it can
+   become its own full-width row on mobile; on desktop it's placed back
+   under the chip, in the same spot it always read visually. */
+.gcwhen { grid-column: 2; grid-row: 2; justify-self: center; margin-top: 5px;
+  font-size: 12.5px; font-weight: 650; color: var(--muted); white-space: nowrap; }
 @media (max-width: 900px) { .gcname { white-space: normal; overflow: visible; } }
+/* Not enough width here for logo + abbr + name + SOG + a 46px score side by
+   side without them colliding — the name and SOG line are the two that can
+   go without losing the banner's point (team + score). The nickname goes
+   too at this width; logo + score is what's left. The slash shapes shrink
+   too, so the side padding can come down with them and still clear the
+   colour — padding alone, without narrowing the slash, would run the
+   logo/score right up against it. */
+@media (max-width: 560px) {
+  .gcnames { display: none; }
+  .gcslash { width: 40px; }
+  .gcbannerinner { padding: 16px 48px; }
+  /* Off the team row entirely and onto its own line below, so the chip
+     doesn't have to share the middle column with it, and the two team
+     columns — now just a logo and a score — space themselves edge to
+     edge instead of the score drifting wherever its auto margins land. */
+  .gcwhen { grid-column: 1 / -1; grid-row: 2; margin-top: 10px; font-size: 10.5px; }
+  .gcteam { justify-content: space-between; }
+  .gcscore { margin-left: 0; margin-right: 0; }
+}
 
 .gctabs { display: flex; gap: 4px; margin: 18px 0 0; border-bottom: 1px solid var(--border); }
 .gctab { background: none; border: 0; cursor: pointer; font: inherit; font-weight: 700;
@@ -657,6 +733,7 @@ table.stats.sortable th { padding: 0; }
 .gcgrid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 20px; }
 .gccol { display: grid; gap: 18px; min-width: 0; }
 .gccol .statcard { border: 0; box-shadow: none; }
+@media (max-width: 860px) { .gcgrid { grid-template-columns: 1fr; } }
 .gcpad { padding: 20px 22px; }
 .gcnone { color: var(--muted); margin: 0; }
 
@@ -989,7 +1066,6 @@ table.stats.statstable .sortbtn:hover { color: #fff; background: rgba(255, 255, 
   opacity: 0.42; transition: opacity 0.18s; }
 a.faffil:hover .faffilmark { opacity: 0.82; }
 .faffilmark.tall { height: 34px; }
-.faffilmark.short { height: 20px; }
 .faffilmark.crest { height: 46px; fill: #8A94A0; opacity: 0.42; transition: opacity 0.18s; }
 a.faffil:hover .faffilmark.crest { opacity: 0.82; }
 .flegalrow { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 26px 24px 34px; }
@@ -1009,7 +1085,6 @@ a.faffil:hover .faffilmark.crest { opacity: 0.82; }
   .faffil { padding: 6px 0; border-left: 0; font-size: 13.5px; }
   .faffilmark { height: 22px; }
   .faffilmark.tall { height: 28px; }
-  .faffilmark.short { height: 16px; }
   .faffilmark.crest { height: 38px; }
   .flegalrow { flex-direction: column; align-items: center; gap: 18px; text-align: center; }
   .flegallinks { justify-content: center; gap: 8px 18px; }
