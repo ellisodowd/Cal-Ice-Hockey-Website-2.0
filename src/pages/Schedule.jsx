@@ -4,7 +4,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import { fetchSchedule, fetchSeasonHistory, seasonStats, currentSeasonStartYear, seasonLabel } from '../lib/schedule.js'
 import { fetchGameSummary, scoringPlays, strengthTag } from '../lib/gameCenter.js'
-import { IcPin, IcClock, IcChevL, IcChevR, PctRing } from '../components/Brand.jsx'
+import { IcPin, IcClock, IcChevL, IcChevR, IcPlayCircle, IcGameCenter, PctRing } from '../components/Brand.jsx'
 
 const FALLBACK_IMG = '/images/blank-profile-picture-973460_960_720.jpeg'
 
@@ -119,7 +119,9 @@ function QuickLook({ game }) {
               const name = fullName(goal.scoredBy)
               return (
                 <div className="qlgoal" key={i}>
-                  <img src={photoByName[name] || FALLBACK_IMG} alt="" onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+                  <span className="qlphoto">
+                    <img src={photoByName[name] || FALLBACK_IMG} alt="" onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+                  </span>
                   <span className="qlbody">
                     <span className="qlname">
                       <span className="pboxname">{name}</span>
@@ -198,8 +200,8 @@ function GameCard({ game, open, onToggle }) {
 
         {(game.watchUrl || canOpenGameCenter) && (
           <div className="gameacts">
-            {game.watchUrl && <a className="watchbtn" href={game.watchUrl} target="_blank" rel="noreferrer">Watch</a>}
-            {canOpenGameCenter && <Link className="watchbtn" to={`/game/${game.gameId}`}>Game Center</Link>}
+            {game.watchUrl && <a className="watchbtn" href={game.watchUrl} target="_blank" rel="noreferrer">Watch <IcPlayCircle size={15} /></a>}
+            {canOpenGameCenter && <Link className="watchbtn" to={`/game/${game.gameId}`}>Game Center <IcGameCenter size={16} /></Link>}
           </div>
         )}
       </div>

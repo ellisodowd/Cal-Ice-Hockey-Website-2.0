@@ -53,6 +53,38 @@ export const IcArrowR = (p) => <Ic {...p} d={<path d="M4 12h15m-6-6 6 6-6 6" />}
 export const IcChevL = (p) => <Ic {...p} sw={2.4} d={<path d="M14 6l-6 6 6 6" />} />
 export const IcChevR = (p) => <Ic {...p} sw={2.4} d={<path d="M10 6l6 6-6 6" />} />
 
+// The goal light: a dome, its base, and three rays. Filled white so it reads
+// against the red disc the reference site always puts behind it.
+export const IcGoalLight = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M6.5 15.5a5.5 5.5 0 0 1 11 0z" fill="#fff" />
+    <rect x="4.5" y="16.5" width="15" height="3" rx="1.5" fill="#fff" />
+    <path d="M12 2.5v2.6M5.4 5.4l1.8 1.8M18.6 5.4l-1.8 1.8" stroke="#fff"
+      strokeWidth="2" strokeLinecap="round" />
+  </svg>
+)
+
+// Filled rather than stroked (same two icons the reference site pairs on its
+// watch/game-center buttons), so they read at the same weight sitting side by side.
+export const IcPlayCircle = ({ size = 16, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true"
+    style={{ display: 'inline-block', verticalAlign: '-3px', flex: '0 0 auto', ...style }}>
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2M9.5 16.5v-9l7 4.5z" />
+  </svg>
+)
+
+export const IcGameCenter = ({ size = 16, style }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true"
+    style={{ display: 'inline-block', verticalAlign: '-3px', flex: '0 0 auto', ...style }}>
+    <path d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z" fill="currentColor" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M6.5 8.75C6.5 9.57843 5.82843 10.25 5 10.25C4.17157 10.25 3.5 9.57843 3.5 8.75C3.5 7.92157 4.17157 7.25 5 7.25C5.82843 7.25 6.5 7.92157 6.5 8.75ZM5 9.5C5.41421 9.5 5.75 9.16421 5.75 8.75C5.75 8.33579 5.41421 8 5 8C4.58579 8 4.25 8.33579 4.25 8.75C4.25 9.16421 4.58579 9.5 5 9.5Z" fill="currentColor" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M6.5 15.25C6.5 16.0784 5.82843 16.75 5 16.75C4.17157 16.75 3.5 16.0784 3.5 15.25C3.5 14.4216 4.17157 13.75 5 13.75C5.82843 13.75 6.5 14.4216 6.5 15.25ZM5 16C5.41421 16 5.75 15.6642 5.75 15.25C5.75 14.8358 5.41421 14.5 5 14.5C4.58579 14.5 4.25 14.8358 4.25 15.25C4.25 15.6642 4.58579 16 5 16Z" fill="currentColor" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M19 10.25C19.8284 10.25 20.5 9.57843 20.5 8.75C20.5 7.92157 19.8284 7.25 19 7.25C18.1716 7.25 17.5 7.92157 17.5 8.75C17.5 9.57843 18.1716 10.25 19 10.25ZM19.75 8.75C19.75 9.16421 19.4142 9.5 19 9.5C18.5858 9.5 18.25 9.16421 18.25 8.75C18.25 8.33579 18.5858 8 19 8C19.4142 8 19.75 8.33579 19.75 8.75Z" fill="currentColor" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M19 16.75C19.8284 16.75 20.5 16.0784 20.5 15.25C20.5 14.4216 19.8284 13.75 19 13.75C18.1716 13.75 17.5 14.4216 17.5 15.25C17.5 16.0784 18.1716 16.75 19 16.75ZM19.75 15.25C19.75 15.6642 19.4142 16 19 16C18.5858 16 18.25 15.6642 18.25 15.25C18.25 14.8358 18.5858 14.5 19 14.5C19.4142 14.5 19.75 14.8358 19.75 15.25Z" fill="currentColor" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M3.5 5C1.567 5 0 6.567 0 8.5V15.5C0 17.433 1.567 19 3.5 19H20.5C22.433 19 24 17.433 24 15.5V8.5C24 6.567 22.433 5 20.5 5H3.5ZM12.5 18H14.5V6H12.5V8.5C12.5 8.77614 12.2761 9 12 9C11.7239 9 11.5 8.77614 11.5 8.5V6H9.25V18H11.5V15.5C11.5 15.2239 11.7239 15 12 15C12.2761 15 12.5 15.2239 12.5 15.5V18ZM1 8.5C1 7.11929 2.11929 6 3.5 6H8.5V18H3.5C2.11929 18 1 16.8807 1 15.5V13.5H2C2.55228 13.5 3 13.0523 3 12.5V11.5C3 10.9477 2.55228 10.5 2 10.5H1V8.5ZM15.25 18H20.5C21.8807 18 23 16.8807 23 15.5V13.5H22C21.4477 13.5 21 13.0523 21 12.5V11.5C21 10.9477 21.4477 10.5 22 10.5H23V8.5C23 7.11929 21.8807 6 20.5 6H15.25V18Z" fill="currentColor" />
+  </svg>
+)
+
 export function PctRing({ pct }) {
   const r = 26
   const c = 2 * Math.PI * r

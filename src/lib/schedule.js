@@ -98,6 +98,7 @@ export function normalizeFeedRow(entry, seasonStartYear) {
   return {
     gameId: row.game_id,
     opponent,
+    opponentTeamId,
     homeAway: homeIsCal ? 'H' : 'A',
     datetimeText,
     dateText,

@@ -342,8 +342,10 @@ export default function Stats() {
                               {!ranked.length && <p className="bsm" style={{ color: 'var(--muted)' }}>No stats recorded.</p>}
                               {ranked.slice(0, 1).map(({ p, v }) => (
                                 <div className="cleadtop" key={p.number}>
-                                  <img className="cleadphoto" src={photoByName[p.name] || FALLBACK_IMG} alt=""
-                                    onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+                                  <span className="cleadphoto">
+                                    <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
+                                      onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+                                  </span>
                                   <span className="cleadtopwho">
                                     <span className="cleadtopname">{p.name}</span>
                                     <span className="cleadtopmeta">{[p.number ? `#${p.number}` : null, p.position].filter(Boolean).join(' · ')}</span>
@@ -355,8 +357,10 @@ export default function Stats() {
                                 <p className="bsm cleadrow" key={p.number}>
                                   <span className="cleadrank">{i + 2}.</span>
                                   <span className="statname" style={{ flex: 1 }}>
-                                    <img className="cleadphoto-sm" src={photoByName[p.name] || FALLBACK_IMG} alt=""
-                                      onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+                                    <span className="cleadphoto-sm">
+                                      <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
+                                        onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+                                    </span>
                                     <span>{p.name}</span>
                                   </span>
                                   <span className="cleadval">{v}</span>

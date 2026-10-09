@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import LoadingScreen from '../components/Loading.jsx'
 import { IcChevL } from '../components/Brand.jsx'
 
 export default function ArticleDetail() {
@@ -46,7 +47,15 @@ export default function ArticleDetail() {
       </>
     )
   }
-  if (!post) return null // still loading
+  if (!post) {
+    return (
+      <>
+        <Header />
+        <main style={{ background: '#fff' }}><div className="wrap section"><LoadingScreen label="Loading story" /></div></main>
+        <Footer />
+      </>
+    )
+  }
 
   return (
     <>

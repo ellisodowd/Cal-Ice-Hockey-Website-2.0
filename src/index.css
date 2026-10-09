@@ -13,7 +13,7 @@
   --gold: #FFC72C; --gold-hot: #FFD34F;
   --ink: #10202F; --muted: #4E6072;
   --ondark: #EAF1F8; --ondark-muted: #9FB4C8;
-  --ice: #F2F5F8; --border: #DCE4EB; --border-dark: #12294A;
+  --ice: #F2F5F8; --border: #DCE4EB; --border-dark: #12294A; --page: #F7F9FA;
   --win: #FFC72C; --loss: #55606B; --tie: #8A97A3;
   --disp: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "Inter", system-ui, sans-serif;
@@ -27,6 +27,17 @@
 .section { padding: clamp(48px, 7vw, 88px) 0; }
 .ice { background: var(--ice); }
 .navy { background: var(--blue); color: var(--ondark); }
+
+/* ---- Loading screen ---- */
+.loadwrap { display: flex; align-items: center; justify-content: center; padding: 120px 0; min-height: 320px; }
+.loadmark { position: relative; display: grid; place-items: center; width: 112px; height: 112px; }
+.loadring { position: absolute; inset: 0; border-radius: 50%;
+  border: 3px solid rgba(4, 30, 66, 0.12); border-top-color: var(--gold);
+  animation: loadspin 0.9s linear infinite; }
+@keyframes loadspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .loadring { animation: none; border-top-color: rgba(4, 30, 66, 0.35); }
+}
 
 /* Buttons are set in the body face, not the condensed display face — grouping
    them with the headings here was shouting for no reason. */
@@ -165,7 +176,7 @@ a.navcta { color: var(--deep); }
 /* ---- Home: merch announcement pill ---- */
 .heroAnnouncement { display: flex; align-items: center; justify-content: center; gap: 12px;
   background: var(--gold); color: var(--deep); text-decoration: none; padding: 11px 20px;
-  text-align: center; }
+  text-align: center; position: relative; margin-top: -8px; }
 .heroAnnouncement:hover { background: var(--gold-hot); }
 .heroAnnouncement__text { margin: 0; font-family: var(--body); font-weight: 700; font-size: 14px; }
 .heroAnnouncement__arrow { flex: 0 0 auto; width: 22px; height: 14px; }
@@ -230,7 +241,7 @@ a.navcta { color: var(--deep); }
 .htophead { border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 6px; }
 .hsectitle { font-family: var(--body); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.025em;
   color: inherit; margin: 0; }
-.htoplist { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; min-height: 0; }
+.htoplist { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; min-height: 0; overflow-y: auto; }
 .htoplist li { border-bottom: 1px solid var(--border); }
 .htoplist li:last-child { border-bottom: 0; }
 .htoplink { display: block; width: 100%; text-align: left; background: none; border: 0;
@@ -289,7 +300,7 @@ a.navcta { color: var(--deep); }
 .newsgrid { display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); }
 .newscard { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;
   display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-.newscard.feat { grid-column: span 2; grid-row: span 2; }
+.newscard.feat { grid-column: span 2; }
 .newsart { position: relative; aspect-ratio: 16 / 9; background: var(--mid); overflow: hidden; }
 .newsart img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .newscard.feat .newsart { aspect-ratio: 16 / 10; }
@@ -299,7 +310,7 @@ a.navcta { color: var(--deep); }
 .newsbody { padding: 14px 16px 16px; }
 .newsbody .h3 { text-transform: none; }
 .newsbody p { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 8px 0 0; }
-@media (max-width: 980px) { .newsgrid { grid-template-columns: 1fr 1fr; } .newscard.feat { grid-column: span 2; grid-row: auto; } }
+@media (max-width: 980px) { .newsgrid { grid-template-columns: 1fr 1fr; } .newscard.feat { grid-column: span 2; } }
 @media (max-width: 620px) { .newsgrid { grid-template-columns: 1fr; } .newscard.feat { grid-column: auto; } }
 
 /* Schedule page */
@@ -334,7 +345,9 @@ a.navcta { color: var(--deep); }
 .qlgoal { flex: 0 0 auto; max-width: 100%; scroll-snap-align: start;
   display: flex; align-items: center; gap: 12px;
   background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 13px; }
-.qlgoal img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; object-position: center top; flex: 0 0 auto; }
+.qlphoto { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; flex: 0 0 auto; display: block; }
+.qlphoto img { width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transform: scale(1.35); }
 .qlpager { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 12px; }
 .qlarrow { display: grid; place-items: center; width: 26px; height: 26px; padding: 0;
   background: none; border: 0; border-radius: 50%; cursor: pointer; color: var(--ink); }
@@ -581,6 +594,9 @@ table.stats.sortable th { padding: 0; }
 .pbgoalscore { display: flex; align-items: center; gap: 24px; }
 .pbgoalside { display: inline-flex; align-items: center; gap: 10px; opacity: 0.5; }
 .pbgoalside.on { opacity: 1; }
+.pbgoallight { width: 26px; height: 26px; border-radius: 50%; background: #E4002B;
+  display: grid; place-items: center; flex: 0 0 auto;
+  box-shadow: 0 0 0 4px rgba(228, 0, 43, 0.22); }
 .pbgoallogo { width: 22px; height: 22px; object-fit: contain; }
 .pbgoalnum { font-family: var(--disp); font-weight: 700; font-size: 23px; line-height: 1; }
 .pbgoallab { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -648,10 +664,14 @@ table.stats.sortable th { padding: 0; }
 .gcperiodlab { margin: 0 0 10px; font-family: var(--body); font-weight: 700; font-size: 12px; color: var(--muted); }
 .gcgoal { display: flex; align-items: center; gap: 14px; border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
 .gcgoal + .gcgoal { margin-top: 8px; }
-.gcgoal > img { flex: 0 0 auto; }
+.gcavatar { width: 46px; height: 46px; border-radius: 50%; overflow: hidden;
+  background: var(--ice); flex: 0 0 auto; display: block; }
+.gcavatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transform: scale(1.35); }
 .gcgoalnum { font-weight: 700; color: var(--muted); }
 .gcgoalwho { flex: 1 1 auto; min-width: 0; display: grid; gap: 3px; }
 .gcgoalname { font-weight: 800; font-size: 15px; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.gcgoalmark { width: 17px; height: 17px; object-fit: contain; flex: 0 0 auto; }
 .gcstrength { font-family: var(--body); font-weight: 700; font-size: 9.5px; letter-spacing: 0.02em;
   background: rgba(228,0,43,0.1); color: #E4002B; border-radius: 4px; padding: 2px 6px; }
 .gcgoalassist { font-size: 13px; color: var(--muted); display: flex; align-items: center; }
@@ -667,20 +687,111 @@ table.stats.sortable th { padding: 0; }
 
 table.stats.gcline { table-layout: fixed; min-width: 0; }
 table.stats.gcline th, table.stats.gcline td { padding: 8px 4px; text-align: center; }
-table.stats.gcline th:first-child, table.stats.gcline td:first-child { text-align: left; width: 34%; padding-left: 0; }
+table.stats.gcline th:first-child, table.stats.gcline td:first-child { text-align: left; width: 34%; padding-left: 14px; }
 table.stats.gcline th:last-child, table.stats.gcline td:last-child { padding-right: 0; }
+.gclineteam { display: inline-flex; align-items: center; gap: 7px; }
+.gclineth { display: inline-flex; align-items: center; gap: 5px; justify-content: center; }
+.gclinelogo { width: 18px; height: 18px; object-fit: contain; flex: 0 0 auto; }
 .gcgrid table.stats th, .gcbox table.stats th { text-transform: none; letter-spacing: 0; font-size: 12px; font-weight: 650; }
 table.stats.gcpen th, table.stats.gcpen td { padding: 8px 6px; text-align: left; }
 table.stats.gcpen th:last-child, table.stats.gcpen td:last-child { text-align: center; }
 
-.gccompare { display: grid; gap: 14px; }
-.gccomparerow { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; gap: 10px; }
-.gccomparelab { grid-column: 1 / -1; text-align: center; font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 2px; }
-.gccompareval { font-weight: 800; font-size: 14px; color: var(--ink); text-align: center; }
-.gccomparebar { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; display: flex; }
-.gccomparebar > span { display: block; height: 100%; }
-.gccomparebar > span:first-child { background: var(--blue); }
-.gccomparebar > span:last-child { background: #AEB8C2; }
+.gcstatshead { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.gcstatshead .statsec { flex: 1 1 auto; text-align: center; }
+.gcstatslogo { width: 30px; height: 30px; object-fit: contain; flex: 0 0 auto; }
+.gcbar { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px;
+  align-items: baseline; padding-bottom: 14px; margin-bottom: 14px;
+  border-bottom: 1px solid var(--border); }
+.gcbar:last-of-type { border-bottom: 0; }
+.gcbarval { font-family: var(--body); font-weight: 800; font-size: 22px; letter-spacing: -0.02em;
+  color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.gcbarval.right { text-align: right; }
+.gcbarlab { text-align: center; font-size: 12.5px; font-weight: 650; color: var(--muted); align-self: center; }
+.gcbartrack { grid-column: 1 / -1; display: flex; height: 9px; margin-top: 8px; }
+.gcbarfill { display: block; }
+.gcbarfill.left { clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 100%, 0 100%); }
+.gcbarfill.right { clip-path: polygon(7px 0, 100% 0, 100% 100%, 0 100%); }
+.gcbarnone { flex: 1 1 auto; background: var(--ice); }
+.gcbar.unrecorded .gcbarval { color: var(--muted); font-weight: 700; }
+
+/* Season series */
+.gcserieslead { float: right; font-family: var(--body); font-size: 12px; font-weight: 700;
+  color: var(--muted); letter-spacing: 0; text-transform: none; }
+.gcseries { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 10px; }
+.gcmeeting { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px 0; background: #fff; }
+.gcmeeting.on { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+.gcmrow { display: flex; align-items: center; gap: 8px; padding: 3px 0; }
+.gcmlogo { width: 20px; height: 20px; object-fit: contain; flex: 0 0 auto; }
+.gcmteam { font-weight: 800; font-size: 13.5px; color: var(--ink); letter-spacing: -0.01em; }
+.gcmscore { margin-left: auto; font-weight: 800; font-size: 15px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.gcmrow.lost .gcmteam, .gcmrow.lost .gcmscore { color: var(--muted); font-weight: 700; }
+.gcmrow.lost .gcmlogo { opacity: 0.55; }
+.gcmfoot { display: flex; justify-content: space-between; gap: 8px; margin: 8px -12px 0;
+  padding: 7px 12px; border-top: 1px solid var(--border);
+  font-family: var(--body); font-weight: 600; font-size: 11.5px; letter-spacing: 0; color: var(--muted); }
+
+/* ---- Game preview (scheduled games) ---- */
+.gpseason { margin: -4px 0 16px; }
+.gpnote { margin-top: 14px; }
+.gcbar.norail { padding-bottom: 12px; }
+
+/* Players to watch — .h2hbar overrides .gcbar's 3-col grid into a 7-col "bookend" layout */
+.h2hbar { grid-template-columns: auto minmax(0,1fr) auto minmax(74px,auto) auto minmax(0,1fr) auto;
+  gap: 4px 12px; align-items: center; }
+.h2hbar > .h2hpic { grid-area: 1 / 1 / 2 / 2; }
+.h2hbar > .h2hwho { grid-area: 1 / 2 / 2 / 3; }
+.h2hbar > .h2hnum { grid-area: 1 / 3 / 2 / 4; }
+.h2hbar > .gcbarlab { grid-area: 1 / 4 / 2 / 5; }
+.h2hbar > .h2hnum.right { grid-area: 1 / 5 / 2 / 6; }
+.h2hbar > .h2hwho.right { grid-area: 1 / 6 / 2 / 7; }
+.h2hbar > .h2hpic.right { grid-area: 1 / 7 / 2 / 8; }
+.h2hbar > .gcbartrack { grid-area: 2 / 1 / 3 / 8; margin-top: 10px; }
+.h2hnum { font-family: var(--body); font-weight: 800; font-size: 28px; letter-spacing: -0.02em;
+  color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1; text-align: right; }
+.h2hnum.right { text-align: left; }
+.h2hpic { display: flex; align-items: center; background: none; border: 0; padding: 0; }
+.h2hmark { width: 38px; height: 38px; object-fit: contain; flex: 0 0 auto; }
+.h2hwho { display: flex; flex-direction: column; gap: 1px; min-width: 0; background: none;
+  border: 0; padding: 0; text-align: left; align-items: flex-start; }
+.h2hwho.right { text-align: right; align-items: flex-end; }
+.h2hname { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; max-width: 100%; }
+.h2hfirst { font-size: 12px; font-weight: 500; color: var(--muted); }
+.h2hlast { font-size: 14.5px; font-weight: 800; color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
+.h2hwho.unknown .h2hlast { color: var(--muted); font-weight: 700; }
+.h2hpos { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+
+/* Goaltending */
+.gtblock + .gtblock { margin-top: 22px; }
+.gtband { padding: 4px 2px 8px; }
+.gtbandmark { display: flex; align-items: center; gap: 10px; }
+.gtbandname { font-weight: 800; font-size: 13px; color: var(--muted); }
+.gtrow { display: grid; grid-template-columns: minmax(0, 1fr) repeat(4, minmax(52px, 74px));
+  align-items: center; gap: 10px; width: 100%; text-align: left; background: none; border: 0;
+  border-bottom: 1px solid var(--border); padding: 12px 16px; }
+.gtrow:last-child { border-bottom: 0; }
+.gtwho { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.gtmark { width: 44px; height: 44px; object-fit: contain; flex: 0 0 auto; }
+.gtnames { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; }
+.gtfirst { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+.gtlast { font-size: 15px; font-weight: 800; color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
+.gtnum { font-size: 11px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+.gtstat { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.gtstat strong { font-family: var(--body); font-weight: 800; font-size: 17px; color: var(--ink);
+  letter-spacing: -0.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.gtstatlab { font-size: 10px; font-weight: 700; color: var(--muted); margin-top: 2px; }
+@media (max-width: 620px) {
+  .gtrow { grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 4px; }
+  .gtwho { grid-column: 1 / -1; }
+}
+
+/* Roster (preview) */
+.twrap.bare { border: 0; border-radius: 0; }
+
+/* Game info */
+.gcinfo { display: grid; grid-template-columns: auto 1fr; gap: 11px 22px; margin: 0;
+  font-size: 13.5px; align-items: baseline; }
+.gcinfo dt { font-weight: 500; color: var(--muted); white-space: nowrap; }
+.gcinfo dd { margin: 0; font-weight: 600; color: var(--ink); min-width: 0; overflow-wrap: anywhere; }
 
 .gameinfo { border-top: 1px solid #EEF1F4; padding: 14px 22px; display: flex; gap: 20px;
   flex-wrap: wrap; color: var(--ink); background: #FAFBFC; border-radius: 0 0 8px 8px; }
@@ -752,6 +863,11 @@ table.stats.statstable th { background: var(--deep); color: #fff; }
    colour the rest of the navy UI already uses (nav, tabs), so it reads as
    "selected" here the same way it does everywhere else. */
 table.stats.statstable .sortbtn.on { color: var(--gold); }
+/* Same navy-on-navy problem on hover: .sortbtn:hover turns the text navy and
+   washes in a faint navy tint, both invisible on this table's own navy
+   header, so it read as the whole cell just going a flat dark grey. White
+   text stays, and the wash goes light instead of navy. */
+table.stats.statstable .sortbtn:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
 .statstable tfoot td { font-weight: 800; background: #F1F5F8; color: var(--ink); border-top: 2px solid #D8E0E8; }
 
 /* Game-by-game rows */
@@ -760,10 +876,12 @@ table.stats.statstable .sortbtn.on { color: var(--gold); }
 
 /* Category leaders */
 .cleadcat { margin: 0 0 14px; font-weight: 800; font-size: 17px; color: var(--blue); }
-.cleadphoto { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top;
-  flex: 0 0 auto; background: var(--ice); }
-.cleadphoto-sm { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; object-position: center top;
-  flex: 0 0 auto; background: var(--ice); }
+.cleadphoto { width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
+  flex: 0 0 auto; background: var(--ice); display: block; }
+.cleadphoto-sm { width: 24px; height: 24px; border-radius: 50%; overflow: hidden;
+  flex: 0 0 auto; background: var(--ice); display: block; }
+.cleadphoto img, .cleadphoto-sm img { width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transform: scale(1.35); }
 .cleadtop { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
   background: none; border: 0; cursor: pointer; padding: 0 0 14px; margin-bottom: 10px;
   border-bottom: 1px solid var(--border); }
@@ -821,7 +939,8 @@ table.stats.statstable .sortbtn.on { color: var(--gold); }
 .ppinfo { display: grid; grid-template-columns: auto 1fr; gap: 0 26px; padding: 0 24px 24px; align-items: start; }
 .ppshot { display: block; width: 148px; height: 148px; margin-top: -74px; border-radius: 50%;
   overflow: hidden; background: var(--ice); box-shadow: 0 0 0 4px #fff; flex: 0 0 auto; }
-.ppshot img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.ppshot img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+  transform: scale(1.35); }
 .ppvitals { grid-column: 1; padding-top: 16px; font-size: 13.5px; line-height: 1.55; }
 .ppvitals p { margin: 0; color: var(--ink); white-space: nowrap; }
 .ppvitals b { font-weight: 700; color: var(--ink); }

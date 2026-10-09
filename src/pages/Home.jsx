@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import { fetchSchedule } from '../lib/schedule.js'
-import { Logo } from '../components/Brand.jsx'
+import { Logo, IcArrowR } from '../components/Brand.jsx'
 
 function NextHomeGame({ game }) {
   return (
@@ -24,7 +24,7 @@ function NextHomeGame({ game }) {
           </span>
 
           <span className="hnextactions">
-            <a className="btn bGhostNavy bSm" href="/schedule">Full schedule</a>
+            <a className="btn bGhostNavy bSm" href="/schedule"><IcArrowR size={15} /> Full schedule</a>
           </span>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import LoadingScreen from '../components/Loading.jsx'
 import { Logo, IcChevL, IcChevR } from '../components/Brand.jsx'
 
 const FALLBACK_IMG = '/images/blank-profile-picture-973460_960_720.jpeg'
@@ -53,7 +54,15 @@ export default function PlayerBio() {
       </>
     )
   }
-  if (!player) return null // still loading
+  if (!player) {
+    return (
+      <>
+        <Header />
+        <main style={{ background: '#fff' }}><div className="wrap section"><LoadingScreen label="Loading player" /></div></main>
+        <Footer />
+      </>
+    )
+  }
 
   const isKeeper = player.position === 'goalie'
 
