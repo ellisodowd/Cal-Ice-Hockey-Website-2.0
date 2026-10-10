@@ -1,10 +1,14 @@
 import { loadJsonp } from './jsonp.js'
 
 // TODO: this is ACHA's opaque season id, bump it manually each new season.
+// scripts/fetch-schedule-history.mjs has a matching CURRENT_SEASON_ID to skip
+// when it backfills past seasons — bump both together.
+export const CURRENT_SEASON_ID = '73'
 const FEED_URL =
-  'https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=schedule&team=241&season=73&month=-1&location=homeaway&key=e6867b36742a0c9d&client_code=acha&site_id=2&league_id=1&conference_id=9&division_id=57&lang=en'
+  `https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=schedule&team=241&season=${CURRENT_SEASON_ID}&month=-1&location=homeaway&key=e6867b36742a0c9d&client_code=acha&site_id=2&league_id=1&conference_id=9&division_id=57&lang=en`
 const CAL_TEAM_ID = '241'
 const OVERRIDES_URL = '/schedule-overrides.json'
+const HISTORY_URL = '/schedule-history.json'
 const LOGO_BASE_URL = 'https://assets.leaguestat.com/acha/logos'
 
 const MONTHS = { // Note: -1 used for all months
@@ -24,7 +28,18 @@ function inferSeasonStartYear(today = new Date()) {
   return month >= 7 ? today.getFullYear() : today.getFullYear() - 1
 }
 
-function normalizeFeedRow(entry, seasonStartYear) {
+export function currentSeasonStartYear() {
+  return inferSeasonStartYear()
+}
+
+export function seasonLabel(startYear) {
+  return `${startYear}-${String((startYear + 1) % 100).padStart(2, '0')}`
+}
+
+// Exported so scripts/fetch-schedule-history.mjs can parse the same raw feed
+// rows for past seasons, where seasonStartYear is known from the season
+// itself rather than inferred from today's date.
+export function normalizeFeedRow(entry, seasonStartYear) {
   const row = entry.row
   const prop = entry.prop
 
@@ -51,12 +66,12 @@ function normalizeFeedRow(entry, seasonStartYear) {
   const timeMatch = /^(\d{1,2}):(\d{2})\s*([ap]m)/i.exec(row.game_status || '')
   let hour24 = 0
   let minute = 0
-  let timeText = ''
+  let timeOnly = ''
   if (timeMatch) {
     hour24 = parseInt(timeMatch[1], 10) % 12
     minute = parseInt(timeMatch[2], 10)
     if (timeMatch[3].toLowerCase() === 'pm') hour24 += 12
-    timeText = ` ${row.game_status}`
+    timeOnly = row.game_status.trim()
   }
 
   const sortDate = new Date(year, monthIndex, day, hour24, minute)
@@ -64,25 +79,34 @@ function normalizeFeedRow(entry, seasonStartYear) {
   const dateForDisplay = new Date(year, monthIndex, day)
   const weekday = dateForDisplay.toLocaleDateString('en-US', { weekday: 'long' })
   const monthName = dateForDisplay.toLocaleDateString('en-US', { month: 'long' })
-  const datetimeText = `${weekday}, ${monthName} ${ordinal(day)}${timeText}`
+  const dateText = `${weekday}, ${monthName} ${ordinal(day)}`
+  const datetimeText = `${dateText}${timeOnly ? ` ${timeOnly}` : ''}`
 
   const homeGoals = row.home_goal_count
   const visitingGoals = row.visiting_goal_count
   const isPlayed = /^\d+$/.test(homeGoals) && /^\d+$/.test(visitingGoals)
 
   let scoreText = ''
+  let usGoals = null
+  let oppGoals = null
   if (isPlayed) {
-    const calGoals = homeIsCal ? homeGoals : visitingGoals
-    const oppGoals = homeIsCal ? visitingGoals : homeGoals
-    scoreText = `Score: ${calGoals} - ${oppGoals}`
+    usGoals = parseInt(homeIsCal ? homeGoals : visitingGoals, 10)
+    oppGoals = parseInt(homeIsCal ? visitingGoals : homeGoals, 10)
+    scoreText = `Score: ${usGoals} - ${oppGoals}`
   }
 
   return {
     gameId: row.game_id,
     opponent,
+    opponentTeamId,
+    homeAway: homeIsCal ? 'H' : 'A',
     datetimeText,
-    locationText: `@${row.venue_name}`,
+    dateText,
+    timeText: timeOnly,
+    locationText: row.venue_name,
     scoreText,
+    usGoals,
+    oppGoals,
     watchUrl: '',
     logo: opponentTeamId ? `${LOGO_BASE_URL}/${opponentTeamId}.png` : undefined,
     sortDate,
@@ -144,6 +168,56 @@ function applyOverrides(games, overrides) {
       isPlayed: false,
     })
   }
+}
+
+// Full season slab (overall/home/away record, streak, goals, games played),
+// same breakdown as the reference site's schedStats().
+export function seasonStats(games) {
+  const decided = games.filter(g => g.isPlayed && g.usGoals != null && g.oppGoals != null)
+  let w = 0, l = 0, t = 0, gf = 0, ga = 0
+  let hw = 0, hl = 0, ht = 0, aw = 0, al = 0, at = 0, unsided = 0
+
+  for (const g of decided) {
+    gf += g.usGoals
+    ga += g.oppGoals
+    const home = g.homeAway === 'H'
+    const away = g.homeAway === 'A'
+    if (!home && !away) unsided++
+    if (g.usGoals > g.oppGoals) { w++; if (home) hw++; else if (away) aw++ }
+    else if (g.usGoals < g.oppGoals) { l++; if (home) hl++; else if (away) al++ }
+    else { t++; if (home) ht++; else if (away) at++ }
+  }
+
+  const played = w + l + t
+  const pct = played ? (w + 0.5 * t) / played : 0
+
+  let streak = '—'
+  if (decided.length) {
+    const tag = g => (g.usGoals > g.oppGoals ? 'W' : g.usGoals < g.oppGoals ? 'L' : 'T')
+    const last = tag(decided[decided.length - 1])
+    let n = 0
+    for (let i = decided.length - 1; i >= 0 && tag(decided[i]) === last; i--) n++
+    streak = `${last}${n}`
+  }
+
+  return {
+    w, l, t, gf, ga, pct, streak, gp: played,
+    home: unsided === played ? '—' : `${hw}-${hl}${ht ? `-${ht}` : ''}`,
+    away: unsided === played ? '—' : `${aw}-${al}${at ? `-${at}` : ''}`,
+  }
+}
+
+// Past seasons, backfilled offline by scripts/fetch-schedule-history.mjs
+// (the ACHA feed only goes back to 2021-22 — see that script's header).
+// Returns [] if the file hasn't been generated yet.
+export async function fetchSeasonHistory() {
+  const res = await fetch(HISTORY_URL, { cache: 'no-store' })
+  if (!res.ok) return []
+  const data = await res.json()
+  return (data.seasons || []).map(season => ({
+    ...season,
+    games: season.games.map(g => ({ ...g, sortDate: new Date(g.sortDate) })),
+  }))
 }
 
 export async function fetchSchedule() {

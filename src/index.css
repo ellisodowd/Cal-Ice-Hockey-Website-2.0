@@ -1,1936 +1,1093 @@
-/* =========================================================
-   Cal Ice Hockey — styles.css (cleaned/organized)
-   ========================================================= */
-
-/* -----------------------------
-   0) Design tokens
--------------------------------- */
-:root {
-  --cal-blue: rgb(4, 30, 66);
-  --pac-blue: #002676;
-  --cal-gold: #fdb515;
-
-  --text-gray: rgb(91, 91, 91);
-  --card-bg: #fff;
-  --soft-bg: #f9f9f9;
-
-  --shadow-soft: 0 0 8px rgba(0, 0, 0, 0.2);
-  --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 8px #ccc;
-
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 15px;
-}
-
-/* -----------------------------
-   1) Base / reset
--------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Utility */
-.blackText {
-  color: #000;
-}
-.white {
-  font-family: "Poppins", sans-serif;
-}
-
-/* -----------------------------
-   2) Header / navigation
--------------------------------- */
-header {
-  position: fixed;
-  inset: 0 0 auto 0; /* top:0; left:0; width:100% */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.6s;
-  padding: 40px 100px;
-  z-index: 10000;
-}
-
-header.sticky {
-  padding: 5px 100px;
-  background: #fff;
-}
-
-header .logo {
-  position: relative;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: 0.6s;
-}
-
-header .logo img {
-  max-height: 125px;
-  height: auto;
-  max-width: 100%;
-  transition: 0.6s;
-}
-
-header.sticky .logo img {
-  max-height: 75px;
-}
-
-header ul {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Hamburger toggle (hidden on desktop) */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 32px;
-  height: 24px;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10001;
-}
-
-/* Pin to the top-right of the header so placement doesn't depend on flow */
-@media (max-width: 768px) {
-  .nav-toggle {
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
-  }
-}
-
-.nav-toggle span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  border-radius: 3px;
-  background: #fff;
-  transition: 0.3s;
-}
-
-header.sticky .nav-toggle span {
-  background: #000;
-}
-
-header ul li {
-  position: relative;
-  list-style: none;
-}
-
-header ul li a {
-  position: relative;
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
-  letter-spacing: 2px;
-  font-weight: 500; /* fixed (was 500px) */
-  transition: 0.6s;
-  white-space: nowrap;
-}
-
-header.sticky .logo,
-header.sticky ul li a {
-  color: #000;
-}
-
-/* Dropdown */
-header ul li.dropdown {
-  position: relative;
-}
-
-/* Hidden menu initially */
-header ul li .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  flex-direction: column;
-  min-width: 150px;
-  padding: 0;
-  margin: 0;
-  z-index: 1000;
-}
-
-/* Show menu on hover (desktop default) */
-header ul li.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-header ul li .dropdown-menu li {
-  list-style: none;
-  width: 100%;
-}
-
-header ul li .dropdown-menu li a {
-  display: block;
-  padding: 10px 15px;
-  color: #fff;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-header ul li .dropdown-menu li a:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* Flat Recruits/Alumni links: shown only in the mobile panel */
-.navMobile {
-  display: none;
-}
-
-/* Optional +/– indicator (desktop) */
-@media (min-width: 769px) {
-  header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  header ul > li {
-    position: relative;
-  }
-  header .dropdown > a::after {
-    content: "+";
-    margin-left: 6px;
-    font-weight: 700;
-    display: inline-block;
-    transform: translateY(-1px);
-    transition: transform 0.15s ease;
-  }
-  header .dropdown:hover > a::after {
-    content: "–";
-  }
-  header .dropdown.open > a::after {
-    content: "–";
-  }
-}
-
-/* -----------------------------
-   2b) Mobile navigation (hamburger)
--------------------------------- */
-@media (max-width: 768px) {
-  header {
-    padding: calc(20px + env(safe-area-inset-top)) 25px 20px;
-  }
-  header.sticky {
-    padding: calc(5px + env(safe-area-inset-top)) 25px 5px;
-  }
-
-  /* Keep the logo from overflowing and pushing the toggle off-screen */
-  header .logo img {
-    max-height: 70px;
-  }
-  header.sticky .logo img {
-    max-height: 55px;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  /* Animate hamburger into an X when open */
-  header.menu-open .nav-toggle span:nth-child(1) {
-    transform: translateY(10.5px) rotate(45deg);
-  }
-  header.menu-open .nav-toggle span:nth-child(2) {
-    opacity: 0;
-  }
-  header.menu-open .nav-toggle span:nth-child(3) {
-    transform: translateY(-10.5px) rotate(-45deg);
-  }
-
-  /* Slide-in panel */
-  header ul {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: min(75vw, 300px);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 4px;
-    margin: 0;
-    padding: 100px 0 40px;
-    background: rgba(0, 0, 0, 0.95);
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-    overflow-y: auto;
-    padding-top: calc(100px + env(safe-area-inset-top));
-  }
-  header ul.open {
-    transform: translateX(0);
-  }
-
-  header ul li {
-    width: 100%;
-  }
-
-  header ul li a {
-    display: block;
-    margin: 0;
-    padding: 18px 28px;
-    color: #fff;
-    font-size: 1.35rem;
-  }
-
-  /* Keep links light even when header is sticky on mobile */
-  header.sticky ul li a {
-    color: #fff;
-  }
-
-  /* No hover on mobile: hide the Team dropdown and show the flat
-     Recruits/Alumni links instead. */
-  .navDesktop {
-    display: none;
-  }
-  .navMobile {
-    display: block;
-  }
-}
-
-/* -----------------------------
-   3) Banner / video
--------------------------------- */
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  overflow: hidden;
-}
-
-.articlesBanner {
-  height: 70vh;
-}
-
-#background-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Hide native video controls (various engines) */
-#background-video::-webkit-media-controls {
-  display: none !important;
-}
-#background-video::-moz-media-controls {
-  display: none !important;
-}
-#background-video::-ms-media-controls {
-  display: none !important;
-}
-
-/* Liquid-glass announcement pill over the hero video */
-.heroAnnouncement {
-  position: absolute;
-  left: 50%;
-  bottom: calc(28px + env(safe-area-inset-bottom));
-  transform: translateX(-50%);
-  z-index: 3;
-  width: min(94%, 1760px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 34px;
-  border-radius: 22px;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(8, 20, 45, 0.42);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.heroAnnouncement:hover {
-  background: rgba(8, 20, 45, 0.52);
-  transform: translateX(-50%) translateY(-2px);
-}
-
-.heroAnnouncement__text {
-  margin: 0;
-  font-family: "Avenir Next", "Avenir", "Jost", sans-serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1rem, 1.9vw, 1.75rem);
-  line-height: 1.3;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
-}
-
-.heroAnnouncement__arrow {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
-
-.heroAnnouncement__arrow svg {
-  width: clamp(30px, 3vw, 44px);
-  height: auto;
-  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.25));
-}
-
-@media (max-width: 768px) {
-  .heroAnnouncement {
-    width: calc(100% - 24px);
-    gap: 16px;
-    padding: 16px 20px;
-    border-radius: 18px;
-  }
-  .heroAnnouncement__text {
-    font-size: 1rem;
-  }
-}
-
-/* -----------------------------
-   4) Home page blocks
--------------------------------- */
-/* Meet The Bears */
-.MeetTheBears {
-  background: #fff;
-  width: 100%;
-  max-height: 500px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.boxMTB {
-  display: flex;
-}
-
-.boxMTB > div {
-  display: flex;
-  justify-content: center;
-}
-
-.leftMTB {
-  flex-basis: 60%;
-}
-
-.leftMTB img {
-  width: 100%;
-  height: auto;
-  margin: 125px 0;
-  border-top-right-radius: 150px;
-  border-bottom-right-radius: 150px;
-}
-
-.rightMTB {
-  position: relative;
-  top: -50px;
-  margin: 10px 0;
-  flex-basis: 40%;
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.roster-button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.MTBOverlay {
-  background: #fff;
-  margin: 50px 50px 10px;
-  font-family: "Spectral", serif;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--cal-blue);
-  font-size: 75px;
-}
-
-.roster-button {
-  margin-top: 10px;
-  background: #fff;
-  font-size: 3em;
-  text-decoration: none;
-  color: var(--cal-blue);
-  font-family: "Spectral", serif;
-  font-weight: 500;
-  font-style: italic;
-  border: 4px solid var(--cal-blue);
-  border-radius: var(--radius-lg);
-}
-
-.roster-button:hover {
-  background: var(--cal-blue);
-  color: #fff;
-}
-
-/* Stream */
-.Stream {
-  background: #fff;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.boxStream {
-  display: flex;
-}
-
-.boxStream > div {
-  display: flex;
-  justify-content: center;
-}
-
-.leftStream {
-  flex-basis: 40%;
-}
-.rightStream {
-  flex-basis: 60%;
-}
-
-.rightStream img {
-  width: 100%;
-  height: auto;
-  margin: 125px 0;
-  border-top-left-radius: 150px;
-  border-bottom-left-radius: 150px;
-}
-
-.StreamContainer {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.StreamingOverlay {
-  background: #fff;
-  margin-top: 50px;
-  font-family: "Spectral", serif;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--cal-blue);
-  font-size: 75px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.logoContainer {
-  display: flex;
-  flex-direction: row;
-  margin: 20px 0;
-}
-
-.StreamCal {
-  flex-basis: 50%;
-}
-.Blackdog {
-  flex-basis: 50%;
-}
-
-.StreamCal img {
-  width: 90%;
-  margin-left: 20px;
-  height: auto;
-}
-.Blackdog img {
-  width: 90%;
-  height: auto;
-}
-
-.streaming-button {
-  font-family: "Spectral", serif;
-  font-weight: 500;
-  font-style: italic;
-  margin-top: 10px;
-  background: #fff;
-  font-size: 3em;
-  text-decoration: none;
-  color: var(--cal-blue);
-  border: 4px solid var(--cal-blue);
-  border-radius: var(--radius-lg);
-}
-
-.streaming-button:hover {
-  background: var(--cal-blue);
-  color: #fff;
-}
-
-/* -----------------------------
-   5) Footer / social
--------------------------------- */
-.bottom,
-.rosterBottom {
-  height: 150px;
-  width: 100%;
-  background: url("/images/bottomBackground.png") no-repeat center center;
-  background-size: cover;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.8);
-}
-
-.rosterBottom {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 100px;
-}
-
-.homeBottom .socialmediacontainer {
-  margin-right: 0;
-  padding-right: 0;
-  position: relative;
-  left: 0;
-}
-
-.articlePageBottom {
-  align-items: flex-start;
-  position: absolute;
-  width: 150%;
-  left: -450px;
-  margin-bottom: 50px;
-}
-
-.socialmediacontainer {
-  margin-left: 70%;
-  text-align: right;
-  display: flex;
-  flex-direction: row;
-  top: 50px;
-  position: relative;
-  z-index: 10;
-}
-
-.FollowUs {
-  font-family: "Spectral", serif;
-  font-weight: 500;
-  font-style: italic;
-  margin-top: 10px;
-  color: #fff;
-  font-size: 2em;
-}
-
-.socialmediacontainer div a img {
-  max-width: 50px;
-  width: 90%;
-  margin-left: 20px;
-  height: auto;
-}
-
-/* Legacy parallax helper (kept) */
-.adjustForParallax {
-  height: 150px;
-  width: 100%;
-  background: var(--cal-blue);
-  position: relative;
-  top: 400px;
-  transform: translateZ(-60px) scale(7.4);
-}
-
-/* -----------------------------
-   6) Schedule page (timeline)
--------------------------------- */
-body.sched {
-  font-family: "Poppins", sans-serif;
-  background: url("/images/backgroundSched.png") no-repeat -20px center fixed;
-  background-size: 110%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 200px auto;
-}
-
-.timelineContainer {
-  padding: 10px 50px;
-  position: relative;
-  width: 50%;
-}
-
-.timelineLeft-container {
-  left: 0;
-}
-.timelineRight-container {
-  left: 50%;
-}
-
-.timelineContainer img {
-  position: absolute;
-  width: 70px;
-  max-width: 120px;
-  max-height: 100px;
-  right: -35px;
-  top: 10%;
-  z-index: 10;
-}
-
-.timelineRight-container img {
-  left: -35px;
-  right: auto;
-}
-
-.timeline::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 100%;
-  background: #fff;
-  top: 0;
-  left: 50%;
-  margin-left: -3px;
-  z-index: -1;
-  box-shadow: var(--shadow-glow);
-  opacity: 0.7;
-}
-
-.textbox {
-  color: var(--text-gray);
-  padding: 20px 30px; /* fixed invalid comma syntax */
-  background: var(--card-bg);
-  position: relative;
-  border-radius: var(--radius-sm);
-  font-size: 22px;
-  box-shadow: var(--shadow-glow);
-  margin-bottom: 100px;
-}
-
-.textbox h2,
-.textbox h4,
-.textbox p,
-.textbox a {
-  position: relative;
-  top: 5px;
-}
-
-.textbox h2 {
-  font-weight: 600;
-}
-.textbox h4 {
-  display: inline-block;
-  margin-bottom: 5px;
-}
-.textbox p {
-  margin-bottom: 5px;
-}
-.textbox a {
-  display: inline-block;
-  margin-bottom: 10px;
-  text-decoration: none;
-}
-
-.left-container-arrow,
-.right-container-arrow {
-  height: 0;
-  width: 0;
-  position: absolute;
-  top: 28px;
-  z-index: 1;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-}
-
-.left-container-arrow {
-  border-left: 15px solid var(--cal-blue);
-  right: -15px;
-}
-
-.right-container-arrow {
-  border-right: 15px solid var(--cal-blue);
-  left: -15px;
-}
-
-.textbox a:visited {
-  color: var(--text-gray);
-}
-
-.textbox a:hover {
-  color: #fff;
-  border-radius: 3px;
-  background: var(--text-gray);
-}
-
-/* Wrapper / background (kept for legacy pages) */
-.wrapper {
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: url("/images/ScheduleBackground.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
-.parallaxbackground {
-  position: absolute;
-  width: 100%;
-  top: 1500px;
-  left: 0;
-  object-fit: cover;
-  transform: translateZ(-70px) scale(8);
-  z-index: -2;
-}
-
-/* -----------------------------
-   7) Roster / staff
--------------------------------- */
-.rosterBody {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  background: url("/images/rosterBackground.png") no-repeat -20px center fixed;
-  background-size: 110%;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0;
-  align-items: flex-start;
-  flex-direction: column;
-  padding-top: 180px;
-}
-
-.rosterContainer {
-  align-items: center;
-  max-width: 1000px;
-  width: 100%;
-  background-color: #fff;
-  padding: 30px 10px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: var(--shadow-soft);
-}
-
-.rosterContainer nav {
-  position: relative;
-  height: 50px;
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.rosterContainer nav::after {
-  content: "";
-  background: silver;
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  top: 47px;
-  filter: blur(0.5px);
-}
-
-.rosterContainer nav label {
-  position: relative;
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  line-height: 50px;
-  cursor: pointer;
-  font-size: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-/* Fix: missing commas made this rule invalid in the original */
-#forwards:checked ~ nav label .forwards,
-#defense:checked ~ nav label .defense,
-#goalies:checked ~ nav label .goalies,
-#coaches:checked ~ nav label .coaches,
-#staff:checked ~ nav label .staff {
-  color: var(--pac-blue);
-}
-
-.rosterContainer nav .slider {
-  position: absolute;
-  height: 4.5px;
-  background-color: var(--pac-blue);
-  border-radius: 20px;
-  width: 33%;
-  z-index: 1;
-  left: 0;
-  bottom: 0;
-  transition: all 0.3s ease;
-  filter: blur(0.4px);
-}
-
-.coachContainer nav .slider {
-  width: 50%;
-}
-
-#forwards:checked ~ nav .slider {
-  left: 0%;
-}
-#defense:checked ~ nav .slider {
-  left: 33%;
-}
-#goalies:checked ~ nav .slider {
-  left: 67%;
-}
-#coaches:checked ~ nav .slider {
-  left: 0%;
-}
-#staff:checked ~ nav .slider {
-  left: 50%;
-}
-
-#forwards:checked ~ nav .forwards {
-  color: var(--pac-blue);
-}
-#defense:checked ~ nav .defense {
-  color: var(--pac-blue);
-}
-#goalies:checked ~ nav .goalies {
-  color: var(--pac-blue);
-}
-#staff:checked ~ nav .staff {
-  color: var(--pac-blue);
-}
-#coaches:checked ~ nav .coaches {
-  color: var(--pac-blue);
-}
-
-section .content {
-  display: none;
-  margin-bottom: 20px;
-}
-
-#goalies:checked ~ section .goalieContent {
-  display: block;
-}
-#forwards:checked ~ section .forwardContent {
-  display: block;
-}
-#defense:checked ~ section .defenseContent {
-  display: block;
-}
-#coaches:checked ~ section .coachesContent {
-  display: block;
-}
-#staff:checked ~ section .staffContent {
-  display: block;
-}
+/* Cal Ice Hockey design system.
+ * Ported rule-for-rule from Cal-Ice-Hockey/reference/cal-ice-hockey-app.jsx's
+ * inline CSS block (the live source of truth — packages/shared/theme.css was
+ * an earlier, now-stale extraction of it), adapted for Vite: fonts load via
+ * a plain Google Fonts <link> in index.html instead of next/font, so
+ * --disp/--body reference the font names directly instead of CSS vars.
+ * The .chh wrapper class is applied to <body> in index.html.
+ */
+
+.chh, .chh * { box-sizing: border-box; }
+.chh {
+  --blue: #041E42; --deep: #041E42; --mid: #0B2440;
+  --gold: #FFC72C; --gold-hot: #FFD34F;
+  --ink: #10202F; --muted: #4E6072;
+  --ondark: #EAF1F8; --ondark-muted: #9FB4C8;
+  --ice: #F2F5F8; --border: #DCE4EB; --border-dark: #12294A; --page: #F7F9FA;
+  --win: #FFC72C; --loss: #55606B; --tie: #8A97A3;
+  --disp: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+  font-family: var(--body); color: var(--ink); background: #fff;
+  min-height: 100vh; display: flex; flex-direction: column;
+  margin: 0; padding: 0;
+}
+.chh a { color: inherit; }
+.chh :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; width: 100%; }
+.section { padding: clamp(48px, 7vw, 88px) 0; }
+.ice { background: var(--ice); }
+.navy { background: var(--blue); color: var(--ondark); }
+
+/* ---- Loading screen ---- */
+.loadwrap { display: flex; align-items: center; justify-content: center; padding: 120px 0; min-height: 320px; }
+.loadmark { position: relative; display: grid; place-items: center; width: 112px; height: 112px; }
+.loadring { position: absolute; inset: 0; border-radius: 50%;
+  border: 3px solid rgba(4, 30, 66, 0.12); border-top-color: var(--gold);
+  animation: loadspin 0.9s linear infinite; }
+@keyframes loadspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .loadring { animation: none; border-top-color: rgba(4, 30, 66, 0.35); }
+}
+
+/* Buttons are set in the body face, not the condensed display face — grouping
+   them with the headings here was shouting for no reason. */
+.h1, .h2, .h3, .h6, .eyebrow, .tab, .jersey, .statnum {
+  font-family: var(--disp); text-transform: uppercase;
+}
+.h1 { font-weight: 700; font-size: clamp(2.5rem, 6.5vw, 4.5rem); line-height: 0.95; letter-spacing: 0.01em; margin: 0; }
+.h2 { font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.1; margin: 0; }
+.h3 { font-weight: 600; font-size: 1.35rem; line-height: 1.15; letter-spacing: 0.02em; margin: 0; }
+.h6 { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.14em; margin: 0; }
+.eyebrow { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.22em; color: var(--gold); margin: 0; }
+.blg { font-size: 18px; line-height: 1.55; }
+.bsm { font-size: 13.5px; line-height: 1.55; }
+
+/* Header */
+.hdr { position: sticky; top: 0; z-index: 50; background: var(--deep); }
+.navbar { display: flex; align-items: center; gap: 28px; min-height: 74px; }
+.brand { display: flex; align-items: center; cursor: pointer; background: none; border: 0; padding: 0; text-decoration: none; }
+.navlinks { display: flex; align-items: center; gap: 22px; margin-left: auto; flex-wrap: wrap; }
+.navlink { position: relative; background: none; border: 0; cursor: pointer; color: #fff;
+  font-family: var(--body); font-weight: 700; font-size: 16.5px; letter-spacing: 0;
+  padding: 8px 0; text-decoration: none; display: inline-block; }
+/* Colour alone marks the page you are on — a rule under it as well says the
+   same thing twice. */
+.navlink.on { color: var(--gold); }
+.navlink:hover { color: var(--gold); }
+/* .chh a { color: inherit } is more specific than a bare class (same issue
+   as .socialbtn below), so a <Link> rendered as .navlink needs the element
+   qualifier too or it inherits ink-on-navy and reads dark grey instead of white. */
+a.navlink { color: #fff; }
+a.navlink.on { color: var(--gold); }
+a.navlink:hover { color: var(--gold); }
+.goldpill { background: var(--gold); color: var(--deep); border: 0; cursor: pointer;
+  text-decoration: none; font-family: var(--body); font-weight: 700; font-size: 14px;
+  padding: 9px 20px; border-radius: 999px; }
+.goldpill:hover { background: var(--gold-hot); }
+.navcta { padding: 10px 18px; }
+
+/* Social links in the header */
+.navactions { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.socials { display: flex; gap: 4px; align-items: center; margin-right: 6px; }
+/* .chh a { color: inherit } is more specific than a bare class, so these
+   need the element qualifier or they inherit ink-on-navy and vanish. */
+a.socialbtn { display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 999px; color: var(--ondark-muted);
+  text-decoration: none; transition: color 0.14s, background 0.14s; }
+a.socialbtn:hover { color: var(--deep); background: var(--gold); }
+/* The gold edge under the navy bar. */
+.hdrrule { height: 8px; background: var(--gold); }
+
+/* "Team" dropdown */
+.navdrop { position: relative; }
+.navdrop > .navlink { display: inline-flex; align-items: center; gap: 5px; }
+/* No margin-top here: a gap between the trigger and the menu is a dead zone
+   neither element covers, and a pointer crossing it drops :hover before ever
+   reaching the menu — the menu would open and then vanish on the way down to
+   it. padding-top fakes the same visual breathing room without a gap the
+   pointer can fall through. */
+.navdrop-menu { position: absolute; top: 100%; left: 0; min-width: 160px; background: var(--deep);
+  border: 1px solid var(--border-dark); border-radius: 6px; padding: 14px 6px 6px; display: none;
+  flex-direction: column; gap: 2px; list-style: none; margin: 0; z-index: 60; }
+.navdrop:hover .navdrop-menu, .navdrop:focus-within .navdrop-menu { display: flex; }
+.navdrop-menu a { display: block; padding: 8px 12px; border-radius: 4px; color: #fff;
+  font-family: var(--body); font-weight: 600; font-size: 14.5px; text-decoration: none; }
+.navdrop-menu a:hover { background: var(--mid); color: var(--gold); }
+
+/* Mobile navigation — above the breakpoint this is all inert; below it, the
+   links row and the dropdowns hide and this replaces them, since a hover
+   menu has nothing to trigger it on a touch screen. */
+.navburger { display: none; width: 38px; height: 38px; padding: 0; border: 0; cursor: pointer;
+  background: none; place-items: center; align-content: center; gap: 4px; justify-items: center; }
+.navburger span { display: block; width: 17px; height: 2px; border-radius: 2px; background: #fff;
+  transition: transform 0.18s, opacity 0.14s; }
+.navburger.on span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.navburger.on span:nth-child(2) { opacity: 0; }
+.navburger.on span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.navpanel { display: none; }
+.navpanelitem { display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: none; border: 0; cursor: pointer; font-family: var(--body); font-weight: 700;
+  font-size: 16px; color: #fff; text-align: left; padding: 13px 24px; text-decoration: none; }
+/* Team/More each sit in their own wrapper div (so their sub-list can mount
+   next to the trigger button), which breaks a plain adjacent-sibling
+   selector between them and the plain links around them — this targets
+   every direct child of the panel instead, wrapped or not. */
+.navpanel > *:not(:first-child) { border-top: 1px solid rgba(255, 255, 255, 0.09); }
+/* .chh a { color: inherit } is more specific than a bare class (same issue
+   as .navlink/.socialbtn above), so a <Link> rendered as .navpanelitem
+   inherits ink-on-navy instead of white unless it's element-qualified too. */
+a.navpanelitem { color: #fff; }
+a.navpanelitem.on { color: var(--gold); }
+.navpanelitem.on { color: var(--gold); }
+.navpanelitem.group svg { transition: transform 0.18s; }
+.navpanelitem.group.open svg { transform: rotate(180deg); }
+.navpanelsub { background: rgba(0, 0, 0, 0.22); }
+.navpanelitem.child { font-size: 15px; font-weight: 650; padding-left: 40px;
+  color: rgba(255, 255, 255, 0.82); }
+.navpanelitem.child.on { color: var(--gold); }
+.navpanelcta { padding: 18px 24px 22px; border-top: 1px solid rgba(255, 255, 255, 0.09); }
+.navpanelcta .goldpill { display: block; padding: 13px 14px; text-align: center; font-size: 15px;
+  font-weight: 800; }
+.navpanelsocials { display: flex; gap: 6px; padding: 14px 24px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09); }
+
+@media (max-width: 860px) {
+  .navbar { padding: 10px 24px; gap: 12px; min-height: 0; flex-wrap: nowrap; }
+  .navlinks { display: none; }
+  .navactions .socials { display: none; }
+  .navcta { display: none; }
+  .navburger { display: grid; }
+  .navpanel { display: block; }
+}
+
+/* Scoreboard — strip above the nav */
+.sboard { background: #fff; border-bottom: 1px solid var(--border); padding: 14px 0; }
+.sboard-inner { display: flex; align-items: center; gap: 10px; padding: 0 16px; }
+.sboard-row { display: flex; gap: 12px; overflow-x: auto; scroll-behavior: smooth;
+  scrollbar-width: none; -ms-overflow-style: none; flex: 1 1 auto; padding: 4px 2px; }
+.sboard-row::-webkit-scrollbar { display: none; }
+.chev { background: none; border: 0; cursor: pointer; color: var(--ink); font-size: 26px;
+  line-height: 1; padding: 4px 6px; flex: 0 0 auto; }
+.chev:hover { color: var(--blue); }
+.chev:disabled { opacity: 0.25; cursor: default; }
+.scard { flex: 0 0 auto; min-width: 230px; text-align: left; background: #fff;
+  border: 1px solid #E7EBEF; border-radius: 8px; box-shadow: 0 1px 3px rgba(4, 30, 66, 0.06);
+  padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; }
+.scard-top { display: flex; align-items: center; gap: 7px; }
+.sdate { font-family: var(--body); font-size: 12.5px; color: var(--muted); }
+.scard-main { display: flex; align-items: center; gap: 9px; }
+.sopp { font-family: var(--body); font-weight: 600; font-size: 14.5px; color: var(--ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sscore { margin-left: auto; font-family: var(--body); font-weight: 800; font-size: 14.5px;
+  color: var(--blue); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.slogo { width: 26px; height: 26px; object-fit: contain; flex: 0 0 auto; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 0; cursor: pointer; text-decoration: none; font-family: var(--body);
+  text-transform: none; font-weight: 700; font-size: 14.5px; letter-spacing: 0.005em;
+  padding: 13px 26px; border-radius: 999px; white-space: nowrap; }
+.bGold { background: var(--gold); color: var(--deep); }
+.bGold:hover { background: var(--gold-hot); }
+.bGhost { background: transparent; color: var(--ondark); box-shadow: inset 0 0 0 2px var(--gold); }
+.bGhost:hover { background: rgba(255,199,44,0.12); }
+.bNavy { background: var(--blue); color: #fff; }
+.bNavy:hover { background: var(--mid); }
+.bGhostNavy { background: #fff; border: 1px solid var(--border); color: var(--blue); }
+.bGhostNavy:hover { border-color: var(--blue); }
+.bSm { padding: 9px 14px; font-size: 13px; }
+/* Same .chh a specificity issue as .navlink above — a <button> is unaffected
+   (not an <a>), but every one of these also gets used as a plain link
+   (Schedule's Watch button, Home's Full schedule link, the nav's goldpill
+   CTAs), so each needs the element-qualified version too. */
+a.bGold { color: var(--deep); }
+a.bNavy { color: #fff; }
+a.bGhostNavy { color: var(--blue); }
+a.navcta { color: var(--deep); }
+
+/* Page head */
+.phead { background: var(--blue); color: var(--ondark); padding: 44px 0; }
+.phead .blg { color: var(--ondark-muted); max-width: 640px; margin: 10px 0 0; }
+.stitle { font-family: var(--body); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--ink); margin: 0 0 26px; padding-left: 16px; border-left: 5px solid var(--blue); }
+/* Shared public page title (the Schedule page's own heading — no navy band). */
+.pagetitle { font-family: var(--disp); font-weight: 700; font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1; letter-spacing: normal; text-transform: none; color: var(--blue);
+  margin: 0 0 32px; padding: 0; border: 0; }
 
 /* Cards */
-.rosterSlot,
-.coachSlot {
-  margin: 30px auto;
-  height: auto; /* avoid clipping */
-  min-height: 150px;
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  justify-content: flex-start;
-  gap: 30px;
-  background: var(--soft-bg);
-  border-radius: var(--radius-md);
-  box-sizing: border-box;
-  overflow: visible;
+.cards { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.card { background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--gold);
+  border-radius: 6px; padding: 22px; }
+.statnum { font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+.emptybox { border: 1px dashed var(--border); border-radius: 10px; padding: 34px 24px;
+  text-align: center; background: #fff; margin-bottom: 24px; }
+
+/* ---- Home: merch announcement pill ---- */
+.heroAnnouncement { display: flex; align-items: center; justify-content: center; gap: 12px;
+  background: var(--gold); color: var(--deep); text-decoration: none; padding: 11px 20px;
+  text-align: center; position: relative; margin-top: -8px; }
+.heroAnnouncement:hover { background: var(--gold-hot); }
+.heroAnnouncement__text { margin: 0; font-family: var(--body); font-weight: 700; font-size: 14px; }
+.heroAnnouncement__arrow { flex: 0 0 auto; width: 22px; height: 14px; }
+.heroAnnouncement__arrow svg { display: block; width: 100%; height: 100%; }
+@media (max-width: 560px) { .heroAnnouncement__text { font-size: 12.5px; } }
+
+/* ---- Home: next home game ---- */
+.hnextcontainer { container-type: inline-size; container-name: next-game; }
+.hnext { display: flex; align-items: center; gap: 18px; flex-wrap: nowrap;
+  background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--gold);
+  border-radius: 12px; padding: 16px 20px; }
+.hnextteams { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
+.hnextlogo { width: 42px; height: 42px; object-fit: contain; }
+.hnextlogo.fallback { display: grid; place-items: center; border-radius: 999px;
+  background: var(--ice); color: var(--blue); font-weight: 800; font-size: 17px;
+  width: 42px; height: 42px; }
+.hnextvs { font-family: var(--disp); font-weight: 700; font-size: 12px; letter-spacing: 0.06em;
+  color: var(--muted); }
+.hnextinfo { display: grid; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.hnextlabel { font-family: var(--body); font-weight: 700; font-size: 12px;
+  letter-spacing: 0; color: var(--blue); }
+.hnextopp { font-weight: 800; font-size: 17px; letter-spacing: -0.015em; color: var(--ink); }
+.hnextwhen { font-size: 13px; color: var(--muted); font-weight: 600; }
+.hnextactions { margin-left: auto; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; flex: 0 0 auto; }
+.hnextactions .btn { text-decoration: none; font-family: var(--body); }
+@container next-game (min-width: 601px) and (max-width: 1000px) {
+  .hnext { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; padding: 16px; }
+  .hnextteams { gap: 8px; }
+  .hnextlogo { width: 36px; height: 36px; }
+  .hnextactions { display: grid; gap: 8px; margin-left: 0; }
+  .hnextactions .btn { justify-content: center; padding: 9px 14px; font-size: 12px; white-space: nowrap; }
+  .hnextwhen { line-height: 1.5; }
+}
+@container next-game (max-width: 600px) {
+  .hnext { flex-direction: column; justify-content: center; text-align: center;
+    border-left: 1px solid var(--border); border-top: 4px solid var(--gold); }
+  .hnextinfo { justify-items: center; width: 100%; }
+  .hnextactions { margin-left: 0; width: 100%; justify-content: center; }
+}
+
+/* ---- Home: hero + top stories ---- */
+.hherorow { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr); gap: 22px;
+  align-items: stretch; }
+.hhero { position: relative; border-radius: 14px; overflow: hidden; cursor: pointer;
+  aspect-ratio: 16 / 9; align-self: start; background: var(--deep); display: block;
+  text-decoration: none; }
+.hhero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hheroscrim { position: absolute; inset: 0; transition: background 0.18s;
+  background: linear-gradient(180deg, rgba(4,30,66,0) 38%, rgba(4,30,66,0.82) 100%); }
+.hherotext { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 30px; }
+.hherotext .newstag { position: static; display: inline-block; margin-bottom: 4px; }
+.hherotitle { font-family: var(--body); font-weight: 800; font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  line-height: 1.1; letter-spacing: -0.025em; color: #fff; margin: 10px 0 0; }
+.hheroblurb { font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,0.86); margin: 10px 0 0;
+  max-width: 60ch; }
+.hhero:hover .hheroscrim { background: linear-gradient(180deg,
+  rgba(4,30,66,0.12) 30%, rgba(4,30,66,0.92) 100%); }
+
+.htopwrap { position: relative; min-height: 0; }
+.htop { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden;
+  background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+.htophead { border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 6px; }
+.hsectitle { font-family: var(--body); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.025em;
+  color: inherit; margin: 0; }
+.htoplist { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+.htoplist li { border-bottom: 1px solid var(--border); }
+.htoplist li:last-child { border-bottom: 0; }
+.htoplink { display: block; width: 100%; text-align: left; background: none; border: 0;
+  cursor: pointer; font: inherit; font-size: 14.5px; font-weight: 650; line-height: 1.35;
+  color: var(--ink); padding: 12px 0; text-decoration: none; }
+.htoplink:hover { color: var(--blue); }
+.htopall { margin-top: 12px; flex: 0 0 auto; background: none; border: 0; cursor: pointer; font: inherit;
+  font-size: 13px; font-weight: 700; color: var(--blue); display: inline-flex; align-items: center;
+  gap: 6px; padding: 0; text-decoration: none; }
+
+@media (max-width: 860px) {
+  .hherorow { grid-template-columns: 1fr; }
+  .htopwrap { min-height: 320px; }
+}
+@media (max-width: 560px) {
+  .hhero { aspect-ratio: auto; min-height: 210px; display: flex; align-items: flex-end; }
+  .hherotext { position: relative; z-index: 1; width: 100%; padding: 20px 18px; }
+  .hherotitle { font-size: 1.5rem; }
+  .hheroblurb { display: none; }
+}
+
+/* ---- Home: story cards ---- */
+.hcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.hcard { display: grid; gap: 10px; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; text-align: left; text-decoration: none; }
+.hcardart { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden;
+  background: var(--ice); display: block; }
+.hcardart img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hcardtitle { font-weight: 800; font-size: 17px; line-height: 1.25; letter-spacing: -0.015em;
+  color: var(--ink); }
+.hcard:hover .hcardtitle { color: var(--blue); }
+.hcardmeta { font-size: 12px; font-weight: 700; color: var(--muted); }
+
+/* Stat slab / record grid */
+.recgrid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 28px;
+  border: 1px solid #E7EBEF; border-radius: 4px; background: #fff; }
+.reccell { padding: 26px 12px; text-align: center; border-right: 1px solid #E7EBEF;
+  border-bottom: 1px solid #E7EBEF; display: flex; flex-direction: column; gap: 8px;
+  align-items: center; justify-content: center; }
+.reccell:nth-child(4n) { border-right: 0; }
+.reccell:nth-child(n+5) { border-bottom: 0; }
+.reclab { font-family: var(--body); font-weight: 600; font-size: 14px; color: var(--muted); margin: 0; }
+.recnum { font-family: var(--body); font-weight: 800; font-size: 26px; color: var(--ink); margin: 0; }
+@media (max-width: 720px) { .recgrid { grid-template-columns: 1fr 1fr; }
+  .reccell:nth-child(4n) { border-right: 1px solid #E7EBEF; }
+  .reccell:nth-child(2n) { border-right: 0; }
+  .reccell:nth-child(n+5) { border-bottom: 1px solid #E7EBEF; } }
+
+/* Tabs */
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab { font-family: var(--disp); font-weight: 600; font-size: 14.5px; letter-spacing: 0.08em; cursor: pointer;
+  padding: 9px 18px; border: 1px solid var(--border); border-radius: 999px; background: #fff; color: var(--ink); }
+.tab.on { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* News grid (Articles page) */
+.newsgrid { display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); }
+.newscard { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff;
+  display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+.newscard.feat { grid-column: span 2; }
+.newsart { position: relative; aspect-ratio: 16 / 9; background: var(--mid); overflow: hidden; }
+.newsart img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.newscard.feat .newsart { aspect-ratio: 16 / 10; }
+.newstag { position: absolute; left: 10px; bottom: 10px; background: var(--gold); color: var(--deep);
+  font-family: var(--disp); font-weight: 700; font-size: 11.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+.newsbody { padding: 14px 16px 16px; }
+.newsbody .h3 { text-transform: none; }
+.newsbody p { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 8px 0 0; }
+@media (max-width: 980px) { .newsgrid { grid-template-columns: 1fr 1fr; } .newscard.feat { grid-column: span 2; } }
+@media (max-width: 620px) { .newsgrid { grid-template-columns: 1fr; } .newscard.feat { grid-column: auto; } }
+
+/* Schedule page */
+.sctrl { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.gamecard { background: #fff; border: 1px solid #E7EBEF; border-left: 5px solid var(--deep);
+  border-radius: 8px; box-shadow: 0 1px 3px rgba(4, 30, 66, 0.06); min-width: 0; }
+.gamemain { display: flex; align-items: center; gap: 18px; padding: 20px 22px; flex-wrap: wrap; }
+/* Opponent + location sit on the left; this block (score if played, then the
+   date/time) is pushed to the right and right-aligned, same as the reference
+   site's schedule rows. */
+.gameresult { margin-left: auto; text-align: right; flex: 0 0 auto; }
+.gameacts { flex: 1 0 100%; display: flex; flex-wrap: wrap; gap: 10px; }
+.gamefoot { border-top: 1px solid #EEF1F4; padding: 8px 22px; display: flex;
+  align-items: center; gap: 12px; flex-wrap: wrap; }
+
+/* Quick look: one row of plain facts, then the goals as a horizontally
+   scrolling strip of cards — not a box score, just who scored. */
+.gameinfo { padding: 14px 22px; display: flex; gap: 20px; flex-wrap: wrap;
+  color: var(--ink); background: #FAFBFC; border-top: 1px solid #EEF1F4; }
+.pbox { border-top: 1px solid #EEF1F4; padding: 16px 22px 18px; background: #FBFCFD; }
+.pbox.stack { display: block; }
+.pboxhead { font-family: var(--body); font-weight: 700; font-size: 11.5px; letter-spacing: 0;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.pboxfoot { margin: 0; font-size: 12.5px; color: var(--muted); }
+.pboxname { background: none; border: 0; padding: 0; cursor: pointer; font: inherit;
+  font-size: 14px; font-weight: 700; color: var(--blue); text-align: left; }
+.pboxname:hover { text-decoration: underline; }
+
+.qlgoals { display: flex; gap: 10px; min-width: 0; overflow-x: auto;
+  scroll-snap-type: x mandatory; scrollbar-width: none; }
+.qlgoals::-webkit-scrollbar { display: none; }
+.qlgoal { flex: 0 0 auto; max-width: 100%; scroll-snap-align: start;
+  display: flex; align-items: center; gap: 12px;
+  background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 13px; }
+.qlphoto { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; flex: 0 0 auto; display: block; }
+.qlphoto img { width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transform: scale(1.35); }
+.qlpager { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 12px; }
+.qlarrow { display: grid; place-items: center; width: 26px; height: 26px; padding: 0;
+  background: none; border: 0; border-radius: 50%; cursor: pointer; color: var(--ink); }
+.qlarrow:not(:disabled):hover { background: var(--ice); }
+.qlarrow:disabled { color: #C6CFD8; cursor: default; }
+.qldots { display: flex; align-items: center; gap: 7px; }
+.qldot { width: 24px; height: 3px; padding: 0; border: 0; border-radius: 999px; background: #D7DDE4; cursor: pointer; }
+.qldot:not(.on):hover { background: #B6C0CB; }
+.qldot.on { background: var(--deep); }
+.qlbody { display: grid; gap: 2px; min-width: max-content; }
+.qlname { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap;
+  white-space: nowrap; font-weight: 800; font-size: 14.5px; color: var(--ink); }
+.qlnum { font-weight: 700; color: var(--muted); }
+.qlassist { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.qlscore { font-size: 12.5px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qlwhen { font-weight: 600; color: var(--muted); margin-left: 7px; }
+.watchbtn { display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+  background: var(--blue); color: #fff; font-family: var(--body); font-weight: 700;
+  font-size: 14px; padding: 8px 16px; border-radius: 999px; }
+.watchbtn:hover { background: var(--mid); }
+/* Same .chh a specificity issue as .navlink/.bNavy elsewhere — .watchbtn is
+   rendered as an <a>, which .chh a { color: inherit } otherwise overrides. */
+a.watchbtn { color: #fff; }
+
+/* One treatment for every <select> on the site, in the body font, with our
+   own chevron so it doesn't fall back to the OS control. */
+.rsel { appearance: none; -webkit-appearance: none;
+  padding: 9px 34px 9px 13px; font-family: var(--body); font-weight: 600; font-size: 14px;
+  letter-spacing: 0; text-transform: none; color: var(--ink); cursor: pointer;
+  border: 1px solid var(--border); border-radius: 8px; background-color: #fff;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5L6 6.5L11 1.5' stroke='%234E6072' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat; background-position: right 12px center; }
+.rsel:hover { border-color: #B9C6D2; }
+.rsel:focus-visible { outline: none; border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(4,30,66,0.16); }
+/* Result tag: a win is the thing worth spotting when scanning a schedule. */
+.rtag { font-weight: 800; }
+.rtag.W { color: var(--gold); }
+.rtag.L { color: var(--loss); }
+.rtag.T { color: var(--tie); }
+/* The small vs/at marker overlapping the opponent crest. Home carries the
+   team colour; away is deliberately recessive, so a glance down the
+   schedule separates the two without reading the words. */
+.vsbadge { width: 26px; height: 26px; border-radius: 50%; background: var(--gold); color: var(--deep);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--body); font-weight: 700; font-size: 11.5px; flex: 0 0 auto; }
+.vsbadge.home { background: var(--blue); color: #fff; }
+.vsbadge.away { background: #DBE0E6; color: #46505A; }
+
+@media (max-width: 640px) {
+  .gamecard { border-left: 1px solid #E7EBEF; border-top: 5px solid var(--deep); }
+}
+@media (max-width: 560px) {
+  .gamemain { flex-direction: column; align-items: center; text-align: center;
+    gap: 10px; padding: 20px 16px 18px; }
+  .gamemain > * { flex: 0 0 auto; max-width: 100%; }
+  .gamemain > span:first-child { transform: scale(1.18); margin-bottom: 8px; }
+  .gameresult { margin-left: 0; text-align: center; }
+  .gamemain .bsm { justify-content: center; }
+  .gamecard .gameacts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    width: 100%; margin-top: 4px; }
+  .gamecard .gameacts > * { width: 100%; justify-content: center; }
+  .gamecard .gameacts > *:only-child { grid-column: 1 / -1; }
+}
+
+/* Roster / staff cards */
+.pcard { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #fff; }
+.pcard-photo { position: relative; background: var(--ice); aspect-ratio: 4 / 5; overflow: hidden; }
+.pcard-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pcard-num { position: absolute; right: 10px; bottom: 10px; background: var(--blue); color: var(--gold);
+  font-family: var(--disp); font-weight: 700; font-size: 16px; padding: 3px 11px; border-radius: 999px; }
+.pcard-body { padding: 14px 16px 16px; }
+.pcard-body .h3 { text-transform: none; }
+.pcard-pos { font-family: var(--disp); font-weight: 600; font-size: 11.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin: 2px 0 10px; }
+.pcard-stats { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+.pcard-stats .statItem { display: flex; flex-direction: column; gap: 2px; }
+.pcard-stats .statLabel { font-family: var(--disp); font-weight: 600; font-size: 10.5px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* ---- Roster: view-type toggle (list / card / table) ---- */
+.vtgroup { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+@media (max-width: 640px) { .vtlabel { display: none; } }
+.vtbtn { width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--border);
+  background: #fff; color: var(--muted); cursor: pointer; display: inline-flex;
+  align-items: center; justify-content: center; }
+.vtbtn.on { background: var(--deep); color: #fff; border-color: var(--deep); }
+
+/* ---- Roster: position-group headers (list view) ---- */
+.posgroup { display: flex; align-items: center; gap: 10px; margin: 0 0 12px;
+  font-family: var(--body); font-weight: 750; font-size: 1.15rem; letter-spacing: -0.015em;
+  color: var(--blue); border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+.posgroupn { font-family: var(--body); font-size: 12px; font-weight: 700;
+  color: var(--muted); background: var(--ice); border-radius: 999px; padding: 2px 9px; }
+
+.fullbio { background: none; border: 0; cursor: pointer; color: var(--blue);
+  font-family: var(--body); font-weight: 800; font-size: 15px; margin-left: auto;
+  display: inline-flex; gap: 8px; align-items: center; flex: 0 0 auto; text-decoration: none; }
+.fullbio:hover { text-decoration: underline; }
+
+/* ---- Roster: list view rows (reuses .gamecard/.gamemain's layout) ---- */
+.numbadge { position: absolute; left: -6px; bottom: -4px; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--deep); color: #fff; display: inline-flex;
+  align-items: center; justify-content: center; font-family: var(--body); font-weight: 700;
+  font-size: 12px; border: 2px solid #fff; }
+.numbadge-lg { left: 12px; top: 12px; bottom: auto; width: 36px; height: 36px; font-size: 15px; }
+@media (min-width: 561px) {
+  .gamemain > .rostname { flex: 1 1 200px; min-width: 0; }
+  .gamemain > .rosthome { flex: 1 1 220px; min-width: 0; }
+}
+
+/* ---- Roster: table view ---- */
+.twrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px;
+  scrollbar-width: none; -ms-overflow-style: none; }
+.twrap::-webkit-scrollbar { display: none; }
+table.stats { width: 100%; border-collapse: collapse; min-width: 620px; background: #fff; }
+table.stats th { background: #F4F7F9; color: var(--blue); font-family: var(--body);
+  font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  text-align: left; padding: 11px 14px; }
+table.stats td { padding: 13px 16px; border-top: 1px solid #EDF1F4; font-size: 14.5px; }
+table.stats tbody tr:nth-child(even) { background: #FAFBFC; }
+table.stats tbody tr:hover { background: #F1F5F8; }
+table.stats.sortable th { padding: 0; }
+.sortbtn { display: inline-flex; align-items: center; gap: 6px; width: 100%;
+  background: none; border: 0; cursor: pointer; font: inherit; color: inherit;
+  padding: 12px 16px; letter-spacing: inherit; text-transform: inherit; }
+.sortbtn:hover { color: var(--blue); background: rgba(4,30,66,0.04); }
+.sortcaret { font-size: 9px; opacity: 0.28; line-height: 1; }
+.sortbtn.on { color: var(--blue); }
+.sortbtn.on .sortcaret { opacity: 1; color: var(--gold); }
+.pcard-stats .statValue { font-family: var(--body); font-weight: 700; font-size: 13.5px; color: var(--ink); }
+
+/* Hockey Ops Staff — lead coach banner + card grid, same shape the roster's
+   card view uses so the two pages read as the same site. */
+.leadstaff { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 0; background: #fff;
+  border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.leadphoto { position: relative; background: var(--ice); min-height: 340px; }
+.leadphoto .stphoto { position: absolute; inset: 0; }
+.leadbody { padding: 30px 34px; align-self: center; }
+.leadname { font-family: var(--body); font-weight: 800; font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  letter-spacing: -0.02em; color: var(--ink); margin: 6px 0 4px; }
+.leadcontact { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 18px;
+  margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--border); max-width: 420px; }
+.leadcontact dt { font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); align-self: center; }
+.leadcontact dd { margin: 0; font-size: 14px; font-weight: 650; }
+.leadcontact a { color: var(--blue); text-decoration: none; }
+.leadcontact a:hover { text-decoration: underline; }
+@media (max-width: 560px) {
+  /* Same shape as a plain .staffcard below this width — full-width photo
+     on top, body underneath — rather than the side-by-side feature layout,
+     which left no room for the text next to a fixed photo column. */
+  .leadstaff { grid-template-columns: 1fr; }
+  .leadphoto { min-height: 230px; }
+  .leadbody { padding: 15px 16px 17px; align-self: stretch; }
+  .leadname { font-size: 16.5px; margin: 4px 0 0; }
+  .leadcontact { grid-template-columns: 1fr; gap: 0; margin-top: 8px; padding-top: 0; border-top: 0; max-width: none; }
+  .leadcontact dt { display: none; }
+  .leadcontact dd { display: block; margin-top: 8px; font-size: 12.5px; font-weight: 700; overflow-wrap: anywhere; }
+}
+
+.staffsec { margin-top: 36px; }
+.staffseclab { font-family: var(--body); font-weight: 750; font-size: 1.15rem; letter-spacing: -0.015em;
+  color: var(--blue); margin: 0 0 14px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--gold); display: flex; align-items: center; gap: 10px; }
+.staffsecn { font-family: var(--body); font-weight: 700; font-size: 11.5px;
+  color: var(--muted); background: var(--ice); border-radius: 999px; padding: 2px 9px; }
+.staffgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+@media (max-width: 1040px) { .staffgrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .staffgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .staffgrid { grid-template-columns: 1fr; } }
+.staffcard { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.staffwell { position: relative; height: 230px; background: var(--ice); }
+.stphoto { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.stmono { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--body); font-weight: 800; font-size: 46px; letter-spacing: 0.02em;
+  color: var(--blue); opacity: 0.26; background: var(--ice); }
+.staffbody { padding: 15px 16px 17px; }
+.staffname { margin: 0; font-weight: 800; font-size: 16.5px; color: var(--ink); line-height: 1.25; }
+.stafftitle { margin: 4px 0 0; font-size: 12.5px; font-weight: 700; color: var(--blue); line-height: 1.35; }
+.staffcard .staffmail + .staffmail { display: block; margin-top: 2px; }
+.staffmail { display: block; margin-top: 8px; font-size: 12.5px; font-weight: 700;
+  color: var(--blue); text-decoration: none; overflow-wrap: anywhere; }
+.staffmail:hover { text-decoration: underline; }
+
+/* Front office directory */
+.frontoffice { background: #fff; min-height: 60vh; }
+.fohero { background: #fff; color: var(--blue); padding: 36px 0 0; }
+.fohero .pagetitle { margin-bottom: 0; }
+.focontent { padding-top: 32px; padding-bottom: 64px; }
+.fosection + .fosection { margin-top: 30px; }
+.fosection > h2 { margin: 0; padding: 13px 16px; background: var(--deep); color: #fff;
+  font-size: 15px; font-weight: 750; text-transform: uppercase; }
+.fotable { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 14px; }
+.fotable th, .fotable td { border: 1px solid var(--border); padding: 12px 16px; text-align: left;
+  line-height: 1.45; overflow-wrap: anywhere; }
+.fotable tbody th { color: var(--blue); font-weight: 650; }
+.fotable tbody td { color: var(--muted); }
+.fotable tbody tr:nth-child(even) { background: #F8FAFC; }
+@media (max-width: 640px) {
+  .focontent { padding-top: 20px; }
+  .fotable th, .fotable td { padding: 10px 12px; }
+}
+
+/* ---- Recruits ---- */
+.recintro { font-size: 16.5px; line-height: 1.65; color: var(--muted); margin: 10px 0 28px; max-width: 680px; }
+.recgrid2 { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.reccard { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; margin-bottom: 14px; }
+.rectitle { font-family: var(--body); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 10px; }
+.recbody .artp { font-size: 15px; color: var(--ink); line-height: 1.6; margin: 0 0 12px; }
+.recside { position: sticky; top: 96px; }
+
+/* ---- Article detail page ---- */
+.artcover { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-radius: 12px; margin: 18px 0 0; }
+.artbyline { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  margin: 16px 0 22px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.artbylinewho { margin: 0; font-size: 13.5px; font-weight: 650; color: var(--muted); }
+.artp { font-size: 17px; line-height: 1.68; color: var(--ink); margin: 0 0 18px; }
+.artlabel { font-family: var(--disp); font-weight: 700; font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin: 0; }
+.artmore { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit;
+  padding: 10px; border-radius: 8px; }
+.artmore:hover { background: var(--ice); }
+.artmorethumb { width: 64px; height: 44px; border-radius: 6px; overflow: hidden; flex: 0 0 auto; background: var(--ice); }
+.artmorethumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.artmoretext { flex: 1 1 auto; min-width: 0; }
+.artmoretitle { display: block; font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.artmoredate { font-size: 12.5px; color: var(--muted); flex: 0 0 auto; white-space: nowrap; }
+.recfacts { display: grid; grid-template-columns: auto 1fr; gap: 9px 16px; margin: 0; font-size: 14px; }
+.recfacts dt { color: var(--muted); font-weight: 600; }
+.recfacts dd { margin: 0; color: var(--ink); font-weight: 700; }
+.reccta { border-left: 4px solid var(--gold); }
+@media (max-width: 860px) {
+  .recgrid2 { grid-template-columns: 1fr; }
+  .recside { position: static; }
+}
+
+/* ---- Game Center: play-by-play (goals only — the feed has no fuller log) ---- */
+.gcpbp { margin-top: 20px; }
+.gcfilters { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.gcfilter { display: grid; gap: 6px; min-width: 168px; }
+.gcfilter .h6 { color: var(--muted); }
+.gcfilter select { width: 100%; appearance: none; -webkit-appearance: none;
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  padding: 11px 38px 11px 14px; font: inherit; font-size: 14.5px; font-weight: 650;
+  color: var(--ink); cursor: pointer; line-height: 1.2;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234E6072' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; }
+.gcfilter select:hover { border-color: var(--blue); }
+
+.gcplays { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #fff; }
+.pbgoal { border-top: 1px solid var(--border); }
+.gcplays > .pbgoal:first-child { border-top: 0; }
+.pbgoalbar { position: relative; display: grid; place-items: center; padding: 12px 14px; color: #fff; }
+.pbgoalcore { position: relative; display: grid; justify-items: center; gap: 5px; }
+.pbgoalscore { display: flex; align-items: center; gap: 24px; }
+.pbgoalside { display: inline-flex; align-items: center; gap: 10px; opacity: 0.5; }
+.pbgoalside.on { opacity: 1; }
+.pbgoallight { width: 26px; height: 26px; border-radius: 50%; background: #E4002B;
+  display: grid; place-items: center; flex: 0 0 auto;
+  box-shadow: 0 0 0 4px rgba(228, 0, 43, 0.22); }
+.pbgoallogo { width: 22px; height: 22px; object-fit: contain; }
+.pbgoalnum { font-family: var(--disp); font-weight: 700; font-size: 23px; line-height: 1; }
+.pbgoallab { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.pbrow { display: flex; align-items: center; gap: 14px; padding: 14px 16px; }
+.pbrow.goal .pbtitle { color: #fff; font-size: 15px; }
+.pbrow.goal .pbdetail { color: rgba(255,255,255,0.85); }
+.pbrow.goal .pbper { color: rgba(255,255,255,0.75); }
+.pbrow.goal .pbstr { border-color: rgba(255,255,255,0.6); }
+.pbtime { display: grid; justify-items: center; gap: 3px; flex: 0 0 48px; }
+.pbclock { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 5px;
+  padding: 2px 7px; font-weight: 800; font-size: 12px; font-variant-numeric: tabular-nums; color: #fff; }
+.pbper { font-size: 10.5px; font-weight: 700; }
+.pblogo { width: 26px; height: 26px; object-fit: contain; flex: 0 0 auto; }
+.pbbody { min-width: 0; display: grid; gap: 2px; }
+.pbtitle { font-weight: 800; font-size: 14.5px; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pbdetail { font-size: 13px; font-weight: 600; color: var(--muted); }
+.pbstr { font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; border: 1px solid currentColor;
+  border-radius: 4px; padding: 1px 5px; }
+
+/* ---- Game Center ---- */
+.gchead { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+.gctitle { margin: 0; font-family: var(--body); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.025em; color: var(--ink); }
+
+.gcbanner { position: relative; overflow: hidden; background: #fff; border: 1px solid var(--border); border-radius: 14px; }
+.gcslash { position: absolute; top: 0; bottom: 0; width: 76px; }
+.gcslash.left { left: 0; clip-path: polygon(0 0, 100% 0, 46% 100%, 0 100%); background: var(--blue); }
+.gcslash.right { right: 0; clip-path: polygon(54% 0, 100% 0, 100% 100%, 0 100%); background: #8A94A0; }
+.gcbannerinner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center; gap: 0; padding: 18px 84px; }
+.gcteam { display: flex; align-items: center; gap: 0; min-width: 0; }
+.gcteam.left { justify-content: flex-start; }
+.gcteam.right { justify-content: flex-end; }
+.gcid { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.gcteam.right .gcid { flex-direction: row-reverse; text-align: right; }
+.gclogo { width: 46px; height: 46px; object-fit: contain; flex: 0 0 auto; }
+.gcnames { display: grid; min-width: 0; }
+.gcabbr { font-size: 12px; font-weight: 650; color: var(--muted); line-height: 1.2; }
+.gcname { font-family: var(--body); font-weight: 800; font-size: 19px; letter-spacing: -0.02em;
+  color: var(--ink); line-height: 1.15; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gcsog { font-size: 11.5px; font-weight: 650; color: var(--muted); margin-top: 2px; }
+.gcscore { font-family: var(--disp); font-weight: 700; font-size: 46px; line-height: 1;
+  color: var(--ink); font-variant-numeric: tabular-nums; flex: 0 0 auto; margin-left: auto; margin-right: auto; }
+.gcscore.beaten { color: var(--muted); }
+.gcmid { display: grid; justify-items: center; gap: 5px; flex: 0 0 auto; }
+.gcchip { font-family: var(--body); font-weight: 700; font-size: 11.5px; letter-spacing: 0.02em;
+  background: var(--ice); border-radius: 5px; padding: 4px 10px; color: var(--ink); white-space: nowrap; }
+/* A direct grid child of .gcbannerinner (not nested in .gcmid) so it can
+   become its own full-width row on mobile; on desktop it's placed back
+   under the chip, in the same spot it always read visually. */
+.gcwhen { grid-column: 2; grid-row: 2; justify-self: center; margin-top: 5px;
+  font-size: 12.5px; font-weight: 650; color: var(--muted); white-space: nowrap; }
+@media (max-width: 900px) { .gcname { white-space: normal; overflow: visible; } }
+/* Not enough width here for logo + abbr + name + SOG + a 46px score side by
+   side without them colliding — the name and SOG line are the two that can
+   go without losing the banner's point (team + score). The nickname goes
+   too at this width; logo + score is what's left. The slash shapes shrink
+   too, so the side padding can come down with them and still clear the
+   colour — padding alone, without narrowing the slash, would run the
+   logo/score right up against it. */
+@media (max-width: 560px) {
+  .gcnames { display: none; }
+  .gcslash { width: 40px; }
+  .gcbannerinner { padding: 16px 48px; }
+  /* Off the team row entirely and onto its own line below, so the chip
+     doesn't have to share the middle column with it, and the two team
+     columns — now just a logo and a score — space themselves edge to
+     edge instead of the score drifting wherever its auto margins land. */
+  .gcwhen { grid-column: 1 / -1; grid-row: 2; margin-top: 10px; font-size: 10.5px; }
+  .gcteam { justify-content: space-between; }
+  .gcscore { margin-left: 0; margin-right: 0; }
+}
+
+.gctabs { display: flex; gap: 4px; margin: 18px 0 0; border-bottom: 1px solid var(--border); }
+.gctab { background: none; border: 0; cursor: pointer; font: inherit; font-weight: 700;
+  font-size: 14.5px; color: var(--muted); padding: 12px 16px; position: relative; }
+.gctab:hover { color: var(--ink); }
+.gctab.on { color: var(--ink); }
+.gctab.on::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px;
+  height: 3px; background: var(--gold); border-radius: 3px 3px 0 0; }
+
+.gcgrid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 20px; }
+.gccol { display: grid; gap: 18px; min-width: 0; }
+.gccol .statcard { border: 0; box-shadow: none; }
+@media (max-width: 860px) { .gcgrid { grid-template-columns: 1fr; } }
+.gcpad { padding: 20px 22px; }
+.gcnone { color: var(--muted); margin: 0; }
+
+.gcperiod + .gcperiod { margin-top: 20px; }
+.gcperiodlab { margin: 0 0 10px; font-family: var(--body); font-weight: 700; font-size: 12px; color: var(--muted); }
+.gcgoal { display: flex; align-items: center; gap: 14px; border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+.gcgoal + .gcgoal { margin-top: 8px; }
+.gcavatar { width: 46px; height: 46px; border-radius: 50%; overflow: hidden;
+  background: var(--ice); flex: 0 0 auto; display: block; }
+.gcavatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transform: scale(1.35); }
+.gcgoalnum { font-weight: 700; color: var(--muted); }
+.gcgoalwho { flex: 1 1 auto; min-width: 0; display: grid; gap: 3px; }
+.gcgoalname { font-weight: 800; font-size: 15px; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.gcgoalmark { width: 17px; height: 17px; object-fit: contain; flex: 0 0 auto; }
+.gcstrength { font-family: var(--body); font-weight: 700; font-size: 9.5px; letter-spacing: 0.02em;
+  background: rgba(228,0,43,0.1); color: #E4002B; border-radius: 4px; padding: 2px 6px; }
+.gcgoalassist { font-size: 13px; color: var(--muted); display: flex; align-items: center; }
+.gcgoalcell { flex: 0 0 auto; display: grid; justify-items: center; gap: 2px; background: var(--ice);
+  border-radius: 8px; padding: 7px 12px; min-width: 74px; }
+.gccellval { font-weight: 800; font-size: 13.5px; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gccelllab { font-size: 10px; font-weight: 650; color: var(--muted); }
+@media (max-width: 560px) {
+  .gcgoal { flex-wrap: wrap; gap: 8px 12px; padding: 12px; }
+  .gcgoalwho { flex: 1 1 55%; }
+  .gcgoalcell { justify-items: start; text-align: left; }
+}
+
+table.stats.gcline { table-layout: fixed; min-width: 0; }
+table.stats.gcline th, table.stats.gcline td { padding: 8px 4px; text-align: center; }
+table.stats.gcline th:first-child, table.stats.gcline td:first-child { text-align: left; width: 34%; padding-left: 14px; }
+table.stats.gcline th:last-child, table.stats.gcline td:last-child { padding-right: 0; }
+.gclineteam { display: inline-flex; align-items: center; gap: 7px; }
+.gclineth { display: inline-flex; align-items: center; gap: 5px; justify-content: center; }
+.gclinelogo { width: 18px; height: 18px; object-fit: contain; flex: 0 0 auto; }
+.gcgrid table.stats th, .gcbox table.stats th { text-transform: none; letter-spacing: 0; font-size: 12px; font-weight: 650; }
+table.stats.gcpen th, table.stats.gcpen td { padding: 8px 6px; text-align: left; }
+table.stats.gcpen th:last-child, table.stats.gcpen td:last-child { text-align: center; }
+
+.gcstatshead { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.gcstatshead .statsec { flex: 1 1 auto; text-align: center; }
+.gcstatslogo { width: 30px; height: 30px; object-fit: contain; flex: 0 0 auto; }
+.gcbar { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 10px;
+  align-items: baseline; padding-bottom: 14px; margin-bottom: 14px;
+  border-bottom: 1px solid var(--border); }
+.gcbar:last-of-type { border-bottom: 0; }
+.gcbarval { font-family: var(--body); font-weight: 800; font-size: 22px; letter-spacing: -0.02em;
+  color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.gcbarval.right { text-align: right; }
+.gcbarlab { text-align: center; font-size: 12.5px; font-weight: 650; color: var(--muted); align-self: center; }
+.gcbartrack { grid-column: 1 / -1; display: flex; height: 9px; margin-top: 8px; }
+.gcbarfill { display: block; }
+.gcbarfill.left { clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 100%, 0 100%); }
+.gcbarfill.right { clip-path: polygon(7px 0, 100% 0, 100% 100%, 0 100%); }
+.gcbarnone { flex: 1 1 auto; background: var(--ice); }
+.gcbar.unrecorded .gcbarval { color: var(--muted); font-weight: 700; }
+
+/* Season series */
+.gcserieslead { float: right; font-family: var(--body); font-size: 12px; font-weight: 700;
+  color: var(--muted); letter-spacing: 0; text-transform: none; }
+.gcseries { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 10px; }
+.gcmeeting { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px 0; background: #fff; }
+.gcmeeting.on { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+.gcmrow { display: flex; align-items: center; gap: 8px; padding: 3px 0; }
+.gcmlogo { width: 20px; height: 20px; object-fit: contain; flex: 0 0 auto; }
+.gcmteam { font-weight: 800; font-size: 13.5px; color: var(--ink); letter-spacing: -0.01em; }
+.gcmscore { margin-left: auto; font-weight: 800; font-size: 15px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.gcmrow.lost .gcmteam, .gcmrow.lost .gcmscore { color: var(--muted); font-weight: 700; }
+.gcmrow.lost .gcmlogo { opacity: 0.55; }
+.gcmfoot { display: flex; justify-content: space-between; gap: 8px; margin: 8px -12px 0;
+  padding: 7px 12px; border-top: 1px solid var(--border);
+  font-family: var(--body); font-weight: 600; font-size: 11.5px; letter-spacing: 0; color: var(--muted); }
+
+/* ---- Game preview (scheduled games) ---- */
+.gpseason { margin: -4px 0 16px; }
+.gpnote { margin-top: 14px; }
+.gcbar.norail { padding-bottom: 12px; }
+
+/* Players to watch — .h2hbar overrides .gcbar's 3-col grid into a 7-col "bookend" layout */
+.h2hbar { grid-template-columns: auto minmax(0,1fr) auto minmax(74px,auto) auto minmax(0,1fr) auto;
+  gap: 4px 12px; align-items: center; }
+.h2hbar > .h2hpic { grid-area: 1 / 1 / 2 / 2; }
+.h2hbar > .h2hwho { grid-area: 1 / 2 / 2 / 3; }
+.h2hbar > .h2hnum { grid-area: 1 / 3 / 2 / 4; }
+.h2hbar > .gcbarlab { grid-area: 1 / 4 / 2 / 5; }
+.h2hbar > .h2hnum.right { grid-area: 1 / 5 / 2 / 6; }
+.h2hbar > .h2hwho.right { grid-area: 1 / 6 / 2 / 7; }
+.h2hbar > .h2hpic.right { grid-area: 1 / 7 / 2 / 8; }
+.h2hbar > .gcbartrack { grid-area: 2 / 1 / 3 / 8; margin-top: 10px; }
+.h2hnum { font-family: var(--body); font-weight: 800; font-size: 28px; letter-spacing: -0.02em;
+  color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1; text-align: right; }
+.h2hnum.right { text-align: left; }
+.h2hpic { display: flex; align-items: center; background: none; border: 0; padding: 0; }
+.h2hmark { width: 38px; height: 38px; object-fit: contain; flex: 0 0 auto; }
+.h2hwho { display: flex; flex-direction: column; gap: 1px; min-width: 0; background: none;
+  border: 0; padding: 0; text-align: left; align-items: flex-start; }
+.h2hwho.right { text-align: right; align-items: flex-end; }
+.h2hname { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; max-width: 100%; }
+.h2hfirst { font-size: 12px; font-weight: 500; color: var(--muted); }
+.h2hlast { font-size: 14.5px; font-weight: 800; color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
+.h2hwho.unknown .h2hlast { color: var(--muted); font-weight: 700; }
+.h2hpos { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+
+/* Goaltending */
+.gtblock + .gtblock { margin-top: 22px; }
+.gtband { padding: 4px 2px 8px; }
+.gtbandmark { display: flex; align-items: center; gap: 10px; }
+.gtbandname { font-weight: 800; font-size: 13px; color: var(--muted); }
+.gtrow { display: grid; grid-template-columns: minmax(0, 1fr) repeat(4, minmax(52px, 74px));
+  align-items: center; gap: 10px; width: 100%; text-align: left; background: none; border: 0;
+  border-bottom: 1px solid var(--border); padding: 12px 16px; }
+.gtrow:last-child { border-bottom: 0; }
+.gtwho { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.gtmark { width: 44px; height: 44px; object-fit: contain; flex: 0 0 auto; }
+.gtnames { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; }
+.gtfirst { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+.gtlast { font-size: 15px; font-weight: 800; color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
+.gtnum { font-size: 11px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+.gtstat { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.gtstat strong { font-family: var(--body); font-weight: 800; font-size: 17px; color: var(--ink);
+  letter-spacing: -0.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.gtstatlab { font-size: 10px; font-weight: 700; color: var(--muted); margin-top: 2px; }
+@media (max-width: 620px) {
+  .gtrow { grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 4px; }
+  .gtwho { grid-column: 1 / -1; }
+}
+
+/* Roster (preview) */
+.twrap.bare { border: 0; border-radius: 0; }
+
+/* Game info */
+.gcinfo { display: grid; grid-template-columns: auto 1fr; gap: 11px 22px; margin: 0;
+  font-size: 13.5px; align-items: baseline; }
+.gcinfo dt { font-weight: 500; color: var(--muted); white-space: nowrap; }
+.gcinfo dd { margin: 0; font-weight: 600; color: var(--ink); min-width: 0; overflow-wrap: anywhere; }
+
+.gameinfo { border-top: 1px solid #EEF1F4; padding: 14px 22px; display: flex; gap: 20px;
+  flex-wrap: wrap; color: var(--ink); background: #FAFBFC; border-radius: 0 0 8px 8px; }
+.gfmore { font-weight: 700; display: inline-flex; gap: 7px; align-items: center;
+  padding-left: 14px; border-left: 1px solid #E7EBEF; background: none; border-top: 0; border-right: 0; border-bottom: 0;
+  cursor: pointer; color: var(--deep); font-family: var(--body); font-size: 14px; }
+.gb-link { background: none; border: 0; cursor: pointer; color: var(--deep);
+  font-family: var(--body); font-weight: 600; font-size: 15px; padding: 4px 0; }
+.gb-link:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .gameinfo { padding: 14px 16px; }
+  .gfmore { padding-left: 0; border-left: 0; }
+}
+
+.gcbox { margin-top: 22px; }
+.gcboxsec { padding-left: 0; padding-right: 0; }
+.gcboxsec + .gcboxsec { border-top: 1px solid var(--border); margin-top: 20px; padding-top: 20px; }
+.gcbox .gpsides { margin-bottom: 18px; }
+.gcbox .gpside { padding: 10px 20px; }
+.gpsides { display: inline-flex; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 3px; gap: 2px; }
+.gpside { display: inline-flex; align-items: center; gap: 8px; background: none; border: 0;
+  cursor: pointer; border-radius: 8px; padding: 8px 15px; font: inherit; font-weight: 650; font-size: 13.5px; color: var(--muted); }
+.gpside:hover { color: var(--ink); }
+.gpside.on { background: var(--blue); color: #fff; }
+table.stats.gcbt { width: 100%; table-layout: fixed; min-width: 560px; }
+.gcbtname { font-weight: 700; }
+.gcbtspot { font-weight: 500; color: var(--ink); }
+.gcbtpts { font-weight: 800; color: var(--ink); }
+
+/* ---- Stats page: tabbed card ---- */
+.statcard { background: #fff; border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(16,32,47,0.04); margin-top: 22px; overflow: hidden; }
+.stattabs { display: flex; gap: 4px; padding: 0 8px; border-bottom: 1px solid var(--border);
+  overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+.stattabs::-webkit-scrollbar { display: none; }
+.stattab { position: relative; background: none; border: 0; cursor: pointer; white-space: nowrap;
+  font-family: var(--body); font-weight: 650; font-size: 14px; color: var(--muted);
+  padding: 15px 14px; letter-spacing: -0.01em; }
+.stattab:hover { color: var(--ink); }
+.stattab.on { color: var(--blue); }
+.stattab.on::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px;
+  height: 3px; background: var(--gold); border-radius: 3px 3px 0 0; }
+@media (max-width: 560px) { .stattab { font-size: 13px; } }
+
+.statfilter { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 16px 20px; background: #FBFCFD; border-bottom: 1px solid var(--border); }
+.statfilterlab { font-family: var(--body); font-weight: 600; font-size: 12px;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.statseg { display: inline-flex; background: var(--ice); border: 1px solid var(--border);
+  border-radius: 9px; padding: 3px; gap: 2px; }
+.statsegbtn { background: none; border: 0; cursor: pointer; border-radius: 7px;
+  font-family: var(--body); font-weight: 600; font-size: 13px; color: var(--muted);
+  padding: 7px 15px; white-space: nowrap; }
+.statsegbtn:hover { color: var(--ink); }
+.statsegbtn.on { background: #fff; color: var(--blue); box-shadow: 0 1px 2px rgba(16,32,47,0.12); }
+
+.statbody { padding: 26px 22px; }
+.statsec { font-family: var(--body); font-weight: 750; font-size: 1.15rem; letter-spacing: -0.015em;
+  color: var(--blue); margin: 0 0 16px; }
+.statnote { margin: 10px 2px 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.recsub { margin: 4px 0 0; font-size: 12px; font-weight: 700; color: var(--muted); }
+.statname { display: inline-flex; align-items: center; gap: 10px; background: none; border: 0;
+  padding: 0; cursor: pointer; font: inherit; font-weight: 700; color: var(--blue); text-align: left; }
+.statname span { white-space: nowrap; }
+table.stats.statstable th { background: var(--deep); color: #fff; }
+/* .sortbtn.on sets navy text for the pale-grey header .stats tables use
+   elsewhere (Roster) — on this table's navy header that's navy-on-navy, which
+   reads as a grey smear instead of a highlight. Gold is the active-state
+   colour the rest of the navy UI already uses (nav, tabs), so it reads as
+   "selected" here the same way it does everywhere else. */
+table.stats.statstable .sortbtn.on { color: var(--gold); }
+/* Same navy-on-navy problem on hover: .sortbtn:hover turns the text navy and
+   washes in a faint navy tint, both invisible on this table's own navy
+   header, so it read as the whole cell just going a flat dark grey. White
+   text stays, and the wash goes light instead of navy. */
+table.stats.statstable .sortbtn:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+.statstable tfoot td { font-weight: 800; background: #F1F5F8; color: var(--ink); border-top: 2px solid #D8E0E8; }
+
+/* Game-by-game rows */
+.l5row { cursor: default; }
+.l5row:hover td { background: var(--ice); }
+
+/* Category leaders */
+.cleadcat { margin: 0 0 14px; font-weight: 800; font-size: 17px; color: var(--blue); }
+.cleadphoto { width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
+  flex: 0 0 auto; background: var(--ice); display: block; }
+.cleadphoto-sm { width: 24px; height: 24px; border-radius: 50%; overflow: hidden;
+  flex: 0 0 auto; background: var(--ice); display: block; }
+.cleadphoto img, .cleadphoto-sm img { width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transform: scale(1.35); }
+.cleadtop { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  background: none; border: 0; cursor: pointer; padding: 0 0 14px; margin-bottom: 10px;
+  border-bottom: 1px solid var(--border); }
+.cleadtopwho { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
+.cleadtopname { font-weight: 800; font-size: 16px; color: var(--ink); line-height: 1.2; }
+.cleadtop:hover .cleadtopname { color: var(--blue); }
+.cleadtopmeta { font-size: 11.5px; font-weight: 600; color: var(--muted); }
+.cleadtopval { font-family: var(--body); font-weight: 800; font-size: 30px; color: var(--blue); }
+.cleadrow { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-weight: 600; }
+.cleadrank { color: var(--muted); width: 22px; flex: 0 0 auto; }
+.cleadrow .statname { min-width: 0; }
+.cleadrow .statname span { overflow: hidden; text-overflow: ellipsis; }
+.cleadval { font-weight: 800; color: var(--blue); font-variant-numeric: tabular-nums; margin-left: auto; }
+
+/* ---- Venue ---- */
+.veneyebrow { font-family: var(--body); font-weight: 700; font-size: 12px; color: var(--muted); margin: 0 0 6px; }
+.venfacts { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 18px 0 0; }
+.venfact { display: inline-flex; align-items: center; gap: 9px; color: var(--ink);
+  font-weight: 600; font-size: 14.5px; text-decoration: none; }
+.venfact svg { color: var(--blue); flex: 0 0 auto; }
+.venfact:hover { color: var(--blue); }
+.venabout { margin-top: 22px; max-width: 68ch; }
+.venabout p { color: var(--ink); line-height: 1.7; margin: 0 0 14px; }
+.venhead { font-family: var(--disp); font-weight: 700; font-size: 26px; letter-spacing: 0.01em;
+  color: var(--ink); margin: 38px 0 4px; }
+.vengrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 18px; }
+.vencard { border: 1px solid var(--border); border-radius: 12px; background: #fff; padding: 18px 20px 6px; }
+.venmode { display: flex; align-items: center; gap: 10px; }
+.venicon { display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 999px; background: var(--gold); color: var(--deep); flex: 0 0 auto; }
+.venmodename { margin: 0; font-size: 16px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+.venbody p { color: var(--muted); font-size: 14px; line-height: 1.65; margin: 10px 0 0; }
+.venmapbtn { margin-top: 26px; }
+
+/* ---- Volunteers ---- */
+.volintro { font-size: 16.5px; line-height: 1.65; color: var(--muted); margin: 10px 0 28px; max-width: 640px; }
+.volfoot { margin-top: 24px; padding: 24px; background: #fff; border: 1px dashed var(--border); border-radius: 12px; }
+
+/* ---- Player bio page ---- */
+.backbar { padding-top: 22px; }
+.backlink { display: inline-flex; align-items: center; gap: 6px; background: none;
+  border: 0; padding: 6px 10px 6px 0; margin: 0 0 4px -2px; cursor: pointer;
+  font-family: var(--body); font-weight: 600; font-size: 13.5px; color: var(--muted);
+  border-radius: 6px; transition: color 0.15s; text-decoration: none; }
+.backlink:hover { color: var(--blue); }
+.backlink svg { flex: 0 0 auto; }
+.pptop { overflow: hidden; padding: 0; }
+.pphead { display: flex; align-items: center; gap: 16px; padding: 18px 24px; flex-wrap: wrap; }
+.ppname { margin: 0; font-family: var(--body); font-weight: 800; font-size: 30px;
+  letter-spacing: -0.02em; color: var(--ink); }
+.ppdiv { width: 1px; align-self: stretch; min-height: 26px; background: var(--border); }
+.ppnum, .pppos { font-family: var(--body); font-weight: 800; font-size: 24px; color: var(--ink); }
+.ppsiblings { margin-left: auto; display: flex; gap: 18px; }
+.ppbanner { height: 160px; background: linear-gradient(180deg, #0B2440 0%, #041E42 55%, #02101F 100%); }
+.ppinfo { display: grid; grid-template-columns: auto 1fr; gap: 0 26px; padding: 0 24px 24px; align-items: start; }
+.ppshot { display: block; width: 148px; height: 148px; margin-top: -74px; border-radius: 50%;
+  overflow: hidden; background: var(--ice); box-shadow: 0 0 0 4px #fff; flex: 0 0 auto; }
+.ppshot img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+  transform: scale(1.35); }
+.ppvitals { grid-column: 1; padding-top: 16px; font-size: 13.5px; line-height: 1.55; }
+.ppvitals p { margin: 0; color: var(--ink); white-space: nowrap; }
+.ppvitals b { font-weight: 700; color: var(--ink); }
+.ppcards { grid-column: 2; grid-row: 1 / span 2; display: grid; gap: 12px;
+  align-content: start; padding-top: 18px; min-width: 0; }
+.ppcard { display: flex; align-items: center; gap: 8px; background: var(--ice);
+  border-radius: 12px; padding: 14px 18px; flex-wrap: wrap; }
+.ppcardname { flex: 1 1 auto; min-width: 0; font-weight: 800; font-size: 16px; color: var(--ink); }
+.ppcell { flex: 0 0 auto; display: grid; justify-items: center; gap: 2px; min-width: 54px; }
+.ppcellk { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.ppcellv { font-family: var(--disp); font-weight: 700; font-size: 24px; line-height: 1;
+  color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) {
+  .ppinfo { grid-template-columns: 1fr; }
+  .ppcards { grid-column: 1; grid-row: auto; }
+  .pphead { padding: 16px 18px; }
+  .ppinfo { padding: 0 18px 20px; }
+}
+
+/* ---- Legal pages (Terms / Privacy / Accessibility): plain prose, nothing
+   else on the screen. Sentence-case headings suit a page of prose better
+   than the tracked caps the news/article renderer normally uses. */
+.legalbody { margin-top: 18px; }
+.legalbody .arth3 { font-family: var(--body); font-weight: 800; font-size: 18px;
+  letter-spacing: -0.01em; color: var(--ink); margin: 30px 0 8px; }
+.legalbody .arth3:first-child { margin-top: 0; }
+.legalbody p { color: var(--ink); line-height: 1.75; margin: 0 0 14px; }
+
+/* ---- Footer (Sidearm stack: partners / copyright / affiliates / legal) ---- */
+.fband-navy { background: var(--deep); margin-top: auto; }
+.fpartners { display: flex; gap: 46px; align-items: center; justify-content: center;
+  flex-wrap: wrap; padding: 38px 24px; }
+.gbmark { height: 34px; }
+@media (min-width: 560px) { .gbmark { height: 52px; } }
+.fband-gold { background: var(--gold); padding: 16px 24px; }
+.fcopy { margin: 0; font-weight: 700; color: var(--deep); text-align: center; font-size: 14.5px; }
+.fband-gray { background: #fff; display: flex; justify-content: center; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border); }
+.faffil { color: #8A94A0; font-family: var(--body); font-weight: 700; font-size: 15px;
+  padding: 34px 30px; border-left: 1px solid var(--border);
+  display: inline-flex; align-items: center; text-decoration: none; }
+.faffil:first-child { border-left: 0; }
+/* One tone for the whole row, arrived at by draining colour from each mark the
+   same way rather than restoring each one's own brand colour. */
+.faffilmark { display: block; height: 26px; width: auto; filter: brightness(0);
+  opacity: 0.42; transition: opacity 0.18s; }
+a.faffil:hover .faffilmark { opacity: 0.82; }
+.faffilmark.tall { height: 34px; }
+.faffilmark.crest { height: 46px; fill: #8A94A0; opacity: 0.42; transition: opacity 0.18s; }
+a.faffil:hover .faffilmark.crest { opacity: 0.82; }
+.flegalrow { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 26px 24px 34px; }
+.flegallinks { display: flex; gap: 0; align-items: center; flex-wrap: wrap; }
+.flegalitem { display: inline-flex; align-items: center; }
+.fsep { color: var(--border); margin: 0 14px; }
+.flegallink { color: var(--ink); font-weight: 600; text-decoration: none; }
+.flegallink:hover { text-decoration: underline; }
+.flegalmark { margin-left: auto; display: flex; gap: 14px; align-items: center; }
+.flegalmark span { color: var(--muted); font-weight: 600; }
+
+@media (max-width: 760px) {
+  .fpartners { flex-direction: column; gap: 16px; padding: 28px 20px; text-align: center; }
+  .fband-gold { padding: 14px 18px; }
+  .fcopy { font-size: 13px; line-height: 1.5; }
+  .fband-gray { gap: 0 22px; padding: 18px 16px; }
+  .faffil { padding: 6px 0; border-left: 0; font-size: 13.5px; }
+  .faffilmark { height: 22px; }
+  .faffilmark.tall { height: 28px; }
+  .faffilmark.crest { height: 38px; }
+  .flegalrow { flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .flegallinks { justify-content: center; gap: 8px 18px; }
+  .fsep { display: none; }
+  .flegalmark { margin-left: 0; justify-content: center; }
 }
-
-.rosterSlot {
-  width: 800px;
-  padding: 0;
-  overflow: hidden;
-  background: #fff;
-  border-left: 5px solid var(--pac-blue);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.rosterSlot:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
-}
-
-.rosterSlot .leftSide {
-  padding: 0;
-  align-self: stretch;
-  max-width: 120px;
-  flex-basis: 120px;
-  flex-shrink: 0;
-}
-
-.playerImgWrap {
-  position: relative;
-  width: 120px;
-  height: 100%;
-  min-height: 150px;
-}
-
-.playerImgWrap img {
-  width: 120px;
-  height: 100%;
-  min-height: 150px;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 0;
-  display: block;
-  margin: 0;
-}
-
-.jerseyBadge {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background: var(--pac-blue);
-  color: #fff;
-  font-size: 0.72em;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 4px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
-
-.rosterSlot .rightSide {
-  padding: 18px 20px 18px 16px;
-  gap: 10px;
-  justify-content: center;
-}
-
-.positionTag {
-  display: inline-block;
-  background: var(--pac-blue);
-  color: #fff;
-  font-size: 0.65em;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  /* margin-left: 10px; */
-  vertical-align: middle;
-  white-space: nowrap;
-}
-
-.rosterSlot .top {
-  padding-bottom: 4px;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.rosterSlot .top h2 {
-  font-size: 1.25em;
-  color: var(--cal-blue);
-}
-
-.playerStats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 28px;
-}
-
-.statItem {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  min-width: 90px;
-}
-
-.statLabel {
-  font-size: 0.65em;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #999;
-  font-weight: 600;
-}
-
-.statValue {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #222;
-}
-
-.coachSlot {
-  width: 600px;
-  box-shadow: var(--shadow-soft);
-}
-
-/* (Some pages used large offsets; keep “sane defaults” here)
-   If you still need the old extreme offsets on a specific page,
-   keep them in a page-specific override instead of global CSS. */
-.coachesContent,
-.staffContent {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-/* Split layout inside cards */
-.leftSide {
-  max-width: 150px;
-  flex-basis: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 0;
-  margin: 0;
-}
-
-.rightSide {
-  flex-basis: 70%;
-  padding: 10px 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.coachSlot .leftSide {
-  max-width: 40%;
-  flex-basis: 40%;
-}
-.coachSlot .rightSide {
-  flex-basis: 60%;
-}
-
-.coachSlot .leftSide img {
-  height: 130px;
-  width: 130px;
-  min-width: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-}
-
-.rightSide > p {
-  margin: 0;
-  padding: 0;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
-
-.content h2 {
-  width: 100%;
-}
-.coachContent h2 {
-  font-size: xx-large;
-}
-
-/* Bio blocks */
-.bio {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.leftbio,
-.rightbio {
-  display: flex;
-  flex-basis: 50%;
-  width: 100%;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.leftbio p,
-.rightbio p {
-  margin: 0;
-  padding: 0;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
-
-.top {
-  display: flex;
-  align-items: center;
-  padding-bottom: 8px;
-}
-
-.top h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 1.3em;
-}
-
-.below {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-}
-
-.below > div {
-  flex: 1;
-  min-width: 0;
-}
-
-.below > div p {
-  margin: 0;
-  padding: 0;
-  font-size: 0.95em;
-  line-height: 1.4;
-  word-wrap: break-word;
-}
-
-.greyline {
-  border: none;
-  height: 3px;
-  background-color: var(--pac-blue);
-  width: 70%;
-  margin: 10px auto 0;
-}
-
-/* Header variant used on roster pages */
-.rosterHeader {
-  background: #fff;
-  height: 150px;
-}
-
-.rosterHeader ul li a {
-  color: #000;
-}
-
-/* -----------------------------
-   7b) About page
--------------------------------- */
-.aboutBody {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #f4f4f4;
-}
-
-.aboutHero {
-  position: relative;
-  width: 100%;
-  height: 85vh;
-  min-height: 520px;
-  background: var(--cal-blue);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.aboutHeroVideo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.aboutHeroOverlay {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  color: #fff;
-}
-
-.aboutHeroOverlay h1 {
-  font-family: 'Spectral', serif;
-  font-weight: 600;
-  font-style: italic;
-  font-size: clamp(2.2em, 5vw, 4em);
-  color: var(--cal-gold);
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.aboutHeroOverlay p {
-  font-size: clamp(1em, 1.6vw, 1.3em);
-  line-height: 1.5;
-  color: #fff;
-  font-weight: 300;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.aboutContent {
-  max-width: 1100px;
-  width: 100%;
-  margin: -60px auto 60px;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-  z-index: 2;
-}
-
-.aboutCard {
-  background: #fff;
-  border-radius: var(--radius-md);
-  padding: 30px 36px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid var(--pac-blue);
-}
-
-.aboutCard h2 {
-  font-family: 'Spectral', serif;
-  color: var(--cal-blue);
-  font-size: 1.9em;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.aboutCard ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.aboutCard ul li {
-  position: relative;
-  padding-left: 22px;
-  font-size: 1em;
-  line-height: 1.55;
-  color: #2c2c2c;
-}
-
-.aboutCard ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 8px;
-  height: 8px;
-  background: var(--cal-gold);
-  border-radius: 50%;
-}
-
-.aboutCard a {
-  color: var(--pac-blue);
-  text-decoration: underline;
-  font-weight: 500;
-}
-
-.aboutCard a:hover {
-  color: var(--cal-gold);
-}
-
-.aboutContact {
-  background: var(--cal-blue);
-  border-radius: var(--radius-md);
-  padding: 36px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-}
-
-.aboutContact h2 {
-  font-family: 'Spectral', serif;
-  color: var(--cal-gold);
-  font-size: 1.9em;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.contactGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
-
-.contactPerson {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-sm);
-  border-left: 3px solid var(--cal-gold);
-}
-
-.contactRole {
-  font-size: 0.7em;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--cal-gold);
-  font-weight: 600;
-}
-
-.contactName {
-  font-size: 1.05em;
-  font-weight: 600;
-  color: #fff;
-}
-
-.contactPerson a {
-  color: #cfd8e8;
-  text-decoration: none;
-  font-size: 0.92em;
-  word-break: break-all;
-}
-
-.contactPerson a:hover {
-  color: var(--cal-gold);
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .aboutHero {
-    height: 70vh;
-    min-height: 440px;
-  }
-  .aboutCard {
-    padding: 22px 22px;
-  }
-  .aboutCard h2 {
-    font-size: 1.5em;
-  }
-  .aboutContact {
-    padding: 24px 22px;
-  }
-}
-
-/* -----------------------------
-   8) Articles listing page
--------------------------------- */
-.articlesBody {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-/* Articles has no hero banner: give the fixed nav a solid background so the
-   white links stay readable, and push content clear of the fixed header. */
-.articlesBody header:not(.sticky) {
-  background: var(--cal-blue);
-}
-.articlesBody .articles {
-  margin-top: 180px;
-}
-
-.articlesBody a {
-  text-decoration: none;
-}
-.articlesBody ul {
-  list-style: none;
-}
-
-.articles {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.articlesHeading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.articlesHeading span {
-  color: var(--pac-blue);
-}
-
-.articlesHeading h1 {
-  font-size: 36px;
-  color: var(--pac-blue);
-  font-weight: 600;
-}
-
-.articlesContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-
-.articleThumbnail {
-  width: 400px;
-  background-color: #fff;
-  border: 1px solid #ececec;
-  margin: 20px;
-  box-shadow: var(--shadow-soft);
-}
-
-.articleImg {
-  width: 100%;
-  height: auto;
-}
-
-.articleImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Square logo thumbnails: match the landscape cards' shape without cropping */
-.articleImg img.logoThumb {
-  aspect-ratio: 3 / 2;
-  height: auto;
-  object-fit: contain;
-  background: #041e42;
-}
-
-.articleText {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-.articleText span {
-  color: var(--pac-blue);
-  font-size: 18px;
-}
-
-.articleTitle {
-  font-size: 25px;
-  font-weight: 500;
-  color: #000;
-}
-
-.longTitle {
-  font-size: 15px;
-  font-weight: 600;
-  color: #000;
-}
-
-/* Avoid changing layout on hover: keep font-size constant */
-.articleTitle:hover {
-  color: var(--cal-gold);
-}
-.longTitle:hover {
-  color: var(--cal-gold);
-}
-
-.articleText p {
-  color: #9b9b9b;
-  font-size: 16px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 20px 0;
-}
-
-.articleText a {
-  color: #000;
-}
-.articleText a:hover {
-  color: var(--cal-gold);
-}
-
-/* -----------------------------
-   9) Blog/article page
--------------------------------- */
-.blogBody {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/images/LCHI6246.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  width: 80vw;
-  height: 100vh;
-  font-family: "Poppins", sans-serif;
-  padding: 20px;
-  margin: 150px auto 20px;
-  max-width: 700px;
-}
-
-.blog {
-  margin-bottom: 100px;
-}
-
-.date {
-  color: #fff;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-.blogBody h2 {
-  font-size: 2rem;
-  margin: 20px 0;
-  color: #fff;
-}
-
-.paragraph {
-  border-left: 5px solid #004aae;
-  padding-left: 5px;
-}
-
-.blog p {
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 300;
-  margin-top: 8px;
-}
-
-/* Video container for blog pages */
-.blog-video {
-  margin: 2rem 0;
-}
-
-.blog-video iframe,
-.blog-video video {
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #000;
-}
-
-/* -----------------------------
-   10) Calendar / embeds
--------------------------------- */
-.calendarContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 600px;
-  height: auto;
-  padding: 20px;
-}
-
-iframe {
-  width: 80vw;
-  height: 600px;
-  min-height: 300px;
-  max-height: 1500px;
-}
-
-.styled-calendar-container {
-  max-height: 1500px;
-  height: 1000px;
-  width: 80vw;
-}
-
-/* Legacy helpers */
-.mobileContainer {
-  width: 100%;
-}
-.test,
-.whole,
-.gap {
-  width: 100%;
-}
-.whole {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* -----------------------------
-   11) Responsive
--------------------------------- */
-
-/* Articles card sizing */
-@media (max-width: 1250px) {
-  .articleThumbnail {
-    width: 300px;
-  }
-}
-
-/* NOTE: original had @media(max-width:1100) missing "px" => invalid.
-   Keeping intent with a valid query. */
-@media (max-width: 1100px) {
-  .articleThumbnail {
-    width: 70%;
-  }
-}
-
-/* Blog video spacing */
-@media (max-width: 768px) {
-  .blog-video {
-    margin: 1.5rem 0;
-  }
-}
-
-/* Mobile: schedule + roster backgrounds (iOS fixed-bg workaround) */
-@media (max-width: 768px) {
-  body.sched {
-    background: none;
-    position: relative;
-  }
-  body.sched::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("/images/backgroundSched.png") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-  }
-
-  .rosterBody {
-    min-height: 100vh;
-    position: relative;
-    background: none; /* use ::before for consistent mobile */
-  }
-  .rosterBody::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("/images/rosterBackground.png") no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-  }
-
-  /* Timeline: force all games to one side on mobile */
-  .timelineContainer {
-    width: 100% !important;
-    left: 0 !important;
-    padding: 10px 20px 10px 80px !important; /* left padding for logo */
-  }
-
-  .timelineLeft-container,
-  .timelineRight-container {
-    left: 0 !important;
-  }
-
-  /* Put ALL logos on the same side */
-  .timelineContainer img {
-    left: 20px !important;
-    right: auto !important;
-  }
-
-  /* Move the vertical line to the left (so it doesn't imply alternating) */
-  .timeline::after {
-    left: 50px !important;
-  }
-
-  /* Make BOTH arrow types look identical */
-  .left-container-arrow,
-  .right-container-arrow {
-    left: -15px !important;
-    right: auto !important;
-    border-right: 15px solid var(--cal-blue) !important;
-    border-left: 0 !important;
-  }
-
-  .timeline::after {
-    display: none !important;
-  }
-  .left-container-arrow,
-  .right-container-arrow {
-    display: none !important;
-  }
-  .timelineContainer {
-    padding-left: 20px !important;
-  }
-  .timelineContainer img {
-    position: static;
-    width: 60px;
-    margin-bottom: 10px;
-  }
-
-  /* Keep social icons visible */
-  .socialmediacontainer {
-    margin-left: 5%;
-  }
-
-  /* Home page stacks */
-  .boxMTB {
-    flex-direction: column-reverse;
-    margin-top: 40px;
-  }
-  .boxStream {
-    flex-direction: column;
-  }
-
-  /* Cards stack */
-  .rosterContainer {
-    width: 100%;
-    max-width: 90%;
-    font-size: 12px;
-  }
-
-  .rosterContainer nav label {
-    font-size: 13px;
-    max-width: 100vw;
-  }
-
-  .rosterSlot {
-    width: 95% !important;
-    max-width: 520px !important;
-    margin: 14px auto !important;
-    padding: 0 !important;
-    flex-direction: row !important;
-    text-align: left !important;
-    gap: 0 !important;
-    border-left-width: 4px !important;
-  }
-
-  .rosterSlot .leftSide {
-    max-width: 90px !important;
-    flex-basis: 90px !important;
-    flex-shrink: 0 !important;
-    width: 90px !important;
-    align-self: stretch !important;
-    justify-content: flex-start !important;
-  }
-
-  .playerImgWrap {
-    width: 90px !important;
-    min-height: 120px !important;
-  }
-
-  .playerImgWrap img {
-    width: 90px !important;
-    min-height: 120px !important;
-  }
-
-  .jerseyBadge {
-    font-size: 0.6em !important;
-    padding: 2px 6px !important;
-  }
-
-  .rosterSlot .rightSide {
-    padding: 12px 12px 12px 12px !important;
-    width: 100% !important;
-    margin: 0 !important;
-    align-items: flex-start !important;
-  }
-
-  .rosterSlot .top h2 {
-    font-size: 1em !important;
-  }
-
-  .positionTag {
-    font-size: 0.6em !important;
-  }
-
-  .playerStats {
-    gap: 8px 16px !important;
-  }
-
-  .statItem {
-    min-width: 70px !important;
-  }
-
-  .coachSlot {
-    width: 95% !important;
-    max-width: 520px !important;
-    margin: 14px auto !important;
-    padding: 14px !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 10px !important;
-    align-items: center !important;
-  }
-
-  .coachSlot .leftSide {
-    max-width: none !important;
-    width: 100% !important;
-    flex-basis: auto !important;
-    align-self: center !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .coachSlot .leftSide img {
-    width: 120px !important;
-    height: 120px !important;
-    margin: 0 auto 10px auto !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-  }
-
-  .coachSlot .rightSide {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    align-items: center !important;
-  }
-
-  .bio {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-
-  /* Home block typography scaling */
-  .MTBOverlay {
-    font-size: 50px;
-  }
-  .roster-button {
-    font-size: 50px;
-  }
-  .StreamingOverlay {
-    font-size: 50px;
-  }
-  .streaming-button {
-    font-size: 30px;
-    width: 60%;
-    text-align: center;
-  }
-
-  .leftMTB img {
-    margin: 20px 0;
-    border-radius: 0;
-  }
-  .rightStream img {
-    margin-top: 50px;
-    margin-bottom: 0;
-    border-radius: 0;
-  }
-
-  .StreamCal img {
-    width: 80%;
-    margin-left: 35px;
-  }
-  .Blackdog img {
-    width: 80%;
-    position: relative;
-    top: -10px;
-    left: 10px;
-  }
-
-  /* Footer position for article pages */
-  .articlePageBottom {
-    width: 100%;
-    left: 0;
-  }
-}
-
