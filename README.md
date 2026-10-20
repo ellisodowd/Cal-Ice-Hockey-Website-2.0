@@ -42,6 +42,77 @@ rebuilds it on every deploy.
 
 ---
 
+## Schedule & score overrides
+
+The live Schedule page (and the homepage's Scoreboard ticker) pull from the
+ACHA/HockeyTech feed directly in the browser (`src/lib/schedule.js`). That
+feed is sometimes wrong, incomplete, or just slow to update after a game.
+`public/schedule-overrides.json` lets you patch individual games on top of
+whatever the feed says, without touching code — just edit the file and
+deploy (push to `main`) like any other content change.
+
+Each entry matches an existing game by **`matchDate`** (`YYYY-MM-DD`, the
+game's calendar date) and **`matchOpponent`** (a partial, case-insensitive
+match against the opponent's name — `"San Jose State"` matches `"San Jose
+State University"`). If exactly one game matches, these fields can be
+overridden:
+
+| Field          | Overrides                                                        |
+| -------------- | ----------------------------------------------------------------- |
+| `watchUrl`     | The "Watch" link/button                                           |
+| `logo`         | The opponent's logo image                                         |
+| `datetimeText` | The displayed date/time (e.g. feed has the wrong time)            |
+| `locationText` | The displayed venue                                               |
+| `usGoals`, `oppGoals` | The final score — see **Score overrides** below           |
+
+**Score overrides** — use this when a game has actually happened but ACHA
+hasn't posted a score to the feed yet (the feed still shows it as
+upcoming). Set both `usGoals` (Cal's goals) and `oppGoals` (the opponent's):
+
+```json
+{
+  "matchDate": "2026-10-23",
+  "matchOpponent": "San Jose State University",
+  "usGoals": 4,
+  "oppGoals": 1
+}
+```
+
+Setting both marks the game as played everywhere that reads game data —
+the Schedule page's score and W/L tag, the homepage ticker, and the
+season record/streak — not just a cosmetic label. A `scoreText` string
+(e.g. `"Score: 4 - 1"`) is derived automatically; only set `scoreText`
+yourself if you want different wording.
+
+**If the game isn't on the schedule feed at all yet**, the override can
+create a new entry instead of patching one — in that case `opponent`,
+`datetimeText`, and `locationText` are required (so there's enough to
+display), and `usGoals`/`oppGoals` are still optional on top of that:
+
+```json
+{
+  "matchDate": "2026-11-21",
+  "matchOpponent": "University of Nevada-Reno",
+  "opponent": "University of Nevada-Reno",
+  "datetimeText": "Saturday, November 21st 7:00 PM PST",
+  "locationText": "@Reno Ice"
+}
+```
+
+`matchDate`/`matchOpponent` still have to be set — they're what a future
+override (or the feed, once ACHA adds the game) would match against — but
+since there's no feed row to patch yet, `opponent`, `datetimeText`, and
+`locationText` repeat/supply the actual display values directly. Add
+`usGoals`/`oppGoals` the same way as above once the game's been played and
+still isn't in the feed.
+
+**Cleanup:** once ACHA's feed catches up and reports the real score for
+that date+opponent, the live feed data takes over again automatically —
+an override entry doesn't need to be removed for the site to be correct,
+but it's good housekeeping to delete it once it's redundant.
+
+---
+
 ## DevOps / Deployment
 
 ### Overview
