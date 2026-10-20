@@ -140,9 +140,16 @@ function applyOverrides(games, overrides) {
       const game = matches[0]
       if (override.watchUrl) game.watchUrl = override.watchUrl
       if (override.logo) game.logo = override.logo
-      if (override.scoreText) game.scoreText = override.scoreText
       if (override.datetimeText) game.datetimeText = override.datetimeText
       if (override.locationText) game.locationText = override.locationText
+      if (override.usGoals != null && override.oppGoals != null) {
+        game.isPlayed = true
+        game.usGoals = override.usGoals
+        game.oppGoals = override.oppGoals
+        game.scoreText = override.scoreText || `Score: ${override.usGoals} - ${override.oppGoals}`
+      } else if (override.scoreText) {
+        game.scoreText = override.scoreText
+      }
       continue
     }
 
@@ -156,16 +163,19 @@ function applyOverrides(games, overrides) {
       continue
     }
 
+    const hasResult = override.usGoals != null && override.oppGoals != null
     games.push({
       gameId: `override-${override.matchOpponent}-${override.matchDate}`,
       opponent: override.opponent,
       datetimeText: override.datetimeText,
       locationText: override.locationText,
-      scoreText: override.scoreText || '',
+      scoreText: override.scoreText || (hasResult ? `Score: ${override.usGoals} - ${override.oppGoals}` : ''),
+      usGoals: hasResult ? override.usGoals : null,
+      oppGoals: hasResult ? override.oppGoals : null,
       watchUrl: override.watchUrl || '',
       logo: override.logo || undefined,
       sortDate: new Date(`${override.matchDate}T00:00:00`),
-      isPlayed: false,
+      isPlayed: hasResult,
     })
   }
 }
