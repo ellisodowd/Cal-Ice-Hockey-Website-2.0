@@ -14,6 +14,7 @@ const TEAM_LINKS = [
   { to: '/roster', label: 'Roster' },
   { to: '/recruits', label: 'Recruits' },
   { to: '/staff', label: 'Hockey Ops Staff' },
+  { to: '/student-staff', label: 'Student Staff' },
   // { to: '/front-office', label: 'Front Office' },
   // { to: '/volunteers', label: 'Volunteers' },
 ]
