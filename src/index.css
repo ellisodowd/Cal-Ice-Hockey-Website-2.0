@@ -589,6 +589,11 @@ table.stats.sortable th { padding: 0; }
   color: var(--blue); text-decoration: none; overflow-wrap: anywhere; }
 .staffmail:hover { text-decoration: underline; }
 
+/* Student Staff — department blurb between the director banner and the
+   member grid, and the class-year line on each card. */
+.deptdesc { margin: 18px 0; font-size: 15px; line-height: 1.55; color: var(--muted); max-width: 720px; }
+.staffyear { margin: 4px 0 0; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+
 /* Front office directory */
 .frontoffice { background: #fff; min-height: 60vh; }
 .fohero { background: #fff; color: var(--blue); padding: 36px 0 0; }

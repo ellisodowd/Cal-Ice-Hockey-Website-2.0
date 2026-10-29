@@ -1,0 +1,49 @@
+{
+  "departments": [
+    {
+      "name": "Marketing",
+      "description": "Department description goes here.",
+      "director": { "name": "Placeholder Name", "role": "Director of Marketing", "year": "Senior", "image": "" },
+      "members": [
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Junior", "image": "" },
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Sophomore", "image": "" }
+      ]
+    },
+    {
+      "name": "Broadcasting",
+      "description": "Department description goes here.",
+      "director": { "name": "Placeholder Name", "role": "Director of Broadcasting", "year": "Senior", "image": "" },
+      "members": [
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Junior", "image": "" },
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Freshman", "image": "" }
+      ]
+    },
+    {
+      "name": "Operations",
+      "description": "Department description goes here.",
+      "director": { "name": "Placeholder Name", "role": "Director of Operations", "year": "Junior", "image": "" },
+      "members": [
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Sophomore", "image": "" },
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Freshman", "image": "" }
+      ]
+    },
+    {
+      "name": "PR/Alumni Relations",
+      "description": "Department description goes here.",
+      "director": { "name": "Placeholder Name", "role": "Director of PR/Alumni Relations", "year": "Senior", "image": "" },
+      "members": [
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Junior", "image": "" },
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Sophomore", "image": "" }
+      ]
+    },
+    {
+      "name": "Technology",
+      "description": "Department description goes here.",
+      "director": { "name": "Placeholder Name", "role": "Director of Technology", "year": "Senior", "image": "" },
+      "members": [
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Junior", "image": "" },
+        { "name": "Placeholder Name", "role": "Placeholder Role", "year": "Freshman", "image": "" }
+      ]
+    }
+  ]
+}
