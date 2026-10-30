@@ -13,7 +13,7 @@ const LINKS = [
 const TEAM_LINKS = [
   { to: '/roster', label: 'Roster' },
   { to: '/recruits', label: 'Recruits' },
-  { to: '/staff', label: 'Hockey Ops Staff' },
+  { to: '/staff', label: 'Coaches & Management' },
   // { to: '/front-office', label: 'Front Office' },
   // { to: '/volunteers', label: 'Volunteers' },
 ]

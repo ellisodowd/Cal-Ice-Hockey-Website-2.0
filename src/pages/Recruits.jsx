@@ -29,14 +29,14 @@ export default function Recruits() {
                   <h2 className="rectitle">What the season looks like</h2>
                   <div className="recbody">
                     <p className="artp">
-                      Twenty-five to thirty games and two to three practices a week, from October
+                      Twenty-five to thirty games and two to three practices a week, from September
                       through March, with trips to Washington, LA, Utah, Oregon, Vegas, and more.
                       The program has placed top 3 in the conference for six straight years and
                       qualified for the ACHA Western Regional Tournament last season.
                     </p>
                     <p className="artp">
-                      The annual Big Freeze against Stanford brings out over 1,500 Cal fans, Cal
-                      Cheer, and the Cal Band.
+                      We fill the rink with Cal fans, and the Cal Band is a regular presence at
+                      our games.
                     </p>
                   </div>
                 </section>
@@ -45,8 +45,7 @@ export default function Recruits() {
                   <h2 className="rectitle">What it costs</h2>
                   <div className="recbody">
                     <p className="artp">
-                      Dues are $4,000 per season — among the lowest in the conference, versus
-                      $5,000+ at many programs. Flights, hotels, rental cars, gear, and ice time
+                      Dues are $5,000 per season. Flights, hotels, rental cars, gear, and ice time
                       are all included.
                     </p>
                   </div>
@@ -70,8 +69,8 @@ export default function Recruits() {
                     <dt>League</dt><dd>ACHA Division II</dd>
                     <dt>Conference</dt><dd>Pac-8</dd>
                     <dt>Home rink</dt><dd>Oakland Ice Center</dd>
-                    <dt>Season</dt><dd>October to March</dd>
-                    <dt>Player dues</dt><dd>$4,000 / season</dd>
+                    <dt>Season</dt><dd>September to March</dd>
+                    <dt>Player dues</dt><dd>$5,000 / season</dd>
                   </dl>
                 </div>
 
