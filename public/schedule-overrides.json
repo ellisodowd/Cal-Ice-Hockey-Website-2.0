@@ -36,6 +36,11 @@
       "matchOpponent": "San Jose State University",
       "usGoals": 12,
       "oppGoals": 2
+    },
+    {
+      "matchDate": "2026-10-30",
+      "matchOpponent": "Arizona State University",
+      "datetimeText": "Friday, October 30th 8:45 PM MST"
     }
   ]
 }
