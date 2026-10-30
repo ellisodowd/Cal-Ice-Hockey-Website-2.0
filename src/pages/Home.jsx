@@ -33,7 +33,7 @@ function NextHomeGame({ game }) {
 }
 
 export default function Home() {
-  const announcement = true
+  const announcement = false
   const [nextHome, setNextHome] = useState(null)
   const [articles, setArticles] = useState([])
 

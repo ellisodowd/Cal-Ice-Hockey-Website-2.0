@@ -1,98 +1,66 @@
 {
-    "coaches": [
-      {
-        "name": "Devin Cox",
-        "role": "Head Coach",
-        "contact": "925-216-7455 / devincox@calicehockey.com",
-        "image": "Headshots/devinCox.webp"
-      },
-      {
-        "name": "Darien Oliver",
-        "role": "Assistant Coach",
-        "contact": "",
-        "image": "Headshots/darienOliver.webp"
-      },
-      {
-        "name": "Pravin Chandra",
-        "role": "Assistant Coach",
-        "contact": "",
-        "image": "Headshots/pravinChandra.webp"
-      },
-      {
-        "name": "Mark Arneson",
-        "role": "Assistant Coach",
-        "contact": "",
-        "image": "Headshots/markArneson.webp"
-      },
-      {
-        "name": "Everett Morton",
-        "role": "Goalie Coach",
-        "contact": "",
-        "image": "Headshots/everettMorton.webp"
-      }
-    ],
-    "executive": [
-      {
-        "name": "Michele Cox",
-        "role": "General Manager",
-        "contact": "310-818-1003 / michelecox@calicehockey.com",
-        "image": "images/MicheleCox.jpg"
-      },
-      {
-        "name": "Kodai Mizuno",
-        "role": "Club President",
-        "contact": "",
-        "image": "Headshots/kodaiMizuno.webp"
-      },
-      {
-        "name": "Enzo Goebel",
-        "role": "Vice President",
-        "contact": "",
-        "image": "Headshots/enzoGoebel.webp"
-      },
-      {
-        "name": "Tyson Storr",
-        "role": "Senior Advisor",
-        "contact": "",
-        "image": "Headshots/storrStaff.webp"
-      },
-      {
-        "name": "Aidan Comeau",
-        "role": "Head of Travel",
-        "contact": "",
-        "image": "Headshots/aidanComeau.webp"
-      },
-      {
-        "name": "Yusuf Akbas",
-        "role": "Safety Officer",
-        "contact": "",
-        "image": "Headshots/akbas.webp"
-      },
-      {
-        "name": "Allan Anaka",
-        "role": "Head of Technology / Website Design",
-        "contact": "",
-        "image": "Headshots/allanAnaka.webp"
-      },
-      {
-        "name": "Roxana Nourishad",
-        "role": "Director of Marketing",
-        "contact": "",
-        "image": "images/blank-profile-picture-973460_960_720.jpeg"
-      },
-      {
-        "name": "Auden Meyer",
-        "role": "Game Day Operations",
-        "contact": "",
-        "image": "Headshots/auden.webp"
-      },
-      {
-        "name": "Ryan Carlson",
-        "role": "Director of Broadcasting",
-        "contact": "",
-        "image": "Headshots/ryanCarlson.webp"
-      }
-    ]
-  }
-  
-  
+  "coaches": [
+    {
+      "name": "Devin Cox",
+      "role": "Head Coach",
+      "contact": "925-216-7455 / devincox@calicehockey.com",
+      "image": "Headshots/devinCox.webp"
+    },
+    {
+      "name": "Darien Oliver",
+      "role": "Assistant Coach",
+      "contact": "",
+      "image": "Headshots/darienOliver.webp"
+    },
+    {
+      "name": "Pravin Chandra",
+      "role": "Assistant Coach",
+      "contact": "",
+      "image": "Headshots/pravinChandra.webp"
+    },
+    {
+      "name": "Mark Arneson",
+      "role": "Assistant Coach",
+      "contact": "",
+      "image": "Headshots/markArneson.webp"
+    },
+    {
+      "name": "Everett Morton",
+      "role": "Goalie Coach",
+      "contact": "",
+      "image": "Headshots/everettMorton.webp"
+    }
+  ],
+  "executive": [
+    {
+      "name": "Michele Cox",
+      "role": "General Manager",
+      "contact": "310-818-1003 / michelecox@calicehockey.com",
+      "image": "images/MicheleCox.jpg"
+    },
+    {
+      "name": "Liam Collins",
+      "role": "Club President",
+      "contact": "",
+      "image": "Headshots/liamCollinsLinkedIn.webp"
+    },
+    {
+      "name": "Lucas Fung",
+      "role": "Vice President",
+      "contact": "",
+      "image": "Headshots/lucasFungLinkedIn.webp"
+    },
+    {
+      "name": "Kodai Mizuno",
+      "role": "Senior Officer",
+      "contact": "",
+      "image": "Headshots/kodaiMizunoLinkedIn.webp"
+    },
+    {
+      "name": "Enzo Goebel",
+      "role": "Senior Officer",
+      "contact": "",
+      "image": "Headshots/enzoGoebelLinkedIn.webp"
+    }
+  ]
+}

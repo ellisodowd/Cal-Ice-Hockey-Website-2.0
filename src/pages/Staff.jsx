@@ -20,6 +20,7 @@ function Face({ person }) {
 
 export default function Staff() {
   const [coaches, setCoaches] = useState([])
+  const [executive, setExecutive] = useState([])
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -28,7 +29,10 @@ export default function Staff() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
       })
-      .then(data => setCoaches(Array.isArray(data.coaches) ? data.coaches : []))
+      .then(data => {
+        setCoaches(Array.isArray(data.coaches) ? data.coaches : [])
+        setExecutive(Array.isArray(data.executive) ? data.executive : [])
+      })
       .catch(err => setError(err.message))
   }, [])
 
@@ -43,7 +47,7 @@ export default function Staff() {
       <main style={{ background: '#fff' }}>
         <section className="section" style={{ paddingTop: 36 }}>
           <div className="wrap">
-            <h1 className="pagetitle">Hockey Operations</h1>
+            <h1 className="pagetitle">Coaches &amp; Management</h1>
 
             {error && (
               <div className="emptybox">
@@ -82,6 +86,28 @@ export default function Staff() {
                 <h2 className="staffseclab">Coaching<span className="staffsecn">{rest.length}</span></h2>
                 <div className="staffgrid">
                   {rest.map((c, i) => {
+                    const contact = splitContact(c.contact)
+                    return (
+                      <article className="staffcard" key={i}>
+                        <div className="staffwell"><Face person={c} /></div>
+                        <div className="staffbody">
+                          <p className="staffname">{c.name}</p>
+                          <p className="stafftitle">{c.role}</p>
+                          {contact.email && <a className="staffmail" href={`mailto:${contact.email}`}>{contact.email}</a>}
+                          {contact.phone && <a className="staffmail" href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>}
+                        </div>
+                      </article>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
+            {executive.length > 0 && (
+              <div className="staffsec">
+                <h2 className="staffseclab">Management<span className="staffsecn">{executive.length}</span></h2>
+                <div className="staffgrid">
+                  {executive.map((c, i) => {
                     const contact = splitContact(c.contact)
                     return (
                       <article className="staffcard" key={i}>
