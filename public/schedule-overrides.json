@@ -41,6 +41,12 @@
       "matchDate": "2026-10-30",
       "matchOpponent": "Arizona State University",
       "datetimeText": "Friday, October 30th 8:45 PM MST"
+    },
+    {
+      "matchDate": "2026-10-31",
+      "matchOpponent": "Arizona State University",
+      "usGoals": 4,
+      "oppGoals": 3
     }
   ]
 }
