@@ -169,6 +169,8 @@ function applyOverrides(games, overrides) {
       gameId: `override-${override.matchOpponent}-${override.matchDate}`,
       opponent: override.opponent,
       datetimeText: override.datetimeText,
+      dateText: override.dateText,
+      timeText: override.timeText,
       locationText: override.locationText,
       scoreText: override.scoreText || (hasResult ? `Score: ${override.usGoals} - ${override.oppGoals}` : ''),
       usGoals: hasResult ? override.usGoals : null,
