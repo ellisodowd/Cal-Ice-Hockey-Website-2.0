@@ -47,19 +47,25 @@ export default function StudentStaff() {
 
             {departments.map(dept => {
               const members = Array.isArray(dept.members) ? dept.members : []
+              // "director" is one person, or a list when a department has co-leads.
+              const leads = [].concat(dept.director || [])
               return (
                 <div className="staffsec" key={dept.name}>
                   <h2 className="staffseclab">{dept.name}</h2>
 
-                  {dept.director && (
-                    <article className="leadstaff">
-                      <div className="leadphoto"><Photo person={dept.director} /></div>
-                      <div className="leadbody">
-                        <p className="eyebrow" style={{ color: 'var(--blue)' }}>{dept.director.role}</p>
-                        <h3 className="leadname">{dept.director.name}</h3>
-                        {dept.director.year && <p className="staffyear">{dept.director.year}</p>}
-                      </div>
-                    </article>
+                  {leads.length > 0 && (
+                    <div className={leads.length > 1 ? 'leadrow pair' : 'leadrow'}>
+                      {leads.map((lead, i) => (
+                        <article className="leadstaff" key={i}>
+                          <div className="leadphoto"><Photo person={lead} /></div>
+                          <div className="leadbody">
+                            <p className="eyebrow" style={{ color: 'var(--blue)' }}>{lead.role}</p>
+                            <h3 className="leadname">{lead.name}</h3>
+                            {lead.year && <p className="staffyear">{lead.year}</p>}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
                   )}
 
                   {dept.description && <p className="deptdesc">{dept.description}</p>}
