@@ -14,7 +14,8 @@
       "matchDate": "2026-10-31",
       "matchOpponent": "Grand Canyon University",
       "opponent": "Grand Canyon University",
-      "datetimeText": "Saturday, October 31st 9:45 PM MST",
+      "datetimeText": "Saturday, October 31st 4:00 PM MST",
+      "timeText": "4:00 PM MST",
       "locationText": "@AZ Ice Arcadia"
     },
     {
@@ -23,6 +24,39 @@
       "opponent": "Grand Canyon University",
       "datetimeText": "Sunday, November 1st 12:00 PM MST",
       "locationText": "@AZ Ice Peoria"
+    },
+    {
+      "matchDate": "2026-10-23",
+      "matchOpponent": "San Jose State University",
+      "usGoals": 7,
+      "oppGoals": 3
+    },
+    {
+      "matchDate": "2026-10-24",
+      "matchOpponent": "San Jose State University",
+      "usGoals": 12,
+      "oppGoals": 2
+    },
+    {
+      "matchDate": "2026-10-30",
+      "matchOpponent": "Arizona State University",
+      "datetimeText": "Friday, October 30th 8:45 PM MST"
+    },
+    {
+      "matchDate": "2026-10-31",
+      "matchOpponent": "Arizona State University",
+      "usGoals": 4,
+      "oppGoals": 3
+    },
+    {
+      "matchDate": "2026-11-15",
+      "matchOpponent": "Cal Alumni",
+      "opponent": "Cal Alumni",
+      "datetimeText": "Sunday, November 15th 12:00 PM",
+      "dateText": "Sunday, November 15th",
+      "timeText": "12:00 PM",
+      "logo": "/images/California_Golden_Bears_logo.svg.png",
+      "locationText": "Oakland Ice Center"
     }
   ]
 }

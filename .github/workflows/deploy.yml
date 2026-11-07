@@ -3,6 +3,11 @@ name: Deploy to HostGator
 on:
   push:
     branches: [main]
+  schedule:
+    # Refreshes player-stats.json from the ACHA feed and redeploys, even if
+    # no code changed. See README "Player stats auto-refresh" for why this
+    # exists and how to change the cadence.
+    - cron: '0 8,16 * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,6 +22,11 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
+
+      - name: Refresh player stats from ACHA feed
+        run: npm run fetch:player-stats
+        continue-on-error: true
+
       - run: npm run build
 
       - name: Upload to HostGator

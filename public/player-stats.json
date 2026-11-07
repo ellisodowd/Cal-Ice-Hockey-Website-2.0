@@ -6,22 +6,22 @@
       "startYear": 2026,
       "skaters": [
         {
-          "name": "Liam Collins",
-          "number": 72,
-          "position": "F",
-          "gp": 4,
-          "g": 3,
-          "a": 6,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "Anthony Sergeyev",
           "number": 86,
           "position": "F",
-          "gp": 4,
-          "g": 3,
-          "a": 6,
+          "gp": 6,
+          "g": 5,
+          "a": 9,
+          "pim": 2,
+          "shots": 0
+        },
+        {
+          "name": "Liam Collins",
+          "number": 72,
+          "position": "F",
+          "gp": 6,
+          "g": 4,
+          "a": 8,
           "pim": 0,
           "shots": 0
         },
@@ -29,9 +29,19 @@
           "name": "Kodai Mizuno",
           "number": 9,
           "position": "F",
-          "gp": 4,
+          "gp": 6,
           "g": 3,
-          "a": 5,
+          "a": 9,
+          "pim": 2,
+          "shots": 0
+        },
+        {
+          "name": "Dominik Sedlak-Braude",
+          "number": 3,
+          "position": "F",
+          "gp": 4,
+          "g": 6,
+          "a": 4,
           "pim": 2,
           "shots": 0
         },
@@ -49,10 +59,100 @@
           "name": "Roy Chebaclo",
           "number": 25,
           "position": "F",
-          "gp": 4,
+          "gp": 6,
           "g": 1,
+          "a": 4,
+          "pim": 4,
+          "shots": 0
+        },
+        {
+          "name": "Mark Rejna",
+          "number": 14,
+          "position": "F",
+          "gp": 6,
+          "g": 2,
           "a": 2,
           "pim": 2,
+          "shots": 0
+        },
+        {
+          "name": "Lucas Fung",
+          "number": 23,
+          "position": "F",
+          "gp": 5,
+          "g": 1,
+          "a": 3,
+          "pim": 12,
+          "shots": 0
+        },
+        {
+          "name": "Sean Lohmeier",
+          "number": 77,
+          "position": "D",
+          "gp": 6,
+          "g": 2,
+          "a": 1,
+          "pim": 0,
+          "shots": 0
+        },
+        {
+          "name": "Kaiden Montero",
+          "number": 82,
+          "position": "F",
+          "gp": 6,
+          "g": 2,
+          "a": 1,
+          "pim": 2,
+          "shots": 0
+        },
+        {
+          "name": "Colten Fazio",
+          "number": 93,
+          "position": "F",
+          "gp": 6,
+          "g": 2,
+          "a": 1,
+          "pim": 6,
+          "shots": 0
+        },
+        {
+          "name": "Joonmoh Kim",
+          "number": 10,
+          "position": "D",
+          "gp": 3,
+          "g": 0,
+          "a": 3,
+          "pim": 2,
+          "shots": 0
+        },
+        {
+          "name": "Trent Teruya",
+          "number": 21,
+          "position": "D",
+          "gp": 6,
+          "g": 2,
+          "a": 0,
+          "pim": 10,
+          "shots": 0
+        },
+        {
+          "name": "Aidan Myers",
+          "number": 7,
+          "position": "D",
+          "gp": 6,
+          "g": 1,
+          "a": 1,
+          "pim": 6,
+          "shots": 0
+        },
+        {
+          "name": "Tsan Lam Wang",
+          "number": 48,
+          "position": "F",
+          "gp": 5,
+          "g": 1,
+          "a": 1,
+          "pim": 0,
           "shots": 0
         },
         {
@@ -66,70 +166,30 @@
           "shots": 0
         },
         {
-          "name": "Dominik Sedlak-Braude",
-          "number": 3,
+          "name": "Connor Kanas",
+          "number": 17,
           "position": "F",
-          "gp": 2,
-          "g": 1,
-          "a": 1,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Lucas Fung",
-          "number": 23,
-          "position": "F",
-          "gp": 3,
+          "gp": 5,
           "g": 0,
           "a": 2,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Aidan Myers",
-          "number": 7,
-          "position": "D",
-          "gp": 4,
-          "g": 1,
-          "a": 0,
-          "pim": 4,
+          "pim": 2,
           "shots": 0
         },
         {
           "name": "Ellis O'Dowd",
           "number": 8,
           "position": "D",
-          "gp": 4,
+          "gp": 6,
           "g": 1,
           "a": 0,
           "pim": 2,
           "shots": 0
         },
         {
-          "name": "Mark Rejna",
-          "number": 14,
+          "name": "Arya Nahavandi",
+          "number": 24,
           "position": "F",
-          "gp": 4,
-          "g": 1,
-          "a": 0,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Trent Teruya",
-          "number": 21,
-          "position": "D",
-          "gp": 4,
-          "g": 1,
-          "a": 0,
-          "pim": 4,
-          "shots": 0
-        },
-        {
-          "name": "Sean Lohmeier",
-          "number": 77,
-          "position": "D",
-          "gp": 4,
+          "gp": 1,
           "g": 1,
           "a": 0,
           "pim": 0,
@@ -139,35 +199,25 @@
           "name": "Eddie Yu",
           "number": 22,
           "position": "F",
-          "gp": 4,
+          "gp": 6,
           "g": 0,
           "a": 1,
           "pim": 0,
           "shots": 0
         },
         {
-          "name": "Joonmoh Kim",
-          "number": 10,
+          "name": "Simon Mantoani",
+          "number": 51,
           "position": "D",
-          "gp": 1,
+          "gp": 6,
           "g": 0,
           "a": 1,
-          "pim": 0,
+          "pim": 7,
           "shots": 0
         },
         {
           "name": "Bryan Bartolo",
           "number": 15,
-          "position": "F",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Connor Kanas",
-          "number": 17,
           "position": "F",
           "gp": 3,
           "g": 0,
@@ -186,43 +236,13 @@
           "shots": 0
         },
         {
-          "name": "Tsan Lam Wang",
-          "number": 48,
-          "position": "F",
-          "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Simon Mantoani",
-          "number": 51,
-          "position": "D",
-          "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Kaiden Montero",
-          "number": 82,
-          "position": "F",
-          "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pim": 2,
-          "shots": 0
-        },
-        {
           "name": "Enzo Goebel",
           "number": 95,
           "position": "D",
-          "gp": 3,
+          "gp": 5,
           "g": 0,
           "a": 0,
-          "pim": 0,
+          "pim": 4,
           "shots": 0
         },
         {
@@ -250,25 +270,25 @@
         {
           "name": "Aidan Comeau",
           "number": 80,
-          "gp": 3,
-          "w": 3,
+          "gp": 5,
+          "w": 5,
           "l": 0,
           "t": 0,
-          "ga": 6,
-          "saves": 54,
-          "shotsAgainst": 60,
+          "ga": 11,
+          "saves": 100,
+          "shotsAgainst": 111,
           "so": 0
         },
         {
           "name": "Cole Nelson",
           "number": 31,
-          "gp": 1,
+          "gp": 2,
           "w": 0,
           "l": 1,
           "t": 0,
-          "ga": 4,
-          "saves": 27,
-          "shotsAgainst": 31,
+          "ga": 5,
+          "saves": 38,
+          "shotsAgainst": 43,
           "so": 0
         }
       ],
@@ -332,6 +352,36 @@
           "ppOpportunities": 4,
           "oppPpGoals": 0,
           "oppPpOpportunities": 5
+        },
+        {
+          "gameId": "34744",
+          "opponent": "University of Southern California",
+          "homeAway": "A",
+          "datetimeText": "Friday, October 16th",
+          "usGoals": 7,
+          "oppGoals": 3,
+          "shots": 35,
+          "oppShots": 28,
+          "pim": 29,
+          "ppGoals": 2,
+          "ppOpportunities": 5,
+          "oppPpGoals": 2,
+          "oppPpOpportunities": 7
+        },
+        {
+          "gameId": "34745",
+          "opponent": "University of Southern California",
+          "homeAway": "A",
+          "datetimeText": "Saturday, October 17th",
+          "usGoals": 9,
+          "oppGoals": 3,
+          "shots": 36,
+          "oppShots": 35,
+          "pim": 10,
+          "ppGoals": 0,
+          "ppOpportunities": 0,
+          "oppPpGoals": 1,
+          "oppPpOpportunities": 2
         }
       ]
     },

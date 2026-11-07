@@ -50,7 +50,7 @@ export default function StudentStaff() {
               // "director" is one person, or a list when a department has co-leads.
               const leads = [].concat(dept.director || [])
               return (
-                <div className="staffsec" key={dept.name}>
+                <div className="staffsec dept" key={dept.name}>
                   <h2 className="staffseclab">{dept.name}</h2>
 
                   {leads.length > 0 && (

@@ -165,6 +165,9 @@ function GameCard({ game, open, onToggle }) {
   const sideCls = game.homeAway === 'H' ? 'home' : game.homeAway === 'A' ? 'away' : ''
   const tag = game.usGoals > game.oppGoals ? 'W' : game.usGoals < game.oppGoals ? 'L' : 'T'
   const canOpenGameCenter = hasGameCenter(game)
+  // Games added only through schedule-overrides.json have no feed summary, so
+  // their quick look is just the matchup details.
+  const infoOnly = !canOpenGameCenter && String(game.gameId).startsWith('override-')
 
   return (
     <article className="gamecard">
@@ -206,7 +209,7 @@ function GameCard({ game, open, onToggle }) {
         )}
       </div>
 
-      {canOpenGameCenter && (
+      {(canOpenGameCenter || infoOnly) && (
         <div className="gamefoot">
           <button className="gb-link" style={{ marginLeft: 'auto' }} onClick={onToggle} aria-expanded={open}>
             Quick look {open ? '−' : '+'}
@@ -214,6 +217,13 @@ function GameCard({ game, open, onToggle }) {
         </div>
       )}
       {open && canOpenGameCenter && <QuickLook game={game} />}
+      {open && infoOnly && (
+        <div className="gameinfo bsm">
+          <span><strong>Matchup:</strong> Cal {vs || 'vs'} {game.opponent}</span>
+          <span><strong>Venue:</strong> {game.locationText}</span>
+          <span><strong>Date:</strong> {game.datetimeText}</span>
+        </div>
+      )}
     </article>
   )
 }
