@@ -3,6 +3,7 @@ import Home from './pages/Home.jsx'
 import Schedule from './pages/Schedule.jsx'
 import Roster from './pages/Roster.jsx'
 import Staff from './pages/Staff.jsx'
+import StudentStaff from './pages/StudentStaff.jsx'
 // import FrontOffice from './pages/FrontOffice.jsx'
 // import Volunteers from './pages/Volunteers.jsx'
 import Recruits from './pages/Recruits.jsx'
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/roster/:name" element={<PlayerBio />} />
         <Route path="/recruits" element={<Recruits />} />
         <Route path="/staff" element={<Staff />} />
+        <Route path="/student-staff" element={<StudentStaff />} />
         {/* <Route path="/front-office" element={<FrontOffice />} /> */}
         {/* <Route path="/volunteers" element={<Volunteers />} /> */}
         <Route path="/news" element={<News />} />

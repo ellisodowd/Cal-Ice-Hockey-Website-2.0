@@ -80,6 +80,14 @@
       "matchOpponent": "University of California-San Diego",
       "usGoals": 8,
       "oppGoals": 1
+      "matchDate": "2026-11-15",
+      "matchOpponent": "Cal Alumni",
+      "opponent": "Cal Alumni",
+      "datetimeText": "Sunday, November 15th 12:00 PM",
+      "dateText": "Sunday, November 15th",
+      "timeText": "12:00 PM",
+      "logo": "/images/California_Golden_Bears_logo.svg.png",
+      "locationText": "Oakland Ice Center"
     }
   ]
 }

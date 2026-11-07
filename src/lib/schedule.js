@@ -141,6 +141,7 @@ function applyOverrides(games, overrides) {
       if (override.watchUrl) game.watchUrl = override.watchUrl
       if (override.logo) game.logo = override.logo
       if (override.datetimeText) game.datetimeText = override.datetimeText
+      if (override.timeText) game.timeText = override.timeText
       if (override.locationText) game.locationText = override.locationText
       if (override.usGoals != null && override.oppGoals != null) {
         game.isPlayed = true
@@ -168,6 +169,8 @@ function applyOverrides(games, overrides) {
       gameId: `override-${override.matchOpponent}-${override.matchDate}`,
       opponent: override.opponent,
       datetimeText: override.datetimeText,
+      dateText: override.dateText,
+      timeText: override.timeText,
       locationText: override.locationText,
       scoreText: override.scoreText || (hasResult ? `Score: ${override.usGoals} - ${override.oppGoals}` : ''),
       usGoals: hasResult ? override.usGoals : null,
