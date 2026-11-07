@@ -3,12 +3,14 @@
     {
       "name": "Marketing",
       "description": "",
-      "director": { "name": "Roxana Nourishad", "role": "Director of Marketing", "year": "Class of 2026", "image": "Headshots/student-staff/roxana-nourishad.webp" },
+      "director": [
+        { "name": "Roxana Nourishad", "role": "Director of Marketing", "year": "Class of 2026", "image": "Headshots/student-staff/roxana-nourishad.webp" },
+        { "name": "Yasmin Mohsen", "role": "Media Manager", "year": "Class of 2026", "image": "Headshots/student-staff/yasmin-mohsen.webp" }
+      ],
       "members": [
         { "name": "Sofia Aquino", "role": "Head of Graphic Design", "year": "Class of 2028", "image": "Headshots/student-staff/sofia-aquino.webp" },
         { "name": "Nicole Castro", "role": "Head of Photography", "year": "Class of 2029", "image": "" },
         { "name": "Chloe Chon", "role": "Head of Graphic Design", "year": "Class of 2027", "image": "Headshots/student-staff/chloe-chon.webp" },
-        { "name": "Yasmin Mohsen", "role": "Head of Video", "year": "Class of 2026", "image": "Headshots/student-staff/yasmin-mohsen.webp" },
         { "name": "Gilda Aguirre", "role": "Social Media Intern", "year": "Class of 2029", "image": "Headshots/student-staff/gilda-aguirre.webp" },
         { "name": "Katherine Carpio", "role": "Social Media Intern", "year": "Class of 2028", "image": "Headshots/student-staff/katherine-carpio.webp" },
         { "name": "Amy Chen", "role": "Video Intern", "year": "Class of 2029", "image": "Headshots/student-staff/amy-chen.webp" },
