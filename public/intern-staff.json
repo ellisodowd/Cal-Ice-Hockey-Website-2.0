@@ -1,0 +1,71 @@
+{
+  "departments": [
+    {
+      "name": "Marketing",
+      "description": "",
+      "director": [
+        { "name": "Roxana Nourishad", "role": "Director of Marketing", "year": "Class of 2026", "image": "Headshots/student-staff/roxana-nourishad.webp" },
+        { "name": "Yasmin Mohsen", "role": "Media Manager", "year": "Class of 2026", "image": "Headshots/student-staff/yasmin-mohsen.webp" }
+      ],
+      "members": [
+        { "name": "Sofia Aquino", "role": "Head of Graphic Design", "year": "Class of 2028", "image": "Headshots/student-staff/sofia-aquino.webp" },
+        { "name": "Nicole Castro", "role": "Head of Photography", "year": "Class of 2029", "image": "" },
+        { "name": "Chloe Chon", "role": "Head of Graphic Design", "year": "Class of 2027", "image": "Headshots/student-staff/chloe-chon.webp" },
+        { "name": "Gilda Aguirre", "role": "Social Media Intern", "year": "Class of 2029", "image": "Headshots/student-staff/gilda-aguirre.webp" },
+        { "name": "Katherine Carpio", "role": "Social Media Intern", "year": "Class of 2028", "image": "Headshots/student-staff/katherine-carpio.webp" },
+        { "name": "Amy Chen", "role": "Video Intern", "year": "Class of 2029", "image": "Headshots/student-staff/amy-chen.webp" },
+        { "name": "Cristina Couch", "role": "Graphic Design Intern", "year": "Class of 2029", "image": "" },
+        { "name": "Leilah Elsumeri", "role": "Social Media Intern", "year": "Class of 2028", "image": "Headshots/student-staff/leilah-elsumeri.webp" },
+        { "name": "Annabelle Fong", "role": "Photography Intern", "year": "", "image": "" },
+        { "name": "Tiernan McKevitt", "role": "Photography Intern", "year": "", "image": "" },
+        { "name": "Amanda Newlove", "role": "Photography Intern", "year": "", "image": "" },
+        { "name": "Yeonju Seo", "role": "Graphic Design Intern", "year": "Class of 2027", "image": "Headshots/student-staff/yeonju-seo.webp" },
+        { "name": "Esther Waters", "role": "Video Intern", "year": "Class of 2027", "image": "Headshots/student-staff/esther-waters.webp" },
+        { "name": "Annabelle Wu", "role": "Graphic Design Intern", "year": "Class of 2027", "image": "" },
+        { "name": "Cindy Xue", "role": "Video Intern", "year": "Class of 2028", "image": "Headshots/student-staff/cindy-xue.webp" }
+      ]
+    },
+    {
+      "name": "Operations",
+      "description": "",
+      "director": { "name": "Samantha Wai", "role": "Director of Hockey Operations", "year": "Class of 2029", "image": "Headshots/student-staff/samantha-wai.webp" },
+      "members": [
+        { "name": "Reece Yaksitch", "role": "Game Day Operations Lead Assistant", "year": "Class of 2029", "image": "Headshots/student-staff/reece-yaksitch.webp" },
+        { "name": "Rasheda Ansari", "role": "Game Day Operations Intern", "year": "Class of 2028", "image": "Headshots/student-staff/rasheda-ansari.webp" },
+        { "name": "Madison Bermudez", "role": "Game Day Operations Intern", "year": "Class of 2029", "image": "Headshots/student-staff/madison-bermudez.webp" },
+        { "name": "Mary Clarke", "role": "Game Day Operations Intern", "year": "Class of 2030", "image": "Headshots/student-staff/mary-clarke.webp" },
+        { "name": "Lorena Gonzalez", "role": "Broadcasting Intern", "year": "Class of 2028", "image": "Headshots/student-staff/lorena-gonzalez.webp" },
+        { "name": "Selah Johnson", "role": "Game Day Operations Intern", "year": "Class of 2028", "image": "Headshots/student-staff/selah-johnson.webp" },
+        { "name": "Ann Nguyen", "role": "Broadcasting Intern", "year": "Class of 2028", "image": "Headshots/student-staff/ann-nguyen.webp" },
+        { "name": "Jade Nguyen", "role": "Game Day Operations Intern", "year": "Class of 2028", "image": "Headshots/student-staff/jade-nguyen.webp" }
+      ]
+    },
+    {
+      "name": "PR/Alumni Relations",
+      "description": "",
+      "director": [
+        { "name": "Sofia Aquino", "role": "Head of Public Relations", "year": "Class of 2028", "image": "Headshots/student-staff/sofia-aquino.webp" },
+        { "name": "Simon Mantoani", "role": "Head of Alumni Relations", "year": "Class of 2029", "image": "Headshots/student-staff/simon-mantoani.webp" }
+      ],
+      "members": [
+        { "name": "Kayla Santiago", "role": "Alumni and PR Intern", "year": "Class of 2029", "image": "" },
+        { "name": "Kate Song", "role": "Alumni and PR Intern", "year": "Class of 2030", "image": "Headshots/student-staff/kate-song.webp" },
+        { "name": "Claire Yoo", "role": "Alumni and PR Intern", "year": "Class of 2027", "image": "" }
+      ]
+    },
+    {
+      "name": "Technology",
+      "description": "",
+      "director": { "name": "Ellis O'Dowd", "role": "Director of Technology", "year": "Class of 2027", "image": "Headshots/student-staff/ellis-odowd.webp" },
+      "members": [
+        { "name": "Felix Chen", "role": "Full Stack Engineer", "year": "Class of 2027", "image": "Headshots/student-staff/felix-chen.webp" },
+        { "name": "Jason Lee", "role": "Senior Advisor", "year": "Class of 2026", "image": "" },
+        { "name": "Arya Nahavandi", "role": "Software Intern", "year": "Class of 2028", "image": "" },
+        { "name": "Nikita Nashenko", "role": "Software Intern", "year": "Class of 2027", "image": "" },
+        { "name": "Matthew Takagi", "role": "Technology Intern", "year": "Class of 2029", "image": "Headshots/student-staff/matthew-takagi.webp" },
+        { "name": "Zion Wang", "role": "Software Intern", "year": "Class of 2030", "image": "" },
+        { "name": "Ronan Wong", "role": "Software Intern", "year": "Class of 2029", "image": "Headshots/student-staff/ronan-wong.webp" }
+      ]
+    }
+  ]
+}
