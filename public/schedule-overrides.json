@@ -15,14 +15,14 @@
       "matchOpponent": "Grand Canyon University",
       "opponent": "Grand Canyon University",
       "datetimeText": "Saturday, October 31st 9:45 PM MST",
-      "locationText": "@AZ Ice Arcadia"
+      "locationText": "AZ Ice Arcadia"
     },
     {
       "matchDate": "2026-11-01",
       "matchOpponent": "Grand Canyon University",
       "opponent": "Grand Canyon University",
       "datetimeText": "Sunday, November 1st 12:00 PM MST",
-      "locationText": "@AZ Ice Peoria"
+      "locationText": "AZ Ice Peoria"
     },
     {
       "matchDate": "2026-10-23",
@@ -46,6 +46,40 @@
       "matchOpponent": "Arizona State University",
       "usGoals": 4,
       "oppGoals": 3
+    },
+    {
+      "matchDate": "2027-01-15",
+      "matchOpponent": "University of Wyoming",
+      "opponent": "University of Wyoming",
+      "datetimeText": "Friday, January 15th 8:30 PM MST",
+      "locationText": "Greeley Ice Haus"
+    },
+    {
+      "matchDate": "2027-01-16",
+      "matchOpponent": "Colorado State University",
+      "opponent": "Colorado State University",
+      "datetimeText": "Saturday, January 16th 8:00 PM MST",
+      "locationText": "EPIC Ice"
+    },
+    {
+      "matchDate": "2027-01-17",
+      "matchOpponent": "University of New Mexico",
+      "opponent": "University of New Mexico",
+      "datetimeText": "Sunday, January 17th 12:45 PM MST",
+      "locationText": "Promenade Ice Centre"
+    },
+    {
+      "matchDate": "2027-01-18",
+      "matchOpponent": "University of Utah",
+      "opponent": "University of Utah",
+      "datetimeText": "Monday, January 18th 8:45 AM MST",
+      "locationText": "EPIC Ice"
+    },
+    {
+      "matchDate": "2026-11-06",
+      "matchOpponent": "University of California-San Diego",
+      "usGoals": 8,
+      "oppGoals": 1
     }
   ]
 }
