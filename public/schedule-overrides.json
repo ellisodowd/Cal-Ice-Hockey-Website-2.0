@@ -80,6 +80,14 @@
       "matchOpponent": "University of California-San Diego",
       "usGoals": 8,
       "oppGoals": 1
+    },
+    {
+      "matchDate": "2026-11-07",
+      "matchOpponent": "University of California-San Diego",
+      "usGoals": 4,
+      "oppGoals": 2
+    },
+    {
       "matchDate": "2026-11-15",
       "matchOpponent": "Cal Alumni",
       "opponent": "Cal Alumni",
