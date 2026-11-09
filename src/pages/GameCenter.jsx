@@ -5,7 +5,7 @@ import Footer from '../components/Footer.jsx'
 import LoadingScreen from '../components/Loading.jsx'
 import { Logo, IcGoalLight } from '../components/Brand.jsx'
 import { fetchGameSummary, scoringPlays, periodsWithPlays, penaltyPlays, allPlays, strengthTag } from '../lib/gameCenter.js'
-import { fetchSchedule, seasonStats, CURRENT_SEASON_ID } from '../lib/schedule.js'
+import { fetchSchedule, seasonStats, gameOutcome, CURRENT_SEASON_ID } from '../lib/schedule.js'
 import { fetchOpponentRecord, fetchOpponentSeasonTotals, fetchOpponentRoster } from '../lib/opponentSeason.js'
 
 const THEM_GREY = '#5B6A7A'
@@ -116,8 +116,9 @@ function SeasonSeriesCard({ meetings, us, gameId }) {
   let w = 0, l = 0, t = 0
   for (const g of meetings) {
     if (!g.isPlayed) continue
-    if (g.usGoals > g.oppGoals) w++
-    else if (g.usGoals < g.oppGoals) l++
+    const outcome = gameOutcome(g)
+    if (outcome === 'W') w++
+    else if (outcome === 'L') l++
     else t++
   }
   return (

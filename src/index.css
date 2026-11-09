@@ -429,6 +429,7 @@ a.watchbtn { color: #fff; }
 .rtag.W { color: var(--gold); }
 .rtag.L { color: var(--loss); }
 .rtag.T { color: var(--tie); }
+.rtag.OTL { color: var(--tie); }
 /* The small vs/at marker overlapping the opponent crest. Home carries the
    team colour; away is deliberately recessive, so a glance down the
    schedule separates the two without reading the words. */
