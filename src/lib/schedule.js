@@ -95,6 +95,11 @@ export function normalizeFeedRow(entry, seasonStartYear) {
     scoreText = `Score: ${usGoals} - ${oppGoals}`
   }
 
+  // "Final OT" / "Final SO" once the game's done — only matters for a loss,
+  // where it's worth one point (OTL) instead of zero.
+  const decidedMatch = /^Final\s+(OT|SO)\b/i.exec(row.game_status || '')
+  const decidedBy = isPlayed && decidedMatch ? decidedMatch[1].toUpperCase() : null
+
   return {
     gameId: row.game_id,
     opponent,
@@ -107,11 +112,21 @@ export function normalizeFeedRow(entry, seasonStartYear) {
     scoreText,
     usGoals,
     oppGoals,
+    decidedBy,
     watchUrl: '',
     logo: opponentTeamId ? `${LOGO_BASE_URL}/${opponentTeamId}.png` : undefined,
     sortDate,
     isPlayed,
   }
+}
+
+// W / L / OTL / T for a single decided game — a loss only counts as OTL when
+// the feed (or an override) says the game went past regulation.
+export function gameOutcome(g) {
+  if (g.usGoals == null || g.oppGoals == null) return null
+  if (g.usGoals > g.oppGoals) return 'W'
+  if (g.usGoals < g.oppGoals) return g.decidedBy ? 'OTL' : 'L'
+  return 'T'
 }
 
 function normalizeOpponent(s) {
@@ -148,6 +163,7 @@ function applyOverrides(games, overrides) {
         game.usGoals = override.usGoals
         game.oppGoals = override.oppGoals
         game.scoreText = override.scoreText || `Score: ${override.usGoals} - ${override.oppGoals}`
+        if (override.decidedBy) game.decidedBy = override.decidedBy
       } else if (override.scoreText) {
         game.scoreText = override.scoreText
       }
@@ -175,6 +191,7 @@ function applyOverrides(games, overrides) {
       scoreText: override.scoreText || (hasResult ? `Score: ${override.usGoals} - ${override.oppGoals}` : ''),
       usGoals: hasResult ? override.usGoals : null,
       oppGoals: hasResult ? override.oppGoals : null,
+      decidedBy: hasResult ? override.decidedBy || null : null,
       watchUrl: override.watchUrl || '',
       logo: override.logo || undefined,
       sortDate: new Date(`${override.matchDate}T00:00:00`),
@@ -196,8 +213,11 @@ export function seasonStats(games) {
     const home = g.homeAway === 'H'
     const away = g.homeAway === 'A'
     if (!home && !away) unsided++
-    if (g.usGoals > g.oppGoals) { w++; if (home) hw++; else if (away) aw++ }
-    else if (g.usGoals < g.oppGoals) { l++; if (home) hl++; else if (away) al++ }
+    const outcome = gameOutcome(g)
+    // OTL shares the record's third slot with T — both are worth half a win
+    // in the standings (1 point of 2), same as the pct formula below already assumes.
+    if (outcome === 'W') { w++; if (home) hw++; else if (away) aw++ }
+    else if (outcome === 'L') { l++; if (home) hl++; else if (away) al++ }
     else { t++; if (home) ht++; else if (away) at++ }
   }
 
@@ -206,10 +226,9 @@ export function seasonStats(games) {
 
   let streak = '—'
   if (decided.length) {
-    const tag = g => (g.usGoals > g.oppGoals ? 'W' : g.usGoals < g.oppGoals ? 'L' : 'T')
-    const last = tag(decided[decided.length - 1])
+    const last = gameOutcome(decided[decided.length - 1])
     let n = 0
-    for (let i = decided.length - 1; i >= 0 && tag(decided[i]) === last; i--) n++
+    for (let i = decided.length - 1; i >= 0 && gameOutcome(decided[i]) === last; i--) n++
     streak = `${last}${n}`
   }
 

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
-import { seasonLabel, seasonStats } from '../lib/schedule.js'
+import { seasonLabel, seasonStats, gameOutcome } from '../lib/schedule.js'
 import { PctRing } from '../components/Brand.jsx'
 
 const FALLBACK_IMG = '/images/blank-profile-picture-973460_960_720.jpeg'
@@ -282,7 +282,7 @@ export default function Stats() {
                             {(() => {
                               let w = 0, l = 0, t = 0
                               return games.map((g, i) => {
-                                const tag = g.usGoals > g.oppGoals ? 'W' : g.usGoals < g.oppGoals ? 'L' : 'T'
+                                const tag = gameOutcome(g)
                                 if (tag === 'W') w++
                                 else if (tag === 'L') l++
                                 else t++

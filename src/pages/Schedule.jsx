@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
-import { fetchSchedule, fetchSeasonHistory, seasonStats, currentSeasonStartYear, seasonLabel } from '../lib/schedule.js'
+import { fetchSchedule, fetchSeasonHistory, seasonStats, currentSeasonStartYear, seasonLabel, gameOutcome } from '../lib/schedule.js'
 import { fetchGameSummary, scoringPlays, strengthTag } from '../lib/gameCenter.js'
 import { IcPin, IcClock, IcChevL, IcChevR, IcPlayCircle, IcGameCenter, PctRing } from '../components/Brand.jsx'
 
@@ -163,7 +163,7 @@ function OppBadge({ name, logo, size = 48 }) {
 function GameCard({ game, open, onToggle }) {
   const vs = game.homeAway === 'A' ? 'at' : game.homeAway === 'H' ? 'vs' : ''
   const sideCls = game.homeAway === 'H' ? 'home' : game.homeAway === 'A' ? 'away' : ''
-  const tag = game.usGoals > game.oppGoals ? 'W' : game.usGoals < game.oppGoals ? 'L' : 'T'
+  const tag = gameOutcome(game)
   const canOpenGameCenter = hasGameCenter(game)
   // Games added only through schedule-overrides.json have no feed summary, so
   // their quick look is just the matchup details.

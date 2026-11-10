@@ -20,7 +20,7 @@
 import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { normalizeFeedRow } from '../src/lib/schedule.js'
+import { normalizeFeedRow, gameOutcome } from '../src/lib/schedule.js'
 
 const dir = path.dirname(fileURLToPath(import.meta.url))
 const KEY = 'e6867b36742a0c9d'
@@ -112,8 +112,9 @@ async function statsForSeason(seasonId, startYear) {
         line.saves += Number(row.stats.saves) || 0
         line.shotsAgainst += Number(row.stats.shotsAgainst) || 0
         if (row === starter) {
-          if (game.usGoals > game.oppGoals) line.w += 1
-          else if (game.usGoals < game.oppGoals) line.l += 1
+          const outcome = gameOutcome(game)
+          if (outcome === 'W') line.w += 1
+          else if (outcome === 'L') line.l += 1
           else line.t += 1
           if (Number(row.stats.goalsAgainst) === 0) line.so += 1
         }
@@ -134,6 +135,7 @@ async function statsForSeason(seasonId, startYear) {
       datetimeText: game.datetimeText,
       usGoals: game.usGoals,
       oppGoals: game.oppGoals,
+      decidedBy: game.decidedBy,
       shots: side.stats?.shots ?? null,
       oppShots: opp.stats?.shots ?? null,
       pim: sidePim,
