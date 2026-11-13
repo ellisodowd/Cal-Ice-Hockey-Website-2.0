@@ -33,7 +33,8 @@ function NextHomeGame({ game }) {
 }
 
 export default function Home() {
-  const announcement = false
+  // Hides automatically once the store closes (midnight Pacific at the end of Nov 20).
+  const announcement = new Date() < new Date('2026-11-21T00:00:00-08:00')
   const [nextHome, setNextHome] = useState(null)
   const [articles, setArticles] = useState([])
 
@@ -61,12 +62,13 @@ export default function Home() {
       {announcement &&
         <a
         className="heroAnnouncement"
-        href="https://stores.inksoft.com/Cal_Ice_Hockey_Club_221608/shop/home"
+        href="https://stores.inksoft.com/Cal_Club_Ice_Hockey_222244/shop/home"
         target="_blank"
         rel="noreferrer"
         >
         <p className="heroAnnouncement__text">
-          The Official Cal Ice Hockey Merch Store is Open for a Limited Time!
+          <span className="ha-full">Cal Ice Jersey &amp; Merch Combo Store — Final store of the season, closes Nov 20</span>
+          <span className="ha-short">Jersey &amp; merch store open · closes Nov 20</span>
         </p>
         <span className="heroAnnouncement__arrow" aria-hidden="true">
           <svg viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +77,12 @@ export default function Home() {
         </span>
       </a>
       }
+
+      <section className="hvideo">
+        <video autoPlay loop muted playsInline preload="metadata" poster="/images/HomePageVideo-poster.jpg">
+          <source src="/images/HomePageVideo.mp4" type="video/mp4" />
+        </video>
+      </section>
 
       {nextHome && <NextHomeGame game={nextHome} />}
 

@@ -152,6 +152,13 @@ a.navpanelitem.on { color: var(--gold); }
 }
 
 /* Scoreboard — strip above the nav */
+/* Drop-down wrapper: collapsed (0fr) until .open, then slides to full height. */
+.sbdrop { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.6s ease; }
+.sbdrop.open { grid-template-rows: 1fr; }
+.sbdrop > .sboard { min-height: 0; overflow: hidden; transition: padding 0.6s ease; }
+.sbdrop:not(.open) > .sboard { padding: 0; border-bottom: 0; }
+.sbdrop.home.open > .sboard { padding: 6px 0; }
+@media (prefers-reduced-motion: reduce) { .sbdrop, .sbdrop > .sboard { transition: none; } }
 .sboard { background: #fff; border-bottom: 1px solid var(--border); padding: 14px 0; }
 .sboard-inner { display: flex; align-items: center; gap: 10px; padding: 0 16px; }
 .sboard-row { display: flex; gap: 12px; overflow-x: auto; scroll-behavior: smooth;
@@ -214,6 +221,13 @@ a.navcta { color: var(--deep); }
 .emptybox { border: 1px dashed var(--border); border-radius: 10px; padding: 34px 24px;
   text-align: center; background: #fff; margin-bottom: 24px; }
 
+/* ---- Home: full-width video under the header ---- */
+.hvideo { position: relative; width: 100%; height: clamp(240px, 46vw, 760px); overflow: hidden; background: var(--deep); }
+.hvideo video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hvideo video::-webkit-media-controls { display: none !important; }
+/* Phones: a bit taller; object-fit: cover trims the sides to fill. */
+@media (max-width: 560px) { .hvideo { height: 320px; } }
+
 /* ---- Home: merch announcement pill ---- */
 .heroAnnouncement { display: flex; align-items: center; justify-content: center; gap: 12px;
   background: var(--gold); color: var(--deep); text-decoration: none; padding: 11px 20px;
@@ -222,7 +236,14 @@ a.navcta { color: var(--deep); }
 .heroAnnouncement__text { margin: 0; font-family: var(--body); font-weight: 700; font-size: 14px; }
 .heroAnnouncement__arrow { flex: 0 0 auto; width: 22px; height: 14px; }
 .heroAnnouncement__arrow svg { display: block; width: 100%; height: 100%; }
-@media (max-width: 560px) { .heroAnnouncement__text { font-size: 12.5px; } }
+.heroAnnouncement .ha-short { display: none; }
+@media (max-width: 560px) {
+  .heroAnnouncement { padding: 8px 16px; gap: 8px; }
+  .heroAnnouncement__text { font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .heroAnnouncement .ha-full { display: none; }
+  .heroAnnouncement .ha-short { display: inline; }
+  .heroAnnouncement__arrow { width: 18px; height: 12px; }
+}
 
 /* ---- Home: next home game ---- */
 .hnextcontainer { container-type: inline-size; container-name: next-game; }
@@ -558,8 +579,8 @@ table.stats.sortable th { padding: 0; }
   /* Same shape as a plain .staffcard below this width — full-width photo
      on top, body underneath — rather than the side-by-side feature layout,
      which left no room for the text next to a fixed photo column. */
-  .leadstaff { grid-template-columns: 1fr; }
-  .leadbody { padding: 15px 16px 17px; align-self: stretch; }
+  .leadstaff { grid-template-columns: 128px minmax(0, 1fr); }
+  .leadbody { padding: 14px 14px; align-self: center; }
   .leadname { font-size: 16.5px; margin: 4px 0 0; }
   .leadcontact { grid-template-columns: 1fr; gap: 0; margin-top: 8px; padding-top: 0; border-top: 0; max-width: none; }
   .leadcontact dt { display: none; }
@@ -575,7 +596,16 @@ table.stats.sortable th { padding: 0; }
 .staffgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 @media (max-width: 1040px) { .staffgrid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px) { .staffgrid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 460px) { .staffgrid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  /* Phones: keep two columns with tighter cards instead of one full-width
+     photo per screen. */
+  .staffgrid { gap: 12px; }
+  .staffbody { padding: 10px 11px 12px; }
+  .staffname { font-size: 14.5px; }
+  .stafftitle, .staffyear, .staffmail { font-size: 11.5px; }
+  .stmono { font-size: 34px; }
+  .staffsec { margin-top: 28px; }
+}
 .staffcard { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .staffwell { position: relative; aspect-ratio: 4 / 5; background: var(--ice); }
 .stphoto { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
@@ -602,15 +632,25 @@ table.stats.sortable th { padding: 0; }
 .leadrow.pair .leadname { font-size: clamp(1.3rem, 2vw, 1.6rem); }
 @media (max-width: 860px) { .leadrow.pair { grid-template-columns: 1fr; } }
 @media (max-width: 560px) {
-  .leadrow.pair .leadstaff { grid-template-columns: 1fr; }
-  .leadrow.pair .leadphoto { min-height: 230px; }
-  .leadrow.pair .leadbody { padding: 15px 16px 17px; }
+  .leadrow.pair { gap: 12px; }
+  .leadrow.pair .leadstaff { grid-template-columns: 128px minmax(0, 1fr); }
+  .leadrow.pair .leadphoto { min-height: 0; }
+  .leadrow.pair .leadbody { padding: 14px 14px; }
   .leadrow.pair .leadname { font-size: 16.5px; }
 }
 .staffsec.dept + .staffsec.dept { margin-top: 56px; }
 .staffyear { margin: 4px 0 0; font-size: 12.5px; font-weight: 600; color: var(--muted); }
 /* HAC Board — short bio under the name on each board banner. */
 .leadbio { margin: 12px 0 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+@media (max-width: 560px) {
+  /* Board on phones: photo + title side by side, bio full width underneath. */
+  .leadrow .boardstaff { grid-template-columns: 128px minmax(0, 1fr); grid-template-rows: auto auto auto; }
+  .boardstaff .leadphoto { grid-column: 1; grid-row: 1 / 3; }
+  .boardstaff .leadbody { display: contents; }
+  .boardstaff .eyebrow { grid-column: 2; grid-row: 1; align-self: end; margin: 0; padding: 0 14px; }
+  .boardstaff .leadname { grid-column: 2; grid-row: 2; align-self: start; padding: 0 14px; }
+  .boardstaff .leadbio { grid-column: 1 / -1; grid-row: 3; margin: 0; padding: 12px 14px 14px; font-size: 13.5px; }
+}
 
 /* Front office directory */
 .frontoffice { background: #fff; min-height: 60vh; }
