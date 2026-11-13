@@ -21,6 +21,7 @@ function Face({ person }) {
 export default function Staff() {
   const [coaches, setCoaches] = useState([])
   const [executive, setExecutive] = useState([])
+  const [support, setSupport] = useState([])
   const [board, setBoard] = useState([])
   const [error, setError] = useState(null)
 
@@ -33,6 +34,7 @@ export default function Staff() {
       .then(data => {
         setCoaches(Array.isArray(data.coaches) ? data.coaches : [])
         setExecutive(Array.isArray(data.executive) ? data.executive : [])
+        setSupport(Array.isArray(data.support) ? data.support : [])
         setBoard(Array.isArray(data.board) ? data.board : [])
       })
       .catch(err => setError(err.message))
@@ -127,12 +129,34 @@ export default function Staff() {
               </div>
             )}
 
+            {support.length > 0 && (
+              <div className="staffsec">
+                <h2 className="staffseclab">Support Staff<span className="staffsecn">{support.length}</span></h2>
+                <div className="staffgrid">
+                  {support.map((c, i) => {
+                    const contact = splitContact(c.contact)
+                    return (
+                      <article className="staffcard" key={i}>
+                        <div className="staffwell"><Face person={c} /></div>
+                        <div className="staffbody">
+                          <p className="staffname">{c.name}</p>
+                          <p className="stafftitle">{c.role}</p>
+                          {contact.email && <a className="staffmail" href={`mailto:${contact.email}`}>{contact.email}</a>}
+                          {contact.phone && <a className="staffmail" href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}>{contact.phone}</a>}
+                        </div>
+                      </article>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
             {board.length > 0 && (
               <div className="staffsec">
                 <h2 className="staffseclab">Hockey at California Board of Directors</h2>
                 <div className={board.length > 1 ? 'leadrow pair' : 'leadrow'}>
                   {board.map((b, i) => (
-                    <article className="leadstaff" key={i}>
+                    <article className="leadstaff boardstaff" key={i}>
                       <div className="leadphoto"><Face person={b} /></div>
                       <div className="leadbody">
                         <p className="eyebrow" style={{ color: 'var(--blue)' }}>{b.role}</p>

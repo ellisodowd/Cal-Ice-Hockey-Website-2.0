@@ -61,7 +61,9 @@
       "role": "Senior Officer",
       "contact": "",
       "image": "Headshots/enzoGoebelLinkedIn.webp"
-    },
+    }
+  ],
+  "support": [
     {
       "name": "Ryan Carlson",
       "role": "Broadcaster",
@@ -91,7 +93,7 @@
     {
       "name": "Jeff Chen",
       "role": "Founding Board Member & President, HAC",
-      "image": "",
+      "image": "Headshots/jeffChen.webp",
       "bio": "Grew up in Westchester, NY. Played for Cal Ice Hockey from 2017 to 2021 (fourth year was cancelled due to Covid) and majored in Computer Science at Cal. He's a software engineer at Databricks in San Francisco."
     },
     {
