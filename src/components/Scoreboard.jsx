@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { fetchSchedule } from '../lib/schedule.js'
 import { IcChevL, IcChevR } from './Brand.jsx'
 
@@ -8,6 +9,15 @@ export default function Scoreboard() {
   const rowRef = useRef(null)
   const anchorRef = useRef(null)
   const [ends, setEnds] = useState({ start: true, end: false })
+  // On the home page the strip starts tucked away and drops down after a beat.
+  const isHome = useLocation().pathname === '/'
+  const [open, setOpen] = useState(!isHome)
+
+  useEffect(() => {
+    if (open) return
+    const t = setTimeout(() => setOpen(true), 2500)
+    return () => clearTimeout(t)
+  }, [open])
 
   useEffect(() => {
     let cancelled = false
@@ -55,6 +65,7 @@ export default function Scoreboard() {
   const anchorId = (games.find(g => !g.isPlayed) || games[games.length - 1]).gameId
 
   return (
+    <div className={`sbdrop${isHome ? ' home' : ''}${open ? ' open' : ''}`}>
     <div className="sboard">
       <div className="sboard-inner">
         <button className="chev" aria-label="Previous games" disabled={ends.start} onClick={() => scroll(-1)}>
@@ -79,6 +90,7 @@ export default function Scoreboard() {
           <IcChevR size={22} />
         </button>
       </div>
+    </div>
     </div>
   )
 }

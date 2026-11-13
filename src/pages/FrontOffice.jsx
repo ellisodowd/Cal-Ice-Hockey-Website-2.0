@@ -30,7 +30,10 @@ export default function FrontOffice() {
       })
       .then(data => {
         setCoaches(Array.isArray(data.coaches) ? data.coaches : [])
-        setExecutive(Array.isArray(data.executive) ? data.executive : [])
+        setExecutive([
+          ...(Array.isArray(data.executive) ? data.executive : []),
+          ...(Array.isArray(data.support) ? data.support : []),
+        ])
       })
       .catch(err => setError(err.message))
   }, [])

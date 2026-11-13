@@ -62,5 +62,45 @@
       "contact": "",
       "image": "Headshots/enzoGoebelLinkedIn.webp"
     }
+  ],
+  "support": [
+    {
+      "name": "Ryan Carlson",
+      "role": "Broadcaster",
+      "contact": "",
+      "image": "Headshots/ryanCarlson.webp"
+    },
+    {
+      "name": "Joshua Gohres",
+      "role": "Broadcast Color-Commentator",
+      "contact": "",
+      "image": ""
+    },
+    {
+      "name": "Camille Lu",
+      "role": "Athletic Trainer",
+      "contact": "",
+      "image": ""
+    },
+    {
+      "name": "Eddie Garcia",
+      "role": "Scorekeeper",
+      "contact": "",
+      "image": ""
+    }
+  ],
+  "board": [
+    {
+      "name": "Jeff Chen",
+      "role": "Founding Board Member & President, HAC",
+      "image": "Headshots/jeffChen.webp",
+      "bio": "Grew up in Westchester, NY. Played for Cal Ice Hockey from 2017 to 2021 (fourth year was cancelled due to Covid) and majored in Computer Science at Cal. He's a software engineer at Databricks in San Francisco."
+    },
+    {
+      "name": "Tyson Storr",
+      "role": "Founding Board Member & Treasurer, HAC",
+      "image": "Headshots/storrStaff.webp",
+      "bio": "Played for Cal Ice Hockey from 2022 to 2026, serving as team Captain and President. Transitioning from Junior A hockey in the OJHL to Cal was one of the most impactful decisions of his life. Tyson currently works in commercial real estate, specializing in multifamily properties throughout Southern California."
+    }
   ]
 }

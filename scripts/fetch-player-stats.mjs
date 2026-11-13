@@ -62,8 +62,19 @@ function emptyGoalie(info) {
   }
 }
 
+// Keyed by name, not jersey number, so a player who changes numbers
+// mid-season stays one row; the row shows the number worn most often.
 function playerKey(info) {
-  return `${info.jerseyNumber}-${info.lastName}`
+  return `${info.firstName} ${info.lastName}`.trim().toLowerCase()
+}
+
+// Tally each jersey number a player wears; `number` follows the most-worn one.
+const numberCounts = new WeakMap()
+function countNumber(line, number) {
+  const counts = numberCounts.get(line) || new Map()
+  counts.set(number, (counts.get(number) || 0) + 1)
+  numberCounts.set(line, counts)
+  line.number = [...counts].sort((a, b) => b[1] - a[1])[0][0]
 }
 
 async function statsForSeason(seasonId, startYear) {
@@ -88,9 +99,12 @@ async function statsForSeason(seasonId, startYear) {
     const side = homeIsCal ? summary.homeTeam : summary.visitingTeam
     const opp = homeIsCal ? summary.visitingTeam : summary.homeTeam
 
-    for (const row of side.skaters || []) {
+    // The feed books unattributed goals to a nameless placeholder (id 0);
+    // skip it so it doesn't show up as a "null null" player.
+    for (const row of (side.skaters || []).filter(r => r.info?.lastName)) {
       const key = playerKey(row.info)
       const line = skaters.get(key) || emptySkater(row.info)
+      countNumber(line, row.info.jerseyNumber)
       line.gp += 1
       line.g += Number(row.stats.goals) || 0
       line.a += Number(row.stats.assists) || 0
@@ -107,6 +121,7 @@ async function statsForSeason(seasonId, startYear) {
       const key = playerKey(row.info)
       const line = goalies.get(key) || emptyGoalie(row.info)
       if (row.stats.timeOnIce && row.stats.timeOnIce !== '0:00') {
+        countNumber(line, row.info.jerseyNumber)
         line.gp += 1
         line.ga += Number(row.stats.goalsAgainst) || 0
         line.saves += Number(row.stats.saves) || 0

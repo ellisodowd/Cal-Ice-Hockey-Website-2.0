@@ -169,10 +169,10 @@
           "name": "Trent Teruya",
           "number": 21,
           "position": "D",
-          "gp": 9,
+          "gp": 11,
           "g": 2,
           "a": 2,
-          "pim": 10,
+          "pim": 14,
           "shots": 0
         },
         {
@@ -274,16 +274,6 @@
           "a": 0,
           "pim": 0,
           "shots": 0
-        },
-        {
-          "name": "Trent Teruya",
-          "number": 20,
-          "position": "D",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pim": 4,
-          "shots": 0
         }
       ],
       "goalies": [
@@ -302,25 +292,13 @@
         {
           "name": "Cole Nelson",
           "number": 50,
-          "gp": 4,
+          "gp": 6,
           "w": 4,
-          "l": 0,
-          "t": 0,
-          "ga": 9,
-          "saves": 83,
-          "shotsAgainst": 92,
-          "so": 0
-        },
-        {
-          "name": "Cole Nelson",
-          "number": 31,
-          "gp": 2,
-          "w": 0,
           "l": 1,
           "t": 0,
-          "ga": 5,
-          "saves": 38,
-          "shotsAgainst": 43,
+          "ga": 14,
+          "saves": 121,
+          "shotsAgainst": 135,
           "so": 0
         }
       ],
@@ -541,6 +519,16 @@
       "startYear": 2025,
       "skaters": [
         {
+          "name": "Dominik Sedlak-Braude",
+          "number": 3,
+          "position": "F",
+          "gp": 21,
+          "g": 25,
+          "a": 18,
+          "pim": 30,
+          "shots": 0
+        },
+        {
           "name": "Roy Chebaclo",
           "number": 25,
           "position": "F",
@@ -551,13 +539,13 @@
           "shots": 0
         },
         {
-          "name": "Dominik Sedlak-Braude",
-          "number": 3,
+          "name": "Liam Collins",
+          "number": 72,
           "position": "F",
-          "gp": 17,
-          "g": 19,
+          "gp": 24,
+          "g": 17,
           "a": 17,
-          "pim": 28,
+          "pim": 18,
           "shots": 0
         },
         {
@@ -584,10 +572,20 @@
           "name": "Lucas Fung",
           "number": 23,
           "position": "F",
-          "gp": 26,
-          "g": 19,
-          "a": 8,
+          "gp": 27,
+          "g": 21,
+          "a": 9,
           "pim": 31,
+          "shots": 0
+        },
+        {
+          "name": "Colten Fazio",
+          "number": 93,
+          "position": "F",
+          "gp": 28,
+          "g": 17,
+          "a": 11,
+          "pim": 66,
           "shots": 0
         },
         {
@@ -601,23 +599,13 @@
           "shots": 0
         },
         {
-          "name": "Liam Collins",
-          "number": 72,
-          "position": "F",
-          "gp": 17,
-          "g": 13,
-          "a": 10,
-          "pim": 8,
-          "shots": 0
-        },
-        {
-          "name": "Colten Fazio",
-          "number": 93,
-          "position": "F",
-          "gp": 22,
-          "g": 15,
-          "a": 7,
-          "pim": 40,
+          "name": "Ellis O'Dowd",
+          "number": 8,
+          "position": "D",
+          "gp": 26,
+          "g": 4,
+          "a": 18,
+          "pim": 12,
           "shots": 0
         },
         {
@@ -628,16 +616,6 @@
           "g": 4,
           "a": 14,
           "pim": 21,
-          "shots": 0
-        },
-        {
-          "name": "Ellis O'Dowd",
-          "number": 8,
-          "position": "D",
-          "gp": 23,
-          "g": 2,
-          "a": 16,
-          "pim": 10,
           "shots": 0
         },
         {
@@ -681,13 +659,23 @@
           "shots": 0
         },
         {
-          "name": "Liam Collins",
-          "number": 48,
+          "name": "Connor Kanas",
+          "number": 17,
           "position": "F",
-          "gp": 6,
-          "g": 4,
-          "a": 5,
-          "pim": 8,
+          "gp": 20,
+          "g": 3,
+          "a": 7,
+          "pim": 17,
+          "shots": 0
+        },
+        {
+          "name": "Simon Mantoani",
+          "number": 51,
+          "position": "D",
+          "gp": 27,
+          "g": 2,
+          "a": 7,
+          "pim": 6,
           "shots": 0
         },
         {
@@ -711,16 +699,6 @@
           "shots": 0
         },
         {
-          "name": "Dominik Sedlak-Braude",
-          "number": 2,
-          "position": "F",
-          "gp": 4,
-          "g": 6,
-          "a": 1,
-          "pim": 2,
-          "shots": 0
-        },
-        {
           "name": "Bryan Bartolo",
           "number": 15,
           "position": "F",
@@ -741,16 +719,6 @@
           "shots": 0
         },
         {
-          "name": "Connor Kanas",
-          "number": 17,
-          "position": "F",
-          "gp": 13,
-          "g": 2,
-          "a": 5,
-          "pim": 17,
-          "shots": 0
-        },
-        {
           "name": "Brendan Baker",
           "number": 12,
           "position": "F",
@@ -758,16 +726,6 @@
           "g": 3,
           "a": 2,
           "pim": 26,
-          "shots": 0
-        },
-        {
-          "name": "Simon Mantoani",
-          "number": 96,
-          "position": "D",
-          "gp": 7,
-          "g": 2,
-          "a": 3,
-          "pim": 0,
           "shots": 0
         },
         {
@@ -781,66 +739,6 @@
           "shots": 0
         },
         {
-          "name": "Simon Mantoani",
-          "number": 51,
-          "position": "D",
-          "gp": 19,
-          "g": 0,
-          "a": 4,
-          "pim": 6,
-          "shots": 0
-        },
-        {
-          "name": "Lucas Fung",
-          "number": 13,
-          "position": "F",
-          "gp": 1,
-          "g": 2,
-          "a": 1,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Colten Fazio",
-          "number": 29,
-          "position": "F",
-          "gp": 1,
-          "g": 1,
-          "a": 2,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Colten Fazio",
-          "number": 7,
-          "position": "F",
-          "gp": 5,
-          "g": 1,
-          "a": 2,
-          "pim": 24,
-          "shots": 0
-        },
-        {
-          "name": "Ellis O'Dowd",
-          "number": 2,
-          "position": "D",
-          "gp": 2,
-          "g": 1,
-          "a": 2,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Connor Kanas",
-          "number": 16,
-          "position": "F",
-          "gp": 2,
-          "g": 1,
-          "a": 2,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "Enzo Goebel",
           "number": 95,
           "position": "D",
@@ -851,60 +749,10 @@
           "shots": 0
         },
         {
-          "name": "Liam Collins",
-          "number": 7,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 2,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Ellis O'Dowd",
-          "number": 48,
-          "position": "D",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "William Hagan",
           "number": 6,
           "position": "D",
-          "gp": 3,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "William Hagan",
-          "number": 27,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Simon Mantoani",
-          "number": 57,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Connor Kanas",
-          "number": 97,
-          "position": "F",
-          "gp": 5,
+          "gp": 4,
           "g": 0,
           "a": 0,
           "pim": 0,
@@ -1520,16 +1368,6 @@
           "shots": 0
         },
         {
-          "name": "null null",
-          "number": 0,
-          "position": null,
-          "gp": 3,
-          "g": 25,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "Sean Dolim",
           "number": 88,
           "position": "D",
@@ -1610,6 +1448,16 @@
           "shots": 0
         },
         {
+          "name": "Arya Nahavandi",
+          "number": 24,
+          "position": "F",
+          "gp": 17,
+          "g": 5,
+          "a": 5,
+          "pim": 23,
+          "shots": 0
+        },
+        {
           "name": "Brendan Baker",
           "number": 12,
           "position": "F",
@@ -1637,16 +1485,6 @@
           "g": 4,
           "a": 5,
           "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Arya Nahavandi",
-          "number": 24,
-          "position": "F",
-          "gp": 13,
-          "g": 5,
-          "a": 3,
-          "pim": 23,
           "shots": 0
         },
         {
@@ -1707,26 +1545,6 @@
           "g": 1,
           "a": 1,
           "pim": 10,
-          "shots": 0
-        },
-        {
-          "name": "Arya Nahavandi",
-          "number": 48,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 2,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Arya Nahavandi",
-          "number": 10,
-          "position": "F",
-          "gp": 3,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
           "shots": 0
         }
       ],
@@ -2335,6 +2153,16 @@
           "shots": 2
         },
         {
+          "name": "Brendan Baker",
+          "number": 12,
+          "position": "F",
+          "gp": 26,
+          "g": 11,
+          "a": 5,
+          "pim": 63,
+          "shots": 3
+        },
+        {
           "name": "Amir Sadikov",
           "number": 7,
           "position": "D",
@@ -2355,16 +2183,6 @@
           "shots": 1
         },
         {
-          "name": "Brendan Baker",
-          "number": 12,
-          "position": "F",
-          "gp": 22,
-          "g": 8,
-          "a": 4,
-          "pim": 57,
-          "shots": 0
-        },
-        {
           "name": "Zachary Tam",
           "number": 9,
           "position": "F",
@@ -2378,7 +2196,7 @@
           "name": "Kristian Seppanen",
           "number": 29,
           "position": "F",
-          "gp": 23,
+          "gp": 24,
           "g": 4,
           "a": 4,
           "pim": 10,
@@ -2413,16 +2231,6 @@
           "a": 4,
           "pim": 6,
           "shots": 0
-        },
-        {
-          "name": "Brendan Baker",
-          "number": 13,
-          "position": "F",
-          "gp": 4,
-          "g": 3,
-          "a": 1,
-          "pim": 6,
-          "shots": 3
         },
         {
           "name": "Kayden Roloff",
@@ -2465,16 +2273,6 @@
           "shots": 0
         },
         {
-          "name": "Kristian Seppanen",
-          "number": 76,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "Kamran Samudrala",
           "number": 22,
           "position": "F",
@@ -2501,109 +2299,37 @@
         {
           "name": "Jared Brunner",
           "number": 32,
-          "gp": 7,
-          "w": 3,
+          "gp": 9,
+          "w": 4,
           "l": 2,
           "t": 1,
-          "ga": 30,
-          "saves": 78,
-          "shotsAgainst": 108,
-          "so": 0
-        },
-        {
-          "name": "Thor Oase",
-          "number": 35,
-          "gp": 2,
-          "w": 1,
-          "l": 1,
-          "t": 0,
-          "ga": 8,
-          "saves": 34,
-          "shotsAgainst": 42,
-          "so": 0
-        },
-        {
-          "name": "Thor Oase",
-          "number": 2,
-          "gp": 1,
-          "w": 1,
-          "l": 0,
-          "t": 0,
-          "ga": 5,
-          "saves": 27,
-          "shotsAgainst": 32,
-          "so": 0
-        },
-        {
-          "name": "Allan Anaka",
-          "number": 35,
-          "gp": 2,
-          "w": 0,
-          "l": 1,
-          "t": 0,
-          "ga": 10,
-          "saves": 25,
-          "shotsAgainst": 35,
-          "so": 0
-        },
-        {
-          "name": "Thor Oase",
-          "number": 32,
-          "gp": 1,
-          "w": 1,
-          "l": 0,
-          "t": 0,
-          "ga": 3,
-          "saves": 18,
-          "shotsAgainst": 21,
-          "so": 0
-        },
-        {
-          "name": "Jared Brunner",
-          "number": 1,
-          "gp": 1,
-          "w": 1,
-          "l": 0,
-          "t": 0,
-          "ga": 0,
-          "saves": 15,
-          "shotsAgainst": 15,
+          "ga": 34,
+          "saves": 98,
+          "shotsAgainst": 132,
           "so": 1
         },
         {
+          "name": "Thor Oase",
+          "number": 35,
+          "gp": 4,
+          "w": 3,
+          "l": 1,
+          "t": 0,
+          "ga": 16,
+          "saves": 79,
+          "shotsAgainst": 95,
+          "so": 0
+        },
+        {
           "name": "Allan Anaka",
-          "number": 32,
-          "gp": 1,
+          "number": 35,
+          "gp": 3,
           "w": 1,
-          "l": 0,
+          "l": 1,
           "t": 0,
-          "ga": 2,
-          "saves": 13,
-          "shotsAgainst": 15,
-          "so": 0
-        },
-        {
-          "name": "Jared Brunner",
-          "number": 96,
-          "gp": 1,
-          "w": 0,
-          "l": 0,
-          "t": 0,
-          "ga": 4,
-          "saves": 5,
-          "shotsAgainst": 9,
-          "so": 0
-        },
-        {
-          "name": "Yusuf Akbas",
-          "number": 32,
-          "gp": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0,
-          "ga": 0,
-          "saves": 0,
-          "shotsAgainst": 0,
+          "ga": 12,
+          "saves": 38,
+          "shotsAgainst": 50,
           "so": 0
         }
       ],
@@ -3058,6 +2784,16 @@
           "shots": 0
         },
         {
+          "name": "Brian Faun",
+          "number": 23,
+          "position": "F",
+          "gp": 20,
+          "g": 15,
+          "a": 15,
+          "pim": 28,
+          "shots": 0
+        },
+        {
           "name": "Michael Shum",
           "number": 8,
           "position": "F",
@@ -3068,13 +2804,23 @@
           "shots": 0
         },
         {
-          "name": "Brian Faun",
-          "number": 23,
+          "name": "Tyson Storr",
+          "number": 18,
+          "position": "F",
+          "gp": 19,
+          "g": 12,
+          "a": 13,
+          "pim": 6,
+          "shots": 0
+        },
+        {
+          "name": "Tianshu Liu",
+          "number": 81,
           "position": "F",
           "gp": 18,
-          "g": 12,
-          "a": 11,
-          "pim": 26,
+          "g": 11,
+          "a": 12,
+          "pim": 16,
           "shots": 0
         },
         {
@@ -3098,16 +2844,6 @@
           "shots": 0
         },
         {
-          "name": "Tyson Storr",
-          "number": 18,
-          "position": "F",
-          "gp": 14,
-          "g": 8,
-          "a": 9,
-          "pim": 2,
-          "shots": 0
-        },
-        {
           "name": "Thor Oase",
           "number": 2,
           "position": "F",
@@ -3128,22 +2864,12 @@
           "shots": 0
         },
         {
-          "name": "Tianshu Liu",
-          "number": 81,
-          "position": "F",
-          "gp": 15,
-          "g": 5,
-          "a": 12,
-          "pim": 10,
-          "shots": 0
-        },
-        {
           "name": "Jack Burbank",
           "number": 16,
           "position": "F",
-          "gp": 17,
+          "gp": 18,
           "g": 3,
-          "a": 9,
+          "a": 10,
           "pim": 0,
           "shots": 0
         },
@@ -3158,23 +2884,43 @@
           "shots": 0
         },
         {
-          "name": "Tyson Storr",
-          "number": 22,
-          "position": "F",
-          "gp": 3,
+          "name": "Quinn Deshler",
+          "number": 92,
+          "position": "D",
+          "gp": 15,
           "g": 4,
-          "a": 3,
-          "pim": 0,
+          "a": 4,
+          "pim": 33,
           "shots": 0
         },
         {
-          "name": "Brian Faun",
-          "number": 1,
+          "name": "Charles Brigham",
+          "number": 25,
           "position": "F",
-          "gp": 2,
-          "g": 3,
+          "gp": 6,
+          "g": 4,
           "a": 4,
           "pim": 2,
+          "shots": 0
+        },
+        {
+          "name": "Sean Dolim",
+          "number": 88,
+          "position": "D",
+          "gp": 19,
+          "g": 3,
+          "a": 5,
+          "pim": 10,
+          "shots": 0
+        },
+        {
+          "name": "Kristian Seppanen",
+          "number": 29,
+          "position": "F",
+          "gp": 13,
+          "g": 3,
+          "a": 4,
+          "pim": 20,
           "shots": 0
         },
         {
@@ -3198,16 +2944,6 @@
           "shots": 0
         },
         {
-          "name": "Sean Dolim",
-          "number": 25,
-          "position": "D",
-          "gp": 5,
-          "g": 1,
-          "a": 4,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "Ethan Sheppy",
           "number": 27,
           "position": "D",
@@ -3215,76 +2951,6 @@
           "g": 1,
           "a": 4,
           "pim": 6,
-          "shots": 0
-        },
-        {
-          "name": "Quinn Deshler",
-          "number": 17,
-          "position": "D",
-          "gp": 5,
-          "g": 3,
-          "a": 1,
-          "pim": 16,
-          "shots": 0
-        },
-        {
-          "name": "Kristian Seppanen",
-          "number": 29,
-          "position": "F",
-          "gp": 8,
-          "g": 3,
-          "a": 1,
-          "pim": 4,
-          "shots": 0
-        },
-        {
-          "name": "Charles Brigham",
-          "number": 25,
-          "position": "F",
-          "gp": 3,
-          "g": 2,
-          "a": 2,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Quinn Deshler",
-          "number": 92,
-          "position": "D",
-          "gp": 10,
-          "g": 1,
-          "a": 3,
-          "pim": 17,
-          "shots": 0
-        },
-        {
-          "name": "Tianshu Liu",
-          "number": 7,
-          "position": "F",
-          "gp": 1,
-          "g": 3,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Sean Dolim",
-          "number": 88,
-          "position": "D",
-          "gp": 14,
-          "g": 2,
-          "a": 1,
-          "pim": 10,
-          "shots": 0
-        },
-        {
-          "name": "Charles Brigham",
-          "number": 22,
-          "position": "F",
-          "gp": 1,
-          "g": 2,
-          "a": 1,
-          "pim": 0,
           "shots": 0
         },
         {
@@ -3298,26 +2964,6 @@
           "shots": 0
         },
         {
-          "name": "Kristian Seppanen",
-          "number": 32,
-          "position": "F",
-          "gp": 5,
-          "g": 0,
-          "a": 3,
-          "pim": 16,
-          "shots": 0
-        },
-        {
-          "name": "Tianshu Liu",
-          "number": 48,
-          "position": "F",
-          "gp": 1,
-          "g": 2,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
           "name": "Andrew Wulee",
           "number": 48,
           "position": "F",
@@ -3328,40 +2974,10 @@
           "shots": 0
         },
         {
-          "name": "Tianshu Liu",
-          "number": 6,
-          "position": "F",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pim": 6,
-          "shots": 0
-        },
-        {
           "name": "James Li",
           "number": 28,
           "position": "F",
-          "gp": 4,
-          "g": 0,
-          "a": 1,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Tyson Storr",
-          "number": 76,
-          "position": "F",
-          "gp": 2,
-          "g": 0,
-          "a": 1,
-          "pim": 4,
-          "shots": 0
-        },
-        {
-          "name": "Jack Burbank",
-          "number": 3,
-          "position": "F",
-          "gp": 1,
+          "gp": 7,
           "g": 0,
           "a": 1,
           "pim": 0,
@@ -3371,50 +2987,10 @@
           "name": "Nicholas Daal",
           "number": 17,
           "position": "D",
-          "gp": 10,
+          "gp": 13,
           "g": 0,
           "a": 1,
           "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Charles Brigham",
-          "number": 91,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Nicholas Daal",
-          "number": 27,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Nicholas Daal",
-          "number": 6,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "James Li",
-          "number": 3,
-          "position": "F",
-          "gp": 3,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
           "shots": 0
         },
         {
@@ -3435,26 +3011,6 @@
           "g": 0,
           "a": 0,
           "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Nicholas Daal",
-          "number": 21,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Charles Brigham",
-          "number": 34,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
           "shots": 0
         },
         {
@@ -3843,6 +3399,16 @@
           "shots": 0
         },
         {
+          "name": "Lane Karlitz",
+          "number": 15,
+          "position": "F",
+          "gp": 15,
+          "g": 8,
+          "a": 10,
+          "pim": 12,
+          "shots": 0
+        },
+        {
           "name": "Jacob Sitak",
           "number": 11,
           "position": "D",
@@ -3850,6 +3416,26 @@
           "g": 9,
           "a": 7,
           "pim": 8,
+          "shots": 0
+        },
+        {
+          "name": "Thor Oase",
+          "number": 2,
+          "position": "F",
+          "gp": 15,
+          "g": 7,
+          "a": 7,
+          "pim": 6,
+          "shots": 0
+        },
+        {
+          "name": "Matthew Podelnyk",
+          "number": 91,
+          "position": "F",
+          "gp": 14,
+          "g": 7,
+          "a": 7,
+          "pim": 44,
           "shots": 0
         },
         {
@@ -3893,53 +3479,13 @@
           "shots": 0
         },
         {
-          "name": "Lane Karlitz",
-          "number": 10,
+          "name": "John Nalder",
+          "number": 20,
           "position": "F",
-          "gp": 5,
+          "gp": 15,
           "g": 4,
           "a": 5,
-          "pim": 6,
-          "shots": 0
-        },
-        {
-          "name": "Lane Karlitz",
-          "number": 15,
-          "position": "F",
-          "gp": 10,
-          "g": 4,
-          "a": 5,
-          "pim": 6,
-          "shots": 0
-        },
-        {
-          "name": "Thor Oase",
-          "number": 2,
-          "position": "F",
-          "gp": 8,
-          "g": 5,
-          "a": 2,
-          "pim": 4,
-          "shots": 0
-        },
-        {
-          "name": "Matthew Podelnyk",
-          "number": 91,
-          "position": "F",
-          "gp": 7,
-          "g": 5,
-          "a": 2,
-          "pim": 6,
-          "shots": 0
-        },
-        {
-          "name": "Thor Oase",
-          "number": 16,
-          "position": "F",
-          "gp": 7,
-          "g": 2,
-          "a": 5,
-          "pim": 2,
+          "pim": 10,
           "shots": 0
         },
         {
@@ -3956,130 +3502,50 @@
           "name": "Alexander Carbone",
           "number": 6,
           "position": "F",
-          "gp": 7,
+          "gp": 11,
           "g": 1,
           "a": 5,
-          "pim": 8,
-          "shots": 0
-        },
-        {
-          "name": "John Nalder",
-          "number": 20,
-          "position": "F",
-          "gp": 8,
-          "g": 3,
-          "a": 2,
-          "pim": 8,
-          "shots": 0
-        },
-        {
-          "name": "John Nalder",
-          "number": 76,
-          "position": "F",
-          "gp": 7,
-          "g": 1,
-          "a": 3,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Matthew Podelnyk",
-          "number": 13,
-          "position": "F",
-          "gp": 2,
-          "g": 2,
-          "a": 1,
-          "pim": 25,
-          "shots": 0
-        },
-        {
-          "name": "Andrew Wulee",
-          "number": 48,
-          "position": "F",
-          "gp": 7,
-          "g": 1,
-          "a": 2,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Matthew Podelnyk",
-          "number": 25,
-          "position": "F",
-          "gp": 3,
-          "g": 0,
-          "a": 3,
-          "pim": 13,
-          "shots": 0
-        },
-        {
-          "name": "Amir Sadikov",
-          "number": 27,
-          "position": "D",
-          "gp": 1,
-          "g": 2,
-          "a": 0,
-          "pim": 0,
+          "pim": 23,
           "shots": 0
         },
         {
           "name": "Amir Sadikov",
           "number": 7,
           "position": "D",
-          "gp": 7,
-          "g": 0,
+          "gp": 13,
+          "g": 3,
           "a": 2,
           "pim": 0,
           "shots": 0
         },
         {
           "name": "Zachary Tam",
-          "number": 8,
+          "number": 9,
           "position": "F",
-          "gp": 3,
-          "g": 0,
+          "gp": 15,
+          "g": 1,
+          "a": 4,
+          "pim": 10,
+          "shots": 0
+        },
+        {
+          "name": "Andrew Wulee",
+          "number": 48,
+          "position": "F",
+          "gp": 11,
+          "g": 1,
           "a": 2,
           "pim": 2,
           "shots": 0
         },
         {
           "name": "Nicholas Daal",
-          "number": 13,
+          "number": 17,
           "position": "D",
-          "gp": 2,
+          "gp": 9,
           "g": 1,
           "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Amir Sadikov",
-          "number": 9,
-          "position": "D",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Zachary Tam",
-          "number": 12,
-          "position": "F",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Zachary Tam",
-          "number": 9,
-          "position": "F",
-          "gp": 8,
-          "g": 0,
-          "a": 1,
-          "pim": 8,
+          "pim": 2,
           "shots": 0
         },
         {
@@ -4090,126 +3556,6 @@
           "g": 0,
           "a": 1,
           "pim": 4,
-          "shots": 0
-        },
-        {
-          "name": "Zachary Tam",
-          "number": 14,
-          "position": "F",
-          "gp": 2,
-          "g": 0,
-          "a": 1,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Matthew Podelnyk",
-          "number": 28,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Alexander Carbone",
-          "number": 12,
-          "position": "F",
-          "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pim": 15,
-          "shots": 0
-        },
-        {
-          "name": "Nicholas Daal",
-          "number": 17,
-          "position": "D",
-          "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Andrew Wulee",
-          "number": 25,
-          "position": "F",
-          "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Amir Sadikov",
-          "number": 83,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Nicholas Daal",
-          "number": 35,
-          "position": "D",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pim": 2,
-          "shots": 0
-        },
-        {
-          "name": "Matthew Podelnyk",
-          "number": 6,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Amir Sadikov",
-          "number": 23,
-          "position": "D",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Zachary Tam",
-          "number": 6,
-          "position": "F",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Nicholas Daal",
-          "number": 12,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
-          "shots": 0
-        },
-        {
-          "name": "Amir Sadikov",
-          "number": 19,
-          "position": "D",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pim": 0,
           "shots": 0
         }
       ],
@@ -4237,18 +3583,6 @@
           "saves": 145,
           "shotsAgainst": 167,
           "so": 2
-        },
-        {
-          "name": "Matthew Adrian",
-          "number": 1,
-          "gp": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0,
-          "ga": 0,
-          "saves": 0,
-          "shotsAgainst": 0,
-          "so": 0
         }
       ],
       "games": [

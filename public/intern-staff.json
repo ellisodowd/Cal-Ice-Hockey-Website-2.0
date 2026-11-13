@@ -59,11 +59,11 @@
       "director": { "name": "Ellis O'Dowd", "role": "Director of Technology", "year": "Class of 2027", "image": "Headshots/student-staff/ellis-odowd.webp" },
       "members": [
         { "name": "Felix Chen", "role": "Full Stack Engineer", "year": "Class of 2027", "image": "Headshots/student-staff/felix-chen.webp" },
-        { "name": "Jason Lee", "role": "Senior Advisor", "year": "Class of 2026", "image": "" },
+        { "name": "Jason Lee", "role": "Senior Advisor", "year": "Class of 2026", "image": "Headshots/student-staff/jason-lee.webp" },
         { "name": "Arya Nahavandi", "role": "Software Intern", "year": "Class of 2028", "image": "" },
         { "name": "Nikita Nashenko", "role": "Software Intern", "year": "Class of 2027", "image": "" },
         { "name": "Matthew Takagi", "role": "Technology Intern", "year": "Class of 2029", "image": "Headshots/student-staff/matthew-takagi.webp" },
-        { "name": "Zion Wang", "role": "Software Intern", "year": "Class of 2030", "image": "" },
+        { "name": "Zion Wang", "role": "Software Intern", "year": "Class of 2030", "image": "Headshots/student-staff/zion-wang.webp" },
         { "name": "Ronan Wong", "role": "Software Intern", "year": "Class of 2029", "image": "Headshots/student-staff/ronan-wong.webp" }
       ]
     }

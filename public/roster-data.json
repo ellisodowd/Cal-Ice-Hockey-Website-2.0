@@ -20,7 +20,7 @@
     {"number": 24, "name": "Arya Nahavandi", "position": "forward", "height": "5'8\"", "handedness": "Shoots", "hand": "L", "hometown": "San Diego, CA", "class": "Junior", "image": "Headshots/nahavandi.webp"},
     {"number": 11, "name": "Patrick Nasta", "position": "defense", "height": "6'0\"", "handedness": "Shoots", "hand": "R", "hometown": "Crystal Lake, IL", "class": "Graduate", "image": "Headshots/patrickNasta.webp"},
     {"number": 26, "name": "Eamon Navin", "position": "forward", "height": "6'0\"", "handedness": "Shoots", "hand": "L", "hometown": "San Francisco, CA", "class": "Sophomore", "image": "Headshots/eamonNavin.webp"},
-    {"number": 31, "name": "Cole Nelson", "position": "goalie", "height": "5'8\"", "handedness": "Catches", "hand": "L", "hometown": "Chicago, IL", "class": "Freshman", "image": "Headshots/coleNelson.webp"},
+    {"number": 50, "name": "Cole Nelson", "position": "goalie", "height": "5'8\"", "handedness": "Catches", "hand": "L", "hometown": "Chicago, IL", "class": "Freshman", "image": "Headshots/coleNelson.webp"},
     {"number": 8, "name": "Ellis O'Dowd", "position": "defense", "height": "5'7\"", "handedness": "Shoots", "hand": "L", "hometown": "Reno, NV", "class": "Senior", "image": "Headshots/ellisODowd.webp"},
     {"number": 28, "name": "Jiachen Piao", "position": "forward", "height": "6'0\"", "handedness": "Shoots", "hand": "L", "hometown": "Beijing, China", "class": "Freshman", "image": "images/blank-profile-picture-973460_960_720.jpeg"},
     {"number": 14, "name": "Mark Rejna", "position": "forward", "height": "6'0\"", "handedness": "Shoots", "hand": "L", "hometown": "Prague, Czech Republic", "class": "Senior", "image": "Headshots/markRejna.webp"},
@@ -28,7 +28,7 @@
     {"number": 3, "name": "Dominik Sedlak-Braude", "position": "forward", "height": "6'0\"", "handedness": "Shoots", "hand": "R", "hometown": "Gaithersburg, MD", "class": "Sophomore", "image": "Headshots/dominikSedlakBraude.webp", "captain": "A"},
     {"number": 86, "name": "Anthony Sergeyev", "position": "forward", "height": "5'10\"", "handedness": "Shoots", "hand": "L", "hometown": "Dover, MA", "class": "Freshman", "image": "Headshots/anthonySergeyev.webp"},
     {"number": 21, "name": "Trent Teruya", "position": "defense", "height": "5'8\"", "handedness": "Shoots", "hand": "R", "hometown": "Redlands, CA", "class": "Junior", "image": "Headshots/trentTeruya.webp"},
-    {"number": 68, "name": "Tsan Lam Wang", "position": "forward", "height": "6'0\"", "handedness": "Shoots", "hand": "L", "hometown": "Hong Kong, China", "class": "Freshman", "image": "images/blank-profile-picture-973460_960_720.jpeg"},
+    {"number": 48, "name": "Tsan Lam Wang", "position": "forward", "height": "6'0\"", "handedness": "Shoots", "hand": "L", "hometown": "Hong Kong, China", "class": "Freshman", "image": "images/blank-profile-picture-973460_960_720.jpeg"},
     {"number": 22, "name": "Eddie Yu", "position": "forward", "height": "5'8\"", "handedness": "Shoots", "hand": "R", "hometown": "Hinsdale, IL", "class": "Freshman", "image": "Headshots/eddieYu.webp"}
   ]
 }
