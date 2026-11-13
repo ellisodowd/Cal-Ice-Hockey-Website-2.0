@@ -609,6 +609,8 @@ table.stats.sortable th { padding: 0; }
 }
 .staffsec.dept + .staffsec.dept { margin-top: 56px; }
 .staffyear { margin: 4px 0 0; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+/* HAC Board — short bio under the name on each board banner. */
+.leadbio { margin: 12px 0 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
 
 /* Front office directory */
 .frontoffice { background: #fff; min-height: 60vh; }

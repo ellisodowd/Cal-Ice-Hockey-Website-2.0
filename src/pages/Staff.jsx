@@ -21,6 +21,7 @@ function Face({ person }) {
 export default function Staff() {
   const [coaches, setCoaches] = useState([])
   const [executive, setExecutive] = useState([])
+  const [board, setBoard] = useState([])
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -32,6 +33,7 @@ export default function Staff() {
       .then(data => {
         setCoaches(Array.isArray(data.coaches) ? data.coaches : [])
         setExecutive(Array.isArray(data.executive) ? data.executive : [])
+        setBoard(Array.isArray(data.board) ? data.board : [])
       })
       .catch(err => setError(err.message))
   }, [])
@@ -122,6 +124,25 @@ export default function Staff() {
                     )
                   })}
                 </div>
+              </div>
+            )}
+
+            {board.length > 0 && (
+              <div className="staffsec">
+                <h2 className="staffseclab">Hockey at California Board of Directors</h2>
+                <div className={board.length > 1 ? 'leadrow pair' : 'leadrow'}>
+                  {board.map((b, i) => (
+                    <article className="leadstaff" key={i}>
+                      <div className="leadphoto"><Face person={b} /></div>
+                      <div className="leadbody">
+                        <p className="eyebrow" style={{ color: 'var(--blue)' }}>{b.role}</p>
+                        <h3 className="leadname">{b.name}</h3>
+                        {b.bio && <p className="leadbio">{b.bio}</p>}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+                <p className="deptdesc">More info coming soon — stay tuned!</p>
               </div>
             )}
           </div>
