@@ -1,0 +1,4416 @@
+{
+ "seasons": [
+  {
+   "startYear": 2019,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2019-2020?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Delfino Varela",
+     "pos": "F",
+     "gp": 18,
+     "g": 8,
+     "a": 14,
+     "pim": 30
+    },
+    {
+     "number": null,
+     "name": "Gabriel Giammarco",
+     "pos": "F",
+     "gp": 16,
+     "g": 10,
+     "a": 10,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Brian Faun",
+     "pos": "C",
+     "gp": 24,
+     "g": 7,
+     "a": 13,
+     "pim": 36
+    },
+    {
+     "number": null,
+     "name": "Ron Paulos",
+     "pos": "F",
+     "gp": 21,
+     "g": 10,
+     "a": 8,
+     "pim": 10
+    },
+    {
+     "number": null,
+     "name": "Noah Spieser",
+     "pos": "F",
+     "gp": 16,
+     "g": 4,
+     "a": 12,
+     "pim": 18
+    },
+    {
+     "number": null,
+     "name": "Nolan McMahon",
+     "pos": "F",
+     "gp": 22,
+     "g": 9,
+     "a": 4,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Jeffrey Chen",
+     "pos": "F",
+     "gp": 24,
+     "g": 6,
+     "a": 6,
+     "pim": 9
+    },
+    {
+     "number": null,
+     "name": "Andrew Wong",
+     "pos": "F",
+     "gp": 22,
+     "g": 9,
+     "a": 2,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Darien Oliver",
+     "pos": "F",
+     "gp": 22,
+     "g": 6,
+     "a": 5,
+     "pim": 30
+    },
+    {
+     "number": null,
+     "name": "David Adams",
+     "pos": "D",
+     "gp": 8,
+     "g": 6,
+     "a": 3,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Jake Sitak",
+     "pos": "D",
+     "gp": 19,
+     "g": 5,
+     "a": 4,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Matt Chorlian",
+     "pos": "D",
+     "gp": 22,
+     "g": 2,
+     "a": 7,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Alexander Carbone",
+     "pos": "F",
+     "gp": 19,
+     "g": 3,
+     "a": 5,
+     "pim": 17
+    },
+    {
+     "number": null,
+     "name": "Chase Swerdlick",
+     "pos": "F",
+     "gp": 24,
+     "g": 5,
+     "a": 2,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Jordan Thompson",
+     "pos": "D",
+     "gp": 23,
+     "g": 1,
+     "a": 6,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Sasha Soloviev",
+     "pos": "RW",
+     "gp": 20,
+     "g": 1,
+     "a": 3,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Devin Cox",
+     "pos": "D",
+     "gp": 22,
+     "g": 1,
+     "a": 3,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Pravin Chandra",
+     "pos": "F",
+     "gp": 23,
+     "g": 2,
+     "a": 0,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "Sean Butler",
+     "pos": "D",
+     "gp": 11,
+     "g": 1,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Kevin Wang",
+     "pos": "D",
+     "gp": 7,
+     "g": 0,
+     "a": 2,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Anthony Lair",
+     "pos": "F",
+     "gp": 7,
+     "g": 1,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Ruslan Gabidoulline",
+     "pos": "F",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Max Brownlee",
+     "pos": "F",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Max Wiseman",
+     "gp": 2,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 0,
+     "min": 118.0,
+     "ga": 4,
+     "shots": 69,
+     "saves": 65,
+     "gaa": 2.03,
+     "svpct": 0.942
+    },
+    {
+     "number": null,
+     "name": "Sami Morse",
+     "gp": 10,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 1,
+     "min": 600.0,
+     "ga": 24,
+     "shots": 255,
+     "saves": 231,
+     "gaa": 2.4,
+     "svpct": 0.906
+    },
+    {
+     "number": null,
+     "name": "Ethan Crick",
+     "gp": 10,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 2,
+     "min": 603.77,
+     "ga": 27,
+     "shots": 255,
+     "saves": 228,
+     "gaa": 2.68,
+     "svpct": 0.894
+    },
+    {
+     "number": null,
+     "name": "Conner Taherian",
+     "gp": 2,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 1,
+     "min": 120.0,
+     "ga": 7,
+     "shots": 56,
+     "saves": 49,
+     "gaa": 3.5,
+     "svpct": 0.875
+    }
+   ]
+  },
+  {
+   "startYear": 2018,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2018-2019?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Michael Leone",
+     "pos": "F",
+     "gp": 22,
+     "g": 17,
+     "a": 28,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Gabriel Giammarco",
+     "pos": "F",
+     "gp": 22,
+     "g": 19,
+     "a": 21,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Delfino Varela",
+     "pos": "F",
+     "gp": 23,
+     "g": 14,
+     "a": 16,
+     "pim": 40
+    },
+    {
+     "number": null,
+     "name": "Jeffrey Chen",
+     "pos": "F",
+     "gp": 22,
+     "g": 9,
+     "a": 11,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "Noah Spieser",
+     "pos": "F",
+     "gp": 21,
+     "g": 4,
+     "a": 16,
+     "pim": 24
+    },
+    {
+     "number": null,
+     "name": "Patrick Tagari",
+     "pos": "C",
+     "gp": 18,
+     "g": 11,
+     "a": 6,
+     "pim": 11
+    },
+    {
+     "number": null,
+     "name": "Andrew Wong",
+     "pos": "F",
+     "gp": 23,
+     "g": 6,
+     "a": 10,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "William Song",
+     "pos": "C",
+     "gp": 21,
+     "g": 5,
+     "a": 11,
+     "pim": 29
+    },
+    {
+     "number": null,
+     "name": "Jack Gibbons",
+     "pos": "F",
+     "gp": 19,
+     "g": 7,
+     "a": 6,
+     "pim": 15
+    },
+    {
+     "number": null,
+     "name": "Kevin Wang",
+     "pos": "D",
+     "gp": 21,
+     "g": 2,
+     "a": 11,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Chase Swerdlick",
+     "pos": "F",
+     "gp": 22,
+     "g": 8,
+     "a": 4,
+     "pim": 16
+    },
+    {
+     "number": null,
+     "name": "Max Brownlee",
+     "pos": "F",
+     "gp": 22,
+     "g": 6,
+     "a": 4,
+     "pim": 20
+    },
+    {
+     "number": null,
+     "name": "Ron Paulos",
+     "pos": "F",
+     "gp": 22,
+     "g": 5,
+     "a": 5,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Matt Chorlian",
+     "pos": "D",
+     "gp": 22,
+     "g": 2,
+     "a": 8,
+     "pim": 22
+    },
+    {
+     "number": null,
+     "name": "Darien Oliver",
+     "pos": "F",
+     "gp": 21,
+     "g": 6,
+     "a": 3,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Devin Cox",
+     "pos": "D",
+     "gp": 20,
+     "g": 3,
+     "a": 6,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Jordan Thompson",
+     "pos": "D",
+     "gp": 21,
+     "g": 2,
+     "a": 5,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Sasha Soloviev",
+     "pos": "RW",
+     "gp": 16,
+     "g": 2,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Alexandre Orcutt",
+     "pos": "D",
+     "gp": 23,
+     "g": 0,
+     "a": 2,
+     "pim": 19
+    },
+    {
+     "number": null,
+     "name": "Sean Butler",
+     "pos": "D",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Duncan Cadeddu",
+     "pos": "F",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Sami Morse",
+     "gp": 10,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 0,
+     "min": 585.8,
+     "ga": 25,
+     "shots": 334,
+     "saves": 309,
+     "gaa": 2.56,
+     "svpct": 0.925
+    },
+    {
+     "number": null,
+     "name": "Ethan Crick",
+     "gp": 11,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 1,
+     "min": 618.58,
+     "ga": 27,
+     "shots": 291,
+     "saves": 264,
+     "gaa": 2.62,
+     "svpct": 0.907
+    },
+    {
+     "number": null,
+     "name": "Conner Taherian",
+     "gp": 3,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 0,
+     "min": 180.0,
+     "ga": 10,
+     "shots": 71,
+     "saves": 61,
+     "gaa": 3.33,
+     "svpct": 0.859
+    }
+   ]
+  },
+  {
+   "startYear": 2017,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2017-2018?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Michael Leone",
+     "pos": "F",
+     "gp": 18,
+     "g": 24,
+     "a": 28,
+     "pim": 32
+    },
+    {
+     "number": null,
+     "name": "Delfino Varela",
+     "pos": "F",
+     "gp": 18,
+     "g": 19,
+     "a": 19,
+     "pim": 16
+    },
+    {
+     "number": null,
+     "name": "Gabriel Giammarco",
+     "pos": "F",
+     "gp": 17,
+     "g": 19,
+     "a": 11,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Chase Swerdlick",
+     "pos": "F",
+     "gp": 18,
+     "g": 10,
+     "a": 18,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Steve Bagley",
+     "pos": "F",
+     "gp": 18,
+     "g": 8,
+     "a": 14,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Patrick Tagari",
+     "pos": "C",
+     "gp": 8,
+     "g": 12,
+     "a": 8,
+     "pim": 10
+    },
+    {
+     "number": null,
+     "name": "Jeffrey Chen",
+     "pos": "F",
+     "gp": 18,
+     "g": 8,
+     "a": 11,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Kevin Wang",
+     "pos": "D",
+     "gp": 15,
+     "g": 3,
+     "a": 16,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Jordan Thompson",
+     "pos": "D",
+     "gp": 15,
+     "g": 3,
+     "a": 8,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "William Song",
+     "pos": "C",
+     "gp": 15,
+     "g": 3,
+     "a": 8,
+     "pim": 26
+    },
+    {
+     "number": null,
+     "name": "Devin Cox",
+     "pos": "D",
+     "gp": 16,
+     "g": 1,
+     "a": 8,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Darien Oliver",
+     "pos": "F",
+     "gp": 16,
+     "g": 4,
+     "a": 4,
+     "pim": 28
+    },
+    {
+     "number": null,
+     "name": "Peter Shin",
+     "pos": "RW",
+     "gp": 11,
+     "g": 4,
+     "a": 3,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Duncan Cadeddu",
+     "pos": "F",
+     "gp": 17,
+     "g": 0,
+     "a": 5,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Alexandre Orcutt",
+     "pos": "D",
+     "gp": 9,
+     "g": 1,
+     "a": 1,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Noah Spieser",
+     "pos": "F",
+     "gp": 6,
+     "g": 1,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Yuki Obata",
+     "pos": "F",
+     "gp": 1,
+     "g": 0,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Laurent Hsia",
+     "pos": "F",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Sami Morse",
+     "gp": 9,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 0,
+     "min": 505.0,
+     "ga": 19,
+     "shots": 233,
+     "saves": 214,
+     "gaa": 2.26,
+     "svpct": 0.918
+    },
+    {
+     "number": null,
+     "name": "Ethan Crick",
+     "gp": 8,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 0,
+     "min": 461.57,
+     "ga": 30,
+     "shots": 213,
+     "saves": 183,
+     "gaa": 3.9,
+     "svpct": 0.859
+    },
+    {
+     "number": null,
+     "name": "Everett Morton",
+     "gp": 2,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": 0,
+     "min": 120.0,
+     "ga": 11,
+     "shots": 45,
+     "saves": 34,
+     "gaa": 5.5,
+     "svpct": 0.756
+    }
+   ]
+  },
+  {
+   "startYear": 2016,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2016-2017?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Peter Shin",
+     "pos": "RW",
+     "gp": 15,
+     "g": 21,
+     "a": 21,
+     "pim": 13
+    },
+    {
+     "number": null,
+     "name": "Michael Leone",
+     "pos": "F",
+     "gp": 16,
+     "g": 19,
+     "a": 23,
+     "pim": 15
+    },
+    {
+     "number": null,
+     "name": "Delfino Varela",
+     "pos": "F",
+     "gp": 16,
+     "g": 19,
+     "a": 16,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "C.J. Geering",
+     "pos": "D",
+     "gp": 16,
+     "g": 5,
+     "a": 15,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "Chase Swerdlick",
+     "pos": "F",
+     "gp": 16,
+     "g": 9,
+     "a": 8,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Steve Bagley",
+     "pos": "F",
+     "gp": 14,
+     "g": 6,
+     "a": 9,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Alex Pelletier",
+     "pos": "D",
+     "gp": 16,
+     "g": 5,
+     "a": 7,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "John Fu",
+     "pos": "F",
+     "gp": 15,
+     "g": 5,
+     "a": 3,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Kyle Kelly",
+     "pos": "LW",
+     "gp": 9,
+     "g": 5,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Nico Picciuto",
+     "pos": "D",
+     "gp": 10,
+     "g": 5,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Jordan Thompson",
+     "pos": "D",
+     "gp": 16,
+     "g": 2,
+     "a": 4,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Duncan Cadeddu",
+     "pos": "F",
+     "gp": 15,
+     "g": 0,
+     "a": 5,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "Robert Maxwell",
+     "pos": "LW",
+     "gp": 3,
+     "g": 1,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Travis Sherman",
+     "pos": "D",
+     "gp": 7,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Kenan Kurtkan",
+     "pos": "F",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "William Song",
+     "pos": "C",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Sami Morse",
+     "gp": 13,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 3.4,
+     "svpct": 0.864
+    }
+   ]
+  },
+  {
+   "startYear": 2015,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2015-2016?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Michael Leone",
+     "pos": "F",
+     "gp": 12,
+     "g": 15,
+     "a": 12,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Nic Kawasaki",
+     "pos": "D",
+     "gp": 12,
+     "g": 12,
+     "a": 9,
+     "pim": 16
+    },
+    {
+     "number": null,
+     "name": "Bryce Morisako",
+     "pos": "C",
+     "gp": 11,
+     "g": 7,
+     "a": 9,
+     "pim": 16
+    },
+    {
+     "number": null,
+     "name": "Theo Haboucha",
+     "pos": "RW",
+     "gp": 10,
+     "g": 9,
+     "a": 4,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Nico Picciuto",
+     "pos": "D",
+     "gp": 12,
+     "g": 5,
+     "a": 8,
+     "pim": 18
+    },
+    {
+     "number": null,
+     "name": "Steve Bagley",
+     "pos": "F",
+     "gp": 12,
+     "g": 3,
+     "a": 10,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "C.J. Geering",
+     "pos": "D",
+     "gp": 12,
+     "g": 1,
+     "a": 10,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Kyle Kelly",
+     "pos": "LW",
+     "gp": 12,
+     "g": 6,
+     "a": 3,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Jeffrey Leong",
+     "pos": "D",
+     "gp": 12,
+     "g": 1,
+     "a": 6,
+     "pim": 6
+    },
+    {
+     "number": null,
+     "name": "John Fu",
+     "pos": "F",
+     "gp": 11,
+     "g": 3,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Travis Sherman",
+     "pos": "D",
+     "gp": 8,
+     "g": 1,
+     "a": 2,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "Alexandre Orcutt",
+     "pos": "D",
+     "gp": 12,
+     "g": 1,
+     "a": 2,
+     "pim": 16
+    },
+    {
+     "number": null,
+     "name": "Pei En Cong",
+     "pos": "F",
+     "gp": 12,
+     "g": 0,
+     "a": 3,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Alex Pelletier",
+     "pos": "D",
+     "gp": 10,
+     "g": 0,
+     "a": 2,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Sandon Griffin",
+     "pos": "F",
+     "gp": 12,
+     "g": 0,
+     "a": 2,
+     "pim": 18
+    },
+    {
+     "number": null,
+     "name": "Markus Kytömaa",
+     "pos": "F",
+     "gp": 11,
+     "g": 1,
+     "a": 0,
+     "pim": 11
+    },
+    {
+     "number": null,
+     "name": "Troy Skinner",
+     "pos": "LW",
+     "gp": 11,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Noah Mehr",
+     "pos": "F",
+     "gp": 0,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Maxwell Klaiman",
+     "pos": "F",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Duke Moran",
+     "pos": "LW",
+     "gp": 7,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Orian Williams",
+     "pos": "F",
+     "gp": 7,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Kyle McAllister",
+     "gp": 10,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 4.26,
+     "svpct": 0.846
+    },
+    {
+     "number": null,
+     "name": "Eric Esposito",
+     "gp": 2,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 7.5,
+     "svpct": 0.833
+    }
+   ]
+  },
+  {
+   "startYear": 2014,
+   "source": "team",
+   "status": "partial",
+   "asOf": "as of February 2015",
+   "url": "https://web.archive.org/web/20150215230322/http://www.calicehockey.com:80/stats.html",
+   "skaters": [
+    {
+     "number": 2,
+     "name": "Duke Moran",
+     "gp": 8,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 3,
+     "name": "Troy Skinner",
+     "gp": 11,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": 6,
+     "name": "C.J. Geering",
+     "gp": 8,
+     "g": 4,
+     "a": 9,
+     "pim": 16
+    },
+    {
+     "number": 7,
+     "name": "Travis Sherman",
+     "gp": 10,
+     "g": 2,
+     "a": 1,
+     "pim": 12
+    },
+    {
+     "number": 9,
+     "name": "Alex Pelletier",
+     "gp": 10,
+     "g": 2,
+     "a": 3,
+     "pim": 8
+    },
+    {
+     "number": 11,
+     "name": "Sandon Griffin",
+     "gp": 6,
+     "g": 0,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 13,
+     "name": "Steve Bagley",
+     "gp": 11,
+     "g": 2,
+     "a": 4,
+     "pim": 2
+    },
+    {
+     "number": 17,
+     "name": "Markus Kytomaa",
+     "gp": 8,
+     "g": 1,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 18,
+     "name": "Sam Friedman",
+     "gp": 9,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 19,
+     "name": "Nic Kawasaki",
+     "gp": 11,
+     "g": 8,
+     "a": 11,
+     "pim": 26
+    },
+    {
+     "number": 20,
+     "name": "Bryce Morisako",
+     "gp": 11,
+     "g": 6,
+     "a": 15,
+     "pim": 9
+    },
+    {
+     "number": 21,
+     "name": "Trenten Fenster",
+     "gp": 11,
+     "g": 7,
+     "a": 14,
+     "pim": 11
+    },
+    {
+     "number": 23,
+     "name": "Payne Cong",
+     "gp": 9,
+     "g": 0,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": 25,
+     "name": "Theo Haboucha",
+     "gp": 11,
+     "g": 13,
+     "a": 7,
+     "pim": 30
+    },
+    {
+     "number": 26,
+     "name": "Noah Mehr",
+     "gp": 8,
+     "g": 6,
+     "a": 6,
+     "pim": 4
+    },
+    {
+     "number": 27,
+     "name": "John Fu",
+     "gp": 10,
+     "g": 2,
+     "a": 3,
+     "pim": 0
+    },
+    {
+     "number": 28,
+     "name": "Jeff Leong",
+     "gp": 11,
+     "g": 1,
+     "a": 10,
+     "pim": 15
+    }
+   ],
+   "goalies": [
+    {
+     "number": 30,
+     "name": "Kyle McAllister",
+     "gp": 11,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": null,
+     "svpct": 0.8
+    }
+   ]
+  },
+  {
+   "startYear": 2013,
+   "source": "team",
+   "status": "partial",
+   "asOf": "as of January 2014",
+   "url": "https://web.archive.org/web/20140129224857/http://www.calicehockey.com:80/statistics/",
+   "skaters": [
+    {
+     "number": 4,
+     "name": "Justin Arnett",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 6,
+     "name": "C.J. Geering",
+     "gp": 14,
+     "g": 5,
+     "a": 13,
+     "pim": null
+    },
+    {
+     "number": 9,
+     "name": "Aleksey Pelletier",
+     "gp": 16,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 11,
+     "name": "Sandon Griffin",
+     "gp": 12,
+     "g": 1,
+     "a": 5,
+     "pim": null
+    },
+    {
+     "number": 12,
+     "name": "Andy Quach",
+     "gp": 16,
+     "g": 3,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": 14,
+     "name": "Josh Hampton",
+     "gp": 9,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 17,
+     "name": "Ryan Zehnder",
+     "gp": 7,
+     "g": 4,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 18,
+     "name": "Sam Friedman",
+     "gp": 14,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 19,
+     "name": "Nic Kawasaki",
+     "gp": 17,
+     "g": 19,
+     "a": 21,
+     "pim": null
+    },
+    {
+     "number": 20,
+     "name": "Bryce Morisako",
+     "gp": 17,
+     "g": 15,
+     "a": 33,
+     "pim": null
+    },
+    {
+     "number": 21,
+     "name": "Trenten Fenster",
+     "gp": 5,
+     "g": 3,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": 22,
+     "name": "Justin Tetyevsky",
+     "gp": 14,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 23,
+     "name": "Payne Cong",
+     "gp": 17,
+     "g": 2,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 25,
+     "name": "Theo Haboucha",
+     "gp": 12,
+     "g": 12,
+     "a": 13,
+     "pim": null
+    },
+    {
+     "number": 26,
+     "name": "Noah Mehr",
+     "gp": 17,
+     "g": 19,
+     "a": 26,
+     "pim": null
+    },
+    {
+     "number": 27,
+     "name": "George Gebhardt",
+     "gp": 5,
+     "g": 1,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": 28,
+     "name": "Jeff Leong",
+     "gp": 15,
+     "g": 1,
+     "a": 3,
+     "pim": null
+    }
+   ],
+   "goalies": [
+    {
+     "number": 1,
+     "name": "Jacob Geskin",
+     "gp": 10,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": null,
+     "svpct": null
+    },
+    {
+     "number": 30,
+     "name": "Kyle McAllister",
+     "gp": 7,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": null,
+     "svpct": null
+    }
+   ]
+  },
+  {
+   "startYear": 2012,
+   "source": "team",
+   "status": "partial",
+   "asOf": "first few games only",
+   "url": "https://web.archive.org/web/20121002033742/http://www.calicehockey.com:80/statistics/",
+   "skaters": [
+    {
+     "number": 2,
+     "name": "Grant Brown",
+     "gp": 2,
+     "g": 0,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 3,
+     "name": "Michel Mikhail",
+     "gp": 2,
+     "g": 0,
+     "a": 3,
+     "pim": null
+    },
+    {
+     "number": 8,
+     "name": "Bryan Brown",
+     "gp": 3,
+     "g": 3,
+     "a": 3,
+     "pim": null
+    },
+    {
+     "number": 9,
+     "name": "Mike Holmes",
+     "gp": 3,
+     "g": 0,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 11,
+     "name": "Sandon Griffin",
+     "gp": 2,
+     "g": 0,
+     "a": 3,
+     "pim": null
+    },
+    {
+     "number": 14,
+     "name": "Frank Anicic",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 15,
+     "name": "Chaten Boscha",
+     "gp": 3,
+     "g": 3,
+     "a": 4,
+     "pim": null
+    },
+    {
+     "number": 16,
+     "name": "Jake White",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 17,
+     "name": "Tim Linehan",
+     "gp": 1,
+     "g": 2,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 18,
+     "name": "Sam Friedman",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 19,
+     "name": "Nic Kawasaki",
+     "gp": 3,
+     "g": 8,
+     "a": 5,
+     "pim": null
+    },
+    {
+     "number": 20,
+     "name": "Bryce Morisako",
+     "gp": 3,
+     "g": 3,
+     "a": 5,
+     "pim": null
+    },
+    {
+     "number": 21,
+     "name": "Andy Abrams",
+     "gp": 3,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 22,
+     "name": "Justin Tetyevsky",
+     "gp": 3,
+     "g": 0,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": 23,
+     "name": "Peter Kler",
+     "gp": 3,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 24,
+     "name": "Jeff Stock",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 25,
+     "name": "Theo Haboucha",
+     "gp": 3,
+     "g": 6,
+     "a": 4,
+     "pim": null
+    },
+    {
+     "number": 27,
+     "name": "John Linehan",
+     "gp": 1,
+     "g": 2,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": 28,
+     "name": "Jeff Leong",
+     "gp": 3,
+     "g": 0,
+     "a": 3,
+     "pim": null
+    }
+   ],
+   "goalies": [
+    {
+     "number": 30,
+     "name": "Kegan Nelson",
+     "gp": 3,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": 24,
+     "shots": 118,
+     "saves": 94,
+     "gaa": 8.0,
+     "svpct": 0.797
+    }
+   ]
+  },
+  {
+   "startYear": 2011,
+   "source": "team",
+   "status": "partial",
+   "asOf": "about 10 games, as of May 2012",
+   "url": "https://web.archive.org/web/20120522073457/http://www.calicehockey.com:80/statistics/",
+   "skaters": [
+    {
+     "number": null,
+     "name": "JP McNicholas",
+     "gp": 10,
+     "g": 7,
+     "a": 8,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Tim Linehan",
+     "gp": 4,
+     "g": 5,
+     "a": 3,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Justin Tetyevsky",
+     "gp": 10,
+     "g": 3,
+     "a": 4,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Jake White",
+     "gp": 10,
+     "g": 4,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Peter Kler",
+     "gp": 10,
+     "g": 1,
+     "a": 2,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Brent Dolan",
+     "gp": 3,
+     "g": 2,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Sandon Griffin",
+     "gp": 7,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Zhikai Wang",
+     "gp": 7,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Grant Brown",
+     "gp": 8,
+     "g": 1,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Craig Armstrong",
+     "gp": 5,
+     "g": 1,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Sandy McNaughton",
+     "gp": 2,
+     "g": 1,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Taylor Kroenthal",
+     "gp": 3,
+     "g": 0,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Matthew Springer",
+     "gp": 9,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Michel Mikhail",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Hunter Lew",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": null,
+     "name": "Ryan Bena",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": null
+    }
+   ],
+   "goalies": []
+  },
+  {
+   "startYear": 2010,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2010-2011?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Keisuke Teeple",
+     "pos": "RW",
+     "gp": 16,
+     "g": 16,
+     "a": 17,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "J.P. McNicholas",
+     "pos": "C",
+     "gp": 16,
+     "g": 15,
+     "a": 15,
+     "pim": 22
+    },
+    {
+     "number": null,
+     "name": "T.J. Wynn",
+     "pos": "F",
+     "gp": 16,
+     "g": 4,
+     "a": 19,
+     "pim": 27
+    },
+    {
+     "number": null,
+     "name": "Wesley Borja",
+     "pos": "F",
+     "gp": 13,
+     "g": 8,
+     "a": 8,
+     "pim": 12
+    },
+    {
+     "number": null,
+     "name": "Daniel Sulitzer",
+     "pos": "D",
+     "gp": 11,
+     "g": 8,
+     "a": 5,
+     "pim": 10
+    },
+    {
+     "number": null,
+     "name": "Sam Birch",
+     "pos": "LW",
+     "gp": 9,
+     "g": 4,
+     "a": 7,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Peter Kler",
+     "pos": "F",
+     "gp": 15,
+     "g": 5,
+     "a": 3,
+     "pim": 24
+    },
+    {
+     "number": null,
+     "name": "Matt Henry",
+     "pos": "D",
+     "gp": 6,
+     "g": 1,
+     "a": 4,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Patrick Paul",
+     "pos": "F",
+     "gp": 5,
+     "g": 1,
+     "a": 2,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Arash Amirnezami",
+     "pos": "D",
+     "gp": 15,
+     "g": 1,
+     "a": 2,
+     "pim": 31
+    },
+    {
+     "number": null,
+     "name": "David Carlson",
+     "pos": "F",
+     "gp": 13,
+     "g": 1,
+     "a": 1,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Grant Brown",
+     "pos": "D",
+     "gp": 14,
+     "g": 0,
+     "a": 2,
+     "pim": 16
+    },
+    {
+     "number": null,
+     "name": "Ian Stewart",
+     "pos": "F",
+     "gp": 14,
+     "g": 1,
+     "a": 0,
+     "pim": 18
+    },
+    {
+     "number": null,
+     "name": "Peter O'Reilly",
+     "pos": "F",
+     "gp": 3,
+     "g": 0,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Eugene Shuster",
+     "pos": "F",
+     "gp": 11,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Mike Gilroy",
+     "pos": "F",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Sean Haq",
+     "pos": "C",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Alex Niu",
+     "pos": "D",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Alex Linz",
+     "pos": "F",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Michael Scruton",
+     "pos": "D",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Mike Fina",
+     "pos": "F",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Alex Gordon",
+     "pos": "F",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Jeff Spinardi",
+     "pos": "F",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Zhikai Wang",
+     "pos": "F",
+     "gp": 12,
+     "g": 0,
+     "a": 0,
+     "pim": 5
+    },
+    {
+     "number": null,
+     "name": "Hayley Moore",
+     "pos": "D/F",
+     "gp": 14,
+     "g": 0,
+     "a": 0,
+     "pim": 10
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Peter Christian Tartaglia",
+     "gp": 4,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 7.67,
+     "svpct": 0.83
+    },
+    {
+     "number": null,
+     "name": "Mathew Bloomfield",
+     "gp": 6,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 7.02,
+     "svpct": 0.83
+    }
+   ]
+  },
+  {
+   "startYear": 2009,
+   "source": "eliteprospects",
+   "status": "unknown",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2009-2010?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "J.P. McNicholas",
+     "pos": "C",
+     "gp": 22,
+     "g": 24,
+     "a": 28,
+     "pim": 30
+    },
+    {
+     "number": null,
+     "name": "Wesley Borja",
+     "pos": "F",
+     "gp": 20,
+     "g": 13,
+     "a": 19,
+     "pim": 18
+    },
+    {
+     "number": null,
+     "name": "T.J. Wynn",
+     "pos": "F",
+     "gp": 21,
+     "g": 10,
+     "a": 21,
+     "pim": 41
+    },
+    {
+     "number": null,
+     "name": "Keisuke Teeple",
+     "pos": "RW",
+     "gp": 21,
+     "g": 13,
+     "a": 16,
+     "pim": 40
+    },
+    {
+     "number": null,
+     "name": "Alex Gordon",
+     "pos": "F",
+     "gp": 22,
+     "g": 13,
+     "a": 13,
+     "pim": 24
+    },
+    {
+     "number": null,
+     "name": "Matt Henry",
+     "pos": "D",
+     "gp": 19,
+     "g": 7,
+     "a": 13,
+     "pim": 36
+    },
+    {
+     "number": null,
+     "name": "Daniel Sulitzer",
+     "pos": "D",
+     "gp": 15,
+     "g": 7,
+     "a": 10,
+     "pim": 20
+    },
+    {
+     "number": null,
+     "name": "Alex Niu",
+     "pos": "D",
+     "gp": 17,
+     "g": 5,
+     "a": 4,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "Ian Stewart",
+     "pos": "F",
+     "gp": 14,
+     "g": 1,
+     "a": 4,
+     "pim": 17
+    },
+    {
+     "number": null,
+     "name": "David Carlson",
+     "pos": "F",
+     "gp": 22,
+     "g": 2,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": null,
+     "name": "Mike Gilroy",
+     "pos": "F",
+     "gp": 1,
+     "g": 2,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Michael Scruton",
+     "pos": "D",
+     "gp": 0,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Grant Brown",
+     "pos": "D",
+     "gp": 21,
+     "g": 0,
+     "a": 0,
+     "pim": 26
+    }
+   ],
+   "goalies": [
+    {
+     "number": null,
+     "name": "Mathew Bloomfield",
+     "gp": 10,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 3.32,
+     "svpct": 0.92
+    },
+    {
+     "number": null,
+     "name": "Peter Christian Tartaglia",
+     "gp": 12,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 6.23,
+     "svpct": 0.86
+    }
+   ]
+  },
+  {
+   "startYear": 2008,
+   "source": "eliteprospects",
+   "status": "partial",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2008-2009?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Daniel Sulitzer",
+     "pos": "D",
+     "gp": 5,
+     "g": 3,
+     "a": 0,
+     "pim": 14
+    },
+    {
+     "number": null,
+     "name": "Alex Niu",
+     "pos": "D",
+     "gp": 5,
+     "g": 1,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "T.J. Wynn",
+     "pos": "F",
+     "gp": 4,
+     "g": 0,
+     "a": 2,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Matt Henry",
+     "pos": "D",
+     "gp": 3,
+     "g": 1,
+     "a": 0,
+     "pim": 8
+    },
+    {
+     "number": null,
+     "name": "Michael Scruton",
+     "pos": "D",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Mike Gilroy",
+     "pos": "F",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": 6
+    }
+   ],
+   "goalies": []
+  },
+  {
+   "startYear": 2007,
+   "source": "eliteprospects",
+   "status": "partial",
+   "asOf": "Elite Prospects season page",
+   "url": "https://www.eliteprospects.com/team/10366/univ-of-california-berkeley/2007-2008?tab=stats",
+   "skaters": [
+    {
+     "number": null,
+     "name": "Matt Henry",
+     "pos": "D",
+     "gp": 6,
+     "g": 2,
+     "a": 2,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Mike Gilroy",
+     "pos": "F",
+     "gp": 5,
+     "g": 2,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Alex Niu",
+     "pos": "D",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Michael Scruton",
+     "pos": "D",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "Sean Haq",
+     "pos": "C",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": null,
+     "name": "Daniel Sulitzer",
+     "pos": "D",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": null,
+     "name": "T.J. Wynn",
+     "pos": "F",
+     "gp": 6,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    }
+   ],
+   "goalies": []
+  },
+  {
+   "startYear": 2006,
+   "source": "team",
+   "status": "partial",
+   "asOf": "last updated Jan 28, 2007",
+   "url": "https://web.archive.org/web/20070228193604/http://www.calicehockey.com:80/roster/stats.html",
+   "skaters": [
+    {
+     "number": 39,
+     "name": "Steve Polchinski",
+     "gp": 20,
+     "g": 17,
+     "a": 28,
+     "pim": 34
+    },
+    {
+     "number": 13,
+     "name": "Nick Matzke",
+     "gp": 20,
+     "g": 14,
+     "a": 23,
+     "pim": 32
+    },
+    {
+     "number": 27,
+     "name": "Mike Fina",
+     "gp": 20,
+     "g": 23,
+     "a": 12,
+     "pim": 48
+    },
+    {
+     "number": 12,
+     "name": "Nick Kim",
+     "gp": 17,
+     "g": 6,
+     "a": 14,
+     "pim": 39
+    },
+    {
+     "number": 2,
+     "name": "Kiel Fitzgerald",
+     "gp": 17,
+     "g": 6,
+     "a": 12,
+     "pim": 16
+    },
+    {
+     "number": 17,
+     "name": "Mike Carcerano",
+     "gp": 20,
+     "g": 9,
+     "a": 6,
+     "pim": 26
+    },
+    {
+     "number": 6,
+     "name": "Natsuki Matsumoto",
+     "gp": 19,
+     "g": 8,
+     "a": 5,
+     "pim": 24
+    },
+    {
+     "number": 81,
+     "name": "Bryan Farris",
+     "gp": 20,
+     "g": 2,
+     "a": 10,
+     "pim": 55
+    },
+    {
+     "number": 18,
+     "name": "Doug Fraleigh",
+     "gp": 20,
+     "g": 1,
+     "a": 5,
+     "pim": 4
+    },
+    {
+     "number": 10,
+     "name": "Sami Tahari",
+     "gp": 11,
+     "g": 0,
+     "a": 5,
+     "pim": 10
+    },
+    {
+     "number": 16,
+     "name": "Job Barth",
+     "gp": 16,
+     "g": 0,
+     "a": 4,
+     "pim": 22
+    },
+    {
+     "number": 87,
+     "name": "Aaron Lim",
+     "gp": 17,
+     "g": 2,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": 23,
+     "name": "Gleb Finkelman",
+     "gp": 17,
+     "g": 1,
+     "a": 2,
+     "pim": 32
+    },
+    {
+     "number": 9,
+     "name": "Mike Thompson",
+     "gp": 15,
+     "g": 0,
+     "a": 3,
+     "pim": 10
+    },
+    {
+     "number": 88,
+     "name": "Adrian Repic",
+     "gp": 5,
+     "g": 1,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 1,
+     "name": "Matt Henry",
+     "gp": 4,
+     "g": 0,
+     "a": 1,
+     "pim": 8
+    },
+    {
+     "number": 25,
+     "name": "Alex Niu",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    }
+   ],
+   "goalies": [
+    {
+     "number": 33,
+     "name": "Brian Yates",
+     "gp": 11,
+     "w": 2,
+     "l": 7,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 7.66,
+     "svpct": null
+    },
+    {
+     "number": 35,
+     "name": "Marc Barker",
+     "gp": 14,
+     "w": 2,
+     "l": 8,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": null,
+     "saves": null,
+     "gaa": 8.03,
+     "svpct": null
+    }
+   ]
+  },
+  {
+   "startYear": 2005,
+   "source": "team",
+   "status": "final",
+   "asOf": "as of May 2006",
+   "url": "https://web.archive.org/web/20060522040411/http://www.calicehockey.com/stats.php",
+   "skaters": [
+    {
+     "number": 44,
+     "name": "Amir Moazeni",
+     "gp": 32,
+     "g": 36,
+     "a": 34,
+     "pim": 54
+    },
+    {
+     "number": 55,
+     "name": "Sean Haq",
+     "gp": 31,
+     "g": 16,
+     "a": 51,
+     "pim": 86
+    },
+    {
+     "number": 15,
+     "name": "Chris Moulton",
+     "gp": 29,
+     "g": 22,
+     "a": 34,
+     "pim": 28
+    },
+    {
+     "number": 39,
+     "name": "Steve Polchinski",
+     "gp": 31,
+     "g": 10,
+     "a": 15,
+     "pim": 4
+    },
+    {
+     "number": 27,
+     "name": "Mike Fina",
+     "gp": 25,
+     "g": 12,
+     "a": 9,
+     "pim": 56
+    },
+    {
+     "number": 2,
+     "name": "Kiel Fitzgerlad",
+     "gp": 32,
+     "g": 4,
+     "a": 10,
+     "pim": 22
+    },
+    {
+     "number": 4,
+     "name": "Chris Dang",
+     "gp": 22,
+     "g": 4,
+     "a": 9,
+     "pim": 32
+    },
+    {
+     "number": 91,
+     "name": "Dylan Taylor",
+     "gp": 28,
+     "g": 4,
+     "a": 9,
+     "pim": 18
+    },
+    {
+     "number": 22,
+     "name": "Mike McCleod",
+     "gp": 20,
+     "g": 6,
+     "a": 6,
+     "pim": 36
+    },
+    {
+     "number": 10,
+     "name": "James Yim",
+     "gp": 32,
+     "g": 3,
+     "a": 6,
+     "pim": 8
+    },
+    {
+     "number": 0,
+     "name": "Scott Butters",
+     "gp": 32,
+     "g": 1,
+     "a": 8,
+     "pim": 4
+    },
+    {
+     "number": 12,
+     "name": "Nick Kim",
+     "gp": 25,
+     "g": 3,
+     "a": 6,
+     "pim": 24
+    },
+    {
+     "number": 81,
+     "name": "Bryan Farris",
+     "gp": 23,
+     "g": 1,
+     "a": 8,
+     "pim": 36
+    },
+    {
+     "number": 86,
+     "name": "Charles Bahn",
+     "gp": 23,
+     "g": 3,
+     "a": 6,
+     "pim": 4
+    },
+    {
+     "number": 9,
+     "name": "Mike Thompson",
+     "gp": 23,
+     "g": 3,
+     "a": 5,
+     "pim": 4
+    },
+    {
+     "number": 19,
+     "name": "Mike Carcerano",
+     "gp": 26,
+     "g": 3,
+     "a": 5,
+     "pim": 14
+    },
+    {
+     "number": 23,
+     "name": "Doug Fraleigh",
+     "gp": 31,
+     "g": 2,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": 71,
+     "name": "Eric Bansil",
+     "gp": 27,
+     "g": 1,
+     "a": 2,
+     "pim": 6
+    },
+    {
+     "number": 16,
+     "name": "Job Barth",
+     "gp": 19,
+     "g": 1,
+     "a": 1,
+     "pim": 10
+    },
+    {
+     "number": 32,
+     "name": "Justin Edwards",
+     "gp": 18,
+     "g": 1,
+     "a": 0,
+     "pim": 25
+    },
+    {
+     "number": 37,
+     "name": "Brian Tobin",
+     "gp": 15,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    }
+   ],
+   "goalies": [
+    {
+     "number": 20,
+     "name": "Adam Meehan",
+     "gp": 21,
+     "w": 8,
+     "l": 15,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": 938,
+     "saves": null,
+     "gaa": 6.12,
+     "svpct": null
+    },
+    {
+     "number": 29,
+     "name": "Brian Yates",
+     "gp": 11,
+     "w": 2,
+     "l": 9,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": null,
+     "shots": 480,
+     "saves": null,
+     "gaa": 7.01,
+     "svpct": null
+    }
+   ]
+  },
+  {
+   "startYear": 2004,
+   "source": "team",
+   "status": "final",
+   "asOf": "season archive page",
+   "url": "https://web.archive.org/web/20070304175702/http://2004.calicehockey.com:80/stats.html",
+   "skaters": [
+    {
+     "number": 0,
+     "name": "Scott Butterworth",
+     "gp": 34,
+     "g": 0,
+     "a": 2,
+     "pim": 8
+    },
+    {
+     "number": 2,
+     "name": "Kiel Flitzgerald",
+     "gp": 35,
+     "g": 2,
+     "a": 8,
+     "pim": 26
+    },
+    {
+     "number": 3,
+     "name": "Jeff Murphy",
+     "gp": 21,
+     "g": 1,
+     "a": 5,
+     "pim": 8
+    },
+    {
+     "number": 4,
+     "name": "Chris Dang",
+     "gp": 34,
+     "g": 7,
+     "a": 7,
+     "pim": 32
+    },
+    {
+     "number": 7,
+     "name": "Chase Krieger",
+     "gp": 29,
+     "g": 2,
+     "a": 12,
+     "pim": 18
+    },
+    {
+     "number": 9,
+     "name": "Michael Thompson",
+     "gp": 30,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 10,
+     "name": "James Yim",
+     "gp": 35,
+     "g": 1,
+     "a": 9,
+     "pim": 26
+    },
+    {
+     "number": 11,
+     "name": "Jeff Maisen",
+     "gp": 26,
+     "g": 1,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 15,
+     "name": "Chris Moulton",
+     "gp": 35,
+     "g": 27,
+     "a": 32,
+     "pim": 22
+    },
+    {
+     "number": 18,
+     "name": "Tony Arieta",
+     "gp": 21,
+     "g": 1,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 19,
+     "name": "Peter Monfore",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 23,
+     "name": "Doug Fraliegh",
+     "gp": 29,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 27,
+     "name": "Sam Libeu",
+     "gp": 34,
+     "g": 3,
+     "a": 3,
+     "pim": 2
+    },
+    {
+     "number": 32,
+     "name": "Justin Edwards",
+     "gp": 24,
+     "g": 4,
+     "a": 0,
+     "pim": 30
+    },
+    {
+     "number": 37,
+     "name": "Brian Tobin",
+     "gp": 13,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 39,
+     "name": "Steve Polchinski",
+     "gp": 33,
+     "g": 11,
+     "a": 10,
+     "pim": 10
+    },
+    {
+     "number": 44,
+     "name": "Amir Moazeni",
+     "gp": 35,
+     "g": 33,
+     "a": 31,
+     "pim": 40
+    },
+    {
+     "number": 55,
+     "name": "Sean Haq",
+     "gp": 33,
+     "g": 14,
+     "a": 43,
+     "pim": 68
+    },
+    {
+     "number": 71,
+     "name": "Eric Bansal",
+     "gp": 29,
+     "g": 0,
+     "a": 3,
+     "pim": 8
+    },
+    {
+     "number": 77,
+     "name": "Francois Pellerin",
+     "gp": 35,
+     "g": 13,
+     "a": 11,
+     "pim": 94
+    },
+    {
+     "number": 81,
+     "name": "Bryan Farris",
+     "gp": 27,
+     "g": 2,
+     "a": 3,
+     "pim": 22
+    },
+    {
+     "number": 91,
+     "name": "Dylan Taylor",
+     "gp": 30,
+     "g": 0,
+     "a": 2,
+     "pim": 8
+    }
+   ],
+   "goalies": [
+    {
+     "number": 17,
+     "name": "Brad Buss",
+     "gp": 35,
+     "w": 16,
+     "l": 18,
+     "t": null,
+     "so": 0,
+     "min": null,
+     "ga": 139,
+     "shots": 1496,
+     "saves": 1357,
+     "gaa": 3.97,
+     "svpct": 0.907
+    }
+   ]
+  },
+  {
+   "startYear": 2003,
+   "source": "team",
+   "status": "final",
+   "asOf": "last updated Mar 26, 2004",
+   "url": "https://web.archive.org/web/20040405201135/http://www.calicehockey.com:80/stats.html",
+   "skaters": [
+    {
+     "number": 3,
+     "name": "Jeff Murphy",
+     "gp": 18,
+     "g": 4,
+     "a": 4,
+     "pim": 10
+    },
+    {
+     "number": 4,
+     "name": "Chris Dang",
+     "gp": 19,
+     "g": 6,
+     "a": 3,
+     "pim": 16
+    },
+    {
+     "number": 7,
+     "name": "Chase Krieger",
+     "gp": 21,
+     "g": 3,
+     "a": 10,
+     "pim": 26
+    },
+    {
+     "number": 8,
+     "name": "Bryce Kurtz-Fenster",
+     "gp": 17,
+     "g": 3,
+     "a": 5,
+     "pim": 8
+    },
+    {
+     "number": 10,
+     "name": "James Yim",
+     "gp": 21,
+     "g": 4,
+     "a": 8,
+     "pim": 10
+    },
+    {
+     "number": 11,
+     "name": "Jeff Maisen",
+     "gp": 21,
+     "g": 7,
+     "a": 2,
+     "pim": 0
+    },
+    {
+     "number": 14,
+     "name": "John Riley",
+     "gp": 18,
+     "g": 1,
+     "a": 5,
+     "pim": 4
+    },
+    {
+     "number": 15,
+     "name": "Chris Moulton",
+     "gp": 21,
+     "g": 20,
+     "a": 26,
+     "pim": 10
+    },
+    {
+     "number": 16,
+     "name": "Jason Katzen",
+     "gp": 21,
+     "g": 29,
+     "a": 27,
+     "pim": 26
+    },
+    {
+     "number": 18,
+     "name": "Tony Arieta",
+     "gp": 18,
+     "g": 1,
+     "a": 7,
+     "pim": 22
+    },
+    {
+     "number": 22,
+     "name": "Brian Tobin",
+     "gp": 10,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 27,
+     "name": "Sam Libeu",
+     "gp": 21,
+     "g": 10,
+     "a": 5,
+     "pim": 14
+    },
+    {
+     "number": 32,
+     "name": "Justin Edwards",
+     "gp": 21,
+     "g": 2,
+     "a": 9,
+     "pim": 20
+    },
+    {
+     "number": 51,
+     "name": "Sergei Tirayan",
+     "gp": 14,
+     "g": 0,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 55,
+     "name": "Sean Haq",
+     "gp": 21,
+     "g": 18,
+     "a": 32,
+     "pim": 34
+    },
+    {
+     "number": 71,
+     "name": "Eric Bansal",
+     "gp": 11,
+     "g": 0,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": 77,
+     "name": "Francois Pellerin",
+     "gp": 19,
+     "g": 6,
+     "a": 8,
+     "pim": 18
+    },
+    {
+     "number": 81,
+     "name": "Bryan Farris",
+     "gp": 13,
+     "g": 2,
+     "a": 2,
+     "pim": 9
+    },
+    {
+     "number": 91,
+     "name": "Dylan Taylor",
+     "gp": 21,
+     "g": 6,
+     "a": 2,
+     "pim": 6
+    },
+    {
+     "number": 92,
+     "name": "Rob Cassaras",
+     "gp": 17,
+     "g": 3,
+     "a": 4,
+     "pim": 8
+    },
+    {
+     "number": 93,
+     "name": "Amir Moazeni",
+     "gp": 20,
+     "g": 9,
+     "a": 12,
+     "pim": 42
+    }
+   ],
+   "goalies": [
+    {
+     "number": 17,
+     "name": "Brad Buss",
+     "gp": 15,
+     "w": 10,
+     "l": 5,
+     "t": null,
+     "so": 2,
+     "min": null,
+     "ga": 47,
+     "shots": 458,
+     "saves": 411,
+     "gaa": 3.13,
+     "svpct": 0.897
+    },
+    {
+     "number": 2,
+     "name": "Greg Cutler",
+     "gp": 6,
+     "w": 5,
+     "l": 1,
+     "t": null,
+     "so": 0,
+     "min": null,
+     "ga": 9,
+     "shots": 85,
+     "saves": 76,
+     "gaa": 1.5,
+     "svpct": 0.894
+    }
+   ]
+  },
+  {
+   "startYear": 2002,
+   "source": "team",
+   "status": "partial",
+   "asOf": "last updated Feb 11, 2003",
+   "url": "https://web.archive.org/web/20030416124347/http://calicehockey.com:80/stats.html",
+   "skaters": [
+    {
+     "number": 18,
+     "name": "Tony Arieta",
+     "gp": 17,
+     "g": 6,
+     "a": 3,
+     "pim": 14
+    },
+    {
+     "number": 21,
+     "name": "Carlos Arrieta",
+     "gp": 11,
+     "g": 0,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 3,
+     "name": "Alan Bussard",
+     "gp": 9,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 4,
+     "name": "Christopher Dang",
+     "gp": 17,
+     "g": 6,
+     "a": 5,
+     "pim": 16
+    },
+    {
+     "number": 32,
+     "name": "Justin Edwards",
+     "gp": 16,
+     "g": 3,
+     "a": 8,
+     "pim": 8
+    },
+    {
+     "number": 47,
+     "name": "David English",
+     "gp": 8,
+     "g": 0,
+     "a": 1,
+     "pim": 0
+    },
+    {
+     "number": 20,
+     "name": "Tudor Floru",
+     "gp": 6,
+     "g": 4,
+     "a": 5,
+     "pim": 20
+    },
+    {
+     "number": 88,
+     "name": "Steven Golubchik",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 55,
+     "name": "Sean Haq",
+     "gp": 17,
+     "g": 8,
+     "a": 9,
+     "pim": 14
+    },
+    {
+     "number": 16,
+     "name": "Jason Katzen",
+     "gp": 17,
+     "g": 16,
+     "a": 13,
+     "pim": 39
+    },
+    {
+     "number": 7,
+     "name": "Chase Krieger",
+     "gp": 17,
+     "g": 3,
+     "a": 8,
+     "pim": 26
+    },
+    {
+     "number": 8,
+     "name": "Bryce Kurtz-Fenster",
+     "gp": 17,
+     "g": 8,
+     "a": 4,
+     "pim": 19
+    },
+    {
+     "number": 77,
+     "name": "Daniel Lehrbaum",
+     "gp": 16,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 11,
+     "name": "Jeff Maisen",
+     "gp": 14,
+     "g": 6,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": 22,
+     "name": "Jeff Murphy",
+     "gp": 16,
+     "g": 2,
+     "a": 3,
+     "pim": 16
+    },
+    {
+     "number": 15,
+     "name": "Gabriel Ng",
+     "gp": 12,
+     "g": 1,
+     "a": 3,
+     "pim": 0
+    },
+    {
+     "number": 14,
+     "name": "John Riley",
+     "gp": 11,
+     "g": 2,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": 89,
+     "name": "Mark Rogers",
+     "gp": 17,
+     "g": 2,
+     "a": 21,
+     "pim": 30
+    },
+    {
+     "number": 9,
+     "name": "Gabe Shapiro",
+     "gp": 15,
+     "g": 6,
+     "a": 6,
+     "pim": 28
+    },
+    {
+     "number": 91,
+     "name": "Dylan Taylor",
+     "gp": 17,
+     "g": 3,
+     "a": 9,
+     "pim": 4
+    },
+    {
+     "number": 10,
+     "name": "James Yim",
+     "gp": 16,
+     "g": 3,
+     "a": 1,
+     "pim": 6
+    }
+   ],
+   "goalies": [
+    {
+     "number": 2,
+     "name": "Gregory Cutler",
+     "gp": 17,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": 9,
+     "shots": 41,
+     "saves": 32,
+     "gaa": 4.5,
+     "svpct": 0.78
+    },
+    {
+     "number": 37,
+     "name": "Kevin Gordon",
+     "gp": 17,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": 37,
+     "shots": 342,
+     "saves": 305,
+     "gaa": 2.47,
+     "svpct": 0.891
+    }
+   ]
+  },
+  {
+   "startYear": 2001,
+   "source": "team",
+   "status": "partial",
+   "asOf": "last updated Feb 27, 2002",
+   "url": "https://web.archive.org/web/20021013083226/http://2001.calicehockey.com:80/stats.html",
+   "skaters": [
+    {
+     "number": 88,
+     "name": "Tony Arieta",
+     "gp": 3,
+     "g": 0,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": 21,
+     "name": "Carlos Arrieta",
+     "gp": 13,
+     "g": 1,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 26,
+     "name": "Kirk Bardin",
+     "gp": 5,
+     "g": 1,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 4,
+     "name": "Christopher Dang",
+     "gp": 16,
+     "g": 7,
+     "a": 7,
+     "pim": 22
+    },
+    {
+     "number": 26,
+     "name": "Justin Edwards",
+     "gp": 14,
+     "g": 2,
+     "a": 1,
+     "pim": 21
+    },
+    {
+     "number": 20,
+     "name": "Tudor Floru",
+     "gp": 11,
+     "g": 17,
+     "a": 15,
+     "pim": 50
+    },
+    {
+     "number": 33,
+     "name": "Nicholas Giragosian",
+     "gp": 11,
+     "g": 2,
+     "a": 7,
+     "pim": 72
+    },
+    {
+     "number": 96,
+     "name": "Andrew Harkins",
+     "gp": 10,
+     "g": 2,
+     "a": 0,
+     "pim": null
+    },
+    {
+     "number": 16,
+     "name": "Jason Katzen",
+     "gp": 16,
+     "g": 24,
+     "a": 21,
+     "pim": 26
+    },
+    {
+     "number": 7,
+     "name": "Chase Krieger",
+     "gp": 15,
+     "g": 1,
+     "a": 8,
+     "pim": 14
+    },
+    {
+     "number": 8,
+     "name": "Bryce Kurtz-Fenster",
+     "gp": 15,
+     "g": 3,
+     "a": 6,
+     "pim": 30
+    },
+    {
+     "number": 77,
+     "name": "Daniel Lehrbaum",
+     "gp": 16,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 11,
+     "name": "Vache Moroyan",
+     "gp": 14,
+     "g": 2,
+     "a": 2,
+     "pim": 4
+    },
+    {
+     "number": 3,
+     "name": "Jeff Murphy",
+     "gp": 12,
+     "g": 1,
+     "a": 3,
+     "pim": 20
+    },
+    {
+     "number": 15,
+     "name": "Jack Nunn",
+     "gp": 6,
+     "g": 0,
+     "a": 1,
+     "pim": 16
+    },
+    {
+     "number": 19,
+     "name": "Frank Rey-Herme",
+     "gp": 1,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    },
+    {
+     "number": 9,
+     "name": "Gabe Shapiro",
+     "gp": 12,
+     "g": 5,
+     "a": 10,
+     "pim": 41
+    },
+    {
+     "number": 32,
+     "name": "Dareyn Stilwell",
+     "gp": 5,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": 25,
+     "name": "Masoud Tavazoie",
+     "gp": 12,
+     "g": 1,
+     "a": 1,
+     "pim": null
+    }
+   ],
+   "goalies": []
+  },
+  {
+   "startYear": 2000,
+   "source": "team",
+   "status": "partial",
+   "asOf": "as of March 2001",
+   "url": "https://web.archive.org/web/20010311155518/http://www.calicehockey.com:80/stats.html",
+   "skaters": [
+    {
+     "number": 3,
+     "name": "Alan Bussard",
+     "gp": 22,
+     "g": 1,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 4,
+     "name": "Christopher Dang",
+     "gp": 24,
+     "g": 12,
+     "a": 5,
+     "pim": 31
+    },
+    {
+     "number": 26,
+     "name": "Ryan Faber-Brook",
+     "gp": 17,
+     "g": 0,
+     "a": 1,
+     "pim": 31
+    },
+    {
+     "number": 20,
+     "name": "Tudor Floru",
+     "gp": 20,
+     "g": 6,
+     "a": 8,
+     "pim": 57
+    },
+    {
+     "number": 22,
+     "name": "Chris Foley",
+     "gp": 23,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 33,
+     "name": "Nicholas Giragosian",
+     "gp": 19,
+     "g": 1,
+     "a": 2,
+     "pim": 58
+    },
+    {
+     "number": 12,
+     "name": "Mark Goodman",
+     "gp": 21,
+     "g": 8,
+     "a": 15,
+     "pim": 0
+    },
+    {
+     "number": 14,
+     "name": "Bob Jalalpour",
+     "gp": 13,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 13,
+     "name": "Chris Judge",
+     "gp": 7,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 21,
+     "name": "Alex Kaplenko",
+     "gp": 24,
+     "g": 1,
+     "a": 6,
+     "pim": 18
+    },
+    {
+     "number": 16,
+     "name": "Jason Katzen",
+     "gp": 24,
+     "g": 27,
+     "a": 21,
+     "pim": 24
+    },
+    {
+     "number": 8,
+     "name": "Bryce Kurtz-Fenster",
+     "gp": 25,
+     "g": 1,
+     "a": 4,
+     "pim": 22
+    },
+    {
+     "number": null,
+     "name": "Daniel Lehrbaum",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 11,
+     "name": "Vache Moroyan",
+     "gp": 23,
+     "g": 0,
+     "a": 0,
+     "pim": 8
+    },
+    {
+     "number": 19,
+     "name": "Frank Rey-Herme",
+     "gp": 24,
+     "g": 21,
+     "a": 20,
+     "pim": 15
+    },
+    {
+     "number": 28,
+     "name": "Matthias Roos",
+     "gp": 17,
+     "g": 0,
+     "a": 16,
+     "pim": 20
+    },
+    {
+     "number": 43,
+     "name": "Ankit Sanghvi",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 32,
+     "name": "Dareyn Stilwell",
+     "gp": 25,
+     "g": 6,
+     "a": 18,
+     "pim": 22
+    },
+    {
+     "number": 25,
+     "name": "Masoud Tavazoie",
+     "gp": 9,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 7,
+     "name": "Jason Waller",
+     "gp": 16,
+     "g": 1,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": 9,
+     "name": "Joe Williams",
+     "gp": 16,
+     "g": 0,
+     "a": 1,
+     "pim": 4
+    },
+    {
+     "number": 10,
+     "name": "Audrius Avizienis",
+     "gp": 10,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 2,
+     "name": "Gregory Cutler",
+     "gp": 16,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 31,
+     "name": "Morgan Hite",
+     "gp": 19,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    }
+   ],
+   "goalies": []
+  },
+  {
+   "startYear": 1999,
+   "status": "partial",
+   "asOf": "through Feb 12, 2000",
+   "source": "team",
+   "skaters": [
+    {
+     "number": 10,
+     "name": "Audrius Avizienis",
+     "gp": 17,
+     "g": 1,
+     "a": 0,
+     "pim": 12
+    },
+    {
+     "number": 13,
+     "name": "Ben Barber",
+     "gp": 8,
+     "g": 3,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 14,
+     "name": "Joe Beaudin",
+     "gp": 19,
+     "g": 22,
+     "a": 19,
+     "pim": 20
+    },
+    {
+     "number": 3,
+     "name": "Alan Bussard",
+     "gp": 25,
+     "g": 0,
+     "a": 0,
+     "pim": 18
+    },
+    {
+     "number": 6,
+     "name": "David Choi",
+     "gp": 15,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 93,
+     "name": "Nick Conway",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 18,
+     "name": "Gabriel Desjardins",
+     "gp": 18,
+     "g": 1,
+     "a": 3,
+     "pim": 22
+    },
+    {
+     "number": 26,
+     "name": "Ryan Faber-Brook",
+     "gp": 25,
+     "g": 3,
+     "a": 4,
+     "pim": 32
+    },
+    {
+     "number": 20,
+     "name": "Tudor Floru",
+     "gp": 24,
+     "g": 20,
+     "a": 14,
+     "pim": 31
+    },
+    {
+     "number": 22,
+     "name": "Chris \"Luc\" Foley",
+     "gp": 25,
+     "g": 1,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 12,
+     "name": "Mark Goodman",
+     "gp": 22,
+     "g": 3,
+     "a": 8,
+     "pim": 2
+    },
+    {
+     "number": 20,
+     "name": "Sean Hallgren",
+     "gp": 23,
+     "g": 5,
+     "a": 4,
+     "pim": 10
+    },
+    {
+     "number": 21,
+     "name": "Alex Kaplenko",
+     "gp": 25,
+     "g": 10,
+     "a": 19,
+     "pim": 30
+    },
+    {
+     "number": 5,
+     "name": "Dave Leon",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 11,
+     "name": "Guy Manchuk",
+     "gp": 25,
+     "g": 2,
+     "a": 11,
+     "pim": 34
+    },
+    {
+     "number": 15,
+     "name": "Jack Nunn",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 19,
+     "name": "Franck Rey-Herme",
+     "gp": 9,
+     "g": 10,
+     "a": 9,
+     "pim": 2
+    },
+    {
+     "number": 32,
+     "name": "Dareyn Stilwell",
+     "gp": 25,
+     "g": 12,
+     "a": 18,
+     "pim": 14
+    },
+    {
+     "number": 25,
+     "name": "Masoud Tavazoie",
+     "gp": 12,
+     "g": 0,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 7,
+     "name": "Jason Waller",
+     "gp": 16,
+     "g": 1,
+     "a": 6,
+     "pim": 2
+    },
+    {
+     "number": 9,
+     "name": "Joe Williams",
+     "gp": 25,
+     "g": 0,
+     "a": 2,
+     "pim": 9
+    }
+   ],
+   "goalies": [
+    {
+     "number": 72,
+     "name": "Charles Perosio",
+     "gp": 12,
+     "w": 1,
+     "l": 8,
+     "t": 1,
+     "so": 0,
+     "min": 551,
+     "ga": 58,
+     "shots": 330,
+     "gaa": 6.32,
+     "svpct": 0.824,
+     "saves": 272
+    },
+    {
+     "number": 24,
+     "name": "Anthony Vu",
+     "gp": 11,
+     "w": 0,
+     "l": 7,
+     "t": 0,
+     "so": 0,
+     "min": 477,
+     "ga": 61,
+     "shots": 313,
+     "gaa": 7.67,
+     "svpct": 0.805,
+     "saves": 252
+    },
+    {
+     "number": 35,
+     "name": "Tim Yolo",
+     "gp": 2,
+     "w": 1,
+     "l": 0,
+     "t": 0,
+     "so": 0,
+     "min": 90,
+     "ga": 4,
+     "shots": 40,
+     "gaa": 2.25,
+     "svpct": 0.9,
+     "saves": 36
+    },
+    {
+     "number": 10,
+     "name": "Odo Avizienis",
+     "gp": 2,
+     "w": 0,
+     "l": 1,
+     "t": 0,
+     "so": 0,
+     "min": 69,
+     "ga": 10,
+     "shots": 40,
+     "gaa": 8.7,
+     "svpct": 0.75,
+     "saves": 30
+    }
+   ]
+  },
+  {
+   "startYear": 1998,
+   "status": "final",
+   "asOf": "final, including playoffs",
+   "source": "team",
+   "skaters": [
+    {
+     "number": 8,
+     "name": "Bradley Backes",
+     "gp": 16,
+     "g": 9,
+     "a": 9,
+     "pim": 42
+    },
+    {
+     "number": 4,
+     "name": "Brandon Brown",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 6,
+     "name": "Steven Chase",
+     "gp": 29,
+     "g": 9,
+     "a": 5,
+     "pim": 10
+    },
+    {
+     "number": 13,
+     "name": "Mark Dronskiy",
+     "gp": 26,
+     "g": 3,
+     "a": 9,
+     "pim": 47
+    },
+    {
+     "number": 26,
+     "name": "Ryan Faber-Brook",
+     "gp": 19,
+     "g": 0,
+     "a": 5,
+     "pim": 4
+    },
+    {
+     "number": 2,
+     "name": "Chris Foley",
+     "gp": 29,
+     "g": 0,
+     "a": 3,
+     "pim": 2
+    },
+    {
+     "number": 77,
+     "name": "Marc Gasway",
+     "gp": 18,
+     "g": 3,
+     "a": 1,
+     "pim": 4
+    },
+    {
+     "number": 12,
+     "name": "Mark Goodman",
+     "gp": 18,
+     "g": 1,
+     "a": 1,
+     "pim": 4
+    },
+    {
+     "number": 20,
+     "name": "Sean Hallgren",
+     "gp": 29,
+     "g": 0,
+     "a": 1,
+     "pim": 16
+    },
+    {
+     "number": 93,
+     "name": "Daniel Hasheminejad",
+     "gp": 15,
+     "g": 2,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 15,
+     "name": "Victor Hui",
+     "gp": 21,
+     "g": 4,
+     "a": 2,
+     "pim": 8
+    },
+    {
+     "number": 5,
+     "name": "Mike Lee",
+     "gp": 2,
+     "g": 2,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 9,
+     "name": "Guy Manchuk",
+     "gp": 10,
+     "g": 1,
+     "a": 1,
+     "pim": 18
+    },
+    {
+     "number": 52,
+     "name": "Elliot Otto",
+     "gp": 29,
+     "g": 11,
+     "a": 13,
+     "pim": 70
+    },
+    {
+     "number": 72,
+     "name": "Charles Perosio",
+     "gp": 5,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 10,
+     "name": "Victor Quintana",
+     "gp": 9,
+     "g": 1,
+     "a": 2,
+     "pim": 8
+    },
+    {
+     "number": 22,
+     "name": "Anne Riley-Katz",
+     "gp": 18,
+     "g": 0,
+     "a": 2,
+     "pim": 2
+    },
+    {
+     "number": 32,
+     "name": "Dareyn Stilwell",
+     "gp": 29,
+     "g": 6,
+     "a": 3,
+     "pim": 14
+    },
+    {
+     "number": 7,
+     "name": "Jonathan Weare",
+     "gp": 12,
+     "g": 1,
+     "a": 3,
+     "pim": 18
+    },
+    {
+     "number": 25,
+     "name": "A.J. White",
+     "gp": 19,
+     "g": 10,
+     "a": 13,
+     "pim": 14
+    },
+    {
+     "number": 29,
+     "name": "Gary Witt",
+     "gp": 26,
+     "g": 0,
+     "a": 2,
+     "pim": 0
+    },
+    {
+     "number": 35,
+     "name": "Timothy Yolo",
+     "gp": 1,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    }
+   ],
+   "goalies": [
+    {
+     "number": 29,
+     "name": "Gary Witt",
+     "gp": 26,
+     "w": 7,
+     "l": 18,
+     "t": 1,
+     "so": 2,
+     "min": 1434,
+     "ga": 110,
+     "shots": 965,
+     "gaa": 4.6,
+     "svpct": 0.886,
+     "saves": 855
+    },
+    {
+     "number": 72,
+     "name": "Charles Perosio",
+     "gp": 5,
+     "w": 0,
+     "l": 1,
+     "t": 0,
+     "so": 0,
+     "min": 125,
+     "ga": 18,
+     "shots": 91,
+     "gaa": 8.64,
+     "svpct": 0.802,
+     "saves": 73
+    },
+    {
+     "number": 4,
+     "name": "Brandon Brown",
+     "gp": 4,
+     "w": null,
+     "l": null,
+     "t": null,
+     "so": null,
+     "min": null,
+     "ga": 11,
+     "shots": 91,
+     "gaa": 5.5,
+     "svpct": 0.879,
+     "saves": 80
+    },
+    {
+     "number": 35,
+     "name": "Timothy Yolo",
+     "gp": 1,
+     "w": 0,
+     "l": 0,
+     "t": 0,
+     "so": 0,
+     "min": 20,
+     "ga": 5,
+     "shots": 25,
+     "gaa": 15.0,
+     "svpct": 0.8,
+     "saves": 20
+    }
+   ]
+  },
+  {
+   "startYear": 1997,
+   "status": "partial",
+   "asOf": "marked \"not complete\"",
+   "source": "team",
+   "skaters": [
+    {
+     "number": 1,
+     "name": "Jesse Koritz",
+     "gp": 17,
+     "g": 3,
+     "a": 4,
+     "pim": 140
+    },
+    {
+     "number": 2,
+     "name": "Anne Riley-Katz",
+     "gp": 12,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 4,
+     "name": "Mark Jamieson",
+     "gp": 17,
+     "g": 4,
+     "a": 2,
+     "pim": 62
+    },
+    {
+     "number": 5,
+     "name": "Dan Tessieri",
+     "gp": 17,
+     "g": 0,
+     "a": 6,
+     "pim": 26
+    },
+    {
+     "number": 7,
+     "name": "Steve Chase",
+     "gp": 11,
+     "g": 0,
+     "a": 1,
+     "pim": 2
+    },
+    {
+     "number": 8,
+     "name": "Kyle Reguero",
+     "gp": 12,
+     "g": 2,
+     "a": 4,
+     "pim": 80
+    },
+    {
+     "number": 8,
+     "name": "John Mansfield",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 9,
+     "name": "Tony Dykes",
+     "gp": 13,
+     "g": 0,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 11,
+     "name": "Guy Manchuk",
+     "gp": 16,
+     "g": 0,
+     "a": 2,
+     "pim": 28
+    },
+    {
+     "number": 13,
+     "name": "Eric Chang",
+     "gp": 16,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 15,
+     "name": "Jack Nunn",
+     "gp": 2,
+     "g": 0,
+     "a": 0,
+     "pim": 4
+    },
+    {
+     "number": 16,
+     "name": "Danny Demsky",
+     "gp": 4,
+     "g": 0,
+     "a": 0,
+     "pim": 8
+    },
+    {
+     "number": 17,
+     "name": "Dave Leon",
+     "gp": 17,
+     "g": 0,
+     "a": 0,
+     "pim": 18
+    },
+    {
+     "number": 18,
+     "name": "Larry Wu",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 19,
+     "name": "Jon Weare",
+     "gp": 15,
+     "g": 2,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 20,
+     "name": "Sean Hallgren",
+     "gp": 17,
+     "g": 0,
+     "a": 0,
+     "pim": 6
+    },
+    {
+     "number": 15,
+     "name": "Chris Foley",
+     "gp": 14,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 23,
+     "name": "Victor Quintana",
+     "gp": 15,
+     "g": 2,
+     "a": 4,
+     "pim": 43
+    },
+    {
+     "number": 24,
+     "name": "Oleg Sukhovnin",
+     "gp": 4,
+     "g": 3,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 25,
+     "name": "A.J. White",
+     "gp": 17,
+     "g": 2,
+     "a": 3,
+     "pim": 32
+    },
+    {
+     "number": 29,
+     "name": "Gary Witt",
+     "gp": 16,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 32,
+     "name": "Teal Watkins",
+     "gp": 9,
+     "g": 0,
+     "a": 0,
+     "pim": 2
+    },
+    {
+     "number": 37,
+     "name": "Ryan Faber-Brook",
+     "gp": 3,
+     "g": 0,
+     "a": 0,
+     "pim": 0
+    },
+    {
+     "number": 77,
+     "name": "Marc Gasway",
+     "gp": 13,
+     "g": 1,
+     "a": 3,
+     "pim": 0
+    }
+   ],
+   "goalies": []
+  }
+ ]
+}

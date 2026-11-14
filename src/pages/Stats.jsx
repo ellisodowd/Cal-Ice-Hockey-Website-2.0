@@ -35,11 +35,11 @@ const TABS = [
   ['hilo', 'Game High/Low'],
   ['leaders', 'Category Leaders'],
   ['alltime', 'All-Time Leaders'],
-  ['archive', '1997-2001 Archive'],
+  ['archive', 'Past Seasons'],
 ]
 
 // Seasons before the league feed, copied from the team's old websites
-// (public/archive-stats.json). Blank cells are numbers those pages never had.
+// and Elite Prospects (public/historical-stats.json). Blank cells are numbers the source never had.
 const dash = v => (v == null ? '—' : v)
 const ARCHIVE_SKATER_COLS = [
   ['number', '#', p => p.number, true],
@@ -64,7 +64,13 @@ const ARCHIVE_GOALIE_COLS = [
 ]
 
 // Career GAA and SV% only count goalies with enough games to mean something.
-const MIN_GOALIE_GP = 10
+// Career GAA and SV% only count goalies with enough time in net to mean something.
+// Measured in minutes and shots rather than games: old team pages often listed
+// team games for every goalie.
+const MIN_GOALIE_MINUTES = 600
+const MIN_GOALIE_SHOTS = 300
+// The career leaders start here; earlier seasons are only in Past Seasons.
+const LEADERS_FROM = 2000
 
 function svpct(g) {
   return g.shotsAgainst ? g.saves / g.shotsAgainst : 0
@@ -92,28 +98,55 @@ function specialTeams(games) {
 const SAME_PLAYER = {
   'Jack Burbank': 'John Burbank',
   'Lane Karutz': 'Lane Karlitz',
+  // Older seasons: the team's sites, Elite Prospects and the league feed
+  // write some names differently.
+  'Gregory Cutler': 'Greg Cutler',
+  'Christopher Dang': 'Chris Dang',
+  'Mathew Bloomfield': 'Matthew Bloomfield',
+  'Matt Bloomfield': 'Matthew Bloomfield',
+  'Matt Chorlian': 'Matthew Chorlian',
+  'Payne Cong': 'Pei En Cong',
+  'Markus Kytomaa': 'Markus Kytömaa',
+  'Jeff Leong': 'Jeffrey Leong',
+  'Nolan Mcmahon': 'Nolan McMahon',
+  'JP McNicholas': 'J.P. McNicholas',
+  'Aleksey Pelletier': 'Alex Pelletier',
+  'Jake Sitak': 'Jacob Sitak',
+  'Sasha Soloviev': 'Alexander Soloviev',
+  'Michael Thompson': 'Mike Thompson',
+  'Sean Mcavoy': 'Sean McAvoy',
 }
 
 // Career totals per player across every season in the feed. Keyed by name,
 // since jersey numbers change between (and sometimes within) seasons.
 // seasons arrive newest first, so the first line seen gives the latest number.
+// Goalie lines come in two shapes: league-feed seasons (toi in seconds,
+// shotsAgainst) and older seasons (min, shots), where any number the source
+// never recorded is null. Each career stat only uses the seasons that have it.
 function careerTotals(seasons) {
   const skaters = new Map()
   const goalies = new Map()
   for (const s of seasons) {
     for (const p of s.skaters) {
       const name = SAME_PLAYER[p.name] || p.name
-      const c = skaters.get(name) || { name, number: p.number, position: p.position, gp: 0, g: 0, a: 0, pim: 0, first: s.startYear, last: s.startYear }
-      c.gp += p.gp; c.g += p.g; c.a += p.a; c.pim += p.pim
+      const c = skaters.get(name) || { name, number: p.number, position: p.position || p.pos, gp: 0, g: 0, a: 0, pim: 0, first: s.startYear, last: s.startYear }
+      c.gp += p.gp; c.g += p.g; c.a += p.a; c.pim += p.pim || 0
       c.first = Math.min(c.first, s.startYear); c.last = Math.max(c.last, s.startYear)
       skaters.set(name, c)
     }
     for (const g of s.goalies || []) {
       if (!g.gp) continue
-      const c = goalies.get(g.name) || { name: g.name, number: g.number, position: 'G', gp: 0, w: 0, ga: 0, saves: 0, shotsAgainst: 0, toi: 0, first: s.startYear, last: s.startYear }
-      c.gp += g.gp; c.w += g.w; c.ga += g.ga; c.saves += g.saves; c.shotsAgainst += g.shotsAgainst; c.toi += g.toi || 0
+      const name = SAME_PLAYER[g.name] || g.name
+      const c = goalies.get(name) || { name, number: g.number, position: 'G', gp: 0, w: 0, gaaGoals: 0, seconds: 0, saves: 0, shots: 0, first: s.startYear, last: s.startYear }
+      const seconds = g.toi ?? (g.min ? g.min * 60 : 0)
+      const shots = g.shotsAgainst ?? g.shots
+      const saves = g.saves ?? (shots && g.ga != null ? shots - g.ga : null)
+      c.gp += g.gp
+      if (g.w != null) c.w += g.w
+      if (seconds && g.ga != null) { c.gaaGoals += g.ga; c.seconds += seconds }
+      if (shots && saves != null) { c.saves += saves; c.shots += shots }
       c.first = Math.min(c.first, s.startYear); c.last = Math.max(c.last, s.startYear)
-      goalies.set(g.name, c)
+      goalies.set(name, c)
     }
   }
   return { skaters: [...skaters.values()], goalies: [...goalies.values()] }
@@ -234,7 +267,7 @@ export default function Stats() {
   const [tab, setTab] = useState('player')
   const [cat, setCat] = useState('skaters')
   const [photoByName, setPhotoByName] = useState({})
-  const [archive, setArchive] = useState([])
+  const [history, setHistory] = useState([])
   const [archiveYear, setArchiveYear] = useState(null)
 
   useEffect(() => {
@@ -250,10 +283,10 @@ export default function Stats() {
       })
       .catch(err => setError(err.message))
 
-    fetch('/archive-stats.json')
+    fetch('/historical-stats.json')
       .then(res => (res.ok ? res.json() : { seasons: [] }))
       .then(data => {
-        setArchive(data.seasons || [])
+        setHistory(data.seasons || [])
         if (data.seasons?.length) setArchiveYear(data.seasons[0].startYear)
       })
       .catch(() => {})
@@ -276,9 +309,11 @@ export default function Stats() {
   const games = selected?.games || []
   const record = useMemo(() => seasonStats(games.map(g => ({ ...g, isPlayed: true }))), [games])
   const st = useMemo(() => specialTeams(games), [games])
-  const career = useMemo(() => careerTotals(seasons), [seasons])
-  const qualifiedGoalies = career.goalies.filter(g => g.gp >= MIN_GOALIE_GP)
-  const archived = archive.find(s => s.startYear === archiveYear)
+  const career = useMemo(
+    () => careerTotals([...seasons, ...history.filter(s => s.startYear >= LEADERS_FROM)]),
+    [seasons, history],
+  )
+  const archived = history.find(s => s.startYear === archiveYear)
   // Career and archive tabs aren't about the season picked in the dropdown.
   const seasonTab = tab !== 'alltime' && tab !== 'archive'
 
@@ -335,16 +370,12 @@ export default function Stats() {
                       </div>
                     </div>
                   )}
-                  {tab === 'archive' && archive.length > 0 && (
+                  {tab === 'archive' && history.length > 0 && (
                     <div className="statfilter">
-                      <span className="statfilterlab">Season</span>
-                      <div className="statseg" role="tablist" aria-label="Archive season">
-                        {archive.map(s => (
-                          <button key={s.startYear} role="tab" aria-selected={archiveYear === s.startYear}
-                            className={`statsegbtn${archiveYear === s.startYear ? ' on' : ''}`}
-                            onClick={() => setArchiveYear(s.startYear)}>{seasonLabel(s.startYear)}</button>
-                        ))}
-                      </div>
+                      <label className="statfilterlab" htmlFor="past-season">Season</label>
+                      <select id="past-season" className="rsel" value={archiveYear ?? ''} onChange={e => setArchiveYear(Number(e.target.value))}>
+                        {history.map(s => <option key={s.startYear} value={s.startYear}>{seasonLabel(s.startYear)}</option>)}
+                      </select>
                     </div>
                   )}
                 </div>
@@ -482,10 +513,11 @@ export default function Stats() {
 
                   {tab === 'alltime' && (
                     <>
-                      <h2 className="statsec">All-Time Leaders since {seasonLabel(seasons[seasons.length - 1].startYear)}</h2>
+                      <h2 className="statsec">All-Time Leaders since {seasonLabel(LEADERS_FROM)}</h2>
                       <p className="statnote" style={{ margin: '0 2px 18px' }}>
-                        Career totals since {seasonLabel(seasons[seasons.length - 1].startYear)}, the first season in the league's stats feed.
-                        Players whose Cal careers began earlier are counted from {seasonLabel(seasons[seasons.length - 1].startYear)} on.
+                        Career totals since {seasonLabel(LEADERS_FROM)}. Seasons from {seasonLabel(seasons[seasons.length - 1].startYear)} on come from the league's stats feed;
+                        earlier ones come from the team's old websites and Elite Prospects, and some of those seasons are incomplete.
+                        See Past Seasons for each season and its source.
                       </p>
                       <h3 className="cleadcat">Skaters</h3>
                       <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
@@ -501,25 +533,37 @@ export default function Stats() {
                       <h3 className="cleadcat" style={{ marginTop: 34 }}>Goaltenders</h3>
                       <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
                         <LeaderCard label="Wins" photoByName={photoByName}
-                          ranked={rankBy(career.goalies, g => g.w)} meta={careerSpan} />
+                          ranked={rankBy(career.goalies, g => g.w)} meta={careerSpan}
+                          note="Some seasons before 2021-22 have no win totals." />
                         <LeaderCard label="Goals Against Average" photoByName={photoByName}
-                          ranked={rankBy(qualifiedGoalies.filter(g => g.toi > 0), g => (g.ga * 3600) / g.toi, true)}
-                          show={v => v.toFixed(2)} meta={careerSpan} note={`Minimum ${MIN_GOALIE_GP} games played.`} />
+                          ranked={rankBy(career.goalies.filter(g => g.seconds >= MIN_GOALIE_MINUTES * 60), g => (g.gaaGoals * 3600) / g.seconds, true)}
+                          show={v => v.toFixed(2)} meta={careerSpan}
+                          note={`Minimum ${MIN_GOALIE_MINUTES} minutes. Before 2021-22, only seasons that recorded minutes count.`} />
                         <LeaderCard label="Save Percentage" photoByName={photoByName}
-                          ranked={rankBy(qualifiedGoalies, svpct)}
-                          show={v => v.toFixed(3).replace(/^0/, '')} meta={careerSpan} note={`Minimum ${MIN_GOALIE_GP} games played.`} />
+                          ranked={rankBy(career.goalies.filter(g => g.shots >= MIN_GOALIE_SHOTS), g => g.saves / g.shots)}
+                          show={v => v.toFixed(3).replace(/^0/, '')} meta={careerSpan}
+                          note={`Minimum ${MIN_GOALIE_SHOTS} shots faced. Before 2021-22, only seasons that recorded shots count.`} />
                       </div>
                     </>
                   )}
 
                   {tab === 'archive' && (
-                    !archived ? <p className="blg" style={{ color: 'var(--muted)' }}>No archived seasons.</p> : (
+                    !archived ? <p className="blg" style={{ color: 'var(--muted)' }}>No past seasons.</p> : (
                       <>
                         <h2 className="statsec">{seasonLabel(archived.startYear)} Season</h2>
                         <p className="statnote" style={{ margin: '0 2px 18px' }}>
-                          {archived.status === 'final' ? 'Final stats' : 'Partial season'} ({archived.asOf}), from the team's original website.{' '}
-                          <a href={archived.source} target="_blank" rel="noopener noreferrer">View the archived page</a>.
-                          {' '}A dash means the original page didn't record that number.
+                          {archived.source === 'team' ? (
+                            <>
+                              {archived.status === 'final' ? 'Final stats' : 'Partial season'} ({archived.asOf}), from the team's website at the time.{' '}
+                              <a href={archived.url} target="_blank" rel="noopener noreferrer">View the archived page</a>.
+                            </>
+                          ) : (
+                            <>
+                              {archived.status === 'partial' ? 'Partial season' : 'Season stats'} from Elite Prospects, which may be missing some games.{' '}
+                              <a href={archived.url} target="_blank" rel="noopener noreferrer">View on Elite Prospects</a>.
+                            </>
+                          )}
+                          {' '}A dash means the source didn't record that number.
                         </p>
                         <StatTable key={`s${archived.startYear}`} rows={archived.skaters} cols={ARCHIVE_SKATER_COLS} defaultKey="pts"
                           format={(key, value) => (key === 'name' ? <span className="statname"><span>{value}</span></span> : dash(value))} />
@@ -529,7 +573,8 @@ export default function Stats() {
                             <StatTable key={`g${archived.startYear}`} rows={archived.goalies} cols={ARCHIVE_GOALIE_COLS} defaultKey="gp"
                               format={(key, value, row) => {
                                 if (key === 'name') return <span className="statname"><span>{value}</span></span>
-                                if (key === 'w') return row.w == null ? '—' : `${row.w}-${row.l}-${row.t}`
+                                if (key === 'w') return row.w == null ? '—' : [row.w, row.l, row.t].filter(v => v != null).join('-')
+                                if (key === 'min') return value == null ? '—' : Math.round(value)
                                 if (key === 'gaa') return value == null ? '—' : value.toFixed(2)
                                 if (key === 'svpct') return value == null ? '—' : value.toFixed(3).replace(/^0/, '')
                                 return dash(value)
