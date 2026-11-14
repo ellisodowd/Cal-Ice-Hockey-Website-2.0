@@ -49,6 +49,7 @@ const ARCHIVE_SKATER_COLS = [
   ['a', 'A', p => p.a, true],
   ['pts', 'PTS', p => p.g + p.a, true],
   ['pim', 'PIM', p => p.pim, true],
+  ['src', 'Source', p => p.src, false],
 ]
 const ARCHIVE_GOALIE_COLS = [
   ['number', '#', g => g.number, true],
@@ -61,7 +62,9 @@ const ARCHIVE_GOALIE_COLS = [
   ['shots', 'SA', g => g.shots, true],
   ['gaa', 'GAA', g => g.gaa, true],
   ['svpct', 'SV%', g => g.svpct, true],
+  ['src', 'Source', g => g.src, false],
 ]
+const SOURCE_LABEL = { team: 'Team site', eliteprospects: 'Elite Prospects' }
 
 // Career GAA and SV% only count goalies with enough games to mean something.
 // Career GAA and SV% only count goalies with enough time in net to mean something.
@@ -115,6 +118,7 @@ const SAME_PLAYER = {
   'Sasha Soloviev': 'Alexander Soloviev',
   'Michael Thompson': 'Mike Thompson',
   'Sean Mcavoy': 'Sean McAvoy',
+  'Nolan Mcmahon': 'Nolan McMahon',
 }
 
 // Career totals per player across every season in the feed. Keyed by name,
@@ -152,12 +156,12 @@ function careerTotals(seasons) {
   return { skaters: [...skaters.values()], goalies: [...goalies.values()] }
 }
 
-// Top five by `get`; `asc` for stats where lower is better (GAA).
+// Top ten by `get`; `asc` for stats where lower is better (GAA).
 function rankBy(rows, get, asc = false) {
   return rows.map(p => ({ p, v: get(p) }))
     .filter(x => x.v != null && (asc || x.v > 0))
     .sort((a, b) => (asc ? a.v - b.v : b.v - a.v))
-    .slice(0, 5)
+    .slice(0, 10)
 }
 
 function careerSpan(p) {
@@ -554,21 +558,22 @@ export default function Stats() {
                       <>
                         <h2 className="statsec">{seasonLabel(archived.startYear)} Season</h2>
                         <p className="statnote" style={{ margin: '0 2px 18px' }}>
-                          {archived.source === 'team' ? (
-                            <>
-                              {archived.status === 'final' ? 'Final stats' : 'Partial season'} ({archived.asOf}), from the team's website at the time.{' '}
-                              <a href={archived.url} target="_blank" rel="noopener noreferrer">View the archived page</a>.
-                            </>
-                          ) : (
-                            <>
-                              {archived.status === 'partial' ? 'Partial season' : 'Season stats'} from Elite Prospects, which may be missing some games.{' '}
-                              <a href={archived.url} target="_blank" rel="noopener noreferrer">View on Elite Prospects</a>.
-                            </>
-                          )}
+                          {archived.status === 'final' ? 'Final stats' : archived.status === 'partial' ? 'Partial season' : 'Season stats'}
+                          {archived.sources.length > 1 ? ', combined from ' : ' from '}
+                          {archived.sources.map((src, i) => (
+                            <span key={src.kind}>
+                              {i > 0 && ' and '}
+                              <a href={src.url} target="_blank" rel="noopener noreferrer">
+                                {src.kind === 'team' ? `the team's website at the time (${src.label})` : 'Elite Prospects'}
+                              </a>
+                            </span>
+                          ))}.
+                          {archived.sources.length > 1 && " Where both list a player, the line with more games is used."}
+                          {archived.sources.some(src => src.kind === 'eliteprospects') && ' Elite Prospects may be missing some games.'}
                           {' '}A dash means the source didn't record that number.
                         </p>
                         <StatTable key={`s${archived.startYear}`} rows={archived.skaters} cols={ARCHIVE_SKATER_COLS} defaultKey="pts"
-                          format={(key, value) => (key === 'name' ? <span className="statname"><span>{value}</span></span> : dash(value))} />
+                          format={(key, value) => (key === 'name' ? <span className="statname"><span>{value}</span></span> : key === 'src' ? SOURCE_LABEL[value] : dash(value))} />
                         {archived.goalies.length > 0 && (
                           <>
                             <h2 className="statsec" style={{ marginTop: 28 }}>Goaltenders</h2>
@@ -577,6 +582,7 @@ export default function Stats() {
                                 if (key === 'name') return <span className="statname"><span>{value}</span></span>
                                 if (key === 'w') return row.w == null ? '—' : [row.w, row.l, row.t].filter(v => v != null).join('-')
                                 if (key === 'min') return value == null ? '—' : Math.round(value)
+                                if (key === 'src') return SOURCE_LABEL[value]
                                 if (key === 'gaa') return value == null ? '—' : value.toFixed(2)
                                 if (key === 'svpct') return value == null ? '—' : value.toFixed(3).replace(/^0/, '')
                                 return dash(value)
