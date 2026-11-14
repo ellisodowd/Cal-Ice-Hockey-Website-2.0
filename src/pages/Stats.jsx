@@ -34,7 +34,37 @@ const TABS = [
   ['gbg', 'Game-By-Game'],
   ['hilo', 'Game High/Low'],
   ['leaders', 'Category Leaders'],
+  ['alltime', 'All-Time Leaders'],
+  ['archive', '1997-2001 Archive'],
 ]
+
+// Seasons before the league feed, copied from the team's old websites
+// (public/archive-stats.json). Blank cells are numbers those pages never had.
+const dash = v => (v == null ? '—' : v)
+const ARCHIVE_SKATER_COLS = [
+  ['number', '#', p => p.number, true],
+  ['name', 'Player', p => p.name, false],
+  ['gp', 'GP', p => p.gp, true],
+  ['g', 'G', p => p.g, true],
+  ['a', 'A', p => p.a, true],
+  ['pts', 'PTS', p => p.g + p.a, true],
+  ['pim', 'PIM', p => p.pim, true],
+]
+const ARCHIVE_GOALIE_COLS = [
+  ['number', '#', g => g.number, true],
+  ['name', 'Goaltender', g => g.name, false],
+  ['gp', 'GP', g => g.gp, true],
+  ['w', 'W-L-T', g => g.w, true],
+  ['so', 'SO', g => g.so, true],
+  ['min', 'MIN', g => g.min, true],
+  ['ga', 'GA', g => g.ga, true],
+  ['shots', 'SA', g => g.shots, true],
+  ['gaa', 'GAA', g => g.gaa, true],
+  ['svpct', 'SV%', g => g.svpct, true],
+]
+
+// Career GAA and SV% only count goalies with enough games to mean something.
+const MIN_GOALIE_GP = 10
 
 function svpct(g) {
   return g.shotsAgainst ? g.saves / g.shotsAgainst : 0
@@ -55,6 +85,86 @@ function specialTeams(games) {
     pk: oppPpo ? ((oppPpo - oppPpg) / oppPpo) * 100 : null, killed: oppPpo - oppPpg, pko: oppPpo, ppga: oppPpg,
     games: withPp.length, played: games.length,
   }
+}
+
+// The league feed spells a few players differently from season to season.
+// Checked against Elite Prospects' Cal all-time totals.
+const SAME_PLAYER = {
+  'Jack Burbank': 'John Burbank',
+  'Lane Karutz': 'Lane Karlitz',
+}
+
+// Career totals per player across every season in the feed. Keyed by name,
+// since jersey numbers change between (and sometimes within) seasons.
+// seasons arrive newest first, so the first line seen gives the latest number.
+function careerTotals(seasons) {
+  const skaters = new Map()
+  const goalies = new Map()
+  for (const s of seasons) {
+    for (const p of s.skaters) {
+      const name = SAME_PLAYER[p.name] || p.name
+      const c = skaters.get(name) || { name, number: p.number, position: p.position, gp: 0, g: 0, a: 0, pim: 0, first: s.startYear, last: s.startYear }
+      c.gp += p.gp; c.g += p.g; c.a += p.a; c.pim += p.pim
+      c.first = Math.min(c.first, s.startYear); c.last = Math.max(c.last, s.startYear)
+      skaters.set(name, c)
+    }
+    for (const g of s.goalies || []) {
+      if (!g.gp) continue
+      const c = goalies.get(g.name) || { name: g.name, number: g.number, position: 'G', gp: 0, w: 0, ga: 0, saves: 0, shotsAgainst: 0, toi: 0, first: s.startYear, last: s.startYear }
+      c.gp += g.gp; c.w += g.w; c.ga += g.ga; c.saves += g.saves; c.shotsAgainst += g.shotsAgainst; c.toi += g.toi || 0
+      c.first = Math.min(c.first, s.startYear); c.last = Math.max(c.last, s.startYear)
+      goalies.set(g.name, c)
+    }
+  }
+  return { skaters: [...skaters.values()], goalies: [...goalies.values()] }
+}
+
+// Top five by `get`; `asc` for stats where lower is better (GAA).
+function rankBy(rows, get, asc = false) {
+  return rows.map(p => ({ p, v: get(p) }))
+    .filter(x => x.v != null && (asc || x.v > 0))
+    .sort((a, b) => (asc ? a.v - b.v : b.v - a.v))
+    .slice(0, 5)
+}
+
+function careerSpan(p) {
+  return p.first === p.last ? seasonLabel(p.first) : `${p.first}-${String((p.last + 1) % 100).padStart(2, '0')}`
+}
+
+function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
+  return (
+    <article className="card" style={{ borderTop: '4px solid var(--gold)' }}>
+      <p className="cleadcat">{label}</p>
+      {!ranked.length && <p className="bsm" style={{ color: 'var(--muted)' }}>No stats recorded.</p>}
+      {ranked.slice(0, 1).map(({ p, v }) => (
+        <div className="cleadtop" key={p.name}>
+          <span className="cleadphoto">
+            <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
+              onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+          </span>
+          <span className="cleadtopwho">
+            <span className="cleadtopname">{p.name}</span>
+            <span className="cleadtopmeta">{meta(p)}</span>
+          </span>
+          <span className="cleadtopval">{show(v)}</span>
+        </div>
+      ))}
+      {ranked.slice(1).map(({ p, v }, i) => (
+        <p className="bsm cleadrow" key={p.name}>
+          <span className="cleadrank">{i + 2}.</span>
+          <span className="statname" style={{ flex: 1 }}>
+            <span className="cleadphoto-sm">
+              <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
+                onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
+            </span>
+            <span>{p.name}</span>
+          </span>
+          <span className="cleadval">{show(v)}</span>
+        </p>
+      ))}
+      {note && <p className="statnote">{note}</p>}
+    </article>
+  )
 }
 
 function useSortedTable(rows, cols, defaultKey, defaultDir = 'desc') {
@@ -124,6 +234,8 @@ export default function Stats() {
   const [tab, setTab] = useState('player')
   const [cat, setCat] = useState('skaters')
   const [photoByName, setPhotoByName] = useState({})
+  const [archive, setArchive] = useState([])
+  const [archiveYear, setArchiveYear] = useState(null)
 
   useEffect(() => {
     fetch('/player-stats.json', { cache: 'no-store' })
@@ -137,6 +249,14 @@ export default function Stats() {
         if (list.length) setSelectedId(list[0].seasonId)
       })
       .catch(err => setError(err.message))
+
+    fetch('/archive-stats.json')
+      .then(res => (res.ok ? res.json() : { seasons: [] }))
+      .then(data => {
+        setArchive(data.seasons || [])
+        if (data.seasons?.length) setArchiveYear(data.seasons[0].startYear)
+      })
+      .catch(() => {})
 
     // The feed has no photos — match by name against the current roster for
     // whichever players are on it. Anyone not on today's roster (graduated,
@@ -156,6 +276,11 @@ export default function Stats() {
   const games = selected?.games || []
   const record = useMemo(() => seasonStats(games.map(g => ({ ...g, isPlayed: true }))), [games])
   const st = useMemo(() => specialTeams(games), [games])
+  const career = useMemo(() => careerTotals(seasons), [seasons])
+  const qualifiedGoalies = career.goalies.filter(g => g.gp >= MIN_GOALIE_GP)
+  const archived = archive.find(s => s.startYear === archiveYear)
+  // Career and archive tabs aren't about the season picked in the dropdown.
+  const seasonTab = tab !== 'alltime' && tab !== 'archive'
 
   return (
     <>
@@ -166,9 +291,9 @@ export default function Stats() {
           <div className="wrap">
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, flexWrap: 'wrap' }}>
               <h1 className="pagetitle" style={{ flex: '1 1 auto' }}>
-                {selected ? `${seasonLabel(selected.startYear)} ` : ''}Statistics
+                {selected && seasonTab ? `${seasonLabel(selected.startYear)} ` : ''}Statistics
               </h1>
-              {seasons.length > 1 && (
+              {seasons.length > 1 && seasonTab && (
                 <select className="rsel" value={selectedId || ''} onChange={e => setSelectedId(e.target.value)} aria-label="Season">
                   {seasons.map(s => <option key={s.seasonId} value={s.seasonId}>{seasonLabel(s.startYear)}</option>)}
                 </select>
@@ -206,6 +331,18 @@ export default function Stats() {
                         {[['skaters', 'Skaters'], ['goalies', 'Goaltenders']].map(([k, label]) => (
                           <button key={k} role="tab" aria-selected={cat === k}
                             className={`statsegbtn${cat === k ? ' on' : ''}`} onClick={() => setCat(k)}>{label}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {tab === 'archive' && archive.length > 0 && (
+                    <div className="statfilter">
+                      <span className="statfilterlab">Season</span>
+                      <div className="statseg" role="tablist" aria-label="Archive season">
+                        {archive.map(s => (
+                          <button key={s.startYear} role="tab" aria-selected={archiveYear === s.startYear}
+                            className={`statsegbtn${archiveYear === s.startYear ? ' on' : ''}`}
+                            onClick={() => setArchiveYear(s.startYear)}>{seasonLabel(s.startYear)}</button>
                         ))}
                       </div>
                     </div>
@@ -334,43 +471,73 @@ export default function Stats() {
                     <>
                       <h2 className="statsec">Category Leaders</h2>
                       <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
-                        {[['Goals', p => p.g], ['Assists', p => p.a], ['Points', p => p.g + p.a]].map(([label, get]) => {
-                          const ranked = [...selected.skaters].map(p => ({ p, v: get(p) })).sort((a, b) => b.v - a.v).filter(x => x.v > 0).slice(0, 5)
-                          return (
-                            <article className="card" key={label} style={{ borderTop: '4px solid var(--gold)' }}>
-                              <p className="cleadcat">{label}</p>
-                              {!ranked.length && <p className="bsm" style={{ color: 'var(--muted)' }}>No stats recorded.</p>}
-                              {ranked.slice(0, 1).map(({ p, v }) => (
-                                <div className="cleadtop" key={p.number}>
-                                  <span className="cleadphoto">
-                                    <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
-                                      onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
-                                  </span>
-                                  <span className="cleadtopwho">
-                                    <span className="cleadtopname">{p.name}</span>
-                                    <span className="cleadtopmeta">{[p.number ? `#${p.number}` : null, p.position].filter(Boolean).join(' · ')}</span>
-                                  </span>
-                                  <span className="cleadtopval">{v}</span>
-                                </div>
-                              ))}
-                              {ranked.slice(1).map(({ p, v }, i) => (
-                                <p className="bsm cleadrow" key={p.number}>
-                                  <span className="cleadrank">{i + 2}.</span>
-                                  <span className="statname" style={{ flex: 1 }}>
-                                    <span className="cleadphoto-sm">
-                                      <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
-                                        onError={e => { e.currentTarget.src = FALLBACK_IMG }} />
-                                    </span>
-                                    <span>{p.name}</span>
-                                  </span>
-                                  <span className="cleadval">{v}</span>
-                                </p>
-                              ))}
-                            </article>
-                          )
-                        })}
+                        {[['Goals', p => p.g], ['Assists', p => p.a], ['Points', p => p.g + p.a]].map(([label, get]) => (
+                          <LeaderCard key={label} label={label} photoByName={photoByName}
+                            ranked={rankBy(selected.skaters, get)}
+                            meta={p => [p.number ? `#${p.number}` : null, p.position].filter(Boolean).join(' · ')} />
+                        ))}
                       </div>
                     </>
+                  )}
+
+                  {tab === 'alltime' && (
+                    <>
+                      <h2 className="statsec">All-Time Leaders since {seasonLabel(seasons[seasons.length - 1].startYear)}</h2>
+                      <p className="statnote" style={{ margin: '0 2px 18px' }}>
+                        Career totals since {seasonLabel(seasons[seasons.length - 1].startYear)}, the first season in the league's stats feed.
+                        Players whose Cal careers began earlier are counted from {seasonLabel(seasons[seasons.length - 1].startYear)} on.
+                      </p>
+                      <h3 className="cleadcat">Skaters</h3>
+                      <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
+                        {[
+                          ['Goals', p => p.g], ['Assists', p => p.a], ['Points', p => p.g + p.a],
+                          ['Games Played', p => p.gp], ['Penalty Minutes', p => p.pim],
+                        ].map(([label, get]) => (
+                          <LeaderCard key={label} label={label} photoByName={photoByName}
+                            ranked={rankBy(career.skaters, get)}
+                            meta={p => [p.position, careerSpan(p)].filter(Boolean).join(' · ')} />
+                        ))}
+                      </div>
+                      <h3 className="cleadcat" style={{ marginTop: 34 }}>Goaltenders</h3>
+                      <div className="cards" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
+                        <LeaderCard label="Wins" photoByName={photoByName}
+                          ranked={rankBy(career.goalies, g => g.w)} meta={careerSpan} />
+                        <LeaderCard label="Goals Against Average" photoByName={photoByName}
+                          ranked={rankBy(qualifiedGoalies.filter(g => g.toi > 0), g => (g.ga * 3600) / g.toi, true)}
+                          show={v => v.toFixed(2)} meta={careerSpan} note={`Minimum ${MIN_GOALIE_GP} games played.`} />
+                        <LeaderCard label="Save Percentage" photoByName={photoByName}
+                          ranked={rankBy(qualifiedGoalies, svpct)}
+                          show={v => v.toFixed(3).replace(/^0/, '')} meta={careerSpan} note={`Minimum ${MIN_GOALIE_GP} games played.`} />
+                      </div>
+                    </>
+                  )}
+
+                  {tab === 'archive' && (
+                    !archived ? <p className="blg" style={{ color: 'var(--muted)' }}>No archived seasons.</p> : (
+                      <>
+                        <h2 className="statsec">{seasonLabel(archived.startYear)} Season</h2>
+                        <p className="statnote" style={{ margin: '0 2px 18px' }}>
+                          {archived.status === 'final' ? 'Final stats' : 'Partial season'} ({archived.asOf}), from the team's original website.{' '}
+                          <a href={archived.source} target="_blank" rel="noopener noreferrer">View the archived page</a>.
+                          {' '}A dash means the original page didn't record that number.
+                        </p>
+                        <StatTable key={`s${archived.startYear}`} rows={archived.skaters} cols={ARCHIVE_SKATER_COLS} defaultKey="pts"
+                          format={(key, value) => (key === 'name' ? <span className="statname"><span>{value}</span></span> : dash(value))} />
+                        {archived.goalies.length > 0 && (
+                          <>
+                            <h2 className="statsec" style={{ marginTop: 28 }}>Goaltenders</h2>
+                            <StatTable key={`g${archived.startYear}`} rows={archived.goalies} cols={ARCHIVE_GOALIE_COLS} defaultKey="gp"
+                              format={(key, value, row) => {
+                                if (key === 'name') return <span className="statname"><span>{value}</span></span>
+                                if (key === 'w') return row.w == null ? '—' : `${row.w}-${row.l}-${row.t}`
+                                if (key === 'gaa') return value == null ? '—' : value.toFixed(2)
+                                if (key === 'svpct') return value == null ? '—' : value.toFixed(3).replace(/^0/, '')
+                                return dash(value)
+                              }} />
+                          </>
+                        )}
+                      </>
+                    )
                   )}
                 </div>
               </>
