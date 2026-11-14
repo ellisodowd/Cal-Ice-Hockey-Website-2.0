@@ -292,16 +292,18 @@ export default function Stats() {
       .catch(() => {})
 
     // The feed has no photos — match by name against the current roster for
-    // whichever players are on it. Anyone not on today's roster (graduated,
-    // past seasons) just falls back to the blank silhouette.
-    fetch('/roster-data.json')
-      .then(res => (res.ok ? res.json() : { roster: [] }))
-      .then(data => {
-        const map = {}
-        for (const p of data.roster || []) map[p.name] = p.image
-        setPhotoByName(map)
-      })
-      .catch(() => {})
+    // whichever players are on it. Anyone with no photo falls back to the
+    // blank silhouette.
+    // Former players' headshots (old team sites and past rosters) fill in for
+    // anyone not on today's roster; the current roster's photo wins.
+    Promise.all([
+      fetch('/roster-data.json').then(res => (res.ok ? res.json() : { roster: [] })).catch(() => ({ roster: [] })),
+      fetch('/alumni-photos.json').then(res => (res.ok ? res.json() : {})).catch(() => ({})),
+    ]).then(([data, alumni]) => {
+      const map = { ...alumni }
+      for (const p of data.roster || []) map[p.name] = p.image
+      setPhotoByName(map)
+    })
   }, [])
 
   const selected = seasons.find(s => s.seasonId === selectedId)
