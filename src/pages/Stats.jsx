@@ -168,12 +168,22 @@ function careerSpan(p) {
   return p.first === p.last ? seasonLabel(p.first) : `${p.first}-${String((p.last + 1) % 100).padStart(2, '0')}`
 }
 
+// Shows the top 5; clicking the stat's name expands it to the full top 10.
 function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
+  const [open, setOpen] = useState(false)
+  const shown = open ? ranked : ranked.slice(0, 5)
   return (
     <article className="card" style={{ borderTop: '4px solid var(--gold)' }}>
-      <p className="cleadcat">{label}</p>
+      <p className="cleadcat">
+        {ranked.length > 5 ? (
+          <button type="button" className="cleadcatbtn" aria-expanded={open} onClick={() => setOpen(o => !o)}>
+            <span>{label}</span>
+            <span className="cleadmore">{open ? 'Show top 5 ▴' : 'Show top 10 ▾'}</span>
+          </button>
+        ) : label}
+      </p>
       {!ranked.length && <p className="bsm" style={{ color: 'var(--muted)' }}>No stats recorded.</p>}
-      {ranked.slice(0, 1).map(({ p, v }) => (
+      {shown.slice(0, 1).map(({ p, v }) => (
         <div className="cleadtop" key={p.name}>
           <span className="cleadphoto">
             <img src={photoByName[p.name] || FALLBACK_IMG} alt=""
@@ -186,7 +196,7 @@ function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
           <span className="cleadtopval">{show(v)}</span>
         </div>
       ))}
-      {ranked.slice(1).map(({ p, v }, i) => (
+      {shown.slice(1).map(({ p, v }, i) => (
         <p className="bsm cleadrow" key={p.name}>
           <span className="cleadrank">{i + 2}.</span>
           <span className="statname" style={{ flex: 1 }}>

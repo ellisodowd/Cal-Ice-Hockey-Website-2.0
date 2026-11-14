@@ -1031,6 +1031,11 @@ table.stats.statstable .sortbtn:hover { color: #fff; background: rgba(255, 255, 
 
 /* Category leaders */
 .cleadcat { margin: 0 0 14px; font-weight: 800; font-size: 17px; color: var(--blue); }
+.cleadcatbtn { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; width: 100%;
+  background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.cleadmore { font-size: 12px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.cleadcatbtn:hover .cleadmore { color: var(--blue); }
+.cleadcatbtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 .cleadphoto { width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
   flex: 0 0 auto; background: var(--ice); display: block; }
 .cleadphoto-sm { width: 24px; height: 24px; border-radius: 50%; overflow: hidden;
