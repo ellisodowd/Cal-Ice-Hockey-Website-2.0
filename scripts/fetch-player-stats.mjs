@@ -58,8 +58,13 @@ function emptyGoalie(info) {
   return {
     name: `${info.firstName} ${info.lastName}`.trim(),
     number: info.jerseyNumber,
-    gp: 0, w: 0, l: 0, t: 0, ga: 0, saves: 0, shotsAgainst: 0, so: 0,
+    gp: 0, w: 0, l: 0, t: 0, ga: 0, saves: 0, shotsAgainst: 0, so: 0, toi: 0,
   }
+}
+
+// "58:41" or "1:05:00" -> seconds. Stored so the site can show a real GAA.
+function toiSeconds(text) {
+  return String(text || '').split(':').reduce((n, part) => n * 60 + (Number(part) || 0), 0)
 }
 
 // Keyed by name, not jersey number, so a player who changes numbers
@@ -126,6 +131,7 @@ async function statsForSeason(seasonId, startYear) {
         line.ga += Number(row.stats.goalsAgainst) || 0
         line.saves += Number(row.stats.saves) || 0
         line.shotsAgainst += Number(row.stats.shotsAgainst) || 0
+        line.toi += toiSeconds(row.stats.timeOnIce)
         if (row === starter) {
           const outcome = gameOutcome(game)
           if (outcome === 'W') line.w += 1
@@ -153,7 +159,8 @@ async function statsForSeason(seasonId, startYear) {
       decidedBy: game.decidedBy,
       shots: side.stats?.shots ?? null,
       oppShots: opp.stats?.shots ?? null,
-      pim: sidePim,
+      // The team total includes bench minors, which no player is charged with.
+      pim: Number(side.stats?.penaltyMinuteCount ?? sidePim),
       ppGoals: side.stats?.powerPlayGoals ?? null,
       ppOpportunities: side.stats?.powerPlayOpportunities ?? null,
       oppPpGoals: opp.stats?.powerPlayGoals ?? null,
@@ -163,7 +170,27 @@ async function statsForSeason(seasonId, startYear) {
 
   gameLines.sort((a, b) => a.sortDate - b.sortDate)
   for (const g of gameLines) delete g.sortDate
-  return { skaters: [...skaters.values()], goalies: [...goalies.values()], games: gameLines }
+  return { skaters: [...skaters.values()], goalies: await withOfficialRecords(seasonId, [...goalies.values()]), games: gameLines }
+}
+
+// Box scores don't say who got the decision, so W/L/OTL and shutouts come from
+// the league's own season goalie stats (the same numbers achahockey.org shows).
+async function withOfficialRecords(seasonId, lines) {
+  const byName = new Map(lines.map(g => [g.name, g]))
+  const official = rowsOf(await get(`&view=players&season=${seasonId}&team=${CAL_TEAM_ID}&position=goalies&rookies=0&statsType=standard&limit=100&sort=gaa&qualified=all`))
+  for (const { row } of official) {
+    const g = byName.get(String(row.name || '').trim())
+    if (!g) continue
+    g.w = Number(row.wins) || 0
+    g.l = Number(row.losses) || 0
+    g.t = (Number(row.ot_losses) || 0) + (Number(row.shootout_losses) || 0)
+    g.so = Number(row.shutouts) || 0
+    // Box scores occasionally miss a goal against; keep shots = saves + goals so SV% stays consistent.
+    g.ga = Number(row.goals_against) || 0
+    g.shotsAgainst = g.saves + g.ga
+    if (Number(row.games_played) !== g.gp) console.warn(`  ${g.name}: box scores give ${g.gp} GP, league table ${row.games_played}`)
+  }
+  return lines
 }
 
 const allSeasons = (await get('&view=seasonsForLeague')).seasons

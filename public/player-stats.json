@@ -287,7 +287,8 @@
           "ga": 19,
           "saves": 232,
           "shotsAgainst": 251,
-          "so": 0
+          "so": 0,
+          "toi": 27097
         },
         {
           "name": "Cole Nelson",
@@ -299,7 +300,8 @@
           "ga": 14,
           "saves": 121,
           "shotsAgainst": 135,
-          "so": 0
+          "so": 0,
+          "toi": 19200
         }
       ],
       "games": [
@@ -784,37 +786,40 @@
           "name": "Aidan Comeau",
           "number": 80,
           "gp": 25,
-          "w": 13,
+          "w": 16,
           "l": 8,
           "t": 0,
           "ga": 65,
           "saves": 668,
           "shotsAgainst": 733,
-          "so": 2
+          "so": 3,
+          "toi": 79594
         },
         {
           "name": "Nikola Tomic",
           "number": 39,
           "gp": 5,
-          "w": 4,
+          "w": 2,
           "l": 1,
           "t": 0,
           "ga": 12,
           "saves": 94,
           "shotsAgainst": 106,
-          "so": 2
+          "so": 2,
+          "toi": 13650
         },
         {
           "name": "Yusuf Akbas",
           "number": 1,
           "gp": 7,
-          "w": 3,
+          "w": 2,
           "l": 1,
           "t": 0,
           "ga": 19,
           "saves": 77,
           "shotsAgainst": 96,
-          "so": 0
+          "so": 0,
+          "toi": 14971
         },
         {
           "name": "Allan Anaka",
@@ -826,7 +831,8 @@
           "ga": 0,
           "saves": 0,
           "shotsAgainst": 0,
-          "so": 0
+          "so": 0,
+          "toi": 0
         }
       ],
       "games": [
@@ -920,7 +926,7 @@
           "decidedBy": null,
           "shots": 33,
           "oppShots": 16,
-          "pim": 29,
+          "pim": 31,
           "ppGoals": 3,
           "ppOpportunities": 5,
           "oppPpGoals": 2,
@@ -1559,7 +1565,8 @@
           "ga": 27,
           "saves": 406,
           "shotsAgainst": 433,
-          "so": 5
+          "so": 4,
+          "toi": 63123
         },
         {
           "name": "Yusuf Akbas",
@@ -1571,7 +1578,8 @@
           "ga": 18,
           "saves": 124,
           "shotsAgainst": 142,
-          "so": 1
+          "so": 1,
+          "toi": 19887
         },
         {
           "name": "Allan Anaka",
@@ -1583,7 +1591,8 @@
           "ga": 1,
           "saves": 0,
           "shotsAgainst": 1,
-          "so": 0
+          "so": 0,
+          "toi": 3600
         }
       ],
       "games": [
@@ -1645,7 +1654,7 @@
           "decidedBy": null,
           "shots": 37,
           "oppShots": 29,
-          "pim": 8,
+          "pim": 10,
           "ppGoals": 3,
           "ppOpportunities": 7,
           "oppPpGoals": 1,
@@ -1709,7 +1718,7 @@
           "decidedBy": null,
           "shots": 30,
           "oppShots": 12,
-          "pim": 6,
+          "pim": 10,
           "ppGoals": 1,
           "ppOpportunities": 7,
           "oppPpGoals": 0,
@@ -1741,7 +1750,7 @@
           "decidedBy": null,
           "shots": 33,
           "oppShots": 20,
-          "pim": 6,
+          "pim": 8,
           "ppGoals": 0,
           "ppOpportunities": 2,
           "oppPpGoals": 0,
@@ -1901,7 +1910,7 @@
           "decidedBy": null,
           "shots": 49,
           "oppShots": 30,
-          "pim": 4,
+          "pim": 6,
           "ppGoals": 2,
           "ppOpportunities": 7,
           "oppPpGoals": 1,
@@ -2294,7 +2303,8 @@
           "ga": 53,
           "saves": 230,
           "shotsAgainst": 283,
-          "so": 2
+          "so": 1,
+          "toi": 48183
         },
         {
           "name": "Jared Brunner",
@@ -2306,7 +2316,8 @@
           "ga": 34,
           "saves": 98,
           "shotsAgainst": 132,
-          "so": 1
+          "so": 1,
+          "toi": 26557
         },
         {
           "name": "Thor Oase",
@@ -2318,7 +2329,8 @@
           "ga": 16,
           "saves": 79,
           "shotsAgainst": 95,
-          "so": 0
+          "so": 0,
+          "toi": 14332
         },
         {
           "name": "Allan Anaka",
@@ -2330,7 +2342,8 @@
           "ga": 12,
           "saves": 38,
           "shotsAgainst": 50,
-          "so": 0
+          "so": 0,
+          "toi": 8400
         }
       ],
       "games": [
@@ -2440,7 +2453,7 @@
           "decidedBy": null,
           "shots": 35,
           "oppShots": 21,
-          "pim": 12,
+          "pim": 14,
           "ppGoals": 2,
           "ppOpportunities": 5,
           "oppPpGoals": 1,
@@ -2648,7 +2661,7 @@
           "decidedBy": null,
           "shots": 35,
           "oppShots": 40,
-          "pim": 42,
+          "pim": 44,
           "ppGoals": 1,
           "ppOpportunities": 3,
           "oppPpGoals": 2,
@@ -3039,25 +3052,27 @@
           "name": "Max Wiseman",
           "number": 30,
           "gp": 14,
-          "w": 8,
+          "w": 7,
           "l": 3,
           "t": 2,
-          "ga": 46,
+          "ga": 47,
           "saves": 284,
-          "shotsAgainst": 330,
-          "so": 0
+          "shotsAgainst": 331,
+          "so": 0,
+          "toi": 47463
         },
         {
           "name": "Matthew Adrian",
           "number": 35,
           "gp": 8,
           "w": 6,
-          "l": 1,
+          "l": 2,
           "t": 0,
           "ga": 24,
           "saves": 136,
           "shotsAgainst": 160,
-          "so": 0
+          "so": 0,
+          "toi": 24879
         }
       ],
       "games": [
@@ -3071,7 +3086,7 @@
           "decidedBy": null,
           "shots": 38,
           "oppShots": 21,
-          "pim": 39,
+          "pim": 41,
           "ppGoals": 0,
           "ppOpportunities": 4,
           "oppPpGoals": 0,
@@ -3279,7 +3294,7 @@
           "decidedBy": null,
           "shots": 49,
           "oppShots": 13,
-          "pim": 6,
+          "pim": 8,
           "ppGoals": 3,
           "ppOpportunities": 6,
           "oppPpGoals": 1,
@@ -3570,7 +3585,8 @@
           "ga": 23,
           "saves": 197,
           "shotsAgainst": 220,
-          "so": 1
+          "so": 1,
+          "toi": 30997
         },
         {
           "name": "Matthew Adrian",
@@ -3582,7 +3598,8 @@
           "ga": 22,
           "saves": 145,
           "shotsAgainst": 167,
-          "so": 2
+          "so": 2,
+          "toi": 21398
         }
       ],
       "games": [
