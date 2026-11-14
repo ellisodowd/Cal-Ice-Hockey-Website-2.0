@@ -156,19 +156,18 @@ function careerTotals(seasons) {
   return { skaters: [...skaters.values()], goalies: [...goalies.values()] }
 }
 
-// Top ten by `get`; `asc` for stats where lower is better (GAA).
+// Everyone ranked by `get`; `asc` for stats where lower is better (GAA).
 function rankBy(rows, get, asc = false) {
   return rows.map(p => ({ p, v: get(p) }))
     .filter(x => x.v != null && (asc || x.v > 0))
     .sort((a, b) => (asc ? a.v - b.v : b.v - a.v))
-    .slice(0, 10)
 }
 
 function careerSpan(p) {
   return p.first === p.last ? seasonLabel(p.first) : `${p.first}-${String((p.last + 1) % 100).padStart(2, '0')}`
 }
 
-// Shows the top 5; clicking the stat's name expands it to the full top 10.
+// Shows the top 5; clicking the stat's name expands it to the full list.
 function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
   const [open, setOpen] = useState(false)
   const shown = open ? ranked : ranked.slice(0, 5)
@@ -178,7 +177,7 @@ function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
         {ranked.length > 5 ? (
           <button type="button" className="cleadcatbtn" aria-expanded={open} onClick={() => setOpen(o => !o)}>
             <span>{label}</span>
-            <span className="cleadmore">{open ? 'Show top 5 ▴' : 'Show top 10 ▾'}</span>
+            <span className="cleadmore">{open ? '▴' : '▾'}</span>
           </button>
         ) : label}
       </p>
@@ -196,6 +195,7 @@ function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
           <span className="cleadtopval">{show(v)}</span>
         </div>
       ))}
+      <div className={open ? 'cleadlist-open' : undefined}>
       {shown.slice(1).map(({ p, v }, i) => (
         <p className="bsm cleadrow" key={p.name}>
           <span className="cleadrank">{i + 2}.</span>
@@ -209,6 +209,7 @@ function LeaderCard({ label, ranked, photoByName, show = v => v, meta, note }) {
           <span className="cleadval">{show(v)}</span>
         </p>
       ))}
+      </div>
       {note && <p className="statnote">{note}</p>}
     </article>
   )

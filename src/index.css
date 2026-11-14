@@ -1034,6 +1034,7 @@ table.stats.statstable .sortbtn:hover { color: #fff; background: rgba(255, 255, 
 .cleadcatbtn { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; width: 100%;
   background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
 .cleadmore { font-size: 12px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.cleadlist-open { max-height: 420px; overflow-y: auto; }
 .cleadcatbtn:hover .cleadmore { color: var(--blue); }
 .cleadcatbtn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 .cleadphoto { width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
