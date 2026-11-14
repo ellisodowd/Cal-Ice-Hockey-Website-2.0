@@ -1,0 +1,863 @@
+{
+  "seasons": [
+    {
+      "startYear": 2000,
+      "status": "partial",
+      "asOf": "mid-season, about 12 games",
+      "source": "https://web.archive.org/web/20010423204222/http://www.ocf.berkeley.edu/~hockey/html/body_stats.html",
+      "skaters": [
+        {
+          "number": 3,
+          "name": "Alan Bussard",
+          "gp": 12,
+          "g": 1,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 4,
+          "name": "Christopher Dang",
+          "gp": 12,
+          "g": 5,
+          "a": 3,
+          "pim": 10
+        },
+        {
+          "number": 26,
+          "name": "Ryan Faber-Brook",
+          "gp": 10,
+          "g": 0,
+          "a": 1,
+          "pim": 19
+        },
+        {
+          "number": 20,
+          "name": "Tudor Floru",
+          "gp": 12,
+          "g": 3,
+          "a": 3,
+          "pim": 30
+        },
+        {
+          "number": 22,
+          "name": "Chris Foley",
+          "gp": 10,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 33,
+          "name": "Nicholas Giragosian",
+          "gp": 10,
+          "g": 0,
+          "a": 0,
+          "pim": 34
+        },
+        {
+          "number": 12,
+          "name": "Mark Goodman",
+          "gp": 12,
+          "g": 4,
+          "a": 8,
+          "pim": 0
+        },
+        {
+          "number": 14,
+          "name": "Bob Jalapour",
+          "gp": 7,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 21,
+          "name": "Alex Kaplenko",
+          "gp": 12,
+          "g": 0,
+          "a": 4,
+          "pim": 6
+        },
+        {
+          "number": 16,
+          "name": "Jason Katzen",
+          "gp": 11,
+          "g": 15,
+          "a": 9,
+          "pim": 18
+        },
+        {
+          "number": 8,
+          "name": "Bryce Kurtz-Fenster",
+          "gp": 12,
+          "g": 1,
+          "a": 3,
+          "pim": 8
+        },
+        {
+          "number": 11,
+          "name": "Vache Moroyan",
+          "gp": 11,
+          "g": 0,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 19,
+          "name": "Frank Rey-Herme",
+          "gp": 11,
+          "g": 10,
+          "a": 11,
+          "pim": 7
+        },
+        {
+          "number": 43,
+          "name": "Ankit Sanghvi",
+          "gp": 3,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 32,
+          "name": "Dareyn Stilwell",
+          "gp": 11,
+          "g": 2,
+          "a": 10,
+          "pim": 10
+        },
+        {
+          "number": 25,
+          "name": "Masoud Tavazoie",
+          "gp": 6,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 7,
+          "name": "Jason Waller",
+          "gp": 10,
+          "g": 1,
+          "a": 1,
+          "pim": 0
+        },
+        {
+          "number": 9,
+          "name": "Joe Williams",
+          "gp": 6,
+          "g": 0,
+          "a": 0,
+          "pim": 2
+        }
+      ],
+      "goalies": [
+        {
+          "number": 10,
+          "name": "Audrius Avizienis",
+          "gp": 6,
+          "w": 1,
+          "l": 0,
+          "t": 1,
+          "so": null,
+          "min": null,
+          "ga": null,
+          "shots": null,
+          "gaa": null,
+          "svpct": null
+        },
+        {
+          "number": 31,
+          "name": "Morgan Hite",
+          "gp": 4,
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "so": null,
+          "min": null,
+          "ga": null,
+          "shots": null,
+          "gaa": null,
+          "svpct": null
+        }
+      ]
+    },
+    {
+      "startYear": 1999,
+      "status": "partial",
+      "asOf": "through Feb 12, 2000",
+      "source": "https://web.archive.org/web/2001/http://www.ocf.berkeley.edu/~foley/cih/arc/1999/9900stats.html",
+      "skaters": [
+        {
+          "number": 10,
+          "name": "Audrius Avizienis",
+          "gp": 17,
+          "g": 1,
+          "a": 0,
+          "pim": 12
+        },
+        {
+          "number": 13,
+          "name": "Ben Barber",
+          "gp": 8,
+          "g": 3,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 14,
+          "name": "Joe Beaudin",
+          "gp": 19,
+          "g": 22,
+          "a": 19,
+          "pim": 20
+        },
+        {
+          "number": 3,
+          "name": "Alan Bussard",
+          "gp": 25,
+          "g": 0,
+          "a": 0,
+          "pim": 18
+        },
+        {
+          "number": 6,
+          "name": "David Choi",
+          "gp": 15,
+          "g": 0,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 93,
+          "name": "Nick Conway",
+          "gp": 3,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 18,
+          "name": "Gabriel Desjardins",
+          "gp": 18,
+          "g": 1,
+          "a": 3,
+          "pim": 22
+        },
+        {
+          "number": 26,
+          "name": "Ryan Faber-Brook",
+          "gp": 25,
+          "g": 3,
+          "a": 4,
+          "pim": 32
+        },
+        {
+          "number": 20,
+          "name": "Tudor Floru",
+          "gp": 24,
+          "g": 20,
+          "a": 14,
+          "pim": 31
+        },
+        {
+          "number": 22,
+          "name": "Chris \"Luc\" Foley",
+          "gp": 25,
+          "g": 1,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 12,
+          "name": "Mark Goodman",
+          "gp": 22,
+          "g": 3,
+          "a": 8,
+          "pim": 2
+        },
+        {
+          "number": 20,
+          "name": "Sean Hallgren",
+          "gp": 23,
+          "g": 5,
+          "a": 4,
+          "pim": 10
+        },
+        {
+          "number": 21,
+          "name": "Alex Kaplenko",
+          "gp": 25,
+          "g": 10,
+          "a": 19,
+          "pim": 30
+        },
+        {
+          "number": 5,
+          "name": "Dave Leon",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 11,
+          "name": "Guy Manchuk",
+          "gp": 25,
+          "g": 2,
+          "a": 11,
+          "pim": 34
+        },
+        {
+          "number": 15,
+          "name": "Jack Nunn",
+          "gp": 3,
+          "g": 0,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 19,
+          "name": "Franck Rey-Herme",
+          "gp": 9,
+          "g": 10,
+          "a": 9,
+          "pim": 2
+        },
+        {
+          "number": 32,
+          "name": "Dareyn Stilwell",
+          "gp": 25,
+          "g": 12,
+          "a": 18,
+          "pim": 14
+        },
+        {
+          "number": 25,
+          "name": "Masoud Tavazoie",
+          "gp": 12,
+          "g": 0,
+          "a": 0,
+          "pim": 4
+        },
+        {
+          "number": 7,
+          "name": "Jason Waller",
+          "gp": 16,
+          "g": 1,
+          "a": 6,
+          "pim": 2
+        },
+        {
+          "number": 9,
+          "name": "Joe Williams",
+          "gp": 25,
+          "g": 0,
+          "a": 2,
+          "pim": 9
+        }
+      ],
+      "goalies": [
+        {
+          "number": 72,
+          "name": "Charles Perosio",
+          "gp": 12,
+          "w": 1,
+          "l": 8,
+          "t": 1,
+          "so": 0,
+          "min": 551,
+          "ga": 58,
+          "shots": 330,
+          "gaa": 6.32,
+          "svpct": 0.824
+        },
+        {
+          "number": 24,
+          "name": "Anthony Vu",
+          "gp": 11,
+          "w": 0,
+          "l": 7,
+          "t": 0,
+          "so": 0,
+          "min": 477,
+          "ga": 61,
+          "shots": 313,
+          "gaa": 7.67,
+          "svpct": 0.805
+        },
+        {
+          "number": 35,
+          "name": "Tim Yolo",
+          "gp": 2,
+          "w": 1,
+          "l": 0,
+          "t": 0,
+          "so": 0,
+          "min": 90,
+          "ga": 4,
+          "shots": 40,
+          "gaa": 2.25,
+          "svpct": 0.9
+        },
+        {
+          "number": 10,
+          "name": "Odo Avizienis",
+          "gp": 2,
+          "w": 0,
+          "l": 1,
+          "t": 0,
+          "so": 0,
+          "min": 69,
+          "ga": 10,
+          "shots": 40,
+          "gaa": 8.7,
+          "svpct": 0.75
+        }
+      ]
+    },
+    {
+      "startYear": 1998,
+      "status": "final",
+      "asOf": "final, including playoffs",
+      "source": "https://web.archive.org/web/2001/http://www.ocf.berkeley.edu/~foley/cih/arc/1998/9899stats.html",
+      "skaters": [
+        {
+          "number": 8,
+          "name": "Bradley Backes",
+          "gp": 16,
+          "g": 9,
+          "a": 9,
+          "pim": 42
+        },
+        {
+          "number": 4,
+          "name": "Brandon Brown",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 6,
+          "name": "Steven Chase",
+          "gp": 29,
+          "g": 9,
+          "a": 5,
+          "pim": 10
+        },
+        {
+          "number": 13,
+          "name": "Mark Dronskiy",
+          "gp": 26,
+          "g": 3,
+          "a": 9,
+          "pim": 47
+        },
+        {
+          "number": 26,
+          "name": "Ryan Faber-Brook",
+          "gp": 19,
+          "g": 0,
+          "a": 5,
+          "pim": 4
+        },
+        {
+          "number": 2,
+          "name": "Chris Foley",
+          "gp": 29,
+          "g": 0,
+          "a": 3,
+          "pim": 2
+        },
+        {
+          "number": 77,
+          "name": "Marc Gasway",
+          "gp": 18,
+          "g": 3,
+          "a": 1,
+          "pim": 4
+        },
+        {
+          "number": 12,
+          "name": "Mark Goodman",
+          "gp": 18,
+          "g": 1,
+          "a": 1,
+          "pim": 4
+        },
+        {
+          "number": 20,
+          "name": "Sean Hallgren",
+          "gp": 29,
+          "g": 0,
+          "a": 1,
+          "pim": 16
+        },
+        {
+          "number": 93,
+          "name": "Daniel Hasheminejad",
+          "gp": 15,
+          "g": 2,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 15,
+          "name": "Victor Hui",
+          "gp": 21,
+          "g": 4,
+          "a": 2,
+          "pim": 8
+        },
+        {
+          "number": 5,
+          "name": "Mike Lee",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 9,
+          "name": "Guy Manchuk",
+          "gp": 10,
+          "g": 1,
+          "a": 1,
+          "pim": 18
+        },
+        {
+          "number": 52,
+          "name": "Elliot Otto",
+          "gp": 29,
+          "g": 11,
+          "a": 13,
+          "pim": 70
+        },
+        {
+          "number": 72,
+          "name": "Charles Perosio",
+          "gp": 5,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 10,
+          "name": "Victor Quintana",
+          "gp": 9,
+          "g": 1,
+          "a": 2,
+          "pim": 8
+        },
+        {
+          "number": 22,
+          "name": "Anne Riley-Katz",
+          "gp": 18,
+          "g": 0,
+          "a": 2,
+          "pim": 2
+        },
+        {
+          "number": 32,
+          "name": "Dareyn Stilwell",
+          "gp": 29,
+          "g": 6,
+          "a": 3,
+          "pim": 14
+        },
+        {
+          "number": 7,
+          "name": "Jonathan Weare",
+          "gp": 12,
+          "g": 1,
+          "a": 3,
+          "pim": 18
+        },
+        {
+          "number": 25,
+          "name": "A.J. White",
+          "gp": 19,
+          "g": 10,
+          "a": 13,
+          "pim": 14
+        },
+        {
+          "number": 29,
+          "name": "Gary Witt",
+          "gp": 26,
+          "g": 0,
+          "a": 2,
+          "pim": 0
+        },
+        {
+          "number": 35,
+          "name": "Timothy Yolo",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        }
+      ],
+      "goalies": [
+        {
+          "number": 29,
+          "name": "Gary Witt",
+          "gp": 26,
+          "w": 7,
+          "l": 18,
+          "t": 1,
+          "so": 2,
+          "min": 1434,
+          "ga": 110,
+          "shots": 965,
+          "gaa": 4.6,
+          "svpct": 0.886
+        },
+        {
+          "number": 72,
+          "name": "Charles Perosio",
+          "gp": 5,
+          "w": 0,
+          "l": 1,
+          "t": 0,
+          "so": 0,
+          "min": 125,
+          "ga": 18,
+          "shots": 91,
+          "gaa": 8.64,
+          "svpct": 0.802
+        },
+        {
+          "number": 4,
+          "name": "Brandon Brown",
+          "gp": 4,
+          "w": null,
+          "l": null,
+          "t": null,
+          "so": null,
+          "min": null,
+          "ga": 11,
+          "shots": 91,
+          "gaa": 5.5,
+          "svpct": 0.879
+        },
+        {
+          "number": 35,
+          "name": "Timothy Yolo",
+          "gp": 1,
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "so": 0,
+          "min": 20,
+          "ga": 5,
+          "shots": 25,
+          "gaa": 15.0,
+          "svpct": 0.8
+        }
+      ]
+    },
+    {
+      "startYear": 1997,
+      "status": "partial",
+      "asOf": "marked \"not complete\"",
+      "source": "https://web.archive.org/web/2001/http://www.ocf.berkeley.edu/~foley/cih/arc/1997/9798stats.html",
+      "skaters": [
+        {
+          "number": 1,
+          "name": "Jesse Koritz",
+          "gp": 17,
+          "g": 3,
+          "a": 4,
+          "pim": 140
+        },
+        {
+          "number": 2,
+          "name": "Anne Riley-Katz",
+          "gp": 12,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 4,
+          "name": "Mark Jamieson",
+          "gp": 17,
+          "g": 4,
+          "a": 2,
+          "pim": 62
+        },
+        {
+          "number": 5,
+          "name": "Dan Tessieri",
+          "gp": 17,
+          "g": 0,
+          "a": 6,
+          "pim": 26
+        },
+        {
+          "number": 7,
+          "name": "Steve Chase",
+          "gp": 11,
+          "g": 0,
+          "a": 1,
+          "pim": 2
+        },
+        {
+          "number": 8,
+          "name": "Kyle Reguero",
+          "gp": 12,
+          "g": 2,
+          "a": 4,
+          "pim": 80
+        },
+        {
+          "number": 8,
+          "name": "John Mansfield",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 9,
+          "name": "Tony Dykes",
+          "gp": 13,
+          "g": 0,
+          "a": 0,
+          "pim": 4
+        },
+        {
+          "number": 11,
+          "name": "Guy Manchuk",
+          "gp": 16,
+          "g": 0,
+          "a": 2,
+          "pim": 28
+        },
+        {
+          "number": 13,
+          "name": "Eric Chang",
+          "gp": 16,
+          "g": 0,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 15,
+          "name": "Jack Nunn",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pim": 4
+        },
+        {
+          "number": 16,
+          "name": "Danny Demsky",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pim": 8
+        },
+        {
+          "number": 17,
+          "name": "Dave Leon",
+          "gp": 17,
+          "g": 0,
+          "a": 0,
+          "pim": 18
+        },
+        {
+          "number": 18,
+          "name": "Larry Wu",
+          "gp": 3,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 19,
+          "name": "Jon Weare",
+          "gp": 15,
+          "g": 2,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 20,
+          "name": "Sean Hallgren",
+          "gp": 17,
+          "g": 0,
+          "a": 0,
+          "pim": 6
+        },
+        {
+          "number": 15,
+          "name": "Chris Foley",
+          "gp": 14,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 23,
+          "name": "Victor Quintana",
+          "gp": 15,
+          "g": 2,
+          "a": 4,
+          "pim": 43
+        },
+        {
+          "number": 24,
+          "name": "Oleg Sukhovnin",
+          "gp": 4,
+          "g": 3,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 25,
+          "name": "A.J. White",
+          "gp": 17,
+          "g": 2,
+          "a": 3,
+          "pim": 32
+        },
+        {
+          "number": 29,
+          "name": "Gary Witt",
+          "gp": 16,
+          "g": 0,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 32,
+          "name": "Teal Watkins",
+          "gp": 9,
+          "g": 0,
+          "a": 0,
+          "pim": 2
+        },
+        {
+          "number": 37,
+          "name": "Ryan Faber-Brook",
+          "gp": 3,
+          "g": 0,
+          "a": 0,
+          "pim": 0
+        },
+        {
+          "number": 77,
+          "name": "Marc Gasway",
+          "gp": 13,
+          "g": 1,
+          "a": 3,
+          "pim": 0
+        }
+      ],
+      "goalies": []
+    }
+  ]
+}

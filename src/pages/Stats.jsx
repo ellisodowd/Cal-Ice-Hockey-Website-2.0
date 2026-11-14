@@ -35,6 +35,32 @@ const TABS = [
   ['hilo', 'Game High/Low'],
   ['leaders', 'Category Leaders'],
   ['alltime', 'All-Time Leaders'],
+  ['archive', '1997-2001 Archive'],
+]
+
+// Seasons before the league feed, copied from the team's old websites
+// (public/archive-stats.json). Blank cells are numbers those pages never had.
+const dash = v => (v == null ? '—' : v)
+const ARCHIVE_SKATER_COLS = [
+  ['number', '#', p => p.number, true],
+  ['name', 'Player', p => p.name, false],
+  ['gp', 'GP', p => p.gp, true],
+  ['g', 'G', p => p.g, true],
+  ['a', 'A', p => p.a, true],
+  ['pts', 'PTS', p => p.g + p.a, true],
+  ['pim', 'PIM', p => p.pim, true],
+]
+const ARCHIVE_GOALIE_COLS = [
+  ['number', '#', g => g.number, true],
+  ['name', 'Goaltender', g => g.name, false],
+  ['gp', 'GP', g => g.gp, true],
+  ['w', 'W-L-T', g => g.w, true],
+  ['so', 'SO', g => g.so, true],
+  ['min', 'MIN', g => g.min, true],
+  ['ga', 'GA', g => g.ga, true],
+  ['shots', 'SA', g => g.shots, true],
+  ['gaa', 'GAA', g => g.gaa, true],
+  ['svpct', 'SV%', g => g.svpct, true],
 ]
 
 // Career GAA and SV% only count goalies with enough games to mean something.
@@ -208,6 +234,8 @@ export default function Stats() {
   const [tab, setTab] = useState('player')
   const [cat, setCat] = useState('skaters')
   const [photoByName, setPhotoByName] = useState({})
+  const [archive, setArchive] = useState([])
+  const [archiveYear, setArchiveYear] = useState(null)
 
   useEffect(() => {
     fetch('/player-stats.json', { cache: 'no-store' })
@@ -221,6 +249,14 @@ export default function Stats() {
         if (list.length) setSelectedId(list[0].seasonId)
       })
       .catch(err => setError(err.message))
+
+    fetch('/archive-stats.json')
+      .then(res => (res.ok ? res.json() : { seasons: [] }))
+      .then(data => {
+        setArchive(data.seasons || [])
+        if (data.seasons?.length) setArchiveYear(data.seasons[0].startYear)
+      })
+      .catch(() => {})
 
     // The feed has no photos — match by name against the current roster for
     // whichever players are on it. Anyone not on today's roster (graduated,
@@ -242,6 +278,9 @@ export default function Stats() {
   const st = useMemo(() => specialTeams(games), [games])
   const career = useMemo(() => careerTotals(seasons), [seasons])
   const qualifiedGoalies = career.goalies.filter(g => g.gp >= MIN_GOALIE_GP)
+  const archived = archive.find(s => s.startYear === archiveYear)
+  // Career and archive tabs aren't about the season picked in the dropdown.
+  const seasonTab = tab !== 'alltime' && tab !== 'archive'
 
   return (
     <>
@@ -252,9 +291,9 @@ export default function Stats() {
           <div className="wrap">
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, flexWrap: 'wrap' }}>
               <h1 className="pagetitle" style={{ flex: '1 1 auto' }}>
-                {selected && tab !== 'alltime' ? `${seasonLabel(selected.startYear)} ` : ''}Statistics
+                {selected && seasonTab ? `${seasonLabel(selected.startYear)} ` : ''}Statistics
               </h1>
-              {seasons.length > 1 && tab !== 'alltime' && (
+              {seasons.length > 1 && seasonTab && (
                 <select className="rsel" value={selectedId || ''} onChange={e => setSelectedId(e.target.value)} aria-label="Season">
                   {seasons.map(s => <option key={s.seasonId} value={s.seasonId}>{seasonLabel(s.startYear)}</option>)}
                 </select>
@@ -292,6 +331,18 @@ export default function Stats() {
                         {[['skaters', 'Skaters'], ['goalies', 'Goaltenders']].map(([k, label]) => (
                           <button key={k} role="tab" aria-selected={cat === k}
                             className={`statsegbtn${cat === k ? ' on' : ''}`} onClick={() => setCat(k)}>{label}</button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {tab === 'archive' && archive.length > 0 && (
+                    <div className="statfilter">
+                      <span className="statfilterlab">Season</span>
+                      <div className="statseg" role="tablist" aria-label="Archive season">
+                        {archive.map(s => (
+                          <button key={s.startYear} role="tab" aria-selected={archiveYear === s.startYear}
+                            className={`statsegbtn${archiveYear === s.startYear ? ' on' : ''}`}
+                            onClick={() => setArchiveYear(s.startYear)}>{seasonLabel(s.startYear)}</button>
                         ))}
                       </div>
                     </div>
@@ -459,6 +510,34 @@ export default function Stats() {
                           show={v => v.toFixed(3).replace(/^0/, '')} meta={careerSpan} note={`Minimum ${MIN_GOALIE_GP} games played.`} />
                       </div>
                     </>
+                  )}
+
+                  {tab === 'archive' && (
+                    !archived ? <p className="blg" style={{ color: 'var(--muted)' }}>No archived seasons.</p> : (
+                      <>
+                        <h2 className="statsec">{seasonLabel(archived.startYear)} Season</h2>
+                        <p className="statnote" style={{ margin: '0 2px 18px' }}>
+                          {archived.status === 'final' ? 'Final stats' : 'Partial season'} ({archived.asOf}), from the team's original website.{' '}
+                          <a href={archived.source} target="_blank" rel="noopener noreferrer">View the archived page</a>.
+                          {' '}A dash means the original page didn't record that number.
+                        </p>
+                        <StatTable key={`s${archived.startYear}`} rows={archived.skaters} cols={ARCHIVE_SKATER_COLS} defaultKey="pts"
+                          format={(key, value) => (key === 'name' ? <span className="statname"><span>{value}</span></span> : dash(value))} />
+                        {archived.goalies.length > 0 && (
+                          <>
+                            <h2 className="statsec" style={{ marginTop: 28 }}>Goaltenders</h2>
+                            <StatTable key={`g${archived.startYear}`} rows={archived.goalies} cols={ARCHIVE_GOALIE_COLS} defaultKey="gp"
+                              format={(key, value, row) => {
+                                if (key === 'name') return <span className="statname"><span>{value}</span></span>
+                                if (key === 'w') return row.w == null ? '—' : `${row.w}-${row.l}-${row.t}`
+                                if (key === 'gaa') return value == null ? '—' : value.toFixed(2)
+                                if (key === 'svpct') return value == null ? '—' : value.toFixed(3).replace(/^0/, '')
+                                return dash(value)
+                              }} />
+                          </>
+                        )}
+                      </>
+                    )
                   )}
                 </div>
               </>
